@@ -51,10 +51,10 @@ Partial Class frmLogin
         Me.panelLogin2.Controls.Add(Me.lblSignUp)
         Me.panelLogin2.Controls.Add(Me.btnSignUp)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
-        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
+        Me.panelLogin2.Location = New System.Drawing.Point(654, 0)
+        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panelLogin2.Name = "panelLogin2"
-        Me.panelLogin2.Size = New System.Drawing.Size(434, 491)
+        Me.panelLogin2.Size = New System.Drawing.Size(579, 604)
         Me.panelLogin2.TabIndex = 7
         '
         'btnMinimize
@@ -69,9 +69,10 @@ Partial Class frmLogin
         Me.btnMinimize.ForeColor = System.Drawing.Color.White
         Me.btnMinimize.HoverState.FillColor = System.Drawing.Color.LightSkyBlue
         Me.btnMinimize.IndicateFocus = True
-        Me.btnMinimize.Location = New System.Drawing.Point(374, 0)
+        Me.btnMinimize.Location = New System.Drawing.Point(499, 0)
+        Me.btnMinimize.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
+        Me.btnMinimize.Size = New System.Drawing.Size(40, 37)
         Me.btnMinimize.TabIndex = 6
         Me.btnMinimize.Text = "-"
         Me.btnMinimize.UseTransparentBackground = True
@@ -82,9 +83,10 @@ Partial Class frmLogin
         Me.lblSignUp.BackColor = System.Drawing.Color.Transparent
         Me.lblSignUp.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSignUp.ForeColor = System.Drawing.Color.GhostWhite
-        Me.lblSignUp.Location = New System.Drawing.Point(104, 467)
+        Me.lblSignUp.Location = New System.Drawing.Point(139, 575)
+        Me.lblSignUp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSignUp.Name = "lblSignUp"
-        Me.lblSignUp.Size = New System.Drawing.Size(253, 17)
+        Me.lblSignUp.Size = New System.Drawing.Size(311, 19)
         Me.lblSignUp.TabIndex = 11
         Me.lblSignUp.Text = "Don't have an account? Signup now!"
         '
@@ -101,9 +103,10 @@ Partial Class frmLogin
         Me.btnSignUp.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnSignUp.HoverState.ForeColor = System.Drawing.Color.White
         Me.btnSignUp.IndicateFocus = True
-        Me.btnSignUp.Location = New System.Drawing.Point(140, 408)
+        Me.btnSignUp.Location = New System.Drawing.Point(187, 502)
+        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
+        Me.btnSignUp.Size = New System.Drawing.Size(240, 55)
         Me.btnSignUp.TabIndex = 4
         Me.btnSignUp.Text = "Sign up"
         '
@@ -122,8 +125,9 @@ Partial Class frmLogin
         Me.panelLogin.Controls.Add(Me.panelLogin2)
         Me.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelLogin.Location = New System.Drawing.Point(0, 0)
+        Me.panelLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.panelLogin.Name = "panelLogin"
-        Me.panelLogin.Size = New System.Drawing.Size(925, 491)
+        Me.panelLogin.Size = New System.Drawing.Size(1233, 604)
         Me.panelLogin.TabIndex = 6
         '
         'lblCopyright
@@ -131,9 +135,10 @@ Partial Class frmLogin
         Me.lblCopyright.AutoSize = True
         Me.lblCopyright.BackColor = System.Drawing.Color.Transparent
         Me.lblCopyright.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.lblCopyright.Location = New System.Drawing.Point(118, 467)
+        Me.lblCopyright.Location = New System.Drawing.Point(157, 575)
+        Me.lblCopyright.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCopyright.Name = "lblCopyright"
-        Me.lblCopyright.Size = New System.Drawing.Size(272, 19)
+        Me.lblCopyright.Size = New System.Drawing.Size(331, 21)
         Me.lblCopyright.TabIndex = 10
         Me.lblCopyright.Text = "© 2024 ChronoPulse. All rights reserved."
         '
@@ -143,9 +148,10 @@ Partial Class frmLogin
         Me.lblIncorrect.BackColor = System.Drawing.Color.Transparent
         Me.lblIncorrect.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIncorrect.ForeColor = System.Drawing.Color.Red
-        Me.lblIncorrect.Location = New System.Drawing.Point(70, 371)
+        Me.lblIncorrect.Location = New System.Drawing.Point(93, 457)
+        Me.lblIncorrect.Margin = New System.Windows.Forms.Padding(4)
         Me.lblIncorrect.Name = "lblIncorrect"
-        Me.lblIncorrect.Size = New System.Drawing.Size(366, 26)
+        Me.lblIncorrect.Size = New System.Drawing.Size(488, 32)
         Me.lblIncorrect.TabIndex = 5
         Me.lblIncorrect.Text = "Error"
         Me.lblIncorrect.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -161,9 +167,10 @@ Partial Class frmLogin
         Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold)
         Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.IndicateFocus = True
-        Me.btnLogin.Location = New System.Drawing.Point(164, 408)
+        Me.btnLogin.Location = New System.Drawing.Point(219, 502)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(180, 45)
+        Me.btnLogin.Size = New System.Drawing.Size(240, 55)
         Me.btnLogin.TabIndex = 3
         Me.btnLogin.Text = "Login"
         '
@@ -172,9 +179,10 @@ Partial Class frmLogin
         Me.lnklblReset.AutoSize = True
         Me.lnklblReset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.lnklblReset.LinkColor = System.Drawing.Color.Gray
-        Me.lnklblReset.Location = New System.Drawing.Point(61, 347)
+        Me.lnklblReset.Location = New System.Drawing.Point(81, 427)
+        Me.lnklblReset.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lnklblReset.Name = "lnklblReset"
-        Me.lnklblReset.Size = New System.Drawing.Size(83, 13)
+        Me.lnklblReset.Size = New System.Drawing.Size(100, 16)
         Me.lnklblReset.TabIndex = 2
         Me.lnklblReset.TabStop = True
         Me.lnklblReset.Text = "Reset account?"
@@ -191,12 +199,13 @@ Partial Class frmLogin
         Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(63, 300)
+        Me.txtPassword.Location = New System.Drawing.Point(84, 369)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtPassword.PlaceholderText = "Password"
         Me.txtPassword.SelectedText = ""
-        Me.txtPassword.Size = New System.Drawing.Size(366, 37)
+        Me.txtPassword.Size = New System.Drawing.Size(488, 46)
         Me.txtPassword.TabIndex = 1
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -212,12 +221,13 @@ Partial Class frmLogin
         Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(63, 257)
+        Me.txtUsername.Location = New System.Drawing.Point(84, 316)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Username"
         Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(366, 37)
+        Me.txtUsername.Size = New System.Drawing.Size(488, 46)
         Me.txtUsername.TabIndex = 0
         '
         'Label1
@@ -225,9 +235,10 @@ Partial Class frmLogin
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Copperplate Gothic Light", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 205)
+        Me.Label1.Location = New System.Drawing.Point(141, 252)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(311, 30)
+        Me.Label1.Size = New System.Drawing.Size(379, 36)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Level Up Your Game!"
         '
@@ -236,9 +247,10 @@ Partial Class frmLogin
         Me.lblWelcome1.AutoSize = True
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome1.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome1.Location = New System.Drawing.Point(158, 139)
+        Me.lblWelcome1.Location = New System.Drawing.Point(211, 171)
+        Me.lblWelcome1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblWelcome1.Name = "lblWelcome1"
-        Me.lblWelcome1.Size = New System.Drawing.Size(202, 32)
+        Me.lblWelcome1.Size = New System.Drawing.Size(255, 40)
         Me.lblWelcome1.TabIndex = 0
         Me.lblWelcome1.Text = "Account Login"
         '
@@ -247,9 +259,10 @@ Partial Class frmLogin
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(164, 34)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(219, 42)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(167, 73)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(223, 90)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False
@@ -267,9 +280,10 @@ Partial Class frmLogin
         Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.HoverState.FillColor = System.Drawing.Color.Red
         Me.btnClose.IndicateFocus = True
-        Me.btnClose.Location = New System.Drawing.Point(895, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1193, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 30)
+        Me.btnClose.Size = New System.Drawing.Size(40, 37)
         Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "X"
         Me.btnClose.UseTransparentBackground = True
@@ -277,16 +291,16 @@ Partial Class frmLogin
         'frmLogin
         '
         Me.AcceptButton = Me.btnLogin
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(925, 491)
+        Me.ClientSize = New System.Drawing.Size(1233, 604)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.panelLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
         Me.panelLogin.ResumeLayout(False)
