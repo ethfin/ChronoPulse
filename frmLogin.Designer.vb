@@ -226,7 +226,7 @@ Partial Class frmLogin
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Copperplate Gothic Light", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 205)
+        Me.Label1.Location = New System.Drawing.Point(79, 193)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(311, 30)
         Me.Label1.TabIndex = 0
@@ -237,7 +237,7 @@ Partial Class frmLogin
         Me.lblWelcome1.AutoSize = True
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome1.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome1.Location = New System.Drawing.Point(158, 139)
+        Me.lblWelcome1.Location = New System.Drawing.Point(130, 138)
         Me.lblWelcome1.Name = "lblWelcome1"
         Me.lblWelcome1.Size = New System.Drawing.Size(202, 32)
         Me.lblWelcome1.TabIndex = 0
@@ -248,9 +248,9 @@ Partial Class frmLogin
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(164, 34)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(122, 12)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(167, 73)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(238, 109)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False

@@ -186,7 +186,7 @@ Partial Class frmSignUp
         Me.btnSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSignUp.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.Color.White
         Me.btnSignUp.Location = New System.Drawing.Point(576, 381)
         Me.btnSignUp.Name = "btnSignUp"
@@ -267,7 +267,7 @@ Partial Class frmSignUp
         Me.cbxShowPassword.CheckedState.BorderRadius = 0
         Me.cbxShowPassword.CheckedState.BorderThickness = 0
         Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
         Me.cbxShowPassword.Location = New System.Drawing.Point(409, 359)
         Me.cbxShowPassword.Name = "cbxShowPassword"
         Me.cbxShowPassword.Size = New System.Drawing.Size(102, 17)
