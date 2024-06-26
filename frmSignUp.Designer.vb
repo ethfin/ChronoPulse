@@ -24,6 +24,7 @@ Partial Class frmSignUp
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSignUp))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -36,13 +37,16 @@ Partial Class frmSignUp
         Me.txtReenterPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnMinimize = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Controls.Add(Me.btnClose)
+        Me.Guna2Panel1.Controls.Add(Me.btnMinimize)
         Me.Guna2Panel1.Controls.Add(Me.cbxShowPassword)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
@@ -61,6 +65,24 @@ Partial Class frmSignUp
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(970, 450)
         Me.Guna2Panel1.TabIndex = 2
+        '
+        'cbxShowPassword
+        '
+        Me.cbxShowPassword.AutoSize = True
+        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.CheckedState.BorderRadius = 0
+        Me.cbxShowPassword.CheckedState.BorderThickness = 0
+        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.cbxShowPassword.Location = New System.Drawing.Point(409, 359)
+        Me.cbxShowPassword.Name = "cbxShowPassword"
+        Me.cbxShowPassword.Size = New System.Drawing.Size(102, 17)
+        Me.cbxShowPassword.TabIndex = 35
+        Me.cbxShowPassword.Text = "Show Password"
+        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
+        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
+        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'Guna2HtmlLabel3
         '
@@ -260,23 +282,44 @@ Partial Class frmSignUp
         Me.txtEmail.Size = New System.Drawing.Size(518, 36)
         Me.txtEmail.TabIndex = 25
         '
-        'cbxShowPassword
+        'btnClose
         '
-        Me.cbxShowPassword.AutoSize = True
-        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.CheckedState.BorderRadius = 0
-        Me.cbxShowPassword.CheckedState.BorderThickness = 0
-        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword.Location = New System.Drawing.Point(409, 359)
-        Me.cbxShowPassword.Name = "cbxShowPassword"
-        Me.cbxShowPassword.Size = New System.Drawing.Size(102, 17)
-        Me.cbxShowPassword.TabIndex = 35
-        Me.cbxShowPassword.Text = "Show Password"
-        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
-        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
-        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.CheckedState.ForeColor = System.Drawing.Color.Red
+        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClose.FillColor = System.Drawing.Color.Transparent
+        Me.btnClose.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClose.ForeColor = System.Drawing.Color.Maroon
+        Me.btnClose.HoverState.FillColor = System.Drawing.Color.Red
+        Me.btnClose.IndicateFocus = True
+        Me.btnClose.Location = New System.Drawing.Point(937, 0)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(30, 30)
+        Me.btnClose.TabIndex = 37
+        Me.btnClose.Text = "X"
+        Me.btnClose.UseTransparentBackground = True
+        '
+        'btnMinimize
+        '
+        Me.btnMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMinimize.FillColor = System.Drawing.Color.Transparent
+        Me.btnMinimize.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnMinimize.ForeColor = System.Drawing.Color.DimGray
+        Me.btnMinimize.HoverState.FillColor = System.Drawing.Color.LightSkyBlue
+        Me.btnMinimize.IndicateFocus = True
+        Me.btnMinimize.Location = New System.Drawing.Point(901, 0)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
+        Me.btnMinimize.TabIndex = 36
+        Me.btnMinimize.Text = "-"
+        Me.btnMinimize.UseTransparentBackground = True
         '
         'frmSignUp
         '
@@ -307,4 +350,6 @@ Partial Class frmSignUp
     Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents btnMinimize As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
 End Class
