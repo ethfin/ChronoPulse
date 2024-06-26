@@ -101,4 +101,8 @@ Public Class frmLogin
         Me.Hide()
         frmSignUp.Show()
     End Sub
+
+    Private Sub lblSignUp_Click(sender As Object, e As EventArgs) Handles lblSignUp.Click
+
+    End Sub
 End Class

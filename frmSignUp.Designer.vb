@@ -36,12 +36,14 @@ Partial Class frmSignUp
         Me.txtReenterPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Controls.Add(Me.cbxShowPassword)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
@@ -258,6 +260,24 @@ Partial Class frmSignUp
         Me.txtEmail.Size = New System.Drawing.Size(518, 36)
         Me.txtEmail.TabIndex = 25
         '
+        'cbxShowPassword
+        '
+        Me.cbxShowPassword.AutoSize = True
+        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.CheckedState.BorderRadius = 0
+        Me.cbxShowPassword.CheckedState.BorderThickness = 0
+        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.cbxShowPassword.Location = New System.Drawing.Point(409, 359)
+        Me.cbxShowPassword.Name = "cbxShowPassword"
+        Me.cbxShowPassword.Size = New System.Drawing.Size(102, 17)
+        Me.cbxShowPassword.TabIndex = 35
+        Me.cbxShowPassword.Text = "Show Password"
+        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
+        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
+        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
         'frmSignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,4 +306,5 @@ Partial Class frmSignUp
     Friend WithEvents txtReenterPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
 End Class
