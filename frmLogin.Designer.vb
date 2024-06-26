@@ -286,6 +286,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.panelLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
