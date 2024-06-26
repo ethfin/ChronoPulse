@@ -132,7 +132,7 @@ Partial Class frmSignUp
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
         Me.btnMinimize.TabIndex = 36
-        Me.btnMinimize.Text = "_"
+        Me.btnMinimize.Text = "—"
         Me.btnMinimize.UseTransparentBackground = True
         '
         'cbxShowPassword
