@@ -1,6 +1,27 @@
-﻿Public Class frmSignUp
+﻿Imports System.Runtime.InteropServices
+
+Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
 
+    End Sub
+
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
+
+    <DllImport("user32.dll")>
+    Public Shared Function SendMessage(hWnd As IntPtr, Msg As Integer, wParam As Integer, lParam As Integer) As Integer
+    End Function
+
+    <DllImport("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
+
+    ' The MouseDown event for the panel to initiate the form dragging.
+    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlSignUp.MouseDown, pnlBackground.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
+        End If
     End Sub
 
     Protected Overrides Sub WndProc(ByRef m As Message)
@@ -29,23 +50,8 @@
         End If
     End Sub
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
-
-    End Sub
-
-    Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
-
-    End Sub
-
-    Private Sub htmllblBackToLogin_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub lblNames_Click(sender As Object, e As EventArgs) Handles lblNames.Click
-
-    End Sub
 End Class
