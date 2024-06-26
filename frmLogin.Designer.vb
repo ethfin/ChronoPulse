@@ -236,9 +236,9 @@ Partial Class frmLogin
         '
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome1.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome1.Location = New System.Drawing.Point(70, 148)
+        Me.lblWelcome1.Location = New System.Drawing.Point(63, 148)
         Me.lblWelcome1.Name = "lblWelcome1"
-        Me.lblWelcome1.Size = New System.Drawing.Size(359, 32)
+        Me.lblWelcome1.Size = New System.Drawing.Size(366, 32)
         Me.lblWelcome1.TabIndex = 0
         Me.lblWelcome1.Text = "Account Login"
         Me.lblWelcome1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
