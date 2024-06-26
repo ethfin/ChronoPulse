@@ -223,25 +223,25 @@ Partial Class frmLogin
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Copperplate Gothic Light", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(79, 193)
+        Me.Label1.Location = New System.Drawing.Point(63, 193)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(311, 30)
+        Me.Label1.Size = New System.Drawing.Size(366, 30)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Level Up Your Game!"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblWelcome1
         '
-        Me.lblWelcome1.AutoSize = True
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome1.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome1.Location = New System.Drawing.Point(130, 138)
+        Me.lblWelcome1.Location = New System.Drawing.Point(70, 148)
         Me.lblWelcome1.Name = "lblWelcome1"
-        Me.lblWelcome1.Size = New System.Drawing.Size(202, 32)
+        Me.lblWelcome1.Size = New System.Drawing.Size(359, 32)
         Me.lblWelcome1.TabIndex = 0
         Me.lblWelcome1.Text = "Account Login"
+        Me.lblWelcome1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2PictureBox1
         '
