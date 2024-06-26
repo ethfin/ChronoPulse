@@ -30,6 +30,7 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Name = "frmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.ResumeLayout(False)
 
