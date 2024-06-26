@@ -39,12 +39,14 @@ Partial Class frmSignUp
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMinimize = New Guna.UI2.WinForms.Guna2Button()
+        Me.htmllblBackToLogin = New System.Windows.Forms.LinkLabel()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Controls.Add(Me.htmllblBackToLogin)
         Me.Guna2Panel1.Controls.Add(Me.btnClose)
         Me.Guna2Panel1.Controls.Add(Me.btnMinimize)
         Me.Guna2Panel1.Controls.Add(Me.cbxShowPassword)
@@ -193,6 +195,7 @@ Partial Class frmSignUp
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(409, 237)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtUsername.MaxLength = 30
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Username"
@@ -231,6 +234,7 @@ Partial Class frmSignUp
         Me.txtReenterPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtReenterPassword.Location = New System.Drawing.Point(671, 315)
         Me.txtReenterPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtReenterPassword.MaxLength = 30
         Me.txtReenterPassword.Name = "txtReenterPassword"
         Me.txtReenterPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtReenterPassword.PlaceholderText = "Re-enter Password"
@@ -253,6 +257,7 @@ Partial Class frmSignUp
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Location = New System.Drawing.Point(409, 315)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPassword.MaxLength = 30
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.PlaceholderText = "Password"
@@ -321,6 +326,18 @@ Partial Class frmSignUp
         Me.btnMinimize.Text = "-"
         Me.btnMinimize.UseTransparentBackground = True
         '
+        'htmllblBackToLogin
+        '
+        Me.htmllblBackToLogin.AutoSize = True
+        Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(795, 413)
+        Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
+        Me.htmllblBackToLogin.Size = New System.Drawing.Size(132, 13)
+        Me.htmllblBackToLogin.TabIndex = 39
+        Me.htmllblBackToLogin.TabStop = True
+        Me.htmllblBackToLogin.Text = "Already have an account?"
+        Me.htmllblBackToLogin.VisitedLinkColor = System.Drawing.Color.White
+        '
         'frmSignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -352,4 +369,5 @@ Partial Class frmSignUp
     Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents btnMinimize As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents htmllblBackToLogin As LinkLabel
 End Class

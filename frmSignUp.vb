@@ -36,4 +36,8 @@
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
 
     End Sub
+
+    Private Sub htmllblBackToLogin_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
