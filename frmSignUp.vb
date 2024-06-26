@@ -40,4 +40,12 @@
     Private Sub htmllblBackToLogin_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub lblNames_Click(sender As Object, e As EventArgs) Handles lblNames.Click
+
+    End Sub
 End Class
