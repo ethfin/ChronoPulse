@@ -213,6 +213,7 @@ Partial Class frmLogin
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(63, 257)
+        Me.txtUsername.MaxLength = 30
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Username"
