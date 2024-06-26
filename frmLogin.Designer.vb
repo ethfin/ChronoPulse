@@ -52,7 +52,7 @@ Partial Class frmLogin
         Me.panelLogin2.Controls.Add(Me.btnSignUp)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
         Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
-        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(434, 491)
         Me.panelLogin2.TabIndex = 7
@@ -275,6 +275,7 @@ Partial Class frmLogin
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
@@ -283,6 +284,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.panelLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
