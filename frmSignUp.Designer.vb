@@ -24,6 +24,7 @@ Partial Class frmSignUp
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSignUp))
         Me.pnlSignUp = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lblError = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.htmllblBackToLogin = New System.Windows.Forms.LinkLabel()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
@@ -41,7 +42,6 @@ Partial Class frmSignUp
         Me.txtReenterPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.lblError = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnlSignUp.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,6 +73,21 @@ Partial Class frmSignUp
         Me.pnlSignUp.Size = New System.Drawing.Size(970, 450)
         Me.pnlSignUp.TabIndex = 2
         '
+        'lblError
+        '
+        Me.lblError.AutoSize = False
+        Me.lblError.BackColor = System.Drawing.Color.Transparent
+        Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblError.ForeColor = System.Drawing.Color.Red
+        Me.lblError.Location = New System.Drawing.Point(686, 300)
+        Me.lblError.Name = "lblError"
+        Me.lblError.Size = New System.Drawing.Size(256, 28)
+        Me.lblError.TabIndex = 41
+        Me.lblError.TabStop = False
+        Me.lblError.Text = "Error"
+        Me.lblError.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblError.Visible = False
+        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -89,10 +104,11 @@ Partial Class frmSignUp
         'htmllblBackToLogin
         '
         Me.htmllblBackToLogin.AutoSize = True
+        Me.htmllblBackToLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
-        Me.htmllblBackToLogin.Location = New System.Drawing.Point(828, 408)
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(781, 407)
         Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
-        Me.htmllblBackToLogin.Size = New System.Drawing.Size(132, 13)
+        Me.htmllblBackToLogin.Size = New System.Drawing.Size(162, 16)
         Me.htmllblBackToLogin.TabIndex = 8
         Me.htmllblBackToLogin.TabStop = True
         Me.htmllblBackToLogin.Text = "Already have an account?"
@@ -217,6 +233,7 @@ Partial Class frmSignUp
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLastName.Location = New System.Drawing.Point(687, 106)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtLastName.MaxLength = 30
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastName.PlaceholderText = "Last Name"
@@ -239,6 +256,7 @@ Partial Class frmSignUp
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFirstName.Location = New System.Drawing.Point(424, 106)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtFirstName.MaxLength = 30
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstName.PlaceholderText = "First Name"
@@ -271,7 +289,7 @@ Partial Class frmSignUp
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(424, 257)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtUsername.MaxLength = 30
+        Me.txtUsername.MaxLength = 62
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Username"
@@ -356,27 +374,13 @@ Partial Class frmSignUp
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtEmail.Location = New System.Drawing.Point(424, 180)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtEmail.MaxLength = 62
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmail.PlaceholderText = "Email"
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.Size = New System.Drawing.Size(518, 36)
         Me.txtEmail.TabIndex = 2
-        '
-        'lblError
-        '
-        Me.lblError.AutoSize = False
-        Me.lblError.BackColor = System.Drawing.Color.Transparent
-        Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(686, 300)
-        Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(256, 28)
-        Me.lblError.TabIndex = 41
-        Me.lblError.TabStop = False
-        Me.lblError.Text = "Error"
-        Me.lblError.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lblError.Visible = False
         '
         'frmSignUp
         '

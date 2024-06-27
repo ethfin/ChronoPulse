@@ -28,6 +28,8 @@ Partial Class frmLogin
         Me.lblSignUp = New System.Windows.Forms.Label()
         Me.btnSignUp = New Guna.UI2.WinForms.Guna2Button()
         Me.panelLogin = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.lblIncorrect = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnLogin = New Guna.UI2.WinForms.Guna2Button()
@@ -37,8 +39,6 @@ Partial Class frmLogin
         Me.lblWelcome1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
-        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
-        Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panelLogin2.SuspendLayout()
         Me.panelLogin.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,6 +129,46 @@ Partial Class frmLogin
         Me.panelLogin.Size = New System.Drawing.Size(925, 491)
         Me.panelLogin.TabIndex = 6
         '
+        'txtPassword
+        '
+        Me.txtPassword.BorderColor = System.Drawing.Color.Gray
+        Me.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPassword.DefaultText = ""
+        Me.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPassword.Location = New System.Drawing.Point(63, 289)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPassword.MaxLength = 30
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.PlaceholderText = "Password"
+        Me.txtPassword.SelectedText = ""
+        Me.txtPassword.Size = New System.Drawing.Size(366, 36)
+        Me.txtPassword.TabIndex = 1
+        '
+        'cbxShowPassword
+        '
+        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.CheckedState.BorderRadius = 0
+        Me.cbxShowPassword.CheckedState.BorderThickness = 0
+        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.cbxShowPassword.Location = New System.Drawing.Point(63, 335)
+        Me.cbxShowPassword.Name = "cbxShowPassword"
+        Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
+        Me.cbxShowPassword.TabIndex = 2
+        Me.cbxShowPassword.Text = "Show Password"
+        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
+        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
+        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
         'lblCopyright
         '
         Me.lblCopyright.AutoSize = True
@@ -196,7 +236,7 @@ Partial Class frmLogin
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(63, 245)
-        Me.txtUsername.MaxLength = 30
+        Me.txtUsername.MaxLength = 62
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Username"
@@ -258,46 +298,6 @@ Partial Class frmLogin
         Me.btnClose.TabStop = False
         Me.btnClose.Text = "X"
         Me.btnClose.UseTransparentBackground = True
-        '
-        'cbxShowPassword
-        '
-        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.CheckedState.BorderRadius = 0
-        Me.cbxShowPassword.CheckedState.BorderThickness = 0
-        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword.Location = New System.Drawing.Point(63, 335)
-        Me.cbxShowPassword.Name = "cbxShowPassword"
-        Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
-        Me.cbxShowPassword.TabIndex = 2
-        Me.cbxShowPassword.Text = "Show Password"
-        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
-        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
-        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        '
-        'txtPassword
-        '
-        Me.txtPassword.BorderColor = System.Drawing.Color.Gray
-        Me.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPassword.DefaultText = ""
-        Me.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(63, 289)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtPassword.MaxLength = 30
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.PlaceholderText = "Password"
-        Me.txtPassword.SelectedText = ""
-        Me.txtPassword.Size = New System.Drawing.Size(366, 36)
-        Me.txtPassword.TabIndex = 1
         '
         'frmLogin
         '

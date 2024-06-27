@@ -200,4 +200,7 @@ Public Class frmSignUp
         Return True
     End Function
 
+    Private Sub lblError_Click(sender As Object, e As EventArgs) Handles lblError.Click
+
+    End Sub
 End Class
