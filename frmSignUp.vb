@@ -209,10 +209,16 @@ Public Class frmSignUp
         If txtEmail.Text.Contains(requiredChar) Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
+            txtEmail.BorderColor = Color.Green
         Else
             lblErrorEmail.Text = "Input must include @."
             lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
         End If
         lblErrorEmail.Show()
+    End Sub
+
+    Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.TextChanged
+
     End Sub
 End Class

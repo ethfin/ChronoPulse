@@ -50,6 +50,8 @@ Partial Class frmSignUp
         'pnlSignUp
         '
         Me.pnlSignUp.BackColor = System.Drawing.Color.White
+        Me.pnlSignUp.Controls.Add(Me.txtEmail)
+        Me.pnlSignUp.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnlSignUp.Controls.Add(Me.lblErrorEmail)
         Me.pnlSignUp.Controls.Add(Me.lblError)
         Me.pnlSignUp.Controls.Add(Me.Guna2PictureBox1)
@@ -59,7 +61,6 @@ Partial Class frmSignUp
         Me.pnlSignUp.Controls.Add(Me.cbxShowPassword)
         Me.pnlSignUp.Controls.Add(Me.Guna2HtmlLabel3)
         Me.pnlSignUp.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.pnlSignUp.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnlSignUp.Controls.Add(Me.lblNames)
         Me.pnlSignUp.Controls.Add(Me.txtLastName)
         Me.pnlSignUp.Controls.Add(Me.txtFirstName)
@@ -68,7 +69,6 @@ Partial Class frmSignUp
         Me.pnlSignUp.Controls.Add(Me.btnSignUp)
         Me.pnlSignUp.Controls.Add(Me.txtReenterPassword)
         Me.pnlSignUp.Controls.Add(Me.txtPassword)
-        Me.pnlSignUp.Controls.Add(Me.txtEmail)
         Me.pnlSignUp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlSignUp.Location = New System.Drawing.Point(0, 0)
         Me.pnlSignUp.Name = "pnlSignUp"
@@ -81,7 +81,7 @@ Partial Class frmSignUp
         Me.lblErrorEmail.BackColor = System.Drawing.Color.Transparent
         Me.lblErrorEmail.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblErrorEmail.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorEmail.Location = New System.Drawing.Point(686, 221)
+        Me.lblErrorEmail.Location = New System.Drawing.Point(686, 299)
         Me.lblErrorEmail.Name = "lblErrorEmail"
         Me.lblErrorEmail.Size = New System.Drawing.Size(256, 28)
         Me.lblErrorEmail.TabIndex = 42
@@ -123,7 +123,7 @@ Partial Class frmSignUp
         Me.htmllblBackToLogin.AutoSize = True
         Me.htmllblBackToLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
-        Me.htmllblBackToLogin.Location = New System.Drawing.Point(781, 433)
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(781, 432)
         Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
         Me.htmllblBackToLogin.Size = New System.Drawing.Size(162, 16)
         Me.htmllblBackToLogin.TabIndex = 8
@@ -207,7 +207,7 @@ Partial Class frmSignUp
         Me.Guna2HtmlLabel2.AutoSize = False
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(424, 225)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(424, 149)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(518, 24)
         Me.Guna2HtmlLabel2.TabIndex = 33
@@ -218,7 +218,7 @@ Partial Class frmSignUp
         Me.Guna2HtmlLabel1.AutoSize = False
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(424, 149)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(424, 226)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(519, 24)
         Me.Guna2HtmlLabel1.TabIndex = 32
@@ -248,7 +248,7 @@ Partial Class frmSignUp
         Me.txtLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLastName.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLastName.Location = New System.Drawing.Point(687, 106)
+        Me.txtLastName.Location = New System.Drawing.Point(688, 106)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtLastName.MaxLength = 30
         Me.txtLastName.Name = "txtLastName"
@@ -304,7 +304,7 @@ Partial Class frmSignUp
         Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(424, 257)
+        Me.txtUsername.Location = New System.Drawing.Point(425, 183)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUsername.MaxLength = 62
         Me.txtUsername.Name = "txtUsername"
@@ -389,7 +389,7 @@ Partial Class frmSignUp
         Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtEmail.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.Location = New System.Drawing.Point(424, 180)
+        Me.txtEmail.Location = New System.Drawing.Point(425, 259)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmail.MaxLength = 62
         Me.txtEmail.Name = "txtEmail"
