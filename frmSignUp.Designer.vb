@@ -93,7 +93,7 @@ Partial Class frmSignUp
         Me.htmllblBackToLogin.Location = New System.Drawing.Point(828, 408)
         Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
         Me.htmllblBackToLogin.Size = New System.Drawing.Size(132, 13)
-        Me.htmllblBackToLogin.TabIndex = 39
+        Me.htmllblBackToLogin.TabIndex = 8
         Me.htmllblBackToLogin.TabStop = True
         Me.htmllblBackToLogin.Text = "Already have an account?"
         Me.htmllblBackToLogin.VisitedLinkColor = System.Drawing.Color.White
@@ -115,6 +115,7 @@ Partial Class frmSignUp
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 30)
         Me.btnClose.TabIndex = 37
+        Me.btnClose.TabStop = False
         Me.btnClose.Text = "X"
         Me.btnClose.UseTransparentBackground = True
         '
@@ -134,6 +135,7 @@ Partial Class frmSignUp
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
         Me.btnMinimize.TabIndex = 36
+        Me.btnMinimize.TabStop = False
         Me.btnMinimize.Text = "—"
         Me.btnMinimize.UseTransparentBackground = True
         '
@@ -148,7 +150,7 @@ Partial Class frmSignUp
         Me.cbxShowPassword.Location = New System.Drawing.Point(424, 379)
         Me.cbxShowPassword.Name = "cbxShowPassword"
         Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
-        Me.cbxShowPassword.TabIndex = 35
+        Me.cbxShowPassword.TabIndex = 6
         Me.cbxShowPassword.Text = "Show Password"
         Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.cbxShowPassword.UncheckedState.BorderRadius = 0
@@ -220,7 +222,7 @@ Partial Class frmSignUp
         Me.txtLastName.PlaceholderText = "Last Name"
         Me.txtLastName.SelectedText = ""
         Me.txtLastName.Size = New System.Drawing.Size(256, 36)
-        Me.txtLastName.TabIndex = 24
+        Me.txtLastName.TabIndex = 1
         '
         'txtFirstName
         '
@@ -242,7 +244,7 @@ Partial Class frmSignUp
         Me.txtFirstName.PlaceholderText = "First Name"
         Me.txtFirstName.SelectedText = ""
         Me.txtFirstName.Size = New System.Drawing.Size(256, 36)
-        Me.txtFirstName.TabIndex = 23
+        Me.txtFirstName.TabIndex = 0
         '
         'pnlBackground
         '
@@ -275,7 +277,7 @@ Partial Class frmSignUp
         Me.txtUsername.PlaceholderText = "Username"
         Me.txtUsername.SelectedText = ""
         Me.txtUsername.Size = New System.Drawing.Size(518, 36)
-        Me.txtUsername.TabIndex = 29
+        Me.txtUsername.TabIndex = 3
         '
         'btnSignUp
         '
@@ -290,7 +292,7 @@ Partial Class frmSignUp
         Me.btnSignUp.Location = New System.Drawing.Point(594, 395)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
-        Me.btnSignUp.TabIndex = 28
+        Me.btnSignUp.TabIndex = 7
         Me.btnSignUp.Text = "Sign Up"
         '
         'txtReenterPassword
@@ -314,7 +316,7 @@ Partial Class frmSignUp
         Me.txtReenterPassword.PlaceholderText = "Re-enter Password"
         Me.txtReenterPassword.SelectedText = ""
         Me.txtReenterPassword.Size = New System.Drawing.Size(256, 36)
-        Me.txtReenterPassword.TabIndex = 27
+        Me.txtReenterPassword.TabIndex = 5
         '
         'txtPassword
         '
@@ -337,7 +339,7 @@ Partial Class frmSignUp
         Me.txtPassword.PlaceholderText = "Password"
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(256, 36)
-        Me.txtPassword.TabIndex = 26
+        Me.txtPassword.TabIndex = 4
         '
         'txtEmail
         '
@@ -359,7 +361,7 @@ Partial Class frmSignUp
         Me.txtEmail.PlaceholderText = "Email"
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.Size = New System.Drawing.Size(518, 36)
-        Me.txtEmail.TabIndex = 25
+        Me.txtEmail.TabIndex = 2
         '
         'lblError
         '
@@ -371,6 +373,7 @@ Partial Class frmSignUp
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(256, 28)
         Me.lblError.TabIndex = 41
+        Me.lblError.TabStop = False
         Me.lblError.Text = "Error"
         Me.lblError.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblError.Visible = False

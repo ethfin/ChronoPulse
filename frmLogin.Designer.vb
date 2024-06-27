@@ -74,6 +74,7 @@ Partial Class frmLogin
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
         Me.btnMinimize.TabIndex = 6
+        Me.btnMinimize.TabStop = False
         Me.btnMinimize.Text = "—"
         Me.btnMinimize.UseTransparentBackground = True
         '
@@ -105,7 +106,7 @@ Partial Class frmLogin
         Me.btnSignUp.Location = New System.Drawing.Point(140, 408)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
-        Me.btnSignUp.TabIndex = 4
+        Me.btnSignUp.TabIndex = 5
         Me.btnSignUp.Text = "Sign up"
         '
         'panelLogin
@@ -149,6 +150,7 @@ Partial Class frmLogin
         Me.lblIncorrect.Name = "lblIncorrect"
         Me.lblIncorrect.Size = New System.Drawing.Size(366, 26)
         Me.lblIncorrect.TabIndex = 5
+        Me.lblIncorrect.TabStop = False
         Me.lblIncorrect.Text = "Error"
         Me.lblIncorrect.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblIncorrect.Visible = False
@@ -166,7 +168,7 @@ Partial Class frmLogin
         Me.btnLogin.Location = New System.Drawing.Point(164, 408)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(180, 45)
-        Me.btnLogin.TabIndex = 3
+        Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "Login"
         '
         'lnklblReset
@@ -177,7 +179,7 @@ Partial Class frmLogin
         Me.lnklblReset.Location = New System.Drawing.Point(346, 338)
         Me.lnklblReset.Name = "lnklblReset"
         Me.lnklblReset.Size = New System.Drawing.Size(83, 13)
-        Me.lnklblReset.TabIndex = 2
+        Me.lnklblReset.TabIndex = 3
         Me.lnklblReset.TabStop = True
         Me.lnklblReset.Text = "Reset account?"
         '
@@ -253,6 +255,7 @@ Partial Class frmLogin
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 30)
         Me.btnClose.TabIndex = 7
+        Me.btnClose.TabStop = False
         Me.btnClose.Text = "X"
         Me.btnClose.UseTransparentBackground = True
         '
@@ -267,7 +270,7 @@ Partial Class frmLogin
         Me.cbxShowPassword.Location = New System.Drawing.Point(63, 335)
         Me.cbxShowPassword.Name = "cbxShowPassword"
         Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
-        Me.cbxShowPassword.TabIndex = 36
+        Me.cbxShowPassword.TabIndex = 2
         Me.cbxShowPassword.Text = "Show Password"
         Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.cbxShowPassword.UncheckedState.BorderRadius = 0
@@ -294,7 +297,7 @@ Partial Class frmLogin
         Me.txtPassword.PlaceholderText = "Password"
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(366, 36)
-        Me.txtPassword.TabIndex = 37
+        Me.txtPassword.TabIndex = 1
         '
         'frmLogin
         '
