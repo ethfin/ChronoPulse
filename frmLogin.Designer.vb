@@ -26,7 +26,6 @@ Partial Class frmLogin
         Me.panelLogin2 = New System.Windows.Forms.Panel()
         Me.btnMinimize = New Guna.UI2.WinForms.Guna2Button()
         Me.lblSignUp = New System.Windows.Forms.Label()
-        Me.btnSignUp = New Guna.UI2.WinForms.Guna2Button()
         Me.panelLogin = New Guna.UI2.WinForms.Guna2Panel()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
@@ -39,6 +38,7 @@ Partial Class frmLogin
         Me.lblWelcome1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
+        Me.lnklblSignUp = New System.Windows.Forms.LinkLabel()
         Me.panelLogin2.SuspendLayout()
         Me.panelLogin.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,9 +48,9 @@ Partial Class frmLogin
         '
         Me.panelLogin2.BackgroundImage = CType(resources.GetObject("panelLogin2.BackgroundImage"), System.Drawing.Image)
         Me.panelLogin2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.panelLogin2.Controls.Add(Me.lnklblSignUp)
         Me.panelLogin2.Controls.Add(Me.btnMinimize)
         Me.panelLogin2.Controls.Add(Me.lblSignUp)
-        Me.panelLogin2.Controls.Add(Me.btnSignUp)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
         Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
         Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
@@ -86,28 +86,8 @@ Partial Class frmLogin
         Me.lblSignUp.ForeColor = System.Drawing.Color.GhostWhite
         Me.lblSignUp.Location = New System.Drawing.Point(104, 467)
         Me.lblSignUp.Name = "lblSignUp"
-        Me.lblSignUp.Size = New System.Drawing.Size(253, 17)
+        Me.lblSignUp.Size = New System.Drawing.Size(0, 17)
         Me.lblSignUp.TabIndex = 11
-        Me.lblSignUp.Text = "Don't have an account? Signup now!"
-        '
-        'btnSignUp
-        '
-        Me.btnSignUp.BorderThickness = 2
-        Me.btnSignUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSignUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSignUp.FillColor = System.Drawing.Color.White
-        Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.btnSignUp.ForeColor = System.Drawing.Color.Black
-        Me.btnSignUp.HoverState.FillColor = System.Drawing.Color.Black
-        Me.btnSignUp.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnSignUp.IndicateFocus = True
-        Me.btnSignUp.Location = New System.Drawing.Point(140, 408)
-        Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
-        Me.btnSignUp.TabIndex = 5
-        Me.btnSignUp.Text = "Sign up"
         '
         'panelLogin
         '
@@ -299,6 +279,19 @@ Partial Class frmLogin
         Me.btnClose.Text = "X"
         Me.btnClose.UseTransparentBackground = True
         '
+        'lnklblSignUp
+        '
+        Me.lnklblSignUp.AutoSize = True
+        Me.lnklblSignUp.BackColor = System.Drawing.Color.Transparent
+        Me.lnklblSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnklblSignUp.LinkColor = System.Drawing.Color.Black
+        Me.lnklblSignUp.Location = New System.Drawing.Point(120, 453)
+        Me.lnklblSignUp.Name = "lnklblSignUp"
+        Me.lnklblSignUp.Size = New System.Drawing.Size(268, 20)
+        Me.lnklblSignUp.TabIndex = 12
+        Me.lnklblSignUp.TabStop = True
+        Me.lnklblSignUp.Text = "Don't have an account? Signup now!"
+        '
         'frmLogin
         '
         Me.AcceptButton = Me.btnLogin
@@ -324,7 +317,6 @@ Partial Class frmLogin
     Friend WithEvents panelLogin2 As Panel
     Friend WithEvents btnMinimize As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblSignUp As Label
-    Friend WithEvents btnSignUp As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents panelLogin As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lblCopyright As Label
     Friend WithEvents lblIncorrect As Guna.UI2.WinForms.Guna2HtmlLabel
@@ -337,4 +329,5 @@ Partial Class frmLogin
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lnklblSignUp As LinkLabel
 End Class

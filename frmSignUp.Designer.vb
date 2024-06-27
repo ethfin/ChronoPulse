@@ -70,7 +70,7 @@ Partial Class frmSignUp
         Me.pnlSignUp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlSignUp.Location = New System.Drawing.Point(0, 0)
         Me.pnlSignUp.Name = "pnlSignUp"
-        Me.pnlSignUp.Size = New System.Drawing.Size(970, 450)
+        Me.pnlSignUp.Size = New System.Drawing.Size(970, 473)
         Me.pnlSignUp.TabIndex = 2
         '
         'lblError
@@ -79,7 +79,7 @@ Partial Class frmSignUp
         Me.lblError.BackColor = System.Drawing.Color.Transparent
         Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(686, 300)
+        Me.lblError.Location = New System.Drawing.Point(686, 372)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(256, 28)
         Me.lblError.TabIndex = 41
@@ -106,7 +106,7 @@ Partial Class frmSignUp
         Me.htmllblBackToLogin.AutoSize = True
         Me.htmllblBackToLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
-        Me.htmllblBackToLogin.Location = New System.Drawing.Point(781, 407)
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(780, 424)
         Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
         Me.htmllblBackToLogin.Size = New System.Drawing.Size(162, 16)
         Me.htmllblBackToLogin.TabIndex = 8
@@ -271,7 +271,7 @@ Partial Class frmSignUp
         Me.pnlBackground.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlBackground.Location = New System.Drawing.Point(0, 0)
         Me.pnlBackground.Name = "pnlBackground"
-        Me.pnlBackground.Size = New System.Drawing.Size(394, 450)
+        Me.pnlBackground.Size = New System.Drawing.Size(394, 473)
         Me.pnlBackground.TabIndex = 30
         '
         'txtUsername
@@ -307,7 +307,7 @@ Partial Class frmSignUp
         Me.btnSignUp.FillColor = System.Drawing.Color.MediumSeaGreen
         Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.Color.White
-        Me.btnSignUp.Location = New System.Drawing.Point(594, 395)
+        Me.btnSignUp.Location = New System.Drawing.Point(593, 412)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
         Me.btnSignUp.TabIndex = 7
@@ -387,7 +387,7 @@ Partial Class frmSignUp
         Me.AcceptButton = Me.btnSignUp
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(970, 450)
+        Me.ClientSize = New System.Drawing.Size(970, 473)
         Me.Controls.Add(Me.pnlSignUp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmSignUp"

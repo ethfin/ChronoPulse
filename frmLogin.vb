@@ -97,7 +97,7 @@ Public Class frmLogin
         End Try
     End Sub
 
-    Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
+    Private Sub btnSignUp_Click(sender As Object, e As EventArgs)
         Me.Hide()
         frmSignUp.Show()
     End Sub
@@ -118,5 +118,10 @@ Public Class frmLogin
 
     Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
 
+    End Sub
+
+    Private Sub lnklblSignUp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblSignUp.LinkClicked
+        Me.Hide()
+        frmSignUp.Show()
     End Sub
 End Class
