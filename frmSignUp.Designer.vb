@@ -308,11 +308,12 @@ Partial Class frmSignUp
         Me.txtReenterPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtReenterPassword.MaxLength = 30
         Me.txtReenterPassword.Name = "txtReenterPassword"
-        Me.txtReenterPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtReenterPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtReenterPassword.PlaceholderText = "Re-enter Password"
         Me.txtReenterPassword.SelectedText = ""
         Me.txtReenterPassword.Size = New System.Drawing.Size(256, 36)
         Me.txtReenterPassword.TabIndex = 27
+        Me.txtReenterPassword.UseSystemPasswordChar = True
         '
         'txtPassword
         '
@@ -331,11 +332,12 @@ Partial Class frmSignUp
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPassword.MaxLength = 30
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtPassword.PlaceholderText = "Password"
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(256, 36)
         Me.txtPassword.TabIndex = 26
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtEmail
         '
