@@ -105,4 +105,14 @@ Public Class frmLogin
     Private Sub lblSignUp_Click(sender As Object, e As EventArgs) Handles lblSignUp.Click
 
     End Sub
+
+    Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
+        If cbxShowPassword.Checked Then
+            ' If the checkbox is checked, set the PasswordChar to an empty string to show the password
+            txtPassword.PasswordChar = ""
+        Else
+            ' If the checkbox is unchecked, set the PasswordChar back to "*"
+            txtPassword.PasswordChar = "*"
+        End If
+    End Sub
 End Class

@@ -4,7 +4,15 @@ Imports System.Text.RegularExpressions
 
 Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
-
+        If cbxShowPassword.Checked Then
+            ' If the checkbox is checked, set the PasswordChar to an empty string to show the password
+            txtPassword.PasswordChar = ""
+            txtReenterPassword.PasswordChar = ""
+        Else
+            ' If the checkbox is unchecked, set the PasswordChar back to "*"
+            txtPassword.PasswordChar = "*"
+            txtReenterPassword.PasswordChar = "*"
+        End If
     End Sub
 
     Public Const WM_NCLBUTTONDOWN As Integer = &HA1
