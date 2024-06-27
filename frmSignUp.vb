@@ -203,4 +203,16 @@ Public Class frmSignUp
     Private Sub lblError_Click(sender As Object, e As EventArgs) Handles lblError.Click
 
     End Sub
+
+    Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
+        Dim requiredChar As Char = "@"c
+        If txtEmail.Text.Contains(requiredChar) Then
+            lblErrorEmail.Text = "Valid input."
+            lblErrorEmail.ForeColor = Color.Green
+        Else
+            lblErrorEmail.Text = "Input must include @."
+            lblErrorEmail.ForeColor = Color.Red
+        End If
+        lblErrorEmail.Show()
+    End Sub
 End Class
