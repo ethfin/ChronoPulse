@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
+Imports System.Text.RegularExpressions
 
 Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
@@ -134,4 +135,61 @@ Public Class frmSignUp
             InsertUserData()
         End If
     End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+        ComparePasswords()
+    End Sub
+
+    Private Sub txtReenterPassword_TextChanged(sender As Object, e As EventArgs) Handles txtReenterPassword.TextChanged
+        ComparePasswords()
+    End Sub
+
+    Private Sub ComparePasswords()
+        ' First, check if the passwords match.
+        If txtPassword.Text = txtReenterPassword.Text Then
+            ' Next, validate the password complexity.
+            If ValidatePassword(txtPassword.Text) Then
+                ' If the password is complex enough, set the border color to Green.
+                txtPassword.BorderColor = Color.Green
+                txtReenterPassword.BorderColor = Color.Green
+                lblError.ForeColor = Color.Green
+                lblError.Text = "Password match and meets complexity requirements."
+            Else
+                ' If the password does not meet complexity requirements, set the border color to Orange.
+                txtPassword.BorderColor = Color.Orange
+                txtReenterPassword.BorderColor = Color.Orange
+                lblError.ForeColor = Color.Orange
+                lblError.Text = "Password must be at least 8 characters and include numbers and special characters."
+            End If
+            lblError.Show()
+        Else
+            ' If passwords don't match, set the border color to Red.
+            txtPassword.BorderColor = Color.Red
+            txtReenterPassword.BorderColor = Color.Red
+            lblError.ForeColor = Color.Red
+            lblError.Text = "Password doesn't match."
+            lblError.Show()
+        End If
+    End Sub
+
+    ' Include the ValidatePassword function here.
+    Function ValidatePassword(ByVal pwd As String) As Boolean
+        ' Check the length.
+        If Len(pwd) < 8 Then
+            Return False
+        End If
+
+        ' Use regular expressions to check for numbers and special characters.
+        Dim hasNumber As New Regex("[0-9]")
+        Dim hasSpecial As New Regex("[^a-zA-Z0-9]")
+
+        ' Check for minimum number of occurrences.
+        If hasNumber.Matches(pwd).Count < 1 OrElse hasSpecial.Matches(pwd).Count < 1 Then
+            Return False
+        End If
+
+        ' Passed all checks.
+        Return True
+    End Function
+
 End Class
