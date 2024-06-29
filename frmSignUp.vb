@@ -206,12 +206,14 @@ Public Class frmSignUp
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
         Dim requiredChar As Char = "@"c
-        If txtEmail.Text.Contains(requiredChar) Then
+        Dim emailText As String = ".com"
+
+        If txtEmail.Text.Contains(requiredChar) And txtEmail.Text.Contains(emailText) Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
         Else
-            lblErrorEmail.Text = "Input must include @."
+            lblErrorEmail.Text = "Input must enter valid email."
             lblErrorEmail.ForeColor = Color.Red
             txtEmail.BorderColor = Color.Red
         End If
@@ -219,6 +221,10 @@ Public Class frmSignUp
     End Sub
 
     Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.TextChanged
+
+    End Sub
+
+    Private Sub lblErrorEmail_Click(sender As Object, e As EventArgs) Handles lblErrorEmail.Click
 
     End Sub
 End Class

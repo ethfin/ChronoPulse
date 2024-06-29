@@ -24,6 +24,8 @@ Partial Class frmSignUp
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSignUp))
         Me.pnlSignUp = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblErrorEmail = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblError = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -33,7 +35,6 @@ Partial Class frmSignUp
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblNames = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtFirstName = New Guna.UI2.WinForms.Guna2TextBox()
@@ -42,7 +43,6 @@ Partial Class frmSignUp
         Me.btnSignUp = New Guna.UI2.WinForms.Guna2Button()
         Me.txtReenterPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnlSignUp.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,6 +74,40 @@ Partial Class frmSignUp
         Me.pnlSignUp.Name = "pnlSignUp"
         Me.pnlSignUp.Size = New System.Drawing.Size(970, 473)
         Me.pnlSignUp.TabIndex = 2
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BorderColor = System.Drawing.Color.Gray
+        Me.txtEmail.BorderRadius = 2
+        Me.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmail.DefaultText = ""
+        Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmail.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmail.Location = New System.Drawing.Point(425, 259)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtEmail.MaxLength = 62
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmail.PlaceholderText = "Email"
+        Me.txtEmail.SelectedText = ""
+        Me.txtEmail.Size = New System.Drawing.Size(518, 36)
+        Me.txtEmail.TabIndex = 2
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.AutoSize = False
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(424, 226)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(519, 24)
+        Me.Guna2HtmlLabel1.TabIndex = 32
+        Me.Guna2HtmlLabel1.Text = "Email Address"
         '
         'lblErrorEmail
         '
@@ -212,17 +246,6 @@ Partial Class frmSignUp
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(518, 24)
         Me.Guna2HtmlLabel2.TabIndex = 33
         Me.Guna2HtmlLabel2.Text = "Username"
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.AutoSize = False
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(424, 226)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(519, 24)
-        Me.Guna2HtmlLabel1.TabIndex = 32
-        Me.Guna2HtmlLabel1.Text = "Email Address"
         '
         'lblNames
         '
@@ -375,29 +398,6 @@ Partial Class frmSignUp
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(256, 36)
         Me.txtPassword.TabIndex = 4
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BorderColor = System.Drawing.Color.Gray
-        Me.txtEmail.BorderRadius = 2
-        Me.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtEmail.DefaultText = ""
-        Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.Location = New System.Drawing.Point(425, 259)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtEmail.MaxLength = 62
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtEmail.PlaceholderText = "Email"
-        Me.txtEmail.SelectedText = ""
-        Me.txtEmail.Size = New System.Drawing.Size(518, 36)
-        Me.txtEmail.TabIndex = 2
         '
         'frmSignUp
         '
