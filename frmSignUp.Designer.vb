@@ -351,7 +351,7 @@ Partial Class frmSignUp
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
         Me.btnSignUp.TabIndex = 7
-        Me.btnSignUp.Text = "Sign Up"
+        Me.btnSignUp.Text = "Next"
         '
         'txtReenterPassword
         '
