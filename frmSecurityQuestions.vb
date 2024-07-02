@@ -134,4 +134,8 @@ Public Class frmSecurityQuestions
         End If
         lblError2.Show()
     End Sub
+
+    Private Sub lblNames_Click(sender As Object, e As EventArgs) Handles lblNames.Click
+
+    End Sub
 End Class

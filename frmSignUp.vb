@@ -186,4 +186,8 @@ Public Class frmSignUp
     Private Sub lblErrorEmail_Click(sender As Object, e As EventArgs) Handles lblErrorEmail.Click
 
     End Sub
+
+    Private Sub pnlBackground_Paint(sender As Object, e As PaintEventArgs) Handles pnlBackground.Paint
+
+    End Sub
 End Class
