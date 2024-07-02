@@ -164,10 +164,11 @@ Public Class frmSignUp
     End Sub
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
-        Dim requiredChar As Char = "@"c
-        Dim emailText As String = ".com"
+        ' Regular expression pattern for a valid email address
+        Dim emailPattern As String = "^\S+@\S+\.\S+$"
 
-        If txtEmail.Text.Contains(requiredChar) And txtEmail.Text.Contains(emailText) Then
+        ' Using Regex.IsMatch to check if the email is valid
+        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green

@@ -3,6 +3,11 @@ Imports MySql.Data.MySqlClient
 Imports Org.BouncyCastle.Asn1.X509
 
 Public Class frmSecurityQuestions
+
+    ' Store the previously selected item from cmbSecurityQ1
+    Private prevSelectedIndex1 As Integer = -1
+    Private prevSelectedIndex2 As Integer = -1 ' Added a separate variable for cmbSecurityQ2
+
     Private Sub frmSecurityQuestions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -20,11 +25,16 @@ Public Class frmSecurityQuestions
     End Sub
 
     Private Sub cmbSQ1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSQ1.SelectedIndexChanged
-        ' Check if cmbSQ2 has the same selected item as cmbSQ1
-        If cmbSQ1.SelectedItem IsNot Nothing AndAlso cmbSQ1.SelectedItem.Equals(cmbSQ2.SelectedItem) Then
-            MessageBox.Show("This item is already selected in cmbSQ2. Please choose a different item.")
-            ' Optionally, reset the selection
-            cmbSQ1.SelectedIndex = -1 ' or set it to the default value
+        ' Handle changes in cmbSecurityQ1
+        If cmbSQ1.SelectedIndex <> -1 AndAlso prevSelectedIndex2 <> -1 Then
+            ' Add the previously selected item back to cmbSecurityQ2
+            cmbSQ2.Items.Insert(prevSelectedIndex2, cmbSQ2.Tag)
+        End If
+        ' Remove the currently selected item of cmbSecurityQ1 from cmbSecurityQ2
+        If cmbSQ2.Items.Contains(cmbSQ1.SelectedItem) Then
+            prevSelectedIndex2 = cmbSQ2.Items.IndexOf(cmbSQ1.SelectedItem)
+            cmbSQ2.Tag = cmbSQ1.SelectedItem ' Store the removed item
+            cmbSQ2.Items.Remove(cmbSQ1.SelectedItem)
         End If
     End Sub
 
@@ -45,7 +55,17 @@ Public Class frmSecurityQuestions
     End Function
 
     Private Sub cmbSQ2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSQ2.SelectedIndexChanged
-
+        ' Handle changes in cmbSecurityQ2
+        If cmbSQ2.SelectedIndex <> -1 AndAlso prevSelectedIndex1 <> -1 Then
+            ' Add the previously selected item back to cmbSecurityQ1
+            cmbSQ1.Items.Insert(prevSelectedIndex1, cmbSQ1.Tag)
+        End If
+        ' Remove the currently selected item of cmbSecurityQ2 from cmbSecurityQ1
+        If cmbSQ1.Items.Contains(cmbSQ2.SelectedItem) Then
+            prevSelectedIndex1 = cmbSQ1.Items.IndexOf(cmbSQ2.SelectedItem)
+            cmbSQ1.Tag = cmbSQ2.SelectedItem ' Store the removed item
+            cmbSQ1.Items.Remove(cmbSQ2.SelectedItem)
+        End If
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click

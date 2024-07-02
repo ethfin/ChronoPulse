@@ -96,7 +96,7 @@ Partial Class frmSignUp
         Me.txtEmail.PlaceholderText = "Email"
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.Size = New System.Drawing.Size(518, 36)
-        Me.txtEmail.TabIndex = 2
+        Me.txtEmail.TabIndex = 3
         '
         'Guna2HtmlLabel1
         '
@@ -335,7 +335,7 @@ Partial Class frmSignUp
         Me.txtUsername.PlaceholderText = "Username"
         Me.txtUsername.SelectedText = ""
         Me.txtUsername.Size = New System.Drawing.Size(518, 36)
-        Me.txtUsername.TabIndex = 3
+        Me.txtUsername.TabIndex = 2
         '
         'btnSignUp
         '
