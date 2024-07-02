@@ -119,7 +119,7 @@ Public Class frmSecurityQuestions
 
     Private Sub txtSQA2Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2Verify.TextChanged
         ' Check if the inputs match.
-        If txtSQA2.Text = txtSQA1Verify.Text Then
+        If txtSQA2.Text = txtSQA2Verify.Text Then
             ' If the inputs are the same, set the border color to Green.
             txtSQA2.BorderColor = Color.Green
             txtSQA2Verify.BorderColor = Color.Green
