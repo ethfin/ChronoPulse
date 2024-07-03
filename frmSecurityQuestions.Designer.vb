@@ -37,6 +37,8 @@ Partial Class frmSecurityQuestions
         Me.lblError = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblError2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblNames = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.htmllblBackToLogin = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -117,13 +119,13 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA1.Location = New System.Drawing.Point(742, 112)
+        Me.txtSQA1.Location = New System.Drawing.Point(742, 129)
         Me.txtSQA1.Name = "txtSQA1"
         Me.txtSQA1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSQA1.PlaceholderText = ""
         Me.txtSQA1.SelectedText = ""
-        Me.txtSQA1.Size = New System.Drawing.Size(200, 38)
-        Me.txtSQA1.TabIndex = 45
+        Me.txtSQA1.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA1.TabIndex = 1
         '
         'txtSQA1Verify
         '
@@ -138,13 +140,13 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1Verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA1Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSQA1Verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA1Verify.Location = New System.Drawing.Point(742, 156)
+        Me.txtSQA1Verify.Location = New System.Drawing.Point(742, 173)
         Me.txtSQA1Verify.Name = "txtSQA1Verify"
         Me.txtSQA1Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSQA1Verify.PlaceholderText = ""
         Me.txtSQA1Verify.SelectedText = ""
-        Me.txtSQA1Verify.Size = New System.Drawing.Size(200, 38)
-        Me.txtSQA1Verify.TabIndex = 46
+        Me.txtSQA1Verify.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA1Verify.TabIndex = 2
         '
         'txtSQA2Verify
         '
@@ -159,13 +161,13 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2Verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA2Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA2Verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA2Verify.Location = New System.Drawing.Point(742, 274)
+        Me.txtSQA2Verify.Location = New System.Drawing.Point(742, 291)
         Me.txtSQA2Verify.Name = "txtSQA2Verify"
         Me.txtSQA2Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSQA2Verify.PlaceholderText = ""
         Me.txtSQA2Verify.SelectedText = ""
-        Me.txtSQA2Verify.Size = New System.Drawing.Size(200, 38)
-        Me.txtSQA2Verify.TabIndex = 48
+        Me.txtSQA2Verify.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA2Verify.TabIndex = 5
         '
         'txtSQA2
         '
@@ -180,13 +182,13 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSQA2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA2.Location = New System.Drawing.Point(742, 230)
+        Me.txtSQA2.Location = New System.Drawing.Point(742, 247)
         Me.txtSQA2.Name = "txtSQA2"
         Me.txtSQA2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSQA2.PlaceholderText = ""
         Me.txtSQA2.SelectedText = ""
-        Me.txtSQA2.Size = New System.Drawing.Size(200, 38)
-        Me.txtSQA2.TabIndex = 47
+        Me.txtSQA2.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA2.TabIndex = 4
         '
         'cmbSQ1
         '
@@ -201,10 +203,10 @@ Partial Class frmSecurityQuestions
         Me.cmbSQ1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ1.ItemHeight = 30
         Me.cmbSQ1.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
-        Me.cmbSQ1.Location = New System.Drawing.Point(414, 112)
+        Me.cmbSQ1.Location = New System.Drawing.Point(414, 129)
         Me.cmbSQ1.Name = "cmbSQ1"
         Me.cmbSQ1.Size = New System.Drawing.Size(322, 36)
-        Me.cmbSQ1.TabIndex = 49
+        Me.cmbSQ1.TabIndex = 0
         '
         'cmbSQ2
         '
@@ -219,10 +221,10 @@ Partial Class frmSecurityQuestions
         Me.cmbSQ2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ2.ItemHeight = 30
         Me.cmbSQ2.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
-        Me.cmbSQ2.Location = New System.Drawing.Point(414, 232)
+        Me.cmbSQ2.Location = New System.Drawing.Point(414, 249)
         Me.cmbSQ2.Name = "cmbSQ2"
         Me.cmbSQ2.Size = New System.Drawing.Size(322, 36)
-        Me.cmbSQ2.TabIndex = 50
+        Me.cmbSQ2.TabIndex = 3
         '
         'btnSignUp
         '
@@ -237,7 +239,7 @@ Partial Class frmSecurityQuestions
         Me.btnSignUp.Location = New System.Drawing.Point(593, 412)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
-        Me.btnSignUp.TabIndex = 51
+        Me.btnSignUp.TabIndex = 7
         Me.btnSignUp.Text = "Next"
         '
         'lblError
@@ -246,7 +248,7 @@ Partial Class frmSecurityQuestions
         Me.lblError.BackColor = System.Drawing.Color.Transparent
         Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(442, 166)
+        Me.lblError.Location = New System.Drawing.Point(442, 183)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(256, 28)
         Me.lblError.TabIndex = 52
@@ -261,7 +263,7 @@ Partial Class frmSecurityQuestions
         Me.lblError2.BackColor = System.Drawing.Color.Transparent
         Me.lblError2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError2.ForeColor = System.Drawing.Color.Red
-        Me.lblError2.Location = New System.Drawing.Point(442, 284)
+        Me.lblError2.Location = New System.Drawing.Point(442, 301)
         Me.lblError2.Name = "lblError2"
         Me.lblError2.Size = New System.Drawing.Size(256, 28)
         Me.lblError2.TabIndex = 53
@@ -275,12 +277,38 @@ Partial Class frmSecurityQuestions
         Me.lblNames.AutoSize = False
         Me.lblNames.BackColor = System.Drawing.Color.Transparent
         Me.lblNames.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNames.Location = New System.Drawing.Point(414, 76)
+        Me.lblNames.Location = New System.Drawing.Point(414, 87)
         Me.lblNames.Name = "lblNames"
-        Me.lblNames.Size = New System.Drawing.Size(322, 24)
+        Me.lblNames.Size = New System.Drawing.Size(544, 24)
         Me.lblNames.TabIndex = 54
         Me.lblNames.Text = "Security Questions"
         Me.lblNames.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'htmllblBackToLogin
+        '
+        Me.htmllblBackToLogin.AutoSize = True
+        Me.htmllblBackToLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(781, 432)
+        Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
+        Me.htmllblBackToLogin.Size = New System.Drawing.Size(162, 16)
+        Me.htmllblBackToLogin.TabIndex = 8
+        Me.htmllblBackToLogin.TabStop = True
+        Me.htmllblBackToLogin.Text = "Already have an account?"
+        Me.htmllblBackToLogin.VisitedLinkColor = System.Drawing.Color.White
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.Gray
+        Me.LinkLabel1.Location = New System.Drawing.Point(414, 432)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(72, 16)
+        Me.LinkLabel1.TabIndex = 6
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "<- Go back"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.White
         '
         'frmSecurityQuestions
         '
@@ -288,6 +316,8 @@ Partial Class frmSecurityQuestions
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(970, 473)
+        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.htmllblBackToLogin)
         Me.Controls.Add(Me.lblNames)
         Me.Controls.Add(Me.lblError2)
         Me.Controls.Add(Me.lblError)
@@ -308,6 +338,7 @@ Partial Class frmSecurityQuestions
         Me.Text = "frmSecurityQuestions"
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -325,4 +356,6 @@ Partial Class frmSecurityQuestions
     Friend WithEvents lblError As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblError2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblNames As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents htmllblBackToLogin As LinkLabel
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

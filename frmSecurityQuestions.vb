@@ -158,4 +158,14 @@ Public Class frmSecurityQuestions
     Private Sub lblNames_Click(sender As Object, e As EventArgs) Handles lblNames.Click
 
     End Sub
+
+    Private Sub htmllblBackToLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles htmllblBackToLogin.LinkClicked
+        Me.Hide()
+        frmLogin.Show()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Me.Hide()
+        frmSignUp.Show()
+    End Sub
 End Class
