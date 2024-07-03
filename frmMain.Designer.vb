@@ -22,21 +22,19 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.pnlMain = New Guna.UI2.WinForms.Guna2Panel()
+        Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlLogo = New Guna.UI2.WinForms.Guna2Panel()
         Me.picLogo = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnMinimize = New FontAwesome.Sharp.IconButton()
         Me.btnMaximize = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.pnlContent = New Guna.UI2.WinForms.Guna2Panel()
-        Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.pnlMain.SuspendLayout()
         Me.pnlLogo.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +54,28 @@ Partial Class frmMain
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(203, 625)
         Me.pnlMain.TabIndex = 0
+        '
+        'IconButton4
+        '
+        Me.IconButton4.BackColor = System.Drawing.Color.Transparent
+        Me.IconButton4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IconButton4.FlatAppearance.BorderSize = 0
+        Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton4.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.ChessQueen
+        Me.IconButton4.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton4.Location = New System.Drawing.Point(0, 235)
+        Me.IconButton4.Name = "IconButton4"
+        Me.IconButton4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.IconButton4.Size = New System.Drawing.Size(203, 60)
+        Me.IconButton4.TabIndex = 3
+        Me.IconButton4.Text = "Leaderboard"
+        Me.IconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.IconButton4.UseVisualStyleBackColor = False
         '
         'IconButton2
         '
@@ -122,11 +142,6 @@ Partial Class frmMain
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picLogo.TabIndex = 1
         Me.picLogo.TabStop = False
-        '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.Text = "NotifyIcon1"
-        Me.NotifyIcon1.Visible = True
         '
         'pnlHeader
         '
@@ -217,28 +232,6 @@ Partial Class frmMain
         Me.pnlContent.Size = New System.Drawing.Size(897, 567)
         Me.pnlContent.TabIndex = 2
         '
-        'IconButton4
-        '
-        Me.IconButton4.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton4.FlatAppearance.BorderSize = 0
-        Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton4.ForeColor = System.Drawing.Color.Snow
-        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.ChessQueen
-        Me.IconButton4.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton4.Location = New System.Drawing.Point(0, 235)
-        Me.IconButton4.Name = "IconButton4"
-        Me.IconButton4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.IconButton4.Size = New System.Drawing.Size(203, 60)
-        Me.IconButton4.TabIndex = 3
-        Me.IconButton4.Text = "Leaderboard"
-        Me.IconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton4.UseVisualStyleBackColor = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,7 +254,6 @@ Partial Class frmMain
     Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pnlLogo As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents picLogo As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
