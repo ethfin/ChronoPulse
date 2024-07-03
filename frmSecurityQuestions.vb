@@ -138,7 +138,10 @@ Public Class frmSecurityQuestions
     End Sub
 
     Private Sub txtSQA1Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA1Verify.TextChanged
+        compareAnswer1()
+    End Sub
 
+    Function compareAnswer1()
         ' Check if the inputs match.
         If txtSQA1.Text = txtSQA1Verify.Text Then
             If ValidateSecurity(txtSQA1.Text) Then
@@ -158,17 +161,20 @@ Public Class frmSecurityQuestions
             End If
 
         Else
-                ' If the inputs don't match, set the border color to Red.
-                txtSQA1.BorderColor = Color.Red
+            ' If the inputs don't match, set the border color to Red.
+            txtSQA1.BorderColor = Color.Red
             txtSQA1Verify.BorderColor = Color.Red
             lblError.ForeColor = Color.Red
             lblError.Text = "Answer for Security Question 1 are different"
         End If
         lblError.Show()
-    End Sub
+    End Function
 
     Private Sub txtSQA2Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2Verify.TextChanged
+        compareAnswer2()
+    End Sub
 
+    Function compareAnswer2()
         ' Check if the inputs match.
         If txtSQA2.Text = txtSQA2Verify.Text Then
             If ValidateSecurity(txtSQA2.Text) Then
@@ -195,7 +201,7 @@ Public Class frmSecurityQuestions
             lblError2.Text = "Answer for Security Question 2 are different"
         End If
         lblError2.Show()
-    End Sub
+    End Function
 
     Function ValidateSecurity(ByVal pwd As String) As Boolean
         ' Check the length.
@@ -219,5 +225,13 @@ Public Class frmSecurityQuestions
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Hide()
         frmSignUp.Show()
+    End Sub
+
+    Private Sub txtSQA1_TextChanged(sender As Object, e As EventArgs) Handles txtSQA1.TextChanged
+        compareAnswer1()
+    End Sub
+
+    Private Sub txtSQA2_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2.TextChanged
+        compareAnswer2()
     End Sub
 End Class
