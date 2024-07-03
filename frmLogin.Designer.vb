@@ -24,13 +24,13 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.panelLogin2 = New System.Windows.Forms.Panel()
-        Me.lnklblSignUp = New System.Windows.Forms.LinkLabel()
         Me.btnMinimize = New Guna.UI2.WinForms.Guna2Button()
         Me.lblSignUp = New System.Windows.Forms.Label()
+        Me.lblCopyright = New System.Windows.Forms.Label()
+        Me.lnklblSignUp = New System.Windows.Forms.LinkLabel()
         Me.panelLogin = New Guna.UI2.WinForms.Guna2Panel()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
-        Me.lblCopyright = New System.Windows.Forms.Label()
         Me.lblIncorrect = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnLogin = New Guna.UI2.WinForms.Guna2Button()
         Me.lnklblReset = New System.Windows.Forms.LinkLabel()
@@ -57,20 +57,6 @@ Partial Class frmLogin
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(434, 491)
         Me.panelLogin2.TabIndex = 7
-        '
-        'lnklblSignUp
-        '
-        Me.lnklblSignUp.AutoSize = True
-        Me.lnklblSignUp.BackColor = System.Drawing.Color.Transparent
-        Me.lnklblSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lnklblSignUp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lnklblSignUp.LinkColor = System.Drawing.Color.SlateGray
-        Me.lnklblSignUp.Location = New System.Drawing.Point(118, 453)
-        Me.lnklblSignUp.Name = "lnklblSignUp"
-        Me.lnklblSignUp.Size = New System.Drawing.Size(272, 20)
-        Me.lnklblSignUp.TabIndex = 12
-        Me.lnklblSignUp.TabStop = True
-        Me.lnklblSignUp.Text = "Don't have an account? Sign up now!"
         '
         'btnMinimize
         '
@@ -102,6 +88,31 @@ Partial Class frmLogin
         Me.lblSignUp.Name = "lblSignUp"
         Me.lblSignUp.Size = New System.Drawing.Size(0, 17)
         Me.lblSignUp.TabIndex = 11
+        '
+        'lblCopyright
+        '
+        Me.lblCopyright.AutoSize = True
+        Me.lblCopyright.BackColor = System.Drawing.Color.Transparent
+        Me.lblCopyright.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCopyright.Location = New System.Drawing.Point(222, 475)
+        Me.lblCopyright.Name = "lblCopyright"
+        Me.lblCopyright.Size = New System.Drawing.Size(212, 16)
+        Me.lblCopyright.TabIndex = 10
+        Me.lblCopyright.Text = "© 2024 ChronoPulse. All rights reserved."
+        '
+        'lnklblSignUp
+        '
+        Me.lnklblSignUp.AutoSize = True
+        Me.lnklblSignUp.BackColor = System.Drawing.Color.Transparent
+        Me.lnklblSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnklblSignUp.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lnklblSignUp.LinkColor = System.Drawing.Color.SlateGray
+        Me.lnklblSignUp.Location = New System.Drawing.Point(118, 453)
+        Me.lnklblSignUp.Name = "lnklblSignUp"
+        Me.lnklblSignUp.Size = New System.Drawing.Size(272, 20)
+        Me.lnklblSignUp.TabIndex = 12
+        Me.lnklblSignUp.TabStop = True
+        Me.lnklblSignUp.Text = "Don't have an account? Sign up now!"
         '
         'panelLogin
         '
@@ -162,17 +173,6 @@ Partial Class frmLogin
         Me.cbxShowPassword.UncheckedState.BorderRadius = 0
         Me.cbxShowPassword.UncheckedState.BorderThickness = 0
         Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        '
-        'lblCopyright
-        '
-        Me.lblCopyright.AutoSize = True
-        Me.lblCopyright.BackColor = System.Drawing.Color.Transparent
-        Me.lblCopyright.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCopyright.Location = New System.Drawing.Point(222, 475)
-        Me.lblCopyright.Name = "lblCopyright"
-        Me.lblCopyright.Size = New System.Drawing.Size(212, 16)
-        Me.lblCopyright.TabIndex = 10
-        Me.lblCopyright.Text = "© 2024 ChronoPulse. All rights reserved."
         '
         'lblIncorrect
         '

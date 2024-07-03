@@ -124,4 +124,9 @@ Public Class frmLogin
         Me.Hide()
         frmSignUp.Show()
     End Sub
+
+    Private Sub lnklblReset_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblReset.LinkClicked
+        Me.Hide()
+        frmResetAccount.Show()
+    End Sub
 End Class

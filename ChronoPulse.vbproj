@@ -151,6 +151,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmResetAccount.Designer.vb">
+      <DependentUpon>frmResetAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmResetAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSecurityQuestions.Designer.vb">
       <DependentUpon>frmSecurityQuestions.vb</DependentUpon>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResetAccount.resx">
+      <DependentUpon>frmResetAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.vb</DependentUpon>
