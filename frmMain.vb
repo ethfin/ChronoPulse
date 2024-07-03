@@ -63,11 +63,11 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
     End Sub
 
-    Private Sub IconButton5_Click(sender As Object, e As EventArgs) Handles IconButton5.Click
+    Private Sub btnMaximize_Click(sender As Object, e As EventArgs) Handles btnMaximize.Click
         If WindowState = FormWindowState.Normal Then
             WindowState = FormWindowState.Maximized
         Else
@@ -75,7 +75,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub IconButton6_Click(sender As Object, e As EventArgs) Handles IconButton6.Click
+    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         WindowState = FormWindowState.Minimized
     End Sub
 End Class

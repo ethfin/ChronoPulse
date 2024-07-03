@@ -31,11 +31,12 @@ Partial Class frmMain
         Me.picLogo = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnMinimize = New FontAwesome.Sharp.IconButton()
+        Me.btnMaximize = New FontAwesome.Sharp.IconButton()
+        Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.pnlContent = New Guna.UI2.WinForms.Guna2Panel()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton5 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton6 = New FontAwesome.Sharp.IconButton()
         Me.pnlMain.SuspendLayout()
         Me.pnlLogo.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +46,7 @@ Partial Class frmMain
         'pnlMain
         '
         Me.pnlMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.pnlMain.Controls.Add(Me.IconButton4)
         Me.pnlMain.Controls.Add(Me.IconButton2)
         Me.pnlMain.Controls.Add(Me.IconButton1)
         Me.pnlMain.Controls.Add(Me.pnlLogo)
@@ -52,7 +54,7 @@ Partial Class frmMain
         Me.pnlMain.ForeColor = System.Drawing.Color.Snow
         Me.pnlMain.Location = New System.Drawing.Point(0, 0)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(200, 625)
+        Me.pnlMain.Size = New System.Drawing.Size(203, 625)
         Me.pnlMain.TabIndex = 0
         '
         'IconButton2
@@ -70,7 +72,7 @@ Partial Class frmMain
         Me.IconButton2.Location = New System.Drawing.Point(0, 175)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.IconButton2.Size = New System.Drawing.Size(200, 60)
+        Me.IconButton2.Size = New System.Drawing.Size(203, 60)
         Me.IconButton2.TabIndex = 2
         Me.IconButton2.Text = "Games"
         Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -92,7 +94,7 @@ Partial Class frmMain
         Me.IconButton1.Location = New System.Drawing.Point(0, 115)
         Me.IconButton1.Name = "IconButton1"
         Me.IconButton1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.IconButton1.Size = New System.Drawing.Size(200, 60)
+        Me.IconButton1.Size = New System.Drawing.Size(203, 60)
         Me.IconButton1.TabIndex = 1
         Me.IconButton1.Text = "Dashboard"
         Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -106,7 +108,7 @@ Partial Class frmMain
         Me.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlLogo.Location = New System.Drawing.Point(0, 0)
         Me.pnlLogo.Name = "pnlLogo"
-        Me.pnlLogo.Size = New System.Drawing.Size(200, 115)
+        Me.pnlLogo.Size = New System.Drawing.Size(203, 115)
         Me.pnlLogo.TabIndex = 1
         '
         'picLogo
@@ -129,15 +131,63 @@ Partial Class frmMain
         'pnlHeader
         '
         Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.pnlHeader.Controls.Add(Me.IconButton6)
-        Me.pnlHeader.Controls.Add(Me.IconButton5)
-        Me.pnlHeader.Controls.Add(Me.IconButton4)
+        Me.pnlHeader.Controls.Add(Me.btnMinimize)
+        Me.pnlHeader.Controls.Add(Me.btnMaximize)
+        Me.pnlHeader.Controls.Add(Me.btnClose)
         Me.pnlHeader.Controls.Add(Me.IconButton3)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(200, 0)
+        Me.pnlHeader.Location = New System.Drawing.Point(203, 0)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(900, 64)
+        Me.pnlHeader.Size = New System.Drawing.Size(897, 58)
         Me.pnlHeader.TabIndex = 1
+        '
+        'btnMinimize
+        '
+        Me.btnMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue
+        Me.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
+        Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        Me.btnMinimize.IconColor = System.Drawing.Color.White
+        Me.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnMinimize.IconSize = 20
+        Me.btnMinimize.Location = New System.Drawing.Point(807, 3)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(26, 24)
+        Me.btnMinimize.TabIndex = 3
+        Me.btnMinimize.UseVisualStyleBackColor = True
+        '
+        'btnMaximize
+        '
+        Me.btnMaximize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMaximize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue
+        Me.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
+        Me.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
+        Me.btnMaximize.IconColor = System.Drawing.Color.White
+        Me.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnMaximize.IconSize = 20
+        Me.btnMaximize.Location = New System.Drawing.Point(839, 3)
+        Me.btnMaximize.Name = "btnMaximize"
+        Me.btnMaximize.Size = New System.Drawing.Size(26, 24)
+        Me.btnMaximize.TabIndex = 2
+        Me.btnMaximize.UseVisualStyleBackColor = True
+        '
+        'btnClose
+        '
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
+        Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.IconChar = FontAwesome.Sharp.IconChar.Xmark
+        Me.btnClose.IconColor = System.Drawing.Color.White
+        Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnClose.IconSize = 20
+        Me.btnClose.Location = New System.Drawing.Point(868, 3)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(26, 24)
+        Me.btnClose.TabIndex = 1
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'IconButton3
         '
@@ -162,52 +212,32 @@ Partial Class frmMain
         '
         Me.pnlContent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlContent.Location = New System.Drawing.Point(200, 64)
+        Me.pnlContent.Location = New System.Drawing.Point(203, 58)
         Me.pnlContent.Name = "pnlContent"
-        Me.pnlContent.Size = New System.Drawing.Size(900, 561)
+        Me.pnlContent.Size = New System.Drawing.Size(897, 567)
         Me.pnlContent.TabIndex = 2
         '
         'IconButton4
         '
-        Me.IconButton4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.IconButton4.BackColor = System.Drawing.Color.Transparent
+        Me.IconButton4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IconButton4.FlatAppearance.BorderSize = 0
         Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.Xmark
-        Me.IconButton4.IconColor = System.Drawing.Color.White
+        Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton4.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.ChessQueen
+        Me.IconButton4.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton4.IconSize = 20
-        Me.IconButton4.Location = New System.Drawing.Point(871, 3)
+        Me.IconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton4.Location = New System.Drawing.Point(0, 235)
         Me.IconButton4.Name = "IconButton4"
-        Me.IconButton4.Size = New System.Drawing.Size(26, 24)
-        Me.IconButton4.TabIndex = 1
-        Me.IconButton4.UseVisualStyleBackColor = True
-        '
-        'IconButton5
-        '
-        Me.IconButton5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.IconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton5.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
-        Me.IconButton5.IconColor = System.Drawing.Color.White
-        Me.IconButton5.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton5.IconSize = 20
-        Me.IconButton5.Location = New System.Drawing.Point(842, 3)
-        Me.IconButton5.Name = "IconButton5"
-        Me.IconButton5.Size = New System.Drawing.Size(26, 24)
-        Me.IconButton5.TabIndex = 2
-        Me.IconButton5.UseVisualStyleBackColor = True
-        '
-        'IconButton6
-        '
-        Me.IconButton6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.IconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton6.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
-        Me.IconButton6.IconColor = System.Drawing.Color.White
-        Me.IconButton6.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton6.IconSize = 20
-        Me.IconButton6.Location = New System.Drawing.Point(810, 3)
-        Me.IconButton6.Name = "IconButton6"
-        Me.IconButton6.Size = New System.Drawing.Size(26, 24)
-        Me.IconButton6.TabIndex = 3
-        Me.IconButton6.UseVisualStyleBackColor = True
+        Me.IconButton4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.IconButton4.Size = New System.Drawing.Size(203, 60)
+        Me.IconButton4.TabIndex = 3
+        Me.IconButton4.Text = "Leaderboard"
+        Me.IconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.IconButton4.UseVisualStyleBackColor = False
         '
         'frmMain
         '
@@ -237,7 +267,8 @@ Partial Class frmMain
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents pnlContent As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents IconButton6 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton5 As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMinimize As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMaximize As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton4 As FontAwesome.Sharp.IconButton
 End Class
