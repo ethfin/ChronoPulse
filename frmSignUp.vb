@@ -97,7 +97,7 @@ Public Class frmSignUp
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         ' Validate the input fields
-        If ValidateInputFields() Then
+        If ValidateInputFields() AndAlso emailValid() Then
             Me.Hide()
             frmSecurityQuestions.Show()
         End If
@@ -173,12 +173,33 @@ Public Class frmSignUp
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
         Else
-            lblErrorEmail.Text = "Input must enter valid email."
+            lblErrorEmail.Text = "Please enter a valid email."
             lblErrorEmail.ForeColor = Color.Red
             txtEmail.BorderColor = Color.Red
         End If
+        ' Show the email error label regardless of the result
         lblErrorEmail.Show()
     End Sub
+
+    Function emailValid() As Boolean
+        ' Regular expression pattern for a valid email address
+        Dim emailPattern As String = "^\S+@\S+\.\S+$"
+
+        ' Using Regex.IsMatch to check if the email is valid
+        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
+            lblErrorEmail.Text = "Valid input."
+            lblErrorEmail.ForeColor = Color.Green
+            txtEmail.BorderColor = Color.Green
+            Return True
+        Else
+            lblErrorEmail.Text = "Please enter a valid email."
+            lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
+            Return False
+        End If
+        ' Show the email error label regardless of the result
+        lblErrorEmail.Show()
+    End Function
 
     Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.TextChanged
 
