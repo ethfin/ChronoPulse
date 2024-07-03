@@ -122,7 +122,7 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1.Location = New System.Drawing.Point(742, 129)
         Me.txtSQA1.Name = "txtSQA1"
         Me.txtSQA1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSQA1.PlaceholderText = ""
+        Me.txtSQA1.PlaceholderText = "Answer"
         Me.txtSQA1.SelectedText = ""
         Me.txtSQA1.Size = New System.Drawing.Size(216, 38)
         Me.txtSQA1.TabIndex = 1
@@ -138,12 +138,12 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1Verify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSQA1Verify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSQA1Verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA1Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSQA1Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA1Verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA1Verify.Location = New System.Drawing.Point(742, 173)
         Me.txtSQA1Verify.Name = "txtSQA1Verify"
         Me.txtSQA1Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSQA1Verify.PlaceholderText = ""
+        Me.txtSQA1Verify.PlaceholderText = "Re-enter Answer"
         Me.txtSQA1Verify.SelectedText = ""
         Me.txtSQA1Verify.Size = New System.Drawing.Size(216, 38)
         Me.txtSQA1Verify.TabIndex = 2
@@ -164,7 +164,7 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2Verify.Location = New System.Drawing.Point(742, 291)
         Me.txtSQA2Verify.Name = "txtSQA2Verify"
         Me.txtSQA2Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSQA2Verify.PlaceholderText = ""
+        Me.txtSQA2Verify.PlaceholderText = "Re-enter Answer"
         Me.txtSQA2Verify.SelectedText = ""
         Me.txtSQA2Verify.Size = New System.Drawing.Size(216, 38)
         Me.txtSQA2Verify.TabIndex = 5
@@ -180,12 +180,12 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSQA2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSQA2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSQA2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA2.Location = New System.Drawing.Point(742, 247)
         Me.txtSQA2.Name = "txtSQA2"
         Me.txtSQA2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSQA2.PlaceholderText = ""
+        Me.txtSQA2.PlaceholderText = "Answer"
         Me.txtSQA2.SelectedText = ""
         Me.txtSQA2.Size = New System.Drawing.Size(216, 38)
         Me.txtSQA2.TabIndex = 4
