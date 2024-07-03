@@ -53,7 +53,7 @@ Partial Class frmLogin
         Me.panelLogin2.Controls.Add(Me.lblSignUp)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
         Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
-        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(434, 491)
         Me.panelLogin2.TabIndex = 7
