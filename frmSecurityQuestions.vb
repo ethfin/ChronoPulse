@@ -138,40 +138,74 @@ Public Class frmSecurityQuestions
     End Sub
 
     Private Sub txtSQA1Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA1Verify.TextChanged
+
         ' Check if the inputs match.
         If txtSQA1.Text = txtSQA1Verify.Text Then
-            ' If the inputs are the same, set the border color to Green.
-            txtSQA1.BorderColor = Color.Green
-            txtSQA1Verify.BorderColor = Color.Green
-            lblError.ForeColor = Color.Green
-            lblError.Text = "The inputs of both textboxes are the same."
+            If ValidateSecurity(txtSQA1.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA1.BorderColor = Color.Green
+                txtSQA1Verify.BorderColor = Color.Green
+                lblError.ForeColor = Color.Green
+                lblError.Text = "Answer for Security Question 1 are the same"
+            Else
+                txtSQA1.Text = txtSQA1Verify.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA1.BorderColor = Color.Orange
+                txtSQA1Verify.BorderColor = Color.Orange
+                lblError.ForeColor = Color.Orange
+                lblError.Text = "Fill in the the following fields"
+                lblError.Show()
+            End If
+
         Else
-            ' If the inputs don't match, set the border color to Red.
-            txtSQA1.BorderColor = Color.Red
+                ' If the inputs don't match, set the border color to Red.
+                txtSQA1.BorderColor = Color.Red
             txtSQA1Verify.BorderColor = Color.Red
             lblError.ForeColor = Color.Red
-            lblError.Text = "The inputs of both textboxes are different."
+            lblError.Text = "Answer for Security Question 1 are different"
         End If
         lblError.Show()
     End Sub
 
     Private Sub txtSQA2Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2Verify.TextChanged
+
         ' Check if the inputs match.
         If txtSQA2.Text = txtSQA2Verify.Text Then
-            ' If the inputs are the same, set the border color to Green.
-            txtSQA2.BorderColor = Color.Green
-            txtSQA2Verify.BorderColor = Color.Green
-            lblError2.ForeColor = Color.Green
-            lblError2.Text = "The inputs of both textboxes are the same."
+            If ValidateSecurity(txtSQA2.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA2.BorderColor = Color.Green
+                txtSQA2Verify.BorderColor = Color.Green
+                lblError2.ForeColor = Color.Green
+                lblError2.Text = "Answer for Security Question 2 are the same"
+            Else
+                txtSQA2.Text = txtSQA2Verify.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA2.BorderColor = Color.Orange
+                txtSQA2Verify.BorderColor = Color.Orange
+                lblError2.ForeColor = Color.Orange
+                lblError2.Text = "Fill in the the following fields"
+                lblError2.Show()
+            End If
+
         Else
             ' If the inputs don't match, set the border color to Red.
             txtSQA2.BorderColor = Color.Red
             txtSQA2Verify.BorderColor = Color.Red
             lblError2.ForeColor = Color.Red
-            lblError2.Text = "The inputs of both textboxes are different."
+            lblError2.Text = "Answer for Security Question 2 are different"
         End If
         lblError2.Show()
     End Sub
+
+    Function ValidateSecurity(ByVal pwd As String) As Boolean
+        ' Check the length.
+        If Len(pwd) < 3 Then
+            Return False
+        End If
+
+        ' Passed all checks.
+        Return True
+    End Function
 
     Private Sub lblNames_Click(sender As Object, e As EventArgs) Handles lblNames.Click
 
