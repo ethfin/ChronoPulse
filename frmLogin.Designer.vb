@@ -48,9 +48,9 @@ Partial Class frmLogin
         '
         Me.panelLogin2.BackgroundImage = CType(resources.GetObject("panelLogin2.BackgroundImage"), System.Drawing.Image)
         Me.panelLogin2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.panelLogin2.Controls.Add(Me.lnklblSignUp)
         Me.panelLogin2.Controls.Add(Me.btnMinimize)
         Me.panelLogin2.Controls.Add(Me.lblSignUp)
+        Me.panelLogin2.Controls.Add(Me.lblCopyright)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
         Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
         Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
@@ -64,13 +64,13 @@ Partial Class frmLogin
         Me.lnklblSignUp.BackColor = System.Drawing.Color.Transparent
         Me.lnklblSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lnklblSignUp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lnklblSignUp.LinkColor = System.Drawing.Color.GhostWhite
-        Me.lnklblSignUp.Location = New System.Drawing.Point(103, 447)
+        Me.lnklblSignUp.LinkColor = System.Drawing.Color.SlateGray
+        Me.lnklblSignUp.Location = New System.Drawing.Point(118, 453)
         Me.lnklblSignUp.Name = "lnklblSignUp"
-        Me.lnklblSignUp.Size = New System.Drawing.Size(268, 20)
+        Me.lnklblSignUp.Size = New System.Drawing.Size(272, 20)
         Me.lnklblSignUp.TabIndex = 12
         Me.lnklblSignUp.TabStop = True
-        Me.lnklblSignUp.Text = "Don't have an account? Signup now!"
+        Me.lnklblSignUp.Text = "Don't have an account? Sign up now!"
         '
         'btnMinimize
         '
@@ -106,9 +106,9 @@ Partial Class frmLogin
         'panelLogin
         '
         Me.panelLogin.BackColor = System.Drawing.Color.White
+        Me.panelLogin.Controls.Add(Me.lnklblSignUp)
         Me.panelLogin.Controls.Add(Me.txtPassword)
         Me.panelLogin.Controls.Add(Me.cbxShowPassword)
-        Me.panelLogin.Controls.Add(Me.lblCopyright)
         Me.panelLogin.Controls.Add(Me.lblIncorrect)
         Me.panelLogin.Controls.Add(Me.btnLogin)
         Me.panelLogin.Controls.Add(Me.lnklblReset)
@@ -135,7 +135,7 @@ Partial Class frmLogin
         Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(63, 289)
+        Me.txtPassword.Location = New System.Drawing.Point(63, 286)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPassword.MaxLength = 30
         Me.txtPassword.Name = "txtPassword"
@@ -153,7 +153,7 @@ Partial Class frmLogin
         Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword.Location = New System.Drawing.Point(63, 335)
+        Me.cbxShowPassword.Location = New System.Drawing.Point(63, 332)
         Me.cbxShowPassword.Name = "cbxShowPassword"
         Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
         Me.cbxShowPassword.TabIndex = 2
@@ -167,10 +167,10 @@ Partial Class frmLogin
         '
         Me.lblCopyright.AutoSize = True
         Me.lblCopyright.BackColor = System.Drawing.Color.Transparent
-        Me.lblCopyright.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.lblCopyright.Location = New System.Drawing.Point(118, 467)
+        Me.lblCopyright.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCopyright.Location = New System.Drawing.Point(222, 475)
         Me.lblCopyright.Name = "lblCopyright"
-        Me.lblCopyright.Size = New System.Drawing.Size(272, 19)
+        Me.lblCopyright.Size = New System.Drawing.Size(212, 16)
         Me.lblCopyright.TabIndex = 10
         Me.lblCopyright.Text = "© 2024 ChronoPulse. All rights reserved."
         '
@@ -180,7 +180,7 @@ Partial Class frmLogin
         Me.lblIncorrect.BackColor = System.Drawing.Color.Transparent
         Me.lblIncorrect.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIncorrect.ForeColor = System.Drawing.Color.Red
-        Me.lblIncorrect.Location = New System.Drawing.Point(70, 371)
+        Me.lblIncorrect.Location = New System.Drawing.Point(70, 359)
         Me.lblIncorrect.Name = "lblIncorrect"
         Me.lblIncorrect.Size = New System.Drawing.Size(366, 26)
         Me.lblIncorrect.TabIndex = 5
@@ -199,7 +199,7 @@ Partial Class frmLogin
         Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold)
         Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.IndicateFocus = True
-        Me.btnLogin.Location = New System.Drawing.Point(164, 408)
+        Me.btnLogin.Location = New System.Drawing.Point(164, 396)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(180, 45)
         Me.btnLogin.TabIndex = 4
@@ -210,7 +210,7 @@ Partial Class frmLogin
         Me.lnklblReset.AutoSize = True
         Me.lnklblReset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.lnklblReset.LinkColor = System.Drawing.Color.Gray
-        Me.lnklblReset.Location = New System.Drawing.Point(346, 338)
+        Me.lnklblReset.Location = New System.Drawing.Point(346, 335)
         Me.lnklblReset.Name = "lnklblReset"
         Me.lnklblReset.Size = New System.Drawing.Size(83, 13)
         Me.lnklblReset.TabIndex = 3
@@ -229,7 +229,7 @@ Partial Class frmLogin
         Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(63, 245)
+        Me.txtUsername.Location = New System.Drawing.Point(63, 242)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUsername.MaxLength = 62
         Me.txtUsername.Name = "txtUsername"
@@ -243,7 +243,7 @@ Partial Class frmLogin
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Copperplate Gothic Light", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(63, 193)
+        Me.Label1.Location = New System.Drawing.Point(63, 186)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(366, 30)
         Me.Label1.TabIndex = 0
@@ -254,7 +254,7 @@ Partial Class frmLogin
         '
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome1.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome1.Location = New System.Drawing.Point(63, 148)
+        Me.lblWelcome1.Location = New System.Drawing.Point(63, 141)
         Me.lblWelcome1.Name = "lblWelcome1"
         Me.lblWelcome1.Size = New System.Drawing.Size(366, 32)
         Me.lblWelcome1.TabIndex = 0
@@ -266,7 +266,7 @@ Partial Class frmLogin
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(122, 12)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(122, 9)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(238, 109)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
