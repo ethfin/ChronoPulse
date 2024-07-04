@@ -129,4 +129,8 @@ Public Class frmLogin
         Me.Hide()
         frmResetAccount.Show()
     End Sub
+
+    Private Sub lblWelcome1_Click(sender As Object, e As EventArgs) Handles lblWelcome1.Click
+
+    End Sub
 End Class
