@@ -21,6 +21,7 @@ Public Class frmMain
         Me.Text = String.Empty
         Me.ControlBox = False
         Me.DoubleBuffered = True
+        Me.MinimumSize = New Size(900, 700)
 
     End Sub
 
