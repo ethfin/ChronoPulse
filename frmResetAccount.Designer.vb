@@ -122,7 +122,7 @@ Partial Class frmResetAccount
         Me.lblWelcome1.Name = "lblWelcome1"
         Me.lblWelcome1.Size = New System.Drawing.Size(528, 32)
         Me.lblWelcome1.TabIndex = 10
-        Me.lblWelcome1.Text = "Reset Account"
+        Me.lblWelcome1.Text = "Account Login"
         Me.lblWelcome1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmResetAccount

@@ -43,7 +43,9 @@ Partial Class frmMain
         '
         'pnlMain
         '
-        Me.pnlMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.pnlMain.BackColor = System.Drawing.Color.GhostWhite
+        Me.pnlMain.BorderColor = System.Drawing.Color.Black
+        Me.pnlMain.BorderThickness = 1
         Me.pnlMain.Controls.Add(Me.IconButton4)
         Me.pnlMain.Controls.Add(Me.IconButton2)
         Me.pnlMain.Controls.Add(Me.IconButton1)
@@ -62,7 +64,7 @@ Partial Class frmMain
         Me.IconButton4.FlatAppearance.BorderSize = 0
         Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton4.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.ChessQueen
         Me.IconButton4.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -84,7 +86,7 @@ Partial Class frmMain
         Me.IconButton2.FlatAppearance.BorderSize = 0
         Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton2.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton2.ForeColor = System.Drawing.Color.Black
         Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.Gamepad
         Me.IconButton2.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -106,7 +108,7 @@ Partial Class frmMain
         Me.IconButton1.FlatAppearance.BorderSize = 0
         Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton1.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton1.ForeColor = System.Drawing.Color.Black
         Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartPie
         Me.IconButton1.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -123,8 +125,10 @@ Partial Class frmMain
         '
         'pnlLogo
         '
-        Me.pnlLogo.BackColor = System.Drawing.Color.Transparent
+        Me.pnlLogo.BackColor = System.Drawing.Color.GhostWhite
+        Me.pnlLogo.BorderColor = System.Drawing.Color.Black
         Me.pnlLogo.Controls.Add(Me.picLogo)
+        Me.pnlLogo.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
         Me.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlLogo.Location = New System.Drawing.Point(0, 0)
         Me.pnlLogo.Name = "pnlLogo"
@@ -145,7 +149,7 @@ Partial Class frmMain
         '
         'pnlHeader
         '
-        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.pnlHeader.BackColor = System.Drawing.Color.GhostWhite
         Me.pnlHeader.Controls.Add(Me.btnMinimize)
         Me.pnlHeader.Controls.Add(Me.btnMaximize)
         Me.pnlHeader.Controls.Add(Me.btnClose)
@@ -159,11 +163,12 @@ Partial Class frmMain
         'btnMinimize
         '
         Me.btnMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimize.FlatAppearance.BorderSize = 0
         Me.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue
         Me.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
-        Me.btnMinimize.IconColor = System.Drawing.Color.White
+        Me.btnMinimize.IconColor = System.Drawing.Color.Black
         Me.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMinimize.IconSize = 20
         Me.btnMinimize.Location = New System.Drawing.Point(807, 3)
@@ -175,11 +180,12 @@ Partial Class frmMain
         'btnMaximize
         '
         Me.btnMaximize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMaximize.FlatAppearance.BorderSize = 0
         Me.btnMaximize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue
         Me.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
-        Me.btnMaximize.IconColor = System.Drawing.Color.White
+        Me.btnMaximize.IconColor = System.Drawing.Color.Black
         Me.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnMaximize.IconSize = 20
         Me.btnMaximize.Location = New System.Drawing.Point(839, 3)
@@ -191,11 +197,12 @@ Partial Class frmMain
         'btnClose
         '
         Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
         Me.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.IconChar = FontAwesome.Sharp.IconChar.Xmark
-        Me.btnClose.IconColor = System.Drawing.Color.White
+        Me.btnClose.IconColor = System.Drawing.Color.Black
         Me.btnClose.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnClose.IconSize = 20
         Me.btnClose.Location = New System.Drawing.Point(868, 3)
@@ -209,7 +216,7 @@ Partial Class frmMain
         Me.IconButton3.FlatAppearance.BorderSize = 0
         Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton3.ForeColor = System.Drawing.Color.Snow
+        Me.IconButton3.ForeColor = System.Drawing.Color.Black
         Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.HomeLg
         Me.IconButton3.IconColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -225,8 +232,9 @@ Partial Class frmMain
         '
         'pnlContent
         '
-        Me.pnlContent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.pnlContent.BackColor = System.Drawing.Color.GhostWhite
         Me.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlContent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.pnlContent.Location = New System.Drawing.Point(203, 58)
         Me.pnlContent.Name = "pnlContent"
         Me.pnlContent.Size = New System.Drawing.Size(897, 567)
