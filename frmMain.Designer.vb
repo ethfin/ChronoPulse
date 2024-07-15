@@ -27,7 +27,6 @@ Partial Class frmMain
         Me.btnMinimize = New FontAwesome.Sharp.IconButton()
         Me.btnMaximize = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
-        Me.pnlMain = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
@@ -38,6 +37,9 @@ Partial Class frmMain
         Me.Guna2Separator4 = New Guna.UI2.WinForms.Guna2Separator()
         Me.pnlSeparator1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlSeparator2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.pnlHeader.SuspendLayout()
         Me.pnlSidebar.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,14 +113,6 @@ Partial Class frmMain
         Me.btnClose.TabIndex = 0
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'pnlMain
-        '
-        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMain.Location = New System.Drawing.Point(247, 42)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1067, 659)
-        Me.pnlMain.TabIndex = 2
         '
         'pnlSidebar
         '
@@ -276,6 +270,35 @@ Partial Class frmMain
         Me.pnlSeparator2.Size = New System.Drawing.Size(1299, 15)
         Me.pnlSeparator2.TabIndex = 1
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(247, 42)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(15, 659)
+        Me.Guna2Panel1.TabIndex = 3
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel2.Location = New System.Drawing.Point(1299, 42)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(15, 659)
+        Me.Guna2Panel2.TabIndex = 4
+        '
+        'pnlMain
+        '
+        Me.pnlMain.BorderRadius = 10
+        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMain.FillColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlMain.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlMain.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlMain.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlMain.Location = New System.Drawing.Point(262, 42)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(1037, 659)
+        Me.pnlMain.TabIndex = 5
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,10 +306,13 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(16, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1314, 716)
         Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.Guna2Panel2)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.pnlSidebar)
         Me.Controls.Add(Me.pnlSeparator2)
         Me.Controls.Add(Me.pnlSeparator1)
         Me.Controls.Add(Me.pnlHeader)
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -299,7 +325,6 @@ Partial Class frmMain
     End Sub
 
     Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
     Friend WithEvents btnMinimize As FontAwesome.Sharp.IconButton
     Friend WithEvents btnMaximize As FontAwesome.Sharp.IconButton
@@ -313,4 +338,7 @@ Partial Class frmMain
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2CustomGradientPanel
 End Class

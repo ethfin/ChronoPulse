@@ -2,6 +2,15 @@
 
 Public Class frmMain
 
+    Public Sub childForm(ByVal panel As Form)
+        pnlMain.Controls.Clear()
+        panel.TopLevel = False
+        panel.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        panel.Dock = DockStyle.Fill
+        pnlMain.Controls.Add(panel)
+        panel.Show()
+    End Sub
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -45,7 +54,7 @@ Public Class frmMain
     Public Shared Function ReleaseCapture() As Boolean
     End Function
 
-    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown, pnlMain.MouseDown, pnlSidebar.MouseDown, pnlSeparator1.MouseDown, pnlSeparator2.MouseDown
+    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown, pnlSidebar.MouseDown, pnlSeparator1.MouseDown, pnlSeparator2.MouseDown
         If e.Button = MouseButtons.Left Then
             ReleaseCapture()
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
@@ -77,5 +86,9 @@ Public Class frmMain
 
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
 
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        childForm(frmDashboard)
     End Sub
 End Class
