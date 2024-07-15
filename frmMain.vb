@@ -45,7 +45,7 @@ Public Class frmMain
     Public Shared Function ReleaseCapture() As Boolean
     End Function
 
-    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs)
+    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown, pnlMain.MouseDown
         If e.Button = MouseButtons.Left Then
             ReleaseCapture()
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
@@ -59,15 +59,11 @@ Public Class frmMain
         Me.Hide()
     End Sub
 
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnClose_Click(sender As Object, e As EventArgs)
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
     End Sub
 
-    Private Sub btnMaximize_Click(sender As Object, e As EventArgs)
+    Private Sub btnMaximize_Click(sender As Object, e As EventArgs) Handles btnMaximize.Click
         If WindowState = FormWindowState.Normal Then
             WindowState = FormWindowState.Maximized
         Else
@@ -75,7 +71,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub btnMinimize_Click(sender As Object, e As EventArgs)
+    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         WindowState = FormWindowState.Minimized
     End Sub
 

@@ -23,66 +23,70 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnMinimize = New FontAwesome.Sharp.IconButton()
+        Me.btnMaximize = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
-        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton4 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton5 = New FontAwesome.Sharp.IconButton()
-        Me.Guna2Panel1.SuspendLayout()
-        Me.Guna2Panel2.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlMain = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2Separator3 = New Guna.UI2.WinForms.Guna2Separator()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2Separator4 = New Guna.UI2.WinForms.Guna2Separator()
+        Me.pnlSeparator1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlSeparator2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.pnlHeader.SuspendLayout()
+        Me.pnlSidebar.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Guna2Panel1
+        'pnlHeader
         '
-        Me.Guna2Panel1.Controls.Add(Me.IconButton2)
-        Me.Guna2Panel1.Controls.Add(Me.IconButton1)
-        Me.Guna2Panel1.Controls.Add(Me.btnClose)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1314, 30)
-        Me.Guna2Panel1.TabIndex = 0
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.btnMinimize)
+        Me.pnlHeader.Controls.Add(Me.btnMaximize)
+        Me.pnlHeader.Controls.Add(Me.btnClose)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(1314, 42)
+        Me.pnlHeader.TabIndex = 0
         '
-        'IconButton2
+        'btnMinimize
         '
-        Me.IconButton2.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.IconButton2.FlatAppearance.BorderSize = 0
-        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
-        Me.IconButton2.IconColor = System.Drawing.Color.Black
-        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton2.IconSize = 25
-        Me.IconButton2.Location = New System.Drawing.Point(1200, 0)
-        Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(38, 30)
-        Me.IconButton2.TabIndex = 2
-        Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton2.UseVisualStyleBackColor = False
+        Me.btnMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnMinimize.FlatAppearance.BorderSize = 0
+        Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        Me.btnMinimize.IconColor = System.Drawing.Color.Black
+        Me.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnMinimize.IconSize = 25
+        Me.btnMinimize.Location = New System.Drawing.Point(1200, 0)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(38, 42)
+        Me.btnMinimize.TabIndex = 2
+        Me.btnMinimize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMinimize.UseVisualStyleBackColor = False
         '
-        'IconButton1
+        'btnMaximize
         '
-        Me.IconButton1.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.IconButton1.FlatAppearance.BorderSize = 0
-        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
-        Me.IconButton1.IconColor = System.Drawing.Color.Black
-        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.IconSize = 25
-        Me.IconButton1.Location = New System.Drawing.Point(1238, 0)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(38, 30)
-        Me.IconButton1.TabIndex = 1
-        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton1.UseVisualStyleBackColor = False
+        Me.btnMaximize.BackColor = System.Drawing.Color.Transparent
+        Me.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnMaximize.FlatAppearance.BorderSize = 0
+        Me.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
+        Me.btnMaximize.IconColor = System.Drawing.Color.Black
+        Me.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnMaximize.IconSize = 25
+        Me.btnMaximize.Location = New System.Drawing.Point(1238, 0)
+        Me.btnMaximize.Name = "btnMaximize"
+        Me.btnMaximize.Size = New System.Drawing.Size(38, 42)
+        Me.btnMaximize.TabIndex = 1
+        Me.btnMaximize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMaximize.UseVisualStyleBackColor = False
         '
         'btnClose
         '
@@ -97,121 +101,141 @@ Partial Class frmMain
         Me.btnClose.IconSize = 25
         Me.btnClose.Location = New System.Drawing.Point(1276, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(38, 30)
+        Me.btnClose.Size = New System.Drawing.Size(38, 42)
         Me.btnClose.TabIndex = 0
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'Guna2Panel2
+        'pnlMain
         '
-        Me.Guna2Panel2.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel2.Controls.Add(Me.IconButton5)
-        Me.Guna2Panel2.Controls.Add(Me.IconButton4)
-        Me.Guna2Panel2.Controls.Add(Me.IconButton3)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2Separator1)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 30)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(227, 686)
-        Me.Guna2Panel2.TabIndex = 1
+        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMain.Location = New System.Drawing.Point(257, 42)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(1057, 649)
+        Me.pnlMain.TabIndex = 2
         '
-        'Guna2PictureBox1
+        'pnlSidebar
         '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(227, 67)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 0
-        Me.Guna2PictureBox1.TabStop = False
+        Me.pnlSidebar.BorderRadius = 20
+        Me.pnlSidebar.Controls.Add(Me.Guna2Button3)
+        Me.pnlSidebar.Controls.Add(Me.Guna2Button2)
+        Me.pnlSidebar.Controls.Add(Me.Guna2Button1)
+        Me.pnlSidebar.Controls.Add(Me.Guna2Separator3)
+        Me.pnlSidebar.Controls.Add(Me.Guna2PictureBox2)
+        Me.pnlSidebar.Controls.Add(Me.Guna2Separator4)
+        Me.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlSidebar.Location = New System.Drawing.Point(25, 42)
+        Me.pnlSidebar.Margin = New System.Windows.Forms.Padding(3, 3, 20, 3)
+        Me.pnlSidebar.Name = "pnlSidebar"
+        Me.pnlSidebar.Size = New System.Drawing.Size(232, 649)
+        Me.pnlSidebar.TabIndex = 0
         '
-        'Guna2Panel3
+        'Guna2Separator3
         '
-        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel3.Location = New System.Drawing.Point(227, 30)
-        Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1087, 686)
-        Me.Guna2Panel3.TabIndex = 2
+        Me.Guna2Separator3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Separator3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator3.Location = New System.Drawing.Point(0, 98)
+        Me.Guna2Separator3.Name = "Guna2Separator3"
+        Me.Guna2Separator3.Size = New System.Drawing.Size(232, 31)
+        Me.Guna2Separator3.TabIndex = 5
         '
-        'Guna2Separator1
+        'Guna2PictureBox2
         '
-        Me.Guna2Separator1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Separator1.FillColor = System.Drawing.Color.Black
-        Me.Guna2Separator1.Location = New System.Drawing.Point(0, 67)
-        Me.Guna2Separator1.Name = "Guna2Separator1"
-        Me.Guna2Separator1.Size = New System.Drawing.Size(227, 10)
-        Me.Guna2Separator1.TabIndex = 0
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 31)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(232, 67)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 6
+        Me.Guna2PictureBox2.TabStop = False
         '
-        'IconButton3
+        'Guna2Separator4
         '
-        Me.IconButton3.AutoSize = True
-        Me.IconButton3.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton3.FlatAppearance.BorderSize = 0
-        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton3.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.Inbox
-        Me.IconButton3.IconColor = System.Drawing.Color.Black
-        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton3.IconSize = 25
-        Me.IconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton3.Location = New System.Drawing.Point(0, 77)
-        Me.IconButton3.Name = "IconButton3"
-        Me.IconButton3.Size = New System.Drawing.Size(227, 59)
-        Me.IconButton3.TabIndex = 0
-        Me.IconButton3.TabStop = False
-        Me.IconButton3.Text = "Dashboard"
-        Me.IconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton3.UseVisualStyleBackColor = False
+        Me.Guna2Separator4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Separator4.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Separator4.Name = "Guna2Separator4"
+        Me.Guna2Separator4.Size = New System.Drawing.Size(232, 31)
+        Me.Guna2Separator4.TabIndex = 9
         '
-        'IconButton4
+        'pnlSeparator1
         '
-        Me.IconButton4.AutoSize = True
-        Me.IconButton4.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton4.FlatAppearance.BorderSize = 0
-        Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.Gamepad
-        Me.IconButton4.IconColor = System.Drawing.Color.Black
-        Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton4.IconSize = 25
-        Me.IconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton4.Location = New System.Drawing.Point(0, 136)
-        Me.IconButton4.Name = "IconButton4"
-        Me.IconButton4.Size = New System.Drawing.Size(227, 59)
-        Me.IconButton4.TabIndex = 1
-        Me.IconButton4.TabStop = False
-        Me.IconButton4.Text = "Games"
-        Me.IconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton4.UseVisualStyleBackColor = False
+        Me.pnlSeparator1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlSeparator1.Location = New System.Drawing.Point(0, 42)
+        Me.pnlSeparator1.Name = "pnlSeparator1"
+        Me.pnlSeparator1.Size = New System.Drawing.Size(25, 674)
+        Me.pnlSeparator1.TabIndex = 0
         '
-        'IconButton5
+        'pnlSeparator2
         '
-        Me.IconButton5.AutoSize = True
-        Me.IconButton5.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton5.FlatAppearance.BorderSize = 0
-        Me.IconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton5.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton5.IconChar = FontAwesome.Sharp.IconChar.ChessKing
-        Me.IconButton5.IconColor = System.Drawing.Color.Black
-        Me.IconButton5.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton5.IconSize = 25
-        Me.IconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton5.Location = New System.Drawing.Point(0, 195)
-        Me.IconButton5.Name = "IconButton5"
-        Me.IconButton5.Size = New System.Drawing.Size(227, 59)
-        Me.IconButton5.TabIndex = 2
-        Me.IconButton5.TabStop = False
-        Me.IconButton5.Text = "Leaderboards"
-        Me.IconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton5.UseVisualStyleBackColor = False
+        Me.pnlSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlSeparator2.Location = New System.Drawing.Point(25, 691)
+        Me.pnlSeparator2.Name = "pnlSeparator2"
+        Me.pnlSeparator2.Size = New System.Drawing.Size(1289, 25)
+        Me.pnlSeparator2.TabIndex = 1
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.BorderRadius = 5
+        Me.Guna2Button1.CustomImages.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        Me.Guna2Button1.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button1.Location = New System.Drawing.Point(32, 135)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(168, 52)
+        Me.Guna2Button1.TabIndex = 0
+        Me.Guna2Button1.Text = "Dashboard"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderRadius = 5
+        Me.Guna2Button2.CustomImages.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.Guna2Button2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button2.Location = New System.Drawing.Point(32, 193)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(168, 52)
+        Me.Guna2Button2.TabIndex = 10
+        Me.Guna2Button2.Text = "Games"
+        '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button3.BorderRadius = 5
+        Me.Guna2Button3.CustomImages.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.Guna2Button3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button3.Location = New System.Drawing.Point(32, 251)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.Size = New System.Drawing.Size(168, 52)
+        Me.Guna2Button3.TabIndex = 11
+        Me.Guna2Button3.Text = "Leaderboard"
         '
         'frmMain
         '
@@ -219,30 +243,34 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1314, 716)
-        Me.Controls.Add(Me.Guna2Panel3)
-        Me.Controls.Add(Me.Guna2Panel2)
-        Me.Controls.Add(Me.Guna2Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.pnlSidebar)
+        Me.Controls.Add(Me.pnlSeparator2)
+        Me.Controls.Add(Me.pnlSeparator1)
+        Me.Controls.Add(Me.pnlHeader)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
-        Me.Guna2Panel1.ResumeLayout(False)
-        Me.Guna2Panel2.ResumeLayout(False)
-        Me.Guna2Panel2.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlHeader.ResumeLayout(False)
+        Me.pnlSidebar.ResumeLayout(False)
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btnClose As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
-    Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
-    Friend WithEvents IconButton5 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton4 As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMinimize As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMaximize As FontAwesome.Sharp.IconButton
+    Friend WithEvents pnlSidebar As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Guna2Separator3 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2Separator4 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents pnlSeparator1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlSeparator2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class
