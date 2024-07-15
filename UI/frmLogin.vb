@@ -133,5 +133,4 @@ Public Class frmLogin
     Private Sub lblWelcome1_Click(sender As Object, e As EventArgs) Handles lblWelcome1.Click
 
     End Sub
-
 End Class
