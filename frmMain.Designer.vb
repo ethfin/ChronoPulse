@@ -40,6 +40,7 @@ Partial Class frmMain
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlHeader.SuspendLayout()
         Me.pnlSidebar.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,6 +119,7 @@ Partial Class frmMain
         '
         Me.pnlSidebar.BackColor = System.Drawing.Color.Transparent
         Me.pnlSidebar.BorderRadius = 10
+        Me.pnlSidebar.Controls.Add(Me.Guna2Button5)
         Me.pnlSidebar.Controls.Add(Me.Guna2Button4)
         Me.pnlSidebar.Controls.Add(Me.Guna2Button3)
         Me.pnlSidebar.Controls.Add(Me.Guna2Button2)
@@ -138,11 +140,10 @@ Partial Class frmMain
         '
         'Guna2Button4
         '
-        Me.Guna2Button4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Guna2Button4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Button4.BorderRadius = 5
-        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
         Me.Guna2Button4.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -151,7 +152,7 @@ Partial Class frmMain
         Me.Guna2Button4.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Button4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(32, 591)
+        Me.Guna2Button4.Location = New System.Drawing.Point(32, 543)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.Size = New System.Drawing.Size(168, 52)
         Me.Guna2Button4.TabIndex = 12
@@ -163,7 +164,7 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Button3.BorderRadius = 5
-        Me.Guna2Button3.CustomImages.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.Guna2Button3.CustomImages.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
         Me.Guna2Button3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -184,7 +185,7 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.CustomImages.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        Me.Guna2Button2.CustomImages.Image = CType(resources.GetObject("resource.Image3"), System.Drawing.Image)
         Me.Guna2Button2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -205,7 +206,7 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.CustomImages.Image = CType(resources.GetObject("resource.Image3"), System.Drawing.Image)
+        Me.Guna2Button1.CustomImages.Image = CType(resources.GetObject("resource.Image4"), System.Drawing.Image)
         Me.Guna2Button1.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -299,6 +300,26 @@ Partial Class frmMain
         Me.pnlMain.Size = New System.Drawing.Size(1037, 659)
         Me.pnlMain.TabIndex = 5
         '
+        'Guna2Button5
+        '
+        Me.Guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Guna2Button5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button5.BorderRadius = 5
+        Me.Guna2Button5.CustomImages.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.Guna2Button5.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button5.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button5.Location = New System.Drawing.Point(32, 601)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.Size = New System.Drawing.Size(168, 52)
+        Me.Guna2Button5.TabIndex = 13
+        Me.Guna2Button5.Text = "Logout"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -341,4 +362,5 @@ Partial Class frmMain
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
 End Class
