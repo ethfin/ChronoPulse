@@ -130,7 +130,7 @@ Public Class frmLogin
         frmResetAccount.Show()
     End Sub
 
-    Private Sub lblWelcome1_Click(sender As Object, e As EventArgs) Handles lblWelcome1.Click
+    Private Sub lblWelcome1_Click(sender As Object, e As EventArgs)
 
     End Sub
 

@@ -55,7 +55,7 @@ Public Class frmMain
     Public Shared Function ReleaseCapture() As Boolean
     End Function
 
-    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown, pnlSidebar.MouseDown, pnlSeparator1.MouseDown, pnlSeparator2.MouseDown
+    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown
         If e.Button = MouseButtons.Left Then
             ReleaseCapture()
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)

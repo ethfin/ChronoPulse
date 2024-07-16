@@ -62,6 +62,7 @@ Partial Class frmDashboard
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDashboard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmDashboard"
         Me.pnlMain.ResumeLayout(False)
         Me.pnlMain.PerformLayout()
