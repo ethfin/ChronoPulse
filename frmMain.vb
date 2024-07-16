@@ -18,7 +18,6 @@ Public Class frmMain
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
 
-
         Me.Text = String.Empty
         Me.ControlBox = False
         Me.DoubleBuffered = True
@@ -86,7 +85,7 @@ Public Class frmMain
         WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         childForm(frmDashboard)
     End Sub
 
@@ -95,27 +94,32 @@ Public Class frmMain
         childForm(frmGames)
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnLeaderboard.click
         childForm(frmLeaderboard)
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs)
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         frmLogin.Show()
         Me.Hide()
     End Sub
 
-    Private Sub IconButton1_Paint(sender As Object, e As PaintEventArgs) Handles btnGames.Paint
+    Private Sub btnFontAwsomeRoundCorner(sender As Object, e As PaintEventArgs) Handles btnGames.Paint, btnLogout.Paint, btnDashboard.Paint, btnLeaderboard.Paint
+        Dim button As Button = CType(sender, Button)
+        Dim radius As Integer = 15
         Dim buttonPath As New GraphicsPath()
-        Dim radius As Integer = 5
+
+        ' Create a rounded rectangle for the button's region
         buttonPath.AddArc(New Rectangle(0, 0, radius, radius), 180, 90)
-        buttonPath.AddLine(radius, 0, btnGames.Width - radius, 0)
-        buttonPath.AddArc(New Rectangle(btnGames.Width - radius, 0, radius, radius), -90, 90)
-        buttonPath.AddLine(btnGames.Width, radius, btnGames.Width, btnGames.Height - radius)
-        buttonPath.AddArc(New Rectangle(btnGames.Width - radius, btnGames.Height - radius, radius, radius), 0, 90)
-        buttonPath.AddLine(btnGames.Width - radius, btnGames.Height, radius, btnGames.Height)
-        buttonPath.AddArc(New Rectangle(0, btnGames.Height - radius, radius, radius), 90, 90)
+        buttonPath.AddLine(radius, 0, button.Width - radius, 0)
+        buttonPath.AddArc(New Rectangle(button.Width - radius, 0, radius, radius), -90, 90)
+        buttonPath.AddLine(button.Width, radius, button.Width, button.Height - radius)
+        buttonPath.AddArc(New Rectangle(button.Width - radius, button.Height - radius, radius, radius), 0, 90)
+        buttonPath.AddLine(button.Width - radius, button.Height, radius, button.Height)
+        buttonPath.AddArc(New Rectangle(0, button.Height - radius, radius, radius), 90, 90)
         buttonPath.CloseFigure()
 
-        btnGames.Region = New Region(buttonPath)
+        ' Apply the rounded rectangle to the button's region
+        button.Region = New Region(buttonPath)
     End Sub
+
 End Class

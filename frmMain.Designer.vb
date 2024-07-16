@@ -28,6 +28,9 @@ Partial Class frmMain
         Me.btnMaximize = New FontAwesome.Sharp.IconButton()
         Me.btnClose = New FontAwesome.Sharp.IconButton()
         Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btnLogout = New FontAwesome.Sharp.IconButton()
+        Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
+        Me.btnDashboard = New FontAwesome.Sharp.IconButton()
         Me.btnGames = New FontAwesome.Sharp.IconButton()
         Me.Guna2Separator3 = New Guna.UI2.WinForms.Guna2Separator()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -37,9 +40,6 @@ Partial Class frmMain
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.pnlHeader.SuspendLayout()
         Me.pnlSidebar.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,9 +118,9 @@ Partial Class frmMain
         '
         Me.pnlSidebar.BackColor = System.Drawing.Color.Transparent
         Me.pnlSidebar.BorderRadius = 10
-        Me.pnlSidebar.Controls.Add(Me.IconButton3)
-        Me.pnlSidebar.Controls.Add(Me.IconButton2)
-        Me.pnlSidebar.Controls.Add(Me.IconButton1)
+        Me.pnlSidebar.Controls.Add(Me.btnLogout)
+        Me.pnlSidebar.Controls.Add(Me.btnLeaderboard)
+        Me.pnlSidebar.Controls.Add(Me.btnDashboard)
         Me.pnlSidebar.Controls.Add(Me.btnGames)
         Me.pnlSidebar.Controls.Add(Me.Guna2Separator3)
         Me.pnlSidebar.Controls.Add(Me.Guna2PictureBox2)
@@ -135,6 +135,76 @@ Partial Class frmMain
         Me.pnlSidebar.Name = "pnlSidebar"
         Me.pnlSidebar.Size = New System.Drawing.Size(232, 642)
         Me.pnlSidebar.TabIndex = 0
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnLogout.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
+        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.IconChar = FontAwesome.Sharp.IconChar.RightToBracket
+        Me.btnLogout.IconColor = System.Drawing.Color.Firebrick
+        Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLogout.IconSize = 40
+        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogout.Location = New System.Drawing.Point(32, 584)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(168, 52)
+        Me.btnLogout.TabIndex = 16
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'btnLeaderboard
+        '
+        Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
+        Me.btnLeaderboard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLeaderboard.FlatAppearance.BorderSize = 0
+        Me.btnLeaderboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
+        Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaderboard.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLeaderboard.IconChar = FontAwesome.Sharp.IconChar.Chess
+        Me.btnLeaderboard.IconColor = System.Drawing.Color.LimeGreen
+        Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLeaderboard.IconSize = 40
+        Me.btnLeaderboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLeaderboard.Location = New System.Drawing.Point(32, 295)
+        Me.btnLeaderboard.Name = "btnLeaderboard"
+        Me.btnLeaderboard.Size = New System.Drawing.Size(168, 52)
+        Me.btnLeaderboard.TabIndex = 15
+        Me.btnLeaderboard.Text = "Leaderboard"
+        Me.btnLeaderboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLeaderboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLeaderboard.UseVisualStyleBackColor = False
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
+        Me.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDashboard.FlatAppearance.BorderSize = 0
+        Me.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
+        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashboard.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.Bolt
+        Me.btnDashboard.IconColor = System.Drawing.Color.Gold
+        Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnDashboard.IconSize = 40
+        Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashboard.Location = New System.Drawing.Point(32, 183)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Size = New System.Drawing.Size(168, 52)
+        Me.btnDashboard.TabIndex = 14
+        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'btnGames
         '
@@ -238,76 +308,6 @@ Partial Class frmMain
         Me.pnlMain.Size = New System.Drawing.Size(1018, 642)
         Me.pnlMain.TabIndex = 5
         '
-        'IconButton1
-        '
-        Me.IconButton1.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.IconButton1.FlatAppearance.BorderSize = 0
-        Me.IconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
-        Me.IconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.Bolt
-        Me.IconButton1.IconColor = System.Drawing.Color.Gold
-        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.IconSize = 40
-        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton1.Location = New System.Drawing.Point(32, 183)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(168, 52)
-        Me.IconButton1.TabIndex = 14
-        Me.IconButton1.Text = "Dashboard"
-        Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton1.UseVisualStyleBackColor = False
-        '
-        'IconButton2
-        '
-        Me.IconButton2.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.IconButton2.FlatAppearance.BorderSize = 0
-        Me.IconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
-        Me.IconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.Chess
-        Me.IconButton2.IconColor = System.Drawing.Color.LimeGreen
-        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton2.IconSize = 40
-        Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton2.Location = New System.Drawing.Point(32, 295)
-        Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(168, 52)
-        Me.IconButton2.TabIndex = 15
-        Me.IconButton2.Text = "Leaderboard"
-        Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton2.UseVisualStyleBackColor = False
-        '
-        'IconButton3
-        '
-        Me.IconButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.IconButton3.BackColor = System.Drawing.Color.Transparent
-        Me.IconButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.IconButton3.FlatAppearance.BorderSize = 0
-        Me.IconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black
-        Me.IconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.RightToBracket
-        Me.IconButton3.IconColor = System.Drawing.Color.Firebrick
-        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton3.IconSize = 40
-        Me.IconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton3.Location = New System.Drawing.Point(32, 584)
-        Me.IconButton3.Name = "IconButton3"
-        Me.IconButton3.Size = New System.Drawing.Size(168, 52)
-        Me.IconButton3.TabIndex = 16
-        Me.IconButton3.Text = "Leaderboard"
-        Me.IconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton3.UseVisualStyleBackColor = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -347,7 +347,7 @@ Partial Class frmMain
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents btnGames As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnLeaderboard As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnDashboard As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnLogout As FontAwesome.Sharp.IconButton
 End Class
