@@ -338,7 +338,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.pnlSeparator1)
         Me.Controls.Add(Me.pnlHeader)
         Me.ForeColor = System.Drawing.Color.White
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
