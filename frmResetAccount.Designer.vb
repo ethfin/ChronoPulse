@@ -24,7 +24,6 @@ Partial Class frmResetAccount
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmResetAccount))
         Me.panelLogin2 = New System.Windows.Forms.Panel()
-        Me.btnMinimize = New Guna.UI2.WinForms.Guna2Button()
         Me.lblSignUp = New System.Windows.Forms.Label()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -47,7 +46,6 @@ Partial Class frmResetAccount
         '
         Me.panelLogin2.BackgroundImage = CType(resources.GetObject("panelLogin2.BackgroundImage"), System.Drawing.Image)
         Me.panelLogin2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.panelLogin2.Controls.Add(Me.btnMinimize)
         Me.panelLogin2.Controls.Add(Me.lblSignUp)
         Me.panelLogin2.Controls.Add(Me.lblCopyright)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Left
@@ -56,27 +54,6 @@ Partial Class frmResetAccount
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(579, 582)
         Me.panelLogin2.TabIndex = 8
-        '
-        'btnMinimize
-        '
-        Me.btnMinimize.BackColor = System.Drawing.Color.Transparent
-        Me.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnMinimize.FillColor = System.Drawing.Color.Transparent
-        Me.btnMinimize.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnMinimize.ForeColor = System.Drawing.Color.White
-        Me.btnMinimize.HoverState.FillColor = System.Drawing.Color.LightSkyBlue
-        Me.btnMinimize.IndicateFocus = True
-        Me.btnMinimize.Location = New System.Drawing.Point(499, 0)
-        Me.btnMinimize.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(40, 37)
-        Me.btnMinimize.TabIndex = 6
-        Me.btnMinimize.TabStop = False
-        Me.btnMinimize.Text = "—"
-        Me.btnMinimize.UseTransparentBackground = True
         '
         'lblSignUp
         '
@@ -285,6 +262,7 @@ Partial Class frmResetAccount
         '
         'frmResetAccount
         '
+        Me.AcceptButton = Me.btnReset
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
@@ -294,6 +272,7 @@ Partial Class frmResetAccount
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmResetAccount"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmResetAccount"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
@@ -305,7 +284,6 @@ Partial Class frmResetAccount
     End Sub
 
     Friend WithEvents panelLogin2 As Panel
-    Friend WithEvents btnMinimize As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblSignUp As Label
     Friend WithEvents lblCopyright As Label
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
