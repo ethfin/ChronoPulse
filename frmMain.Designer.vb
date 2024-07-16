@@ -174,7 +174,7 @@ Partial Class frmMain
         Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnLeaderboard.IconSize = 40
         Me.btnLeaderboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLeaderboard.Location = New System.Drawing.Point(32, 295)
+        Me.btnLeaderboard.Location = New System.Drawing.Point(32, 278)
         Me.btnLeaderboard.Name = "btnLeaderboard"
         Me.btnLeaderboard.Size = New System.Drawing.Size(168, 52)
         Me.btnLeaderboard.TabIndex = 15
@@ -197,7 +197,7 @@ Partial Class frmMain
         Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnDashboard.IconSize = 40
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(32, 183)
+        Me.btnDashboard.Location = New System.Drawing.Point(32, 166)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(168, 52)
         Me.btnDashboard.TabIndex = 14
@@ -220,7 +220,7 @@ Partial Class frmMain
         Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnGames.IconSize = 40
         Me.btnGames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGames.Location = New System.Drawing.Point(32, 241)
+        Me.btnGames.Location = New System.Drawing.Point(32, 224)
         Me.btnGames.Name = "btnGames"
         Me.btnGames.Size = New System.Drawing.Size(168, 52)
         Me.btnGames.TabIndex = 0
@@ -234,9 +234,9 @@ Partial Class frmMain
         Me.Guna2Separator3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Separator3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Separator3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator3.Location = New System.Drawing.Point(0, 146)
+        Me.Guna2Separator3.Location = New System.Drawing.Point(0, 140)
         Me.Guna2Separator3.Name = "Guna2Separator3"
-        Me.Guna2Separator3.Size = New System.Drawing.Size(232, 31)
+        Me.Guna2Separator3.Size = New System.Drawing.Size(232, 20)
         Me.Guna2Separator3.TabIndex = 5
         '
         'Guna2PictureBox2
@@ -246,7 +246,7 @@ Partial Class frmMain
         Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 31)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 25)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
         Me.Guna2PictureBox2.Size = New System.Drawing.Size(232, 115)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -260,7 +260,7 @@ Partial Class frmMain
         Me.Guna2Separator4.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Separator4.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Separator4.Name = "Guna2Separator4"
-        Me.Guna2Separator4.Size = New System.Drawing.Size(232, 31)
+        Me.Guna2Separator4.Size = New System.Drawing.Size(232, 25)
         Me.Guna2Separator4.TabIndex = 9
         '
         'pnlSeparator1

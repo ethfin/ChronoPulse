@@ -3,7 +3,7 @@ Imports System.Runtime.InteropServices
 
 Public Class frmMain
 
-    Public Sub childForm(ByVal panel As Form)
+    Public Sub changePanel(ByVal panel As Form)
         pnlMain.Controls.Clear()
         panel.TopLevel = False
         panel.FormBorderStyle = Windows.Forms.FormBorderStyle.None
@@ -67,16 +67,16 @@ Public Class frmMain
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        childForm(frmDashboard)
+        changePanel(frmDashboard)
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnGames.Click
 
-        childForm(frmGames)
+        changePanel(frmGames)
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnLeaderboard.click
-        childForm(frmLeaderboard)
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnLeaderboard.Click
+        changePanel(frmLeaderboard)
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
