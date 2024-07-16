@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Drawing.Drawing2D
+Imports System.Runtime.InteropServices
 
 Public Class frmMain
 
@@ -85,20 +86,36 @@ Public Class frmMain
         WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         childForm(frmDashboard)
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnGames.Click
+
         childForm(frmGames)
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
         childForm(frmLeaderboard)
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs)
         frmLogin.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub IconButton1_Paint(sender As Object, e As PaintEventArgs) Handles btnGames.Paint
+        Dim buttonPath As New GraphicsPath()
+        Dim radius As Integer = 5
+        buttonPath.AddArc(New Rectangle(0, 0, radius, radius), 180, 90)
+        buttonPath.AddLine(radius, 0, btnGames.Width - radius, 0)
+        buttonPath.AddArc(New Rectangle(btnGames.Width - radius, 0, radius, radius), -90, 90)
+        buttonPath.AddLine(btnGames.Width, radius, btnGames.Width, btnGames.Height - radius)
+        buttonPath.AddArc(New Rectangle(btnGames.Width - radius, btnGames.Height - radius, radius, radius), 0, 90)
+        buttonPath.AddLine(btnGames.Width - radius, btnGames.Height, radius, btnGames.Height)
+        buttonPath.AddArc(New Rectangle(0, btnGames.Height - radius, radius, radius), 90, 90)
+        buttonPath.CloseFigure()
+
+        btnGames.Region = New Region(buttonPath)
     End Sub
 End Class

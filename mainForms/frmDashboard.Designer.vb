@@ -23,10 +23,10 @@ Partial Class frmDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.lblBalance = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblBalance = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -46,17 +46,6 @@ Partial Class frmDashboard
         Me.pnlMain.Size = New System.Drawing.Size(800, 450)
         Me.pnlMain.TabIndex = 6
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "WELCOME!"
-        '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent
@@ -72,18 +61,6 @@ Partial Class frmDashboard
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(227, 168)
         Me.Guna2CustomGradientPanel1.TabIndex = 1
         '
-        'lblBalance
-        '
-        Me.lblBalance.AutoSize = True
-        Me.lblBalance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblBalance.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBalance.ForeColor = System.Drawing.Color.Gray
-        Me.lblBalance.Location = New System.Drawing.Point(0, 0)
-        Me.lblBalance.Name = "lblBalance"
-        Me.lblBalance.Size = New System.Drawing.Size(91, 22)
-        Me.lblBalance.TabIndex = 0
-        Me.lblBalance.Text = "Balance:"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -94,6 +71,28 @@ Partial Class frmDashboard
         Me.Label2.Size = New System.Drawing.Size(155, 44)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "$100.00"
+        '
+        'lblBalance
+        '
+        Me.lblBalance.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBalance.ForeColor = System.Drawing.Color.Gray
+        Me.lblBalance.Location = New System.Drawing.Point(23, 27)
+        Me.lblBalance.Name = "lblBalance"
+        Me.lblBalance.Size = New System.Drawing.Size(91, 22)
+        Me.lblBalance.TabIndex = 0
+        Me.lblBalance.Text = "Balance:"
+        Me.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "WELCOME!"
         '
         'frmDashboard
         '
