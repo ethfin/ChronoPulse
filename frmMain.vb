@@ -98,8 +98,6 @@ Public Class frmMain
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        Me.WindowState = FormWindowState.Minimized
-        Me.ShowInTaskbar = False
         frmLogin.Show()
         Me.Hide()
     End Sub

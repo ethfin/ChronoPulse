@@ -130,8 +130,7 @@ Public Class frmLogin
         frmResetAccount.Show()
     End Sub
 
-    Private Sub lblWelcome1_Click(sender As Object, e As EventArgs)
-
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
+        txtUsername.Select()
     End Sub
-
 End Class

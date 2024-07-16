@@ -22,7 +22,8 @@
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         ' Validate the input fields
         If ValidateInputFields() AndAlso emailValid() Then
-
+            Me.Hide()
+            frmResetAccountSecurity.Show()
         End If
     End Sub
 
