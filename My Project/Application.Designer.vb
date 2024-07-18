@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ChronoPulse.frmMain
+            Me.MainForm = Global.ChronoPulse.frmResetAccountSecurity
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
