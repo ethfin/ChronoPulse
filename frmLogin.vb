@@ -74,7 +74,6 @@ Public Class frmLogin
 
             ' Check if the user exists
             If result > 0 Then
-                MessageBox.Show("Login successful!")
                 ' Proceed to the next form or main application window
                 Me.Close()
                 frmMain.WindowState = FormWindowState.Normal

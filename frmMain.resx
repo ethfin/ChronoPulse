@@ -121,7 +121,7 @@
   <data name="Guna2PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7snQdgVMX2/7PpvREC6QmEhBTSO+mV3quAIioqIoKKoCCE3msCoSSh
+        vwAADr8BOAVTJAAA/7JJREFUeF7snQdgVMX2/7PpvREC6QmEhBTSO+mV3quAIioqIoKKoCCE3msCoSSh
         V8Xee8OKvRc6pJfte+vM/5x7N4i+9/6/53tPBZ2vHO/uZtu9u3s/8505c8aGiYmJiYmJiYmJiYmJiYmJ
         iYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJ
         iYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJ
@@ -2937,6 +2937,9 @@
         DUKxKYJlsYj8AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>65</value>
   </metadata>

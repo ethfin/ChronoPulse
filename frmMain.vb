@@ -103,27 +103,53 @@ Public Class frmMain
         button.Region = New Region(buttonPath)
     End Sub
 
+    Private Sub SetSidebarExpanded(expanded As Boolean)
+        pnlSidebar.Width = If(expanded, 200, 100)
+        Dim text As String = If(expanded, "Dashboard", "")
+        Dim text2 As String = If(expanded, "Games", "")
+        Dim text3 As String = If(expanded, "Leaderboard", "")
+        Dim text4 As String = If(expanded, "Logout", "")
+        btnDashboard.ImageAlign = ContentAlignment.MiddleLeft
+        btnGames.ImageAlign = ContentAlignment.MiddleLeft
+        btnLeaderboard.ImageAlign = ContentAlignment.MiddleLeft
+        btnLogout.ImageAlign = ContentAlignment.MiddleLeft
+        btnDashboard.Text = text
+        btnGames.Text = text2
+        btnLeaderboard.Text = text3
+        btnLogout.Text = text4
+    End Sub
+
     Private Sub btnDashboard_MouseHover(sender As Object, e As EventArgs) Handles btnDashboard.MouseHover
-        pnlSidebar.Width = 250
+        SetSidebarExpanded(True)
     End Sub
 
     Private Sub btnGames_MouseHover(sender As Object, e As EventArgs) Handles btnGames.MouseHover
-        pnlSidebar.Width = 250
+        SetSidebarExpanded(True)
     End Sub
 
     Private Sub btnLeaderboard_MouseHover(sender As Object, e As EventArgs) Handles btnLeaderboard.MouseHover
-        pnlSidebar.Width = 250
+        SetSidebarExpanded(True)
+    End Sub
+
+    Private Sub btnLogout_MouseHover(sender As Object, e As EventArgs) Handles btnLogout.MouseHover
+        SetSidebarExpanded(True)
     End Sub
 
     Private Sub btnDashboard_MouseLeave(sender As Object, e As EventArgs) Handles btnDashboard.MouseLeave
-        pnlSidebar.Width = 100
+        SetSidebarExpanded(False)
     End Sub
+
     Private Sub btnGames_MouseLeave(sender As Object, e As EventArgs) Handles btnGames.MouseLeave
-        pnlSidebar.Width = 100
+        SetSidebarExpanded(False)
     End Sub
 
     Private Sub btnLeaderboard_MouseLeave(sender As Object, e As EventArgs) Handles btnLeaderboard.MouseLeave
-        pnlSidebar.Width = 100
+        SetSidebarExpanded(False)
     End Sub
+
+    Private Sub btnLogout_MouseLeave(sender As Object, e As EventArgs) Handles btnLogout.MouseLeave
+        SetSidebarExpanded(False)
+    End Sub
+
 
 End Class

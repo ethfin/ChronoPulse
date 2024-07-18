@@ -22,6 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnMinimize = New FontAwesome.Sharp.IconButton()
@@ -40,6 +41,7 @@ Partial Class frmMain
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlHeader.SuspendLayout()
         Me.pnlSidebar.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,7 +140,8 @@ Partial Class frmMain
         '
         'btnLogout
         '
-        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnLogout.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogout.BackColor = System.Drawing.Color.Transparent
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
@@ -160,6 +163,8 @@ Partial Class frmMain
         '
         'btnLeaderboard
         '
+        Me.btnLeaderboard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
         Me.btnLeaderboard.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLeaderboard.FlatAppearance.BorderSize = 0
@@ -181,6 +186,8 @@ Partial Class frmMain
         '
         'btnDashboard
         '
+        Me.btnDashboard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
         Me.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDashboard.FlatAppearance.BorderSize = 0
@@ -202,6 +209,8 @@ Partial Class frmMain
         '
         'btnGames
         '
+        Me.btnGames.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGames.BackColor = System.Drawing.Color.Transparent
         Me.btnGames.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnGames.FlatAppearance.BorderSize = 0
@@ -342,4 +351,5 @@ Partial Class frmMain
     Friend WithEvents btnLeaderboard As FontAwesome.Sharp.IconButton
     Friend WithEvents btnDashboard As FontAwesome.Sharp.IconButton
     Friend WithEvents btnLogout As FontAwesome.Sharp.IconButton
+    Friend WithEvents Timer1 As Timer
 End Class
