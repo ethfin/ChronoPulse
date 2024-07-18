@@ -133,12 +133,12 @@ Partial Class frmMain
         Me.pnlSidebar.Location = New System.Drawing.Point(15, 42)
         Me.pnlSidebar.Margin = New System.Windows.Forms.Padding(3, 3, 20, 3)
         Me.pnlSidebar.Name = "pnlSidebar"
-        Me.pnlSidebar.Size = New System.Drawing.Size(232, 642)
+        Me.pnlSidebar.Size = New System.Drawing.Size(100, 642)
         Me.pnlSidebar.TabIndex = 0
         '
         'btnLogout
         '
-        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnLogout.BackColor = System.Drawing.Color.Transparent
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
@@ -150,12 +150,10 @@ Partial Class frmMain
         Me.btnLogout.IconColor = System.Drawing.Color.Firebrick
         Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnLogout.IconSize = 40
-        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(32, 584)
+        Me.btnLogout.Location = New System.Drawing.Point(27, 584)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(168, 52)
+        Me.btnLogout.Size = New System.Drawing.Size(52, 52)
         Me.btnLogout.TabIndex = 16
-        Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -173,12 +171,10 @@ Partial Class frmMain
         Me.btnLeaderboard.IconColor = System.Drawing.Color.LimeGreen
         Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnLeaderboard.IconSize = 40
-        Me.btnLeaderboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLeaderboard.Location = New System.Drawing.Point(32, 278)
+        Me.btnLeaderboard.Location = New System.Drawing.Point(27, 278)
         Me.btnLeaderboard.Name = "btnLeaderboard"
-        Me.btnLeaderboard.Size = New System.Drawing.Size(168, 52)
+        Me.btnLeaderboard.Size = New System.Drawing.Size(52, 52)
         Me.btnLeaderboard.TabIndex = 15
-        Me.btnLeaderboard.Text = "Leaderboard"
         Me.btnLeaderboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLeaderboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLeaderboard.UseVisualStyleBackColor = False
@@ -196,12 +192,10 @@ Partial Class frmMain
         Me.btnDashboard.IconColor = System.Drawing.Color.Gold
         Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnDashboard.IconSize = 40
-        Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(32, 166)
+        Me.btnDashboard.Location = New System.Drawing.Point(27, 166)
         Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(168, 52)
+        Me.btnDashboard.Size = New System.Drawing.Size(52, 52)
         Me.btnDashboard.TabIndex = 14
-        Me.btnDashboard.Text = "Dashboard"
         Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDashboard.UseVisualStyleBackColor = False
@@ -219,12 +213,10 @@ Partial Class frmMain
         Me.btnGames.IconColor = System.Drawing.Color.FromArgb(CType(CType(73, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnGames.IconSize = 40
-        Me.btnGames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGames.Location = New System.Drawing.Point(32, 224)
+        Me.btnGames.Location = New System.Drawing.Point(27, 222)
         Me.btnGames.Name = "btnGames"
-        Me.btnGames.Size = New System.Drawing.Size(168, 52)
+        Me.btnGames.Size = New System.Drawing.Size(52, 52)
         Me.btnGames.TabIndex = 0
-        Me.btnGames.Text = "Games"
         Me.btnGames.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGames.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGames.UseVisualStyleBackColor = False
@@ -234,9 +226,9 @@ Partial Class frmMain
         Me.Guna2Separator3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Separator3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Separator3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator3.Location = New System.Drawing.Point(0, 140)
+        Me.Guna2Separator3.Location = New System.Drawing.Point(0, 116)
         Me.Guna2Separator3.Name = "Guna2Separator3"
-        Me.Guna2Separator3.Size = New System.Drawing.Size(232, 20)
+        Me.Guna2Separator3.Size = New System.Drawing.Size(100, 20)
         Me.Guna2Separator3.TabIndex = 5
         '
         'Guna2PictureBox2
@@ -248,7 +240,7 @@ Partial Class frmMain
         Me.Guna2PictureBox2.ImageRotate = 0!
         Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 25)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(232, 115)
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(100, 91)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox2.TabIndex = 6
         Me.Guna2PictureBox2.TabStop = False
@@ -260,7 +252,7 @@ Partial Class frmMain
         Me.Guna2Separator4.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Separator4.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Separator4.Name = "Guna2Separator4"
-        Me.Guna2Separator4.Size = New System.Drawing.Size(232, 25)
+        Me.Guna2Separator4.Size = New System.Drawing.Size(100, 25)
         Me.Guna2Separator4.TabIndex = 9
         '
         'pnlSeparator1
@@ -282,7 +274,7 @@ Partial Class frmMain
         'Guna2Panel1
         '
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(247, 42)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(115, 42)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(15, 642)
         Me.Guna2Panel1.TabIndex = 3
@@ -303,9 +295,9 @@ Partial Class frmMain
         Me.pnlMain.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.pnlMain.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.pnlMain.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.pnlMain.Location = New System.Drawing.Point(262, 42)
+        Me.pnlMain.Location = New System.Drawing.Point(130, 42)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1018, 642)
+        Me.pnlMain.Size = New System.Drawing.Size(1150, 642)
         Me.pnlMain.TabIndex = 5
         '
         'frmMain

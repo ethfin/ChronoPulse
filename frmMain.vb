@@ -103,4 +103,27 @@ Public Class frmMain
         button.Region = New Region(buttonPath)
     End Sub
 
+    Private Sub btnDashboard_MouseHover(sender As Object, e As EventArgs) Handles btnDashboard.MouseHover
+        pnlSidebar.Width = 250
+    End Sub
+
+    Private Sub btnGames_MouseHover(sender As Object, e As EventArgs) Handles btnGames.MouseHover
+        pnlSidebar.Width = 250
+    End Sub
+
+    Private Sub btnLeaderboard_MouseHover(sender As Object, e As EventArgs) Handles btnLeaderboard.MouseHover
+        pnlSidebar.Width = 250
+    End Sub
+
+    Private Sub btnDashboard_MouseLeave(sender As Object, e As EventArgs) Handles btnDashboard.MouseLeave
+        pnlSidebar.Width = 100
+    End Sub
+    Private Sub btnGames_MouseLeave(sender As Object, e As EventArgs) Handles btnGames.MouseLeave
+        pnlSidebar.Width = 100
+    End Sub
+
+    Private Sub btnLeaderboard_MouseLeave(sender As Object, e As EventArgs) Handles btnLeaderboard.MouseLeave
+        pnlSidebar.Width = 100
+    End Sub
+
 End Class
