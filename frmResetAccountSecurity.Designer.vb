@@ -27,6 +27,8 @@ Partial Class frmResetAccountSecurity
         Me.lblSignUp = New System.Windows.Forms.Label()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.cbxShowPassword2 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.lblQ2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblQ1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblError2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -44,8 +46,6 @@ Partial Class frmResetAccountSecurity
         Me.lblinfo = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblWelcome1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
-        Me.cbxShowPassword2 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.panelLogin2.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,10 +111,48 @@ Partial Class frmResetAccountSecurity
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(579, 0)
-        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(754, 582)
         Me.Guna2CustomGradientPanel1.TabIndex = 10
+        '
+        'cbxShowPassword2
+        '
+        Me.cbxShowPassword2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword2.CheckedState.BorderRadius = 0
+        Me.cbxShowPassword2.CheckedState.BorderThickness = 0
+        Me.cbxShowPassword2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxShowPassword2.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.cbxShowPassword2.Location = New System.Drawing.Point(542, 486)
+        Me.cbxShowPassword2.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbxShowPassword2.Name = "cbxShowPassword2"
+        Me.cbxShowPassword2.Size = New System.Drawing.Size(199, 26)
+        Me.cbxShowPassword2.TabIndex = 68
+        Me.cbxShowPassword2.Text = "Show Password"
+        Me.cbxShowPassword2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword2.UncheckedState.BorderRadius = 0
+        Me.cbxShowPassword2.UncheckedState.BorderThickness = 0
+        Me.cbxShowPassword2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
+        'cbxShowPassword
+        '
+        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.CheckedState.BorderRadius = 0
+        Me.cbxShowPassword.CheckedState.BorderThickness = 0
+        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.cbxShowPassword.Location = New System.Drawing.Point(540, 322)
+        Me.cbxShowPassword.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbxShowPassword.Name = "cbxShowPassword"
+        Me.cbxShowPassword.Size = New System.Drawing.Size(199, 26)
+        Me.cbxShowPassword.TabIndex = 67
+        Me.cbxShowPassword.Text = "Show Password"
+        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
+        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
+        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'lblQ2
         '
@@ -122,7 +160,7 @@ Partial Class frmResetAccountSecurity
         Me.lblQ2.BackColor = System.Drawing.Color.Transparent
         Me.lblQ2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQ2.Location = New System.Drawing.Point(17, 340)
-        Me.lblQ2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblQ2.Margin = New System.Windows.Forms.Padding(4)
         Me.lblQ2.Name = "lblQ2"
         Me.lblQ2.Size = New System.Drawing.Size(288, 30)
         Me.lblQ2.TabIndex = 66
@@ -135,7 +173,7 @@ Partial Class frmResetAccountSecurity
         Me.lblQ1.BackColor = System.Drawing.Color.Transparent
         Me.lblQ1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQ1.Location = New System.Drawing.Point(16, 172)
-        Me.lblQ1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblQ1.Margin = New System.Windows.Forms.Padding(4)
         Me.lblQ1.Name = "lblQ1"
         Me.lblQ1.Size = New System.Drawing.Size(288, 30)
         Me.lblQ1.TabIndex = 65
@@ -149,7 +187,7 @@ Partial Class frmResetAccountSecurity
         Me.lblError2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError2.ForeColor = System.Drawing.Color.Red
         Me.lblError2.Location = New System.Drawing.Point(51, 430)
-        Me.lblError2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblError2.Margin = New System.Windows.Forms.Padding(4)
         Me.lblError2.Name = "lblError2"
         Me.lblError2.Size = New System.Drawing.Size(341, 34)
         Me.lblError2.TabIndex = 64
@@ -165,7 +203,7 @@ Partial Class frmResetAccountSecurity
         Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
         Me.lblError.Location = New System.Drawing.Point(51, 266)
-        Me.lblError.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblError.Margin = New System.Windows.Forms.Padding(4)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(341, 34)
         Me.lblError.TabIndex = 63
@@ -188,7 +226,7 @@ Partial Class frmResetAccountSecurity
         Me.cmbSQ2.ItemHeight = 30
         Me.cmbSQ2.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
         Me.cmbSQ2.Location = New System.Drawing.Point(13, 378)
-        Me.cmbSQ2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSQ2.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbSQ2.Name = "cmbSQ2"
         Me.cmbSQ2.Size = New System.Drawing.Size(428, 36)
         Me.cmbSQ2.TabIndex = 60
@@ -207,7 +245,7 @@ Partial Class frmResetAccountSecurity
         Me.cmbSQ1.ItemHeight = 30
         Me.cmbSQ1.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
         Me.cmbSQ1.Location = New System.Drawing.Point(13, 212)
-        Me.cmbSQ1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSQ1.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbSQ1.Name = "cmbSQ1"
         Me.cmbSQ1.Size = New System.Drawing.Size(428, 36)
         Me.cmbSQ1.TabIndex = 57
@@ -314,7 +352,7 @@ Partial Class frmResetAccountSecurity
         Me.btnClose.HoverState.FillColor = System.Drawing.Color.Red
         Me.btnClose.IndicateFocus = True
         Me.btnClose.Location = New System.Drawing.Point(708, 4)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(40, 37)
         Me.btnClose.TabIndex = 55
@@ -335,7 +373,7 @@ Partial Class frmResetAccountSecurity
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.GhostWhite
         Me.Guna2Button1.IndicateFocus = True
         Me.Guna2Button1.Location = New System.Drawing.Point(671, 4)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(40, 37)
         Me.Guna2Button1.TabIndex = 54
@@ -354,7 +392,7 @@ Partial Class frmResetAccountSecurity
         Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
         Me.btnReset.Location = New System.Drawing.Point(267, 502)
-        Me.btnReset.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReset.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(240, 55)
         Me.btnReset.TabIndex = 52
@@ -365,7 +403,7 @@ Partial Class frmResetAccountSecurity
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Gray
-        Me.LinkLabel1.Location = New System.Drawing.Point(0, 558)
+        Me.LinkLabel1.Location = New System.Drawing.Point(645, 553)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(96, 20)
@@ -405,51 +443,13 @@ Partial Class frmResetAccountSecurity
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(289, 15)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(200, 85)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 46
         Me.Guna2PictureBox1.TabStop = False
         Me.Guna2PictureBox1.UseTransparentBackground = True
-        '
-        'cbxShowPassword
-        '
-        Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.CheckedState.BorderRadius = 0
-        Me.cbxShowPassword.CheckedState.BorderThickness = 0
-        Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword.Location = New System.Drawing.Point(540, 322)
-        Me.cbxShowPassword.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbxShowPassword.Name = "cbxShowPassword"
-        Me.cbxShowPassword.Size = New System.Drawing.Size(199, 26)
-        Me.cbxShowPassword.TabIndex = 67
-        Me.cbxShowPassword.Text = "Show Password"
-        Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.cbxShowPassword.UncheckedState.BorderRadius = 0
-        Me.cbxShowPassword.UncheckedState.BorderThickness = 0
-        Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        '
-        'cbxShowPassword2
-        '
-        Me.cbxShowPassword2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword2.CheckedState.BorderRadius = 0
-        Me.cbxShowPassword2.CheckedState.BorderThickness = 0
-        Me.cbxShowPassword2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxShowPassword2.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword2.Location = New System.Drawing.Point(542, 486)
-        Me.cbxShowPassword2.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbxShowPassword2.Name = "cbxShowPassword2"
-        Me.cbxShowPassword2.Size = New System.Drawing.Size(199, 26)
-        Me.cbxShowPassword2.TabIndex = 68
-        Me.cbxShowPassword2.Text = "Show Password"
-        Me.cbxShowPassword2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.cbxShowPassword2.UncheckedState.BorderRadius = 0
-        Me.cbxShowPassword2.UncheckedState.BorderThickness = 0
-        Me.cbxShowPassword2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'frmResetAccountSecurity
         '
@@ -459,7 +459,7 @@ Partial Class frmResetAccountSecurity
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.Controls.Add(Me.panelLogin2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmResetAccountSecurity"
         Me.Text = "frmResetAccountSecurity"
         Me.panelLogin2.ResumeLayout(False)
