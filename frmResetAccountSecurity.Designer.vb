@@ -26,7 +26,7 @@ Partial Class frmResetAccountSecurity
         Me.panelLogin2 = New System.Windows.Forms.Panel()
         Me.lblSignUp = New System.Windows.Forms.Label()
         Me.lblCopyright = New System.Windows.Forms.Label()
-        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.panelLogin1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.cbxShowPassword2 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.lblQ2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -43,11 +43,10 @@ Partial Class frmResetAccountSecurity
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.btnReset = New Guna.UI2.WinForms.Guna2Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.lblinfo = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblWelcome1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.panelLogin2.SuspendLayout()
-        Me.Guna2CustomGradientPanel1.SuspendLayout()
+        Me.panelLogin1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,32 +85,31 @@ Partial Class frmResetAccountSecurity
         Me.lblCopyright.TabIndex = 10
         Me.lblCopyright.Text = "© 2024 ChronoPulse. All rights reserved."
         '
-        'Guna2CustomGradientPanel1
+        'panelLogin1
         '
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.cbxShowPassword2)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.cbxShowPassword)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblQ2)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblQ1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblError2)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblError)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.cmbSQ2)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.cmbSQ1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtSQA2Verify)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtSQA2)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtSQA1Verify)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtSQA1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.btnClose)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2Button1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.btnReset)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.LinkLabel1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblinfo)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.lblWelcome1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(434, 0)
-        Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(566, 473)
-        Me.Guna2CustomGradientPanel1.TabIndex = 10
+        Me.panelLogin1.Controls.Add(Me.cbxShowPassword2)
+        Me.panelLogin1.Controls.Add(Me.cbxShowPassword)
+        Me.panelLogin1.Controls.Add(Me.lblQ2)
+        Me.panelLogin1.Controls.Add(Me.lblQ1)
+        Me.panelLogin1.Controls.Add(Me.lblError2)
+        Me.panelLogin1.Controls.Add(Me.lblError)
+        Me.panelLogin1.Controls.Add(Me.cmbSQ2)
+        Me.panelLogin1.Controls.Add(Me.cmbSQ1)
+        Me.panelLogin1.Controls.Add(Me.txtSQA2Verify)
+        Me.panelLogin1.Controls.Add(Me.txtSQA2)
+        Me.panelLogin1.Controls.Add(Me.txtSQA1Verify)
+        Me.panelLogin1.Controls.Add(Me.txtSQA1)
+        Me.panelLogin1.Controls.Add(Me.btnClose)
+        Me.panelLogin1.Controls.Add(Me.Guna2Button1)
+        Me.panelLogin1.Controls.Add(Me.btnReset)
+        Me.panelLogin1.Controls.Add(Me.LinkLabel1)
+        Me.panelLogin1.Controls.Add(Me.lblWelcome1)
+        Me.panelLogin1.Controls.Add(Me.Guna2PictureBox1)
+        Me.panelLogin1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelLogin1.Location = New System.Drawing.Point(434, 0)
+        Me.panelLogin1.Name = "panelLogin1"
+        Me.panelLogin1.Size = New System.Drawing.Size(566, 473)
+        Me.panelLogin1.TabIndex = 10
         '
         'cbxShowPassword2
         '
@@ -397,19 +395,6 @@ Partial Class frmResetAccountSecurity
         Me.LinkLabel1.Text = "← Previous"
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.White
         '
-        'lblinfo
-        '
-        Me.lblinfo.AutoSize = False
-        Me.lblinfo.BackColor = System.Drawing.Color.Transparent
-        Me.lblinfo.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblinfo.Location = New System.Drawing.Point(222, 150)
-        Me.lblinfo.Margin = New System.Windows.Forms.Padding(2)
-        Me.lblinfo.Name = "lblinfo"
-        Me.lblinfo.Size = New System.Drawing.Size(176, 106)
-        Me.lblinfo.TabIndex = 48
-        Me.lblinfo.Text = Nothing
-        Me.lblinfo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lblWelcome1
         '
         Me.lblWelcome1.BackColor = System.Drawing.Color.Transparent
@@ -439,15 +424,15 @@ Partial Class frmResetAccountSecurity
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1000, 473)
-        Me.Controls.Add(Me.Guna2CustomGradientPanel1)
+        Me.Controls.Add(Me.panelLogin1)
         Me.Controls.Add(Me.panelLogin2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmResetAccountSecurity"
         Me.Text = "frmResetAccountSecurity"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
-        Me.Guna2CustomGradientPanel1.ResumeLayout(False)
-        Me.Guna2CustomGradientPanel1.PerformLayout()
+        Me.panelLogin1.ResumeLayout(False)
+        Me.panelLogin1.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -456,12 +441,11 @@ Partial Class frmResetAccountSecurity
     Friend WithEvents panelLogin2 As Panel
     Friend WithEvents lblSignUp As Label
     Friend WithEvents lblCopyright As Label
-    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents panelLogin1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReset As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents lblinfo As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblWelcome1 As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents lblQ2 As Guna.UI2.WinForms.Guna2HtmlLabel

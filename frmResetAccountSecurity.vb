@@ -1,5 +1,44 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.InteropServices
+Imports MySql.Data.MySqlClient
 Public Class frmResetAccountSecurity
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        ' Define the Windows message constant for system commands
+        Const WM_SYSCOMMAND As Integer = &H112
+        ' Define the command value for maximizing the window
+        Const SC_MAXIMIZE As Integer = &HF030
+
+        ' Check if the message is a system command
+        If m.Msg = WM_SYSCOMMAND Then
+            ' Check if the command is to maximize the window
+            If m.WParam.ToInt32() = SC_MAXIMIZE Then
+                ' Prevent the default behavior by not calling the base method
+                Return
+            End If
+        End If
+
+        ' Call the base class method for default processing of other messages
+        MyBase.WndProc(m)
+    End Sub
+
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
+
+    <DllImport("user32.dll")>
+    Public Shared Function SendMessage(hWnd As IntPtr, Msg As Integer, wParam As Integer, lParam As Integer) As Integer
+    End Function
+
+    <DllImport("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
+
+    ' The MouseDown event for the panel to initiate the form dragging.
+    Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles panelLogin1.MouseDown, panelLogin2.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
+        End If
+    End Sub
 
     Private Sub lblWelcome1_Click(sender As Object, e As EventArgs) Handles lblWelcome1.Click
 
@@ -114,7 +153,7 @@ Public Class frmResetAccountSecurity
 
     Function ValidateSecurity(ByVal pwd As String) As Boolean
         ' Check the length.
-        If Len(pwd) < 3 Then
+        If Len(pwd) < 1 Then
             Return False
         End If
 
@@ -136,7 +175,7 @@ Public Class frmResetAccountSecurity
 
         ' Check if the passwords match
         If Not txtSQA1.Text.Equals(txtSQA1Verify.Text) OrElse
-               txtSQA2.Text.Equals(txtSQA2Verify.Text) Then
+               Not txtSQA2.Text.Equals(txtSQA2Verify.Text) Then
             MessageBox.Show("Passwords do not match.")
             Return False
         End If
