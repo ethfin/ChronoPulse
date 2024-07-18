@@ -98,7 +98,7 @@ Partial Class frmResetAccountPassword
         Me.panelLogin1.Controls.Add(Me.Guna2PictureBox1)
         Me.panelLogin1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelLogin1.Location = New System.Drawing.Point(579, 0)
-        Me.panelLogin1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelLogin1.Margin = New System.Windows.Forms.Padding(4)
         Me.panelLogin1.Name = "panelLogin1"
         Me.panelLogin1.Size = New System.Drawing.Size(714, 582)
         Me.panelLogin1.TabIndex = 10
@@ -112,7 +112,7 @@ Partial Class frmResetAccountPassword
         Me.chkShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
         Me.chkShowPassword.Location = New System.Drawing.Point(464, 309)
-        Me.chkShowPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkShowPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.chkShowPassword.Name = "chkShowPassword"
         Me.chkShowPassword.Size = New System.Drawing.Size(199, 26)
         Me.chkShowPassword.TabIndex = 69
@@ -131,7 +131,7 @@ Partial Class frmResetAccountPassword
         Me.chkShowPassword2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkShowPassword2.ForeColor = System.Drawing.SystemColors.InfoText
         Me.chkShowPassword2.Location = New System.Drawing.Point(464, 422)
-        Me.chkShowPassword2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkShowPassword2.Margin = New System.Windows.Forms.Padding(4)
         Me.chkShowPassword2.Name = "chkShowPassword2"
         Me.chkShowPassword2.Size = New System.Drawing.Size(199, 26)
         Me.chkShowPassword2.TabIndex = 68
@@ -178,7 +178,7 @@ Partial Class frmResetAccountPassword
         Me.btnClose.HoverState.FillColor = System.Drawing.Color.Red
         Me.btnClose.IndicateFocus = True
         Me.btnClose.Location = New System.Drawing.Point(675, 0)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(40, 37)
         Me.btnClose.TabIndex = 45
@@ -199,7 +199,7 @@ Partial Class frmResetAccountPassword
         Me.btnMinimize.HoverState.FillColor = System.Drawing.Color.GhostWhite
         Me.btnMinimize.IndicateFocus = True
         Me.btnMinimize.Location = New System.Drawing.Point(637, 0)
-        Me.btnMinimize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMinimize.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(40, 37)
         Me.btnMinimize.TabIndex = 44
@@ -214,7 +214,7 @@ Partial Class frmResetAccountPassword
         Me.lblErrorEmail.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblErrorEmail.ForeColor = System.Drawing.Color.Red
         Me.lblErrorEmail.Location = New System.Drawing.Point(200, 422)
-        Me.lblErrorEmail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblErrorEmail.Margin = New System.Windows.Forms.Padding(4)
         Me.lblErrorEmail.Name = "lblErrorEmail"
         Me.lblErrorEmail.Size = New System.Drawing.Size(341, 34)
         Me.lblErrorEmail.TabIndex = 43
@@ -234,7 +234,7 @@ Partial Class frmResetAccountPassword
         Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.ForeColor = System.Drawing.Color.White
         Me.btnReset.Location = New System.Drawing.Point(251, 473)
-        Me.btnReset.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReset.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(240, 55)
         Me.btnReset.TabIndex = 17
@@ -305,7 +305,7 @@ Partial Class frmResetAccountPassword
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(264, 15)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(200, 85)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -321,8 +321,9 @@ Partial Class frmResetAccountPassword
         Me.Controls.Add(Me.panelLogin1)
         Me.Controls.Add(Me.panelLogin2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmResetAccountPassword"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmResetAccountPassword"
         Me.panelLogin2.ResumeLayout(False)
         Me.panelLogin2.PerformLayout()
