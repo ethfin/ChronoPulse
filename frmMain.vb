@@ -105,18 +105,14 @@ Public Class frmMain
 
     Private Sub SetSidebarExpanded(expanded As Boolean)
         pnlSidebar.Width = If(expanded, 200, 100)
-        Dim text As String = If(expanded, "Dashboard", "")
-        Dim text2 As String = If(expanded, "Games", "")
-        Dim text3 As String = If(expanded, "Leaderboard", "")
-        Dim text4 As String = If(expanded, "Logout", "")
-        btnDashboard.ImageAlign = ContentAlignment.MiddleLeft
-        btnGames.ImageAlign = ContentAlignment.MiddleLeft
-        btnLeaderboard.ImageAlign = ContentAlignment.MiddleLeft
-        btnLogout.ImageAlign = ContentAlignment.MiddleLeft
-        btnDashboard.Text = text
-        btnGames.Text = text2
-        btnLeaderboard.Text = text3
-        btnLogout.Text = text4
+        btnDashboard.ImageAlign = If(expanded, ContentAlignment.MiddleLeft, btnDashboard.ImageAlign)
+        btnGames.ImageAlign = If(expanded, ContentAlignment.MiddleLeft, btnGames.ImageAlign)
+        btnLeaderboard.ImageAlign = If(expanded, ContentAlignment.MiddleLeft, btnLeaderboard.ImageAlign)
+        btnLogout.ImageAlign = If(expanded, ContentAlignment.MiddleLeft, btnLogout.ImageAlign)
+        btnDashboard.Text = If(expanded, "Dashboard", "")
+        btnGames.Text = If(expanded, "Games", "")
+        btnLeaderboard.Text = If(expanded, "Leaderboard", "")
+        btnLogout.Text = If(expanded, "Logout", "")
     End Sub
 
     Private Sub btnDashboard_MouseHover(sender As Object, e As EventArgs) Handles btnDashboard.MouseHover
