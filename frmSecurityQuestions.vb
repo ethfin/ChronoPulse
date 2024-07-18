@@ -234,4 +234,28 @@ Public Class frmSecurityQuestions
     Private Sub txtSQA2_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2.TextChanged
         compareAnswer2()
     End Sub
+
+    Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
+        If cbxShowPassword.Checked Then
+            ' If the checkbox is checked, set the PasswordChar to an empty string to show the password
+            txtSQA1.PasswordChar = ""
+            txtSQA1Verify.PasswordChar = ""
+        Else
+            ' If the checkbox is unchecked, set the PasswordChar back to "*"
+            txtSQA1.PasswordChar = "*"
+            txtSQA1Verify.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub cbxShowPassword2_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword2.CheckedChanged
+        If cbxShowPassword2.Checked Then
+            ' If the checkbox is checked, set the PasswordChar to an empty string to show the password
+            txtSQA2.PasswordChar = ""
+            txtSQA2Verify.PasswordChar = ""
+        Else
+            ' If the checkbox is unchecked, set the PasswordChar back to "*"
+            txtSQA2.PasswordChar = "*"
+            txtSQA2Verify.PasswordChar = "*"
+        End If
+    End Sub
 End Class
