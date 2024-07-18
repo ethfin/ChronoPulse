@@ -1,4 +1,6 @@
-﻿Public Class frmResetAccountSecurity
+﻿Imports MySql.Data.MySqlClient
+Public Class frmResetAccountSecurity
+
     Private Sub lblWelcome1_Click(sender As Object, e As EventArgs) Handles lblWelcome1.Click
 
     End Sub
@@ -145,8 +147,54 @@
         Return True
     End Function
 
-
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-
+    Private Sub frmResetAccountSecurity_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'get the txtEmail from the previous form and store it in the lblWelcome1 label
+        lblWelcome1.Text = frmResetAccount.txtEmail.Text
     End Sub
+
+    Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        If ValidateInputFields() Then
+            Dim conn As MySqlConnection = Common.getDBConnectionX()
+
+            Try
+                ' Open the connection
+                conn.Open()
+
+                ' SQL query to check if the user exists with the given username and password
+                Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE email = @email AND securityAnswer1 = @sqa1 AND securityAnswer2 = @sqa2"
+                Dim cmd As MySqlCommand = New MySqlCommand(query, conn)
+
+                ' Use parameters to prevent SQL injection
+                cmd.Parameters.AddWithValue("@email", lblWelcome1.Text)
+                cmd.Parameters.AddWithValue("@sqa1", txtSQA1.Text)
+                cmd.Parameters.AddWithValue("@sqa2", txtSQA2.Text)
+
+                ' Execute the query and get the result
+                Dim result As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+
+                ' Check if the user exists
+                If result > 0 Then
+                    ' Proceed to the next form or main application window
+                    Me.Hide()
+                    frmResetAccountPassword.Show()
+                Else
+                    lblError.ForeColor = Color.Red
+                    lblError.Text = "Invalid Security Questions and Answers."
+                    lblError.Show()
+                End If
+
+            Catch ex As Exception
+                ' Handle any errors that occur
+                lblError.ForeColor = Color.Red
+                lblError.Text = "Error: " & ex.Message
+                lblError.Show()
+            Finally
+                ' Close the connection whether or not an error occurred
+                If conn IsNot Nothing Then
+                    conn.Close()
+                End If
+            End Try
+        End If
+    End Sub
+
 End Class

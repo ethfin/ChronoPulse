@@ -157,6 +157,12 @@
     <Compile Include="frmResetAccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmResetAccountPassword.Designer.vb">
+      <DependentUpon>frmResetAccountPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmResetAccountPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmResetAccountSecurity.Designer.vb">
       <DependentUpon>frmResetAccountSecurity.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmResetAccount.resx">
       <DependentUpon>frmResetAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResetAccountPassword.resx">
+      <DependentUpon>frmResetAccountPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmResetAccountSecurity.resx">
       <DependentUpon>frmResetAccountSecurity.vb</DependentUpon>
