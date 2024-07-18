@@ -43,6 +43,7 @@ Partial Class frmSecurityQuestions
         Me.lblQ2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.cbxShowPassword2 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.btnShowPassword1 = New Guna.UI2.WinForms.Guna2ImageButton()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -394,6 +395,20 @@ Partial Class frmSecurityQuestions
         Me.cbxShowPassword2.UncheckedState.BorderThickness = 0
         Me.cbxShowPassword2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
+        'btnShowPassword1
+        '
+        Me.btnShowPassword1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnShowPassword1.HoverState.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnShowPassword1.Image = CType(resources.GetObject("btnShowPassword1.Image"), System.Drawing.Image)
+        Me.btnShowPassword1.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btnShowPassword1.ImageRotate = 0!
+        Me.btnShowPassword1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnShowPassword1.Location = New System.Drawing.Point(1216, 201)
+        Me.btnShowPassword1.Name = "btnShowPassword1"
+        Me.btnShowPassword1.PressedState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.btnShowPassword1.Size = New System.Drawing.Size(50, 28)
+        Me.btnShowPassword1.TabIndex = 71
+        '
         'frmSecurityQuestions
         '
         Me.AcceptButton = Me.btnSignUp
@@ -401,6 +416,7 @@ Partial Class frmSecurityQuestions
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1293, 582)
+        Me.Controls.Add(Me.btnShowPassword1)
         Me.Controls.Add(Me.cbxShowPassword2)
         Me.Controls.Add(Me.cbxShowPassword)
         Me.Controls.Add(Me.lblQ2)
@@ -452,4 +468,5 @@ Partial Class frmSecurityQuestions
     Friend WithEvents lblQ2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents cbxShowPassword2 As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents btnShowPassword1 As Guna.UI2.WinForms.Guna2ImageButton
 End Class

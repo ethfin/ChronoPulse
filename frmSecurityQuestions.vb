@@ -258,4 +258,8 @@ Public Class frmSecurityQuestions
             txtSQA2Verify.PasswordChar = "*"
         End If
     End Sub
+
+    Private Sub Guna2ImageButton2_Click(sender As Object, e As EventArgs) Handles btnShowPassword1.Click
+
+    End Sub
 End Class
