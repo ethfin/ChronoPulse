@@ -113,6 +113,7 @@ Partial Class frmResetAccountSecurity
         '
         'cbxShowPassword2
         '
+        Me.cbxShowPassword2.BackColor = System.Drawing.Color.Transparent
         Me.cbxShowPassword2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbxShowPassword2.CheckedState.BorderRadius = 0
         Me.cbxShowPassword2.CheckedState.BorderThickness = 0
@@ -128,14 +129,16 @@ Partial Class frmResetAccountSecurity
         Me.cbxShowPassword2.UncheckedState.BorderRadius = 0
         Me.cbxShowPassword2.UncheckedState.BorderThickness = 0
         Me.cbxShowPassword2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword2.UseVisualStyleBackColor = False
         '
         'cbxShowPassword
         '
+        Me.cbxShowPassword.BackColor = System.Drawing.Color.Transparent
         Me.cbxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbxShowPassword.CheckedState.BorderRadius = 0
         Me.cbxShowPassword.CheckedState.BorderThickness = 0
         Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!)
         Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
         Me.cbxShowPassword.Location = New System.Drawing.Point(405, 262)
         Me.cbxShowPassword.Name = "cbxShowPassword"
@@ -146,6 +149,7 @@ Partial Class frmResetAccountSecurity
         Me.cbxShowPassword.UncheckedState.BorderRadius = 0
         Me.cbxShowPassword.UncheckedState.BorderThickness = 0
         Me.cbxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbxShowPassword.UseVisualStyleBackColor = False
         '
         'lblQ2
         '
