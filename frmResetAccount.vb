@@ -29,7 +29,7 @@
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
         ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.\S+$"
+        Dim emailPattern As String = "^\S+@\S+\.(?!.*@)\S+$"
 
         ' Using Regex.IsMatch to check if the email is valid
         If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
