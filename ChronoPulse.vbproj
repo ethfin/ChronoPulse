@@ -215,6 +215,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PIDTesting.Designer.vb">
+      <DependentUpon>PIDTesting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PIDTesting.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmLogin.resx">
@@ -252,6 +258,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PIDTesting.resx">
+      <DependentUpon>PIDTesting.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
