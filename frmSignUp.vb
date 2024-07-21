@@ -120,24 +120,24 @@ Public Class frmSignUp
                 txtPassword.BorderColor = Color.Green
                 txtReenterPassword.BorderColor = Color.Green
                 lblError.ForeColor = Color.Green
-                lblError.Text = "Password match and meets requirements."
+                lblError.Text = "Password matches and meets requirements."
             Else
                 ' If the password does not meet complexity requirements, set the border color to Orange.
                 txtPassword.BorderColor = Color.Orange
                 txtReenterPassword.BorderColor = Color.Orange
                 lblError.ForeColor = Color.Orange
-                lblError.Text = "Password must be at least 8 characters with numbers and special characters."
+                lblError.Text = "Password must be at least 8 characters, contain numbers, and special characters, and should not include : ; "" ' / \\."
             End If
-            lblError.Show()
         Else
             ' If passwords don't match, set the border color to Red.
             txtPassword.BorderColor = Color.Red
             txtReenterPassword.BorderColor = Color.Red
             lblError.ForeColor = Color.Red
-            lblError.Text = "Password doesn't match."
-            lblError.Show()
+            lblError.Text = "Passwords do not match."
         End If
+        lblError.Show()
     End Sub
+
 
     ' Include the ValidatePassword function here.
     Function ValidatePassword(ByVal pwd As String) As Boolean
