@@ -146,18 +146,25 @@ Public Class frmSignUp
             Return False
         End If
 
-        ' Use regular expressions to check for numbers and special characters.
+        ' Use regular expressions to check for numbers, special characters, and invalid characters.
         Dim hasNumber As New Regex("[0-9]")
         Dim hasSpecial As New Regex("[^a-zA-Z0-9]")
+        Dim invalidChars As New Regex("[ :;""'/\\]")
 
         ' Check for minimum number of occurrences.
         If hasNumber.Matches(pwd).Count < 1 OrElse hasSpecial.Matches(pwd).Count < 1 Then
             Return False
         End If
 
+        ' Check for invalid characters.
+        If invalidChars.Matches(pwd).Count > 0 Then
+            Return False
+        End If
+
         ' Passed all checks.
         Return True
     End Function
+
 
     Private Sub lblError_Click(sender As Object, e As EventArgs) Handles lblError.Click
 
