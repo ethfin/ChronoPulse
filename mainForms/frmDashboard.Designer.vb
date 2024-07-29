@@ -33,7 +33,6 @@ Partial Class frmDashboard
         '
         'pnlMain
         '
-        Me.pnlMain.BorderRadius = 10
         Me.pnlMain.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill

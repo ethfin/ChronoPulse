@@ -37,7 +37,7 @@ Partial Class PIDTesting
         Me.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnStart.ForeColor = System.Drawing.Color.White
-        Me.btnStart.Location = New System.Drawing.Point(109, 98)
+        Me.btnStart.Location = New System.Drawing.Point(78, 109)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(180, 45)
         Me.btnStart.TabIndex = 0
@@ -53,7 +53,7 @@ Partial Class PIDTesting
         Me.cmbApplications.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbApplications.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbApplications.ItemHeight = 30
-        Me.cmbApplications.Location = New System.Drawing.Point(402, 98)
+        Me.cmbApplications.Location = New System.Drawing.Point(386, 129)
         Me.cmbApplications.Name = "cmbApplications"
         Me.cmbApplications.Size = New System.Drawing.Size(140, 36)
         Me.cmbApplications.TabIndex = 1
@@ -61,11 +61,14 @@ Partial Class PIDTesting
         'lblElapsedTime
         '
         Me.lblElapsedTime.AutoSize = True
-        Me.lblElapsedTime.Location = New System.Drawing.Point(256, 240)
+        Me.lblElapsedTime.Location = New System.Drawing.Point(249, 243)
         Me.lblElapsedTime.Name = "lblElapsedTime"
         Me.lblElapsedTime.Size = New System.Drawing.Size(39, 13)
         Me.lblElapsedTime.TabIndex = 2
         Me.lblElapsedTime.Text = "Label1"
+        '
+        'timerAppCheck
+        '
         '
         'PIDTesting
         '

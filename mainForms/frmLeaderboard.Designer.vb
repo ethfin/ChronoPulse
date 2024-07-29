@@ -41,7 +41,6 @@ Partial Class frmLeaderboard
         '
         'Guna2CustomGradientPanel1
         '
-        Me.Guna2CustomGradientPanel1.BorderRadius = 10
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label1)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
