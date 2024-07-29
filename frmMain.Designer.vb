@@ -24,16 +24,22 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btnGames = New FontAwesome.Sharp.IconButton()
+        Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
-        Me.btnGames = New FontAwesome.Sharp.IconButton()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.pnlHeader.SuspendLayout()
         Me.pnlSidebar.SuspendLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlHeader
         '
         Me.pnlHeader.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.IconPictureBox1)
+        Me.pnlHeader.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnlHeader.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.pnlHeader.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
@@ -64,6 +70,42 @@ Partial Class frmMain
         Me.pnlSidebar.Size = New System.Drawing.Size(47, 652)
         Me.pnlSidebar.TabIndex = 1
         '
+        'btnGames
+        '
+        Me.btnGames.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnGames.BackColor = System.Drawing.Color.Transparent
+        Me.btnGames.FlatAppearance.BorderSize = 0
+        Me.btnGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGames.ForeColor = System.Drawing.Color.Transparent
+        Me.btnGames.IconChar = FontAwesome.Sharp.IconChar.Gamepad
+        Me.btnGames.IconColor = System.Drawing.Color.White
+        Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnGames.IconSize = 25
+        Me.btnGames.Location = New System.Drawing.Point(4, 94)
+        Me.btnGames.Name = "btnGames"
+        Me.btnGames.Size = New System.Drawing.Size(38, 38)
+        Me.btnGames.TabIndex = 2
+        Me.btnGames.UseVisualStyleBackColor = False
+        '
+        'btnLeaderboard
+        '
+        Me.btnLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
+        Me.btnLeaderboard.FlatAppearance.BorderSize = 0
+        Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaderboard.ForeColor = System.Drawing.Color.Transparent
+        Me.btnLeaderboard.IconChar = FontAwesome.Sharp.IconChar.PieChart
+        Me.btnLeaderboard.IconColor = System.Drawing.Color.White
+        Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLeaderboard.IconSize = 25
+        Me.btnLeaderboard.Location = New System.Drawing.Point(4, 50)
+        Me.btnLeaderboard.Name = "btnLeaderboard"
+        Me.btnLeaderboard.Size = New System.Drawing.Size(38, 38)
+        Me.btnLeaderboard.TabIndex = 1
+        Me.btnLeaderboard.UseVisualStyleBackColor = False
+        '
         'btnDashboard
         '
         Me.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -76,7 +118,7 @@ Partial Class frmMain
         Me.btnDashboard.IconColor = System.Drawing.Color.WhiteSmoke
         Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnDashboard.IconSize = 25
-        Me.btnDashboard.Location = New System.Drawing.Point(3, 6)
+        Me.btnDashboard.Location = New System.Drawing.Point(4, 6)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(38, 38)
         Me.btnDashboard.TabIndex = 0
@@ -91,41 +133,28 @@ Partial Class frmMain
         Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
         Me.pnlMain.TabIndex = 2
         '
-        'btnLeaderboard
+        'Guna2HtmlLabel1
         '
-        Me.btnLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
-        Me.btnLeaderboard.FlatAppearance.BorderSize = 0
-        Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeaderboard.ForeColor = System.Drawing.Color.Transparent
-        Me.btnLeaderboard.IconChar = FontAwesome.Sharp.IconChar.ChartPie
-        Me.btnLeaderboard.IconColor = System.Drawing.Color.White
-        Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnLeaderboard.IconSize = 25
-        Me.btnLeaderboard.Location = New System.Drawing.Point(3, 50)
-        Me.btnLeaderboard.Name = "btnLeaderboard"
-        Me.btnLeaderboard.Size = New System.Drawing.Size(38, 38)
-        Me.btnLeaderboard.TabIndex = 1
-        Me.btnLeaderboard.UseVisualStyleBackColor = False
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("DM Sans 14pt Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(47, 7)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(184, 33)
+        Me.Guna2HtmlLabel1.TabIndex = 0
+        Me.Guna2HtmlLabel1.Text = "CHRONOPULSE"
         '
-        'btnGames
+        'IconPictureBox1
         '
-        Me.btnGames.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnGames.BackColor = System.Drawing.Color.Transparent
-        Me.btnGames.FlatAppearance.BorderSize = 0
-        Me.btnGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGames.ForeColor = System.Drawing.Color.Transparent
-        Me.btnGames.IconChar = FontAwesome.Sharp.IconChar.Gamepad
-        Me.btnGames.IconColor = System.Drawing.Color.White
-        Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnGames.IconSize = 25
-        Me.btnGames.Location = New System.Drawing.Point(3, 94)
-        Me.btnGames.Name = "btnGames"
-        Me.btnGames.Size = New System.Drawing.Size(38, 38)
-        Me.btnGames.TabIndex = 2
-        Me.btnGames.UseVisualStyleBackColor = False
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconPictureBox1.Location = New System.Drawing.Point(7, 7)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.IconPictureBox1.TabIndex = 1
+        Me.IconPictureBox1.TabStop = False
         '
         'frmMain
         '
@@ -140,7 +169,10 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
+        Me.pnlHeader.ResumeLayout(False)
+        Me.pnlHeader.PerformLayout()
         Me.pnlSidebar.ResumeLayout(False)
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -151,4 +183,6 @@ Partial Class frmMain
     Friend WithEvents btnDashboard As FontAwesome.Sharp.IconButton
     Friend WithEvents btnGames As FontAwesome.Sharp.IconButton
     Friend WithEvents btnLeaderboard As FontAwesome.Sharp.IconButton
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
 End Class

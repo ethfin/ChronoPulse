@@ -20,7 +20,7 @@ Public Class frmMain
 
         Me.Text = String.Empty
         Me.DoubleBuffered = True
-        Me.MinimumSize = New Size(900, 700)
+        Me.MinimumSize = New Size(1200, 700)
 
     End Sub
 
