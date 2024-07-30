@@ -41,4 +41,9 @@
         changePanel(PIDTesting)
     End Sub
 
+    Protected Overrides Sub OnFormClosing(ByVal e As FormClosingEventArgs)
+        MyBase.OnFormClosing(e)
+        Application.Exit()
+    End Sub
+
 End Class
