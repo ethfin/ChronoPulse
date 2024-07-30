@@ -37,7 +37,7 @@ Partial Class PIDTesting
         Me.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnStart.ForeColor = System.Drawing.Color.White
-        Me.btnStart.Location = New System.Drawing.Point(78, 109)
+        Me.btnStart.Location = New System.Drawing.Point(155, 102)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(180, 45)
         Me.btnStart.TabIndex = 0

@@ -1,6 +1,9 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Public Class frmLogin
+
+    Public Property Username As String
+
     Protected Overrides Sub WndProc(ByRef m As Message)
         ' Define the Windows message constant for system commands
         Const WM_SYSCOMMAND As Integer = &H112
@@ -74,11 +77,14 @@ Public Class frmLogin
 
             ' Check if the user exists
             If result > 0 Then
+                ' Set the Username property
+                Me.Username = username
+
                 ' Proceed to the next form or main application window
-                Me.Close()
-                frmMain.WindowState = FormWindowState.Normal
-                frmMain.ShowInTaskbar = True
                 frmMain.Show()
+                'frmMain.WindowState = FormWindowState.Normal
+                'frmMain.ShowInTaskbar = True
+                Me.Close()
             Else
                 lblIncorrect.Text = "Invalid username or password."
                 lblIncorrect.Show()
