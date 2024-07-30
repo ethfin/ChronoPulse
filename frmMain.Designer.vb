@@ -33,6 +33,7 @@ Partial Class frmMain
         Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
         Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btnLogout = New FontAwesome.Sharp.IconButton()
         Me.pnlHeader.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picUserIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,6 +117,7 @@ Partial Class frmMain
         'pnlSidebar
         '
         Me.pnlSidebar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlSidebar.Controls.Add(Me.btnLogout)
         Me.pnlSidebar.Controls.Add(Me.btnGames)
         Me.pnlSidebar.Controls.Add(Me.btnLeaderboard)
         Me.pnlSidebar.Controls.Add(Me.btnDashboard)
@@ -197,6 +199,24 @@ Partial Class frmMain
         Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
         Me.pnlMain.TabIndex = 2
         '
+        'btnLogout
+        '
+        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnLogout.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.ForeColor = System.Drawing.Color.Transparent
+        Me.btnLogout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
+        Me.btnLogout.IconColor = System.Drawing.Color.Red
+        Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLogout.IconSize = 25
+        Me.btnLogout.Location = New System.Drawing.Point(4, 602)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(38, 38)
+        Me.btnLogout.TabIndex = 3
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -230,4 +250,5 @@ Partial Class frmMain
     Friend WithEvents picUserIcon As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblUsername As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents btnLogout As FontAwesome.Sharp.IconButton
 End Class
