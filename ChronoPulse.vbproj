@@ -286,9 +286,6 @@
     <None Include="Resources\ChronoPulse Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\backgroundMain.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="ChronoPulse Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

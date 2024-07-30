@@ -193,7 +193,6 @@ Partial Class frmMain
         Me.pnlMain.FillColor4 = System.Drawing.Color.Transparent
         Me.pnlMain.Location = New System.Drawing.Point(47, 47)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Padding = New System.Windows.Forms.Padding(50)
         Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
         Me.pnlMain.TabIndex = 2
         '

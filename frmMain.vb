@@ -37,7 +37,7 @@
     End Sub
 
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles btnGames.Click
-        changePanel(frmGames)
+        changePanel(PIDTesting)
     End Sub
 
 End Class
