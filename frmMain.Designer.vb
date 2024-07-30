@@ -63,6 +63,7 @@ Partial Class frmMain
         Me.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.lblUsername.AutoSize = False
         Me.lblUsername.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsername.Font = New System.Drawing.Font("DM Sans 14pt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
         Me.lblUsername.Location = New System.Drawing.Point(1078, 12)
         Me.lblUsername.Name = "lblUsername"
