@@ -1,5 +1,4 @@
 ﻿Imports System.Runtime.InteropServices
-Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
 
 Public Class frmSignUp

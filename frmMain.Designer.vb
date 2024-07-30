@@ -22,24 +22,30 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.lblUsername = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lblHeaderTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.picLogo = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.picUserIcon = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btnGames = New FontAwesome.Sharp.IconButton()
         Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
-        Me.pnlMain = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.pnlHeader.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picUserIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSidebar.SuspendLayout()
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlHeader
         '
         Me.pnlHeader.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlHeader.Controls.Add(Me.IconPictureBox1)
-        Me.pnlHeader.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.pnlHeader.Controls.Add(Me.lblUsername)
+        Me.pnlHeader.Controls.Add(Me.lblHeaderTitle)
+        Me.pnlHeader.Controls.Add(Me.picLogo)
+        Me.pnlHeader.Controls.Add(Me.picUserIcon)
         Me.pnlHeader.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.pnlHeader.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
@@ -51,6 +57,60 @@ Partial Class frmMain
         Me.pnlHeader.Name = "pnlHeader"
         Me.pnlHeader.Size = New System.Drawing.Size(1295, 47)
         Me.pnlHeader.TabIndex = 0
+        '
+        'lblUsername
+        '
+        Me.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.lblUsername.AutoSize = False
+        Me.lblUsername.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsername.ForeColor = System.Drawing.Color.White
+        Me.lblUsername.Location = New System.Drawing.Point(1078, 12)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.lblUsername.Size = New System.Drawing.Size(163, 29)
+        Me.lblUsername.TabIndex = 0
+        Me.lblUsername.Text = "USER#0001"
+        Me.lblUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblHeaderTitle
+        '
+        Me.lblHeaderTitle.AutoSize = False
+        Me.lblHeaderTitle.BackColor = System.Drawing.Color.Transparent
+        Me.lblHeaderTitle.Font = New System.Drawing.Font("DM Sans 14pt Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeaderTitle.ForeColor = System.Drawing.Color.White
+        Me.lblHeaderTitle.Location = New System.Drawing.Point(53, 7)
+        Me.lblHeaderTitle.Name = "lblHeaderTitle"
+        Me.lblHeaderTitle.Size = New System.Drawing.Size(228, 33)
+        Me.lblHeaderTitle.TabIndex = 0
+        Me.lblHeaderTitle.Text = "CHRONOPULSE"
+        Me.lblHeaderTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picLogo
+        '
+        Me.picLogo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.picLogo.Image = Global.ChronoPulse.My.Resources.Resources.ChronoPulse_Logo
+        Me.picLogo.ImageRotate = 0!
+        Me.picLogo.Location = New System.Drawing.Point(0, 0)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(47, 47)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
+        '
+        'picUserIcon
+        '
+        Me.picUserIcon.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.picUserIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.picUserIcon.IconChar = FontAwesome.Sharp.IconChar.User
+        Me.picUserIcon.IconColor = System.Drawing.Color.White
+        Me.picUserIcon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.picUserIcon.Location = New System.Drawing.Point(1249, 6)
+        Me.picUserIcon.Margin = New System.Windows.Forms.Padding(5)
+        Me.picUserIcon.Name = "picUserIcon"
+        Me.picUserIcon.Size = New System.Drawing.Size(32, 35)
+        Me.picUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picUserIcon.TabIndex = 0
+        Me.picUserIcon.TabStop = False
         '
         'pnlSidebar
         '
@@ -72,7 +132,6 @@ Partial Class frmMain
         '
         'btnGames
         '
-        Me.btnGames.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnGames.BackColor = System.Drawing.Color.Transparent
         Me.btnGames.FlatAppearance.BorderSize = 0
         Me.btnGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
@@ -90,7 +149,6 @@ Partial Class frmMain
         '
         'btnLeaderboard
         '
-        Me.btnLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
         Me.btnLeaderboard.FlatAppearance.BorderSize = 0
         Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
@@ -108,7 +166,6 @@ Partial Class frmMain
         '
         'btnDashboard
         '
-        Me.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
         Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
@@ -126,35 +183,19 @@ Partial Class frmMain
         '
         'pnlMain
         '
-        Me.pnlMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlMain.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlMain.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMain.FillColor = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor2 = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor3 = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor4 = System.Drawing.Color.Transparent
         Me.pnlMain.Location = New System.Drawing.Point(47, 47)
         Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Padding = New System.Windows.Forms.Padding(50)
         Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
         Me.pnlMain.TabIndex = 2
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("DM Sans 14pt Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(47, 7)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(184, 33)
-        Me.Guna2HtmlLabel1.TabIndex = 0
-        Me.Guna2HtmlLabel1.Text = "CHRONOPULSE"
-        '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
-        Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconPictureBox1.Location = New System.Drawing.Point(7, 7)
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.IconPictureBox1.TabIndex = 1
-        Me.IconPictureBox1.TabStop = False
         '
         'frmMain
         '
@@ -165,24 +206,28 @@ Partial Class frmMain
         Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlSidebar)
         Me.Controls.Add(Me.pnlHeader)
-        Me.ForeColor = System.Drawing.Color.White
+        Me.ForeColor = System.Drawing.Color.Black
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.pnlHeader.ResumeLayout(False)
-        Me.pnlHeader.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picUserIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlSidebar.ResumeLayout(False)
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents pnlSidebar As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btnDashboard As FontAwesome.Sharp.IconButton
     Friend WithEvents btnGames As FontAwesome.Sharp.IconButton
     Friend WithEvents btnLeaderboard As FontAwesome.Sharp.IconButton
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents lblHeaderTitle As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents picLogo As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents pnlMain As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents picUserIcon As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents lblUsername As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

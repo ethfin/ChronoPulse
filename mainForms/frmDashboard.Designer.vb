@@ -22,7 +22,7 @@ Partial Class frmDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.GunaAreaDataset1 = New Guna.Charts.WinForms.GunaAreaDataset()
         Me.GunaAreaDataset2 = New Guna.Charts.WinForms.GunaAreaDataset()
@@ -32,22 +32,22 @@ Partial Class frmDashboard
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel1.SuspendLayout()
+        Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Guna2Panel1
+        'pnlContainer
         '
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel5)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel4)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel3)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(50)
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1248, 652)
-        Me.Guna2Panel1.TabIndex = 0
+        Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
+        Me.pnlContainer.Controls.Add(Me.Guna2Panel4)
+        Me.pnlContainer.Controls.Add(Me.Guna2Panel3)
+        Me.pnlContainer.Controls.Add(Me.Guna2Panel2)
+        Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
+        Me.pnlContainer.Name = "pnlContainer"
+        Me.pnlContainer.Padding = New System.Windows.Forms.Padding(50)
+        Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
+        Me.pnlContainer.TabIndex = 0
         '
         'Guna2Panel5
         '
@@ -154,20 +154,20 @@ Partial Class frmDashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1248, 652)
-        Me.Controls.Add(Me.Guna2Panel1)
+        Me.Controls.Add(Me.pnlContainer)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmDashboard"
-        Me.Guna2Panel1.ResumeLayout(False)
+        Me.pnlContainer.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlContainer As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel

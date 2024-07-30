@@ -1,7 +1,4 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Runtime.InteropServices
-
-Public Class frmMain
+﻿Public Class frmMain
 
     Public Sub changePanel(ByVal panel As Form)
         pnlMain.Controls.Clear()
@@ -42,4 +39,5 @@ Public Class frmMain
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles btnGames.Click
         changePanel(frmGames)
     End Sub
+
 End Class
