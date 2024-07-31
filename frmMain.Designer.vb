@@ -26,18 +26,19 @@ Partial Class frmMain
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.lblUsername = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblHeaderTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.picLogo = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.picUserIcon = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlSidebar = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btnFinance = New FontAwesome.Sharp.IconButton()
+        Me.btnLogout = New FontAwesome.Sharp.IconButton()
         Me.btnGames = New FontAwesome.Sharp.IconButton()
         Me.btnLeaderboard = New FontAwesome.Sharp.IconButton()
         Me.btnDashboard = New FontAwesome.Sharp.IconButton()
-        Me.pnlMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.btnLogout = New FontAwesome.Sharp.IconButton()
+        Me.picLogo = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.picUserIcon = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlHeader.SuspendLayout()
+        Me.pnlSidebar.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picUserIcon, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlSidebar.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlHeader
@@ -87,6 +88,131 @@ Partial Class frmMain
         Me.lblHeaderTitle.Text = "CHRONOPULSE"
         Me.lblHeaderTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'pnlSidebar
+        '
+        Me.pnlSidebar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlSidebar.Controls.Add(Me.btnFinance)
+        Me.pnlSidebar.Controls.Add(Me.btnLogout)
+        Me.pnlSidebar.Controls.Add(Me.btnGames)
+        Me.pnlSidebar.Controls.Add(Me.btnLeaderboard)
+        Me.pnlSidebar.Controls.Add(Me.btnDashboard)
+        Me.pnlSidebar.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlSidebar.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
+        Me.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlSidebar.FillColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlSidebar.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlSidebar.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlSidebar.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlSidebar.Location = New System.Drawing.Point(0, 47)
+        Me.pnlSidebar.Name = "pnlSidebar"
+        Me.pnlSidebar.Size = New System.Drawing.Size(47, 652)
+        Me.pnlSidebar.TabIndex = 1
+        '
+        'pnlMain
+        '
+        Me.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlMain.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlMain.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMain.FillColor = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor2 = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor3 = System.Drawing.Color.Transparent
+        Me.pnlMain.FillColor4 = System.Drawing.Color.Transparent
+        Me.pnlMain.Location = New System.Drawing.Point(47, 47)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
+        Me.pnlMain.TabIndex = 2
+        '
+        'btnFinance
+        '
+        Me.btnFinance.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnFinance.BackColor = System.Drawing.Color.Transparent
+        Me.btnFinance.FlatAppearance.BorderSize = 0
+        Me.btnFinance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnFinance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFinance.ForeColor = System.Drawing.Color.Transparent
+        Me.btnFinance.IconChar = FontAwesome.Sharp.IconChar.PlusSquare
+        Me.btnFinance.IconColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnFinance.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnFinance.IconSize = 25
+        Me.btnFinance.Location = New System.Drawing.Point(4, 138)
+        Me.btnFinance.Name = "btnFinance"
+        Me.btnFinance.Size = New System.Drawing.Size(38, 38)
+        Me.btnFinance.TabIndex = 4
+        Me.btnFinance.UseVisualStyleBackColor = False
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnLogout.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.ForeColor = System.Drawing.Color.Transparent
+        Me.btnLogout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
+        Me.btnLogout.IconColor = System.Drawing.Color.Red
+        Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLogout.IconSize = 25
+        Me.btnLogout.Location = New System.Drawing.Point(4, 602)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(38, 38)
+        Me.btnLogout.TabIndex = 3
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'btnGames
+        '
+        Me.btnGames.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnGames.BackColor = System.Drawing.Color.Transparent
+        Me.btnGames.FlatAppearance.BorderSize = 0
+        Me.btnGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGames.ForeColor = System.Drawing.Color.Transparent
+        Me.btnGames.IconChar = FontAwesome.Sharp.IconChar.Gamepad
+        Me.btnGames.IconColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnGames.IconSize = 25
+        Me.btnGames.Location = New System.Drawing.Point(4, 94)
+        Me.btnGames.Name = "btnGames"
+        Me.btnGames.Size = New System.Drawing.Size(38, 38)
+        Me.btnGames.TabIndex = 2
+        Me.btnGames.UseVisualStyleBackColor = False
+        '
+        'btnLeaderboard
+        '
+        Me.btnLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
+        Me.btnLeaderboard.FlatAppearance.BorderSize = 0
+        Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaderboard.ForeColor = System.Drawing.Color.Transparent
+        Me.btnLeaderboard.IconChar = FontAwesome.Sharp.IconChar.PieChart
+        Me.btnLeaderboard.IconColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnLeaderboard.IconSize = 25
+        Me.btnLeaderboard.Location = New System.Drawing.Point(4, 50)
+        Me.btnLeaderboard.Name = "btnLeaderboard"
+        Me.btnLeaderboard.Size = New System.Drawing.Size(38, 38)
+        Me.btnLeaderboard.TabIndex = 1
+        Me.btnLeaderboard.UseVisualStyleBackColor = False
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
+        Me.btnDashboard.FlatAppearance.BorderSize = 0
+        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashboard.ForeColor = System.Drawing.Color.Transparent
+        Me.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.House
+        Me.btnDashboard.IconColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnDashboard.IconSize = 25
+        Me.btnDashboard.Location = New System.Drawing.Point(4, 6)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Size = New System.Drawing.Size(38, 38)
+        Me.btnDashboard.TabIndex = 0
+        Me.btnDashboard.UseVisualStyleBackColor = False
+        '
         'picLogo
         '
         Me.picLogo.Dock = System.Windows.Forms.DockStyle.Left
@@ -114,109 +240,6 @@ Partial Class frmMain
         Me.picUserIcon.TabIndex = 0
         Me.picUserIcon.TabStop = False
         '
-        'pnlSidebar
-        '
-        Me.pnlSidebar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlSidebar.Controls.Add(Me.btnLogout)
-        Me.pnlSidebar.Controls.Add(Me.btnGames)
-        Me.pnlSidebar.Controls.Add(Me.btnLeaderboard)
-        Me.pnlSidebar.Controls.Add(Me.btnDashboard)
-        Me.pnlSidebar.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlSidebar.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 1, 0)
-        Me.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pnlSidebar.FillColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlSidebar.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlSidebar.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlSidebar.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlSidebar.Location = New System.Drawing.Point(0, 47)
-        Me.pnlSidebar.Name = "pnlSidebar"
-        Me.pnlSidebar.Size = New System.Drawing.Size(47, 652)
-        Me.pnlSidebar.TabIndex = 1
-        '
-        'btnGames
-        '
-        Me.btnGames.BackColor = System.Drawing.Color.Transparent
-        Me.btnGames.FlatAppearance.BorderSize = 0
-        Me.btnGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGames.ForeColor = System.Drawing.Color.Transparent
-        Me.btnGames.IconChar = FontAwesome.Sharp.IconChar.Gamepad
-        Me.btnGames.IconColor = System.Drawing.Color.White
-        Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnGames.IconSize = 25
-        Me.btnGames.Location = New System.Drawing.Point(4, 94)
-        Me.btnGames.Name = "btnGames"
-        Me.btnGames.Size = New System.Drawing.Size(38, 38)
-        Me.btnGames.TabIndex = 2
-        Me.btnGames.UseVisualStyleBackColor = False
-        '
-        'btnLeaderboard
-        '
-        Me.btnLeaderboard.BackColor = System.Drawing.Color.Transparent
-        Me.btnLeaderboard.FlatAppearance.BorderSize = 0
-        Me.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeaderboard.ForeColor = System.Drawing.Color.Transparent
-        Me.btnLeaderboard.IconChar = FontAwesome.Sharp.IconChar.PieChart
-        Me.btnLeaderboard.IconColor = System.Drawing.Color.White
-        Me.btnLeaderboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnLeaderboard.IconSize = 25
-        Me.btnLeaderboard.Location = New System.Drawing.Point(4, 50)
-        Me.btnLeaderboard.Name = "btnLeaderboard"
-        Me.btnLeaderboard.Size = New System.Drawing.Size(38, 38)
-        Me.btnLeaderboard.TabIndex = 1
-        Me.btnLeaderboard.UseVisualStyleBackColor = False
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
-        Me.btnDashboard.FlatAppearance.BorderSize = 0
-        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboard.ForeColor = System.Drawing.Color.Transparent
-        Me.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.House
-        Me.btnDashboard.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnDashboard.IconSize = 25
-        Me.btnDashboard.Location = New System.Drawing.Point(4, 6)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(38, 38)
-        Me.btnDashboard.TabIndex = 0
-        Me.btnDashboard.UseVisualStyleBackColor = False
-        '
-        'pnlMain
-        '
-        Me.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlMain.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlMain.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMain.FillColor = System.Drawing.Color.Transparent
-        Me.pnlMain.FillColor2 = System.Drawing.Color.Transparent
-        Me.pnlMain.FillColor3 = System.Drawing.Color.Transparent
-        Me.pnlMain.FillColor4 = System.Drawing.Color.Transparent
-        Me.pnlMain.Location = New System.Drawing.Point(47, 47)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
-        Me.pnlMain.TabIndex = 2
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnLogout.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogout.FlatAppearance.BorderSize = 0
-        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.ForeColor = System.Drawing.Color.Transparent
-        Me.btnLogout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
-        Me.btnLogout.IconColor = System.Drawing.Color.Red
-        Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnLogout.IconSize = 25
-        Me.btnLogout.Location = New System.Drawing.Point(4, 602)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(38, 38)
-        Me.btnLogout.TabIndex = 3
-        Me.btnLogout.UseVisualStyleBackColor = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,9 +255,9 @@ Partial Class frmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.pnlHeader.ResumeLayout(False)
+        Me.pnlSidebar.ResumeLayout(False)
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picUserIcon, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlSidebar.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -251,4 +274,5 @@ Partial Class frmMain
     Friend WithEvents lblUsername As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btnLogout As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnFinance As FontAwesome.Sharp.IconButton
 End Class

@@ -50,4 +50,8 @@
         Me.Hide()
         frmLogin.Show()
     End Sub
+
+    Private Sub btnFinance_Click(sender As Object, e As EventArgs) Handles btnFinance.Click
+        changePanel(frmFinance)
+    End Sub
 End Class
