@@ -24,14 +24,14 @@ Partial Class frmDashboard
     Private Sub InitializeComponent()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.GunaAreaDataset1 = New Guna.Charts.WinForms.GunaAreaDataset()
-        Me.GunaAreaDataset2 = New Guna.Charts.WinForms.GunaAreaDataset()
-        Me.GunaAreaDataset3 = New Guna.Charts.WinForms.GunaAreaDataset()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.GunaAreaDataset1 = New Guna.Charts.WinForms.GunaAreaDataset()
+        Me.GunaAreaDataset2 = New Guna.Charts.WinForms.GunaAreaDataset()
+        Me.GunaAreaDataset3 = New Guna.Charts.WinForms.GunaAreaDataset()
         Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -63,24 +63,6 @@ Partial Class frmDashboard
         Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(25)
         Me.Guna2Panel5.Size = New System.Drawing.Size(700, 291)
         Me.Guna2Panel5.TabIndex = 2
-        '
-        'GunaAreaDataset1
-        '
-        Me.GunaAreaDataset1.BorderColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset1.FillColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset1.Label = "Area1"
-        '
-        'GunaAreaDataset2
-        '
-        Me.GunaAreaDataset2.BorderColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset2.FillColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset2.Label = "Area2"
-        '
-        'GunaAreaDataset3
-        '
-        Me.GunaAreaDataset3.BorderColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset3.FillColor = System.Drawing.Color.Empty
-        Me.GunaAreaDataset3.Label = "Area3"
         '
         'Guna2Panel4
         '
@@ -144,9 +126,27 @@ Partial Class frmDashboard
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(30, 30)
         Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(72, 22)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(117, 22)
         Me.Guna2HtmlLabel1.TabIndex = 0
-        Me.Guna2HtmlLabel1.Text = "BALANCE:"
+        Me.Guna2HtmlLabel1.Text = "TOTAL EXPENSE:"
+        '
+        'GunaAreaDataset1
+        '
+        Me.GunaAreaDataset1.BorderColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset1.FillColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset1.Label = "Area1"
+        '
+        'GunaAreaDataset2
+        '
+        Me.GunaAreaDataset2.BorderColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset2.FillColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset2.Label = "Area2"
+        '
+        'GunaAreaDataset3
+        '
+        Me.GunaAreaDataset3.BorderColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset3.FillColor = System.Drawing.Color.Empty
+        Me.GunaAreaDataset3.Label = "Area3"
         '
         'frmDashboard
         '

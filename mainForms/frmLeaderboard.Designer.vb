@@ -24,13 +24,10 @@ Partial Class frmLeaderboard
     Private Sub InitializeComponent()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnlContainer.SuspendLayout()
-        Me.Guna2Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContainer
@@ -53,38 +50,12 @@ Partial Class frmLeaderboard
         Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.Guna2Panel5.BorderThickness = 1
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel7)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel5.Location = New System.Drawing.Point(55, 55)
         Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(25)
         Me.Guna2Panel5.Size = New System.Drawing.Size(836, 542)
         Me.Guna2Panel5.TabIndex = 2
-        '
-        'Guna2HtmlLabel7
-        '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Inter", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(30, 52)
-        Me.Guna2HtmlLabel7.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(79, 41)
-        Me.Guna2HtmlLabel7.TabIndex = 1
-        Me.Guna2HtmlLabel7.Text = "0.00"
-        '
-        'Guna2HtmlLabel8
-        '
-        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("DM Sans 14pt", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(30, 30)
-        Me.Guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(72, 22)
-        Me.Guna2HtmlLabel8.TabIndex = 0
-        Me.Guna2HtmlLabel8.Text = "BALANCE:"
         '
         'Guna2Panel4
         '
@@ -136,16 +107,12 @@ Partial Class frmLeaderboard
         Me.Name = "frmLeaderboard"
         Me.Text = "frmLeaderboard"
         Me.pnlContainer.ResumeLayout(False)
-        Me.Guna2Panel5.ResumeLayout(False)
-        Me.Guna2Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlContainer As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel

@@ -78,9 +78,9 @@ Partial Class frmGames
         Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(30, 30)
         Me.Guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(72, 22)
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(117, 22)
         Me.Guna2HtmlLabel8.TabIndex = 0
-        Me.Guna2HtmlLabel8.Text = "BALANCE:"
+        Me.Guna2HtmlLabel8.Text = "TOTAL EXPENSE:"
         '
         'frmGames
         '
