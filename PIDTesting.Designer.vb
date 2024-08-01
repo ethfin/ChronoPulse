@@ -41,7 +41,7 @@ Partial Class PIDTesting
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(180, 45)
         Me.btnStart.TabIndex = 0
-        Me.btnStart.Text = "Guna2Button1"
+        Me.btnStart.Text = "Launch"
         '
         'cmbApplications
         '
@@ -53,7 +53,7 @@ Partial Class PIDTesting
         Me.cmbApplications.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbApplications.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbApplications.ItemHeight = 30
-        Me.cmbApplications.Location = New System.Drawing.Point(386, 129)
+        Me.cmbApplications.Location = New System.Drawing.Point(392, 102)
         Me.cmbApplications.Name = "cmbApplications"
         Me.cmbApplications.Size = New System.Drawing.Size(140, 36)
         Me.cmbApplications.TabIndex = 1
