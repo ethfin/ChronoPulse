@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ChronoPulse.frmLogin
+            Me.MainForm = Global.ChronoPulse.PIDTesting
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
