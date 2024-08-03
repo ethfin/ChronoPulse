@@ -86,7 +86,6 @@ Partial Class frmGames
         Me.lblTracker.Name = "lblTracker"
         Me.lblTracker.Size = New System.Drawing.Size(801, 222)
         Me.lblTracker.TabIndex = 1
-        Me.lblTracker.Text = "Guna2HtmlLabel1"
         '
         'lbApp
         '
