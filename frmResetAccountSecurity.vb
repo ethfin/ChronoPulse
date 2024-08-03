@@ -1,6 +1,8 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Public Class frmResetAccountSecurity
+    Private prevSelectedIndex1 As Integer = -1
+    Private prevSelectedIndex2 As Integer = -1 ' Added a separate variable for cmbSecurityQ2
 
     Protected Overrides Sub WndProc(ByRef m As Message)
         ' Define the Windows message constant for system commands
@@ -89,6 +91,10 @@ Public Class frmResetAccountSecurity
         compareAnswer1()
     End Sub
 
+    Private Sub txtSQA1_TextChanged(sender As Object, e As EventArgs) Handles txtSQA1.TextChanged
+        compareAnswer3()
+    End Sub
+
     Function compareAnswer1()
         ' Check if the inputs match.
         If txtSQA1.Text = txtSQA1Verify.Text Then
@@ -118,8 +124,41 @@ Public Class frmResetAccountSecurity
         lblError.Show()
     End Function
 
+    Function compareAnswer3()
+        ' Check if the inputs match.
+        If txtSQA1Verify.Text = txtSQA1.Text Then
+            If ValidateSecurity(txtSQA1Verify.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA1.BorderColor = Color.Green
+                txtSQA1Verify.BorderColor = Color.Green
+                lblError.ForeColor = Color.Green
+                lblError.Text = "Answer for Security Question 1 are the same"
+            Else
+                txtSQA1Verify.Text = txtSQA1.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA1.BorderColor = Color.Orange
+                txtSQA1Verify.BorderColor = Color.Orange
+                lblError.ForeColor = Color.Orange
+                lblError.Text = "Fill in the the following fields"
+                lblError.Show()
+            End If
+
+        Else
+            ' If the inputs don't match, set the border color to Red.
+            txtSQA1.BorderColor = Color.Red
+            txtSQA1Verify.BorderColor = Color.Red
+            lblError.ForeColor = Color.Red
+            lblError.Text = "Answer for Security Question 1 are different"
+        End If
+        lblError.Show()
+    End Function
+
     Private Sub txtSQA2Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2Verify.TextChanged
         compareAnswer2()
+    End Sub
+
+    Private Sub txtSQA2_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2.TextChanged
+        compareAnswer4()
     End Sub
 
     Function compareAnswer2()
@@ -133,6 +172,35 @@ Public Class frmResetAccountSecurity
                 lblError2.Text = "Answer for Security Question 2 are the same"
             Else
                 txtSQA2.Text = txtSQA2Verify.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA2.BorderColor = Color.Orange
+                txtSQA2Verify.BorderColor = Color.Orange
+                lblError2.ForeColor = Color.Orange
+                lblError2.Text = "Fill in the the following fields"
+                lblError2.Show()
+            End If
+
+        Else
+            ' If the inputs don't match, set the border color to Red.
+            txtSQA2.BorderColor = Color.Red
+            txtSQA2Verify.BorderColor = Color.Red
+            lblError2.ForeColor = Color.Red
+            lblError2.Text = "Answer for Security Question 2 are different"
+        End If
+        lblError2.Show()
+    End Function
+
+    Function compareAnswer4()
+        ' Check if the inputs match.
+        If txtSQA2Verify.Text = txtSQA2.Text Then
+            If ValidateSecurity(txtSQA2.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA2.BorderColor = Color.Green
+                txtSQA2Verify.BorderColor = Color.Green
+                lblError2.ForeColor = Color.Green
+                lblError2.Text = "Answer for Security Question 2 are the same"
+            Else
+                txtSQA2Verify.Text = txtSQA2.Text
                 ' If the inputs are blank, set the border color to Orange.
                 txtSQA2.BorderColor = Color.Orange
                 txtSQA2Verify.BorderColor = Color.Orange
@@ -187,8 +255,7 @@ Public Class frmResetAccountSecurity
     End Function
 
     Private Sub frmResetAccountSecurity_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'get the txtEmail from the previous form and store it in the lblWelcome1 label
-        lblWelcome1.Text = frmResetAccount.txtEmail.Text
+
     End Sub
 
     Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -220,6 +287,9 @@ Public Class frmResetAccountSecurity
                     lblError.ForeColor = Color.Red
                     lblError.Text = "Invalid Security Questions and Answers."
                     lblError.Show()
+                    lblError2.ForeColor = Color.Red
+                    lblError2.Text = "Invalid Security Questions and Answers."
+                    lblError2.Show()
                 End If
 
             Catch ex As Exception
@@ -227,6 +297,9 @@ Public Class frmResetAccountSecurity
                 lblError.ForeColor = Color.Red
                 lblError.Text = "Error: " & ex.Message
                 lblError.Show()
+                lblError2.ForeColor = Color.Red
+                lblError2.Text = "Error: " & ex.Message
+                lblError2.Show()
             Finally
                 ' Close the connection whether or not an error occurred
                 If conn IsNot Nothing Then
@@ -236,4 +309,31 @@ Public Class frmResetAccountSecurity
         End If
     End Sub
 
+    Private Sub cmbSQ1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSQ1.SelectedIndexChanged
+        ' Handle changes in cmbSecurityQ1
+        If cmbSQ1.SelectedIndex <> -1 AndAlso prevSelectedIndex2 <> -1 Then
+            ' Add the previously selected item back to cmbSecurityQ2
+            cmbSQ2.Items.Insert(prevSelectedIndex2, cmbSQ2.Tag)
+        End If
+        ' Remove the currently selected item of cmbSecurityQ1 from cmbSecurityQ2
+        If cmbSQ2.Items.Contains(cmbSQ1.SelectedItem) Then
+            prevSelectedIndex2 = cmbSQ2.Items.IndexOf(cmbSQ1.SelectedItem)
+            cmbSQ2.Tag = cmbSQ1.SelectedItem ' Store the removed item
+            cmbSQ2.Items.Remove(cmbSQ1.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub cmbSQ2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSQ2.SelectedIndexChanged
+        ' Handle changes in cmbSecurityQ2
+        If cmbSQ2.SelectedIndex <> -1 AndAlso prevSelectedIndex1 <> -1 Then
+            ' Add the previously selected item back to cmbSecurityQ1
+            cmbSQ1.Items.Insert(prevSelectedIndex1, cmbSQ1.Tag)
+        End If
+        ' Remove the currently selected item of cmbSecurityQ2 from cmbSecurityQ1
+        If cmbSQ1.Items.Contains(cmbSQ2.SelectedItem) Then
+            prevSelectedIndex1 = cmbSQ1.Items.IndexOf(cmbSQ2.SelectedItem)
+            cmbSQ1.Tag = cmbSQ2.SelectedItem ' Store the removed item
+            cmbSQ1.Items.Remove(cmbSQ2.SelectedItem)
+        End If
+    End Sub
 End Class

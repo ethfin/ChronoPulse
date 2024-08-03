@@ -43,10 +43,6 @@ Partial Class frmSecurityQuestions
         Me.lblQ2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cbxShowPassword = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.cbxShowPassword2 = New Guna.UI2.WinForms.Guna2CheckBox()
-        Me.btnShowPassword1 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton3 = New Guna.UI2.WinForms.Guna2ImageButton()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,9 +51,10 @@ Partial Class frmSecurityQuestions
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(629, 11)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(839, 14)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(108, 59)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(144, 73)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 44
         Me.Guna2PictureBox1.TabStop = False
@@ -76,9 +73,10 @@ Partial Class frmSecurityQuestions
         Me.btnClose.ForeColor = System.Drawing.Color.Maroon
         Me.btnClose.HoverState.FillColor = System.Drawing.Color.Red
         Me.btnClose.IndicateFocus = True
-        Me.btnClose.Location = New System.Drawing.Point(940, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1253, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(30, 30)
+        Me.btnClose.Size = New System.Drawing.Size(40, 37)
         Me.btnClose.TabIndex = 43
         Me.btnClose.TabStop = False
         Me.btnClose.Text = "X"
@@ -96,9 +94,10 @@ Partial Class frmSecurityQuestions
         Me.btnMinimize.ForeColor = System.Drawing.Color.DimGray
         Me.btnMinimize.HoverState.FillColor = System.Drawing.Color.GhostWhite
         Me.btnMinimize.IndicateFocus = True
-        Me.btnMinimize.Location = New System.Drawing.Point(912, 0)
+        Me.btnMinimize.Location = New System.Drawing.Point(1216, 0)
+        Me.btnMinimize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
+        Me.btnMinimize.Size = New System.Drawing.Size(40, 37)
         Me.btnMinimize.TabIndex = 42
         Me.btnMinimize.TabStop = False
         Me.btnMinimize.Text = "—"
@@ -110,8 +109,9 @@ Partial Class frmSecurityQuestions
         Me.pnlBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlBackground.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlBackground.Location = New System.Drawing.Point(0, 0)
+        Me.pnlBackground.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlBackground.Name = "pnlBackground"
-        Me.pnlBackground.Size = New System.Drawing.Size(408, 473)
+        Me.pnlBackground.Size = New System.Drawing.Size(544, 582)
         Me.pnlBackground.TabIndex = 41
         '
         'txtSQA1
@@ -127,14 +127,14 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA1.Location = New System.Drawing.Point(742, 157)
-        Me.txtSQA1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSQA1.Location = New System.Drawing.Point(989, 193)
+        Me.txtSQA1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSQA1.MaxLength = 20
         Me.txtSQA1.Name = "txtSQA1"
         Me.txtSQA1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtSQA1.PlaceholderText = "Answer"
         Me.txtSQA1.SelectedText = ""
-        Me.txtSQA1.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA1.Size = New System.Drawing.Size(288, 47)
         Me.txtSQA1.TabIndex = 1
         '
         'txtSQA1Verify
@@ -150,14 +150,14 @@ Partial Class frmSecurityQuestions
         Me.txtSQA1Verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA1Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA1Verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA1Verify.Location = New System.Drawing.Point(742, 201)
-        Me.txtSQA1Verify.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSQA1Verify.Location = New System.Drawing.Point(989, 247)
+        Me.txtSQA1Verify.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSQA1Verify.MaxLength = 20
         Me.txtSQA1Verify.Name = "txtSQA1Verify"
         Me.txtSQA1Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtSQA1Verify.PlaceholderText = "Re-enter Answer"
         Me.txtSQA1Verify.SelectedText = ""
-        Me.txtSQA1Verify.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA1Verify.Size = New System.Drawing.Size(288, 47)
         Me.txtSQA1Verify.TabIndex = 2
         '
         'txtSQA2Verify
@@ -173,14 +173,14 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2Verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA2Verify.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA2Verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA2Verify.Location = New System.Drawing.Point(742, 334)
-        Me.txtSQA2Verify.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSQA2Verify.Location = New System.Drawing.Point(989, 411)
+        Me.txtSQA2Verify.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSQA2Verify.MaxLength = 20
         Me.txtSQA2Verify.Name = "txtSQA2Verify"
         Me.txtSQA2Verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtSQA2Verify.PlaceholderText = "Re-enter Answer"
         Me.txtSQA2Verify.SelectedText = ""
-        Me.txtSQA2Verify.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA2Verify.Size = New System.Drawing.Size(288, 47)
         Me.txtSQA2Verify.TabIndex = 5
         '
         'txtSQA2
@@ -196,14 +196,14 @@ Partial Class frmSecurityQuestions
         Me.txtSQA2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSQA2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txtSQA2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSQA2.Location = New System.Drawing.Point(742, 290)
-        Me.txtSQA2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSQA2.Location = New System.Drawing.Point(989, 357)
+        Me.txtSQA2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSQA2.MaxLength = 20
         Me.txtSQA2.Name = "txtSQA2"
         Me.txtSQA2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtSQA2.PlaceholderText = "Answer"
         Me.txtSQA2.SelectedText = ""
-        Me.txtSQA2.Size = New System.Drawing.Size(216, 38)
+        Me.txtSQA2.Size = New System.Drawing.Size(288, 47)
         Me.txtSQA2.TabIndex = 4
         '
         'cmbSQ1
@@ -219,9 +219,10 @@ Partial Class frmSecurityQuestions
         Me.cmbSQ1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ1.ItemHeight = 30
         Me.cmbSQ1.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
-        Me.cmbSQ1.Location = New System.Drawing.Point(414, 157)
+        Me.cmbSQ1.Location = New System.Drawing.Point(552, 193)
+        Me.cmbSQ1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbSQ1.Name = "cmbSQ1"
-        Me.cmbSQ1.Size = New System.Drawing.Size(322, 36)
+        Me.cmbSQ1.Size = New System.Drawing.Size(428, 36)
         Me.cmbSQ1.TabIndex = 0
         '
         'cmbSQ2
@@ -237,9 +238,10 @@ Partial Class frmSecurityQuestions
         Me.cmbSQ2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ2.ItemHeight = 30
         Me.cmbSQ2.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
-        Me.cmbSQ2.Location = New System.Drawing.Point(414, 292)
+        Me.cmbSQ2.Location = New System.Drawing.Point(552, 359)
+        Me.cmbSQ2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbSQ2.Name = "cmbSQ2"
-        Me.cmbSQ2.Size = New System.Drawing.Size(322, 36)
+        Me.cmbSQ2.Size = New System.Drawing.Size(428, 36)
         Me.cmbSQ2.TabIndex = 3
         '
         'btnSignUp
@@ -252,9 +254,10 @@ Partial Class frmSecurityQuestions
         Me.btnSignUp.FillColor = System.Drawing.Color.MediumTurquoise
         Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.Color.White
-        Me.btnSignUp.Location = New System.Drawing.Point(593, 412)
+        Me.btnSignUp.Location = New System.Drawing.Point(791, 507)
+        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(180, 45)
+        Me.btnSignUp.Size = New System.Drawing.Size(240, 55)
         Me.btnSignUp.TabIndex = 7
         Me.btnSignUp.Text = "Sign Up"
         '
@@ -264,9 +267,10 @@ Partial Class frmSecurityQuestions
         Me.lblError.BackColor = System.Drawing.Color.Transparent
         Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(442, 201)
+        Me.lblError.Location = New System.Drawing.Point(589, 247)
+        Me.lblError.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(256, 28)
+        Me.lblError.Size = New System.Drawing.Size(341, 34)
         Me.lblError.TabIndex = 52
         Me.lblError.TabStop = False
         Me.lblError.Text = "Error"
@@ -279,9 +283,10 @@ Partial Class frmSecurityQuestions
         Me.lblError2.BackColor = System.Drawing.Color.Transparent
         Me.lblError2.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError2.ForeColor = System.Drawing.Color.Red
-        Me.lblError2.Location = New System.Drawing.Point(442, 334)
+        Me.lblError2.Location = New System.Drawing.Point(589, 411)
+        Me.lblError2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblError2.Name = "lblError2"
-        Me.lblError2.Size = New System.Drawing.Size(256, 28)
+        Me.lblError2.Size = New System.Drawing.Size(341, 34)
         Me.lblError2.TabIndex = 53
         Me.lblError2.TabStop = False
         Me.lblError2.Text = "Error"
@@ -293,9 +298,10 @@ Partial Class frmSecurityQuestions
         Me.lblNames.AutoSize = False
         Me.lblNames.BackColor = System.Drawing.Color.Transparent
         Me.lblNames.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNames.Location = New System.Drawing.Point(414, 85)
+        Me.lblNames.Location = New System.Drawing.Point(552, 105)
+        Me.lblNames.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblNames.Name = "lblNames"
-        Me.lblNames.Size = New System.Drawing.Size(544, 24)
+        Me.lblNames.Size = New System.Drawing.Size(725, 30)
         Me.lblNames.TabIndex = 54
         Me.lblNames.Text = "Security Question"
         Me.lblNames.TextAlignment = System.Drawing.ContentAlignment.TopCenter
@@ -305,9 +311,10 @@ Partial Class frmSecurityQuestions
         Me.htmllblBackToLogin.AutoSize = True
         Me.htmllblBackToLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.htmllblBackToLogin.LinkColor = System.Drawing.Color.Gray
-        Me.htmllblBackToLogin.Location = New System.Drawing.Point(414, 449)
+        Me.htmllblBackToLogin.Location = New System.Drawing.Point(552, 553)
+        Me.htmllblBackToLogin.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.htmllblBackToLogin.Name = "htmllblBackToLogin"
-        Me.htmllblBackToLogin.Size = New System.Drawing.Size(162, 16)
+        Me.htmllblBackToLogin.Size = New System.Drawing.Size(201, 20)
         Me.htmllblBackToLogin.TabIndex = 8
         Me.htmllblBackToLogin.TabStop = True
         Me.htmllblBackToLogin.Text = "Already have an account?"
@@ -318,9 +325,10 @@ Partial Class frmSecurityQuestions
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Gray
-        Me.LinkLabel1.Location = New System.Drawing.Point(888, 449)
+        Me.LinkLabel1.Location = New System.Drawing.Point(1184, 553)
+        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(76, 16)
+        Me.LinkLabel1.Size = New System.Drawing.Size(96, 20)
         Me.LinkLabel1.TabIndex = 6
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "← Previous"
@@ -331,9 +339,10 @@ Partial Class frmSecurityQuestions
         Me.lblQ1.AutoSize = False
         Me.lblQ1.BackColor = System.Drawing.Color.Transparent
         Me.lblQ1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ1.Location = New System.Drawing.Point(416, 125)
+        Me.lblQ1.Location = New System.Drawing.Point(555, 154)
+        Me.lblQ1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblQ1.Name = "lblQ1"
-        Me.lblQ1.Size = New System.Drawing.Size(216, 24)
+        Me.lblQ1.Size = New System.Drawing.Size(288, 30)
         Me.lblQ1.TabIndex = 55
         Me.lblQ1.Text = "Question 1:"
         Me.lblQ1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -343,9 +352,10 @@ Partial Class frmSecurityQuestions
         Me.lblQ2.AutoSize = False
         Me.lblQ2.BackColor = System.Drawing.Color.Transparent
         Me.lblQ2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQ2.Location = New System.Drawing.Point(417, 261)
+        Me.lblQ2.Location = New System.Drawing.Point(556, 321)
+        Me.lblQ2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblQ2.Name = "lblQ2"
-        Me.lblQ2.Size = New System.Drawing.Size(216, 24)
+        Me.lblQ2.Size = New System.Drawing.Size(288, 30)
         Me.lblQ2.TabIndex = 56
         Me.lblQ2.Text = "Question 2:"
         Me.lblQ2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -358,9 +368,10 @@ Partial Class frmSecurityQuestions
         Me.cbxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbxShowPassword.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxShowPassword.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword.Location = New System.Drawing.Point(820, 246)
+        Me.cbxShowPassword.Location = New System.Drawing.Point(1093, 303)
+        Me.cbxShowPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbxShowPassword.Name = "cbxShowPassword"
-        Me.cbxShowPassword.Size = New System.Drawing.Size(149, 21)
+        Me.cbxShowPassword.Size = New System.Drawing.Size(199, 26)
         Me.cbxShowPassword.TabIndex = 68
         Me.cbxShowPassword.Text = "Show Password"
         Me.cbxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -376,9 +387,10 @@ Partial Class frmSecurityQuestions
         Me.cbxShowPassword2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbxShowPassword2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxShowPassword2.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.cbxShowPassword2.Location = New System.Drawing.Point(820, 379)
+        Me.cbxShowPassword2.Location = New System.Drawing.Point(1093, 466)
+        Me.cbxShowPassword2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbxShowPassword2.Name = "cbxShowPassword2"
-        Me.cbxShowPassword2.Size = New System.Drawing.Size(149, 21)
+        Me.cbxShowPassword2.Size = New System.Drawing.Size(199, 26)
         Me.cbxShowPassword2.TabIndex = 69
         Me.cbxShowPassword2.Text = "Show Password"
         Me.cbxShowPassword2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -386,77 +398,13 @@ Partial Class frmSecurityQuestions
         Me.cbxShowPassword2.UncheckedState.BorderThickness = 0
         Me.cbxShowPassword2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
-        'btnShowPassword1
-        '
-        Me.btnShowPassword1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btnShowPassword1.HoverState.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnShowPassword1.Image = CType(resources.GetObject("btnShowPassword1.Image"), System.Drawing.Image)
-        Me.btnShowPassword1.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.btnShowPassword1.ImageRotate = 0!
-        Me.btnShowPassword1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnShowPassword1.Location = New System.Drawing.Point(912, 163)
-        Me.btnShowPassword1.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnShowPassword1.Name = "btnShowPassword1"
-        Me.btnShowPassword1.PressedState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.btnShowPassword1.Size = New System.Drawing.Size(38, 23)
-        Me.btnShowPassword1.TabIndex = 71
-        '
-        'Guna2ImageButton1
-        '
-        Me.Guna2ImageButton1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.HoverState.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.Guna2ImageButton1.ImageRotate = 0!
-        Me.Guna2ImageButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(912, 206)
-        Me.Guna2ImageButton1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
-        Me.Guna2ImageButton1.PressedState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton1.Size = New System.Drawing.Size(38, 23)
-        Me.Guna2ImageButton1.TabIndex = 72
-        '
-        'Guna2ImageButton2
-        '
-        Me.Guna2ImageButton2.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton2.HoverState.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2ImageButton2.Image = CType(resources.GetObject("Guna2ImageButton2.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton2.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.Guna2ImageButton2.ImageRotate = 0!
-        Me.Guna2ImageButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton2.Location = New System.Drawing.Point(912, 298)
-        Me.Guna2ImageButton2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
-        Me.Guna2ImageButton2.PressedState.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        Me.Guna2ImageButton2.Size = New System.Drawing.Size(38, 23)
-        Me.Guna2ImageButton2.TabIndex = 73
-        '
-        'Guna2ImageButton3
-        '
-        Me.Guna2ImageButton3.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton3.HoverState.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2ImageButton3.Image = CType(resources.GetObject("Guna2ImageButton3.Image"), System.Drawing.Image)
-        Me.Guna2ImageButton3.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.Guna2ImageButton3.ImageRotate = 0!
-        Me.Guna2ImageButton3.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton3.Location = New System.Drawing.Point(912, 343)
-        Me.Guna2ImageButton3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
-        Me.Guna2ImageButton3.PressedState.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        Me.Guna2ImageButton3.Size = New System.Drawing.Size(38, 23)
-        Me.Guna2ImageButton3.TabIndex = 74
-        '
         'frmSecurityQuestions
         '
         Me.AcceptButton = Me.btnSignUp
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(970, 473)
-        Me.Controls.Add(Me.btnShowPassword1)
-        Me.Controls.Add(Me.Guna2ImageButton2)
-        Me.Controls.Add(Me.Guna2ImageButton1)
-        Me.Controls.Add(Me.Guna2ImageButton3)
+        Me.ClientSize = New System.Drawing.Size(1293, 582)
         Me.Controls.Add(Me.cbxShowPassword2)
         Me.Controls.Add(Me.cbxShowPassword)
         Me.Controls.Add(Me.lblQ2)
@@ -478,6 +426,7 @@ Partial Class frmSecurityQuestions
         Me.Controls.Add(Me.txtSQA1)
         Me.Controls.Add(Me.txtSQA1Verify)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmSecurityQuestions"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSecurityQuestions"
@@ -507,8 +456,4 @@ Partial Class frmSecurityQuestions
     Friend WithEvents lblQ2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cbxShowPassword As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents cbxShowPassword2 As Guna.UI2.WinForms.Guna2CheckBox
-    Friend WithEvents btnShowPassword1 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2ImageButton2 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2ImageButton3 As Guna.UI2.WinForms.Guna2ImageButton
 End Class

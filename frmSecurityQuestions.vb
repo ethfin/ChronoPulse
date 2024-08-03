@@ -139,6 +139,10 @@ Public Class frmSecurityQuestions
         compareAnswer1()
     End Sub
 
+    Private Sub txtSQA3_TextChanged(sender As Object, e As EventArgs) Handles txtSQA1.TextChanged
+        compareAnswer3()
+    End Sub
+
     Function compareAnswer1()
         ' Check if the inputs match.
         If txtSQA1.Text = txtSQA1Verify.Text Then
@@ -168,8 +172,41 @@ Public Class frmSecurityQuestions
         lblError.Show()
     End Function
 
+    Function compareAnswer3()
+        ' Check if the inputs match.
+        If txtSQA1Verify.Text = txtSQA1.Text Then
+            If ValidateSecurity(txtSQA1Verify.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA1.BorderColor = Color.Green
+                txtSQA1Verify.BorderColor = Color.Green
+                lblError.ForeColor = Color.Green
+                lblError.Text = "Answer for Security Question 1 are the same"
+            Else
+                txtSQA1Verify.Text = txtSQA1.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA1.BorderColor = Color.Orange
+                txtSQA1Verify.BorderColor = Color.Orange
+                lblError.ForeColor = Color.Orange
+                lblError.Text = "Fill in the the following fields"
+                lblError.Show()
+            End If
+
+        Else
+            ' If the inputs don't match, set the border color to Red.
+            txtSQA1.BorderColor = Color.Red
+            txtSQA1Verify.BorderColor = Color.Red
+            lblError.ForeColor = Color.Red
+            lblError.Text = "Answer for Security Question 1 are different"
+        End If
+        lblError.Show()
+    End Function
+
     Private Sub txtSQA2Verify_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2Verify.TextChanged
         compareAnswer2()
+    End Sub
+
+    Private Sub txtSQA4_TextChanged(sender As Object, e As EventArgs) Handles txtSQA2.TextChanged
+        compareAnswer4()
     End Sub
 
     Function compareAnswer2()
@@ -183,6 +220,35 @@ Public Class frmSecurityQuestions
                 lblError2.Text = "Answer for Security Question 2 are the same"
             Else
                 txtSQA2.Text = txtSQA2Verify.Text
+                ' If the inputs are blank, set the border color to Orange.
+                txtSQA2.BorderColor = Color.Orange
+                txtSQA2Verify.BorderColor = Color.Orange
+                lblError2.ForeColor = Color.Orange
+                lblError2.Text = "Fill in the the following fields"
+                lblError2.Show()
+            End If
+
+        Else
+            ' If the inputs don't match, set the border color to Red.
+            txtSQA2.BorderColor = Color.Red
+            txtSQA2Verify.BorderColor = Color.Red
+            lblError2.ForeColor = Color.Red
+            lblError2.Text = "Answer for Security Question 2 are different"
+        End If
+        lblError2.Show()
+    End Function
+
+    Function compareAnswer4()
+        ' Check if the inputs match.
+        If txtSQA2Verify.Text = txtSQA2.Text Then
+            If ValidateSecurity(txtSQA2.Text) Then
+                ' If the inputs are the same, set the border color to Green.
+                txtSQA2.BorderColor = Color.Green
+                txtSQA2Verify.BorderColor = Color.Green
+                lblError2.ForeColor = Color.Green
+                lblError2.Text = "Answer for Security Question 2 are the same"
+            Else
+                txtSQA2Verify.Text = txtSQA2.Text
                 ' If the inputs are blank, set the border color to Orange.
                 txtSQA2.BorderColor = Color.Orange
                 txtSQA2Verify.BorderColor = Color.Orange
