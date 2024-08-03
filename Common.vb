@@ -6,7 +6,7 @@ Public Class Common
     Public Shared Function getDBConnectionX() As MySqlConnection
         If myDBConnection Is Nothing Then
             myDBConnection = New MySqlConnection(
-                "Database=projectDB;" &
+                "Database=chronopulsedb;" &
                 "Data Source=localhost;" &
                 "User id=projectDBAdmin;" &
                 "Password=1322LDSP;" &
