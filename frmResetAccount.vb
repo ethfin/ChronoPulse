@@ -1,7 +1,9 @@
-﻿Public Class frmResetAccount
+﻿Imports MySql.Data.MySqlClient
+
+Public Class frmResetAccount
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Me.Hide()
         frmLogin.Show()
+        Me.Close()
     End Sub
 
     Private Function ValidateInputFields() As Boolean
@@ -29,21 +31,20 @@
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
         ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.(?!.*@)\S+$"
+        Dim emailPattern As String = "^\S+@\S+\.\S+$"
 
         ' Using Regex.IsMatch to check if the email is valid
         If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
-            lblErrorEmail.Text = "Valid input."
-            lblErrorEmail.ForeColor = Color.Green
-            txtEmail.BorderColor = Color.Green
+            ' Check if the email exists in the database
+            CheckExistingUser(txtEmail.Text)
         Else
             lblErrorEmail.Text = "Please enter a valid email."
             lblErrorEmail.ForeColor = Color.Red
             txtEmail.BorderColor = Color.Red
+            lblErrorEmail.Show()
         End If
-        ' Show the email error label regardless of the result
-        lblErrorEmail.Show()
     End Sub
+
 
     Function emailValid() As Boolean
         ' Regular expression pattern for a valid email address
@@ -76,4 +77,40 @@
             Application.Exit()
         End If
     End Sub
+
+    Private Function CheckExistingUser(email As String) As Boolean
+        ' Use the getDBConnectionX method from Common.vb to get the database connection
+        Dim connection As MySqlConnection = Common.getDBConnectionX()
+
+        ' SQL query to check if the email already exists
+        Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE email = @Email"
+
+        ' Create a MySqlCommand object with the query and connection
+        Using command As New MySqlCommand(query, connection)
+            ' Add parameters to the query to prevent SQL injection
+            command.Parameters.AddWithValue("@Email", email)
+
+            ' Open the database connection
+            connection.Open()
+
+            ' Execute the query and get the result
+            Dim count As Integer = CInt(command.ExecuteScalar())
+
+            ' Check if the count is greater than 0, indicating that the email already exists
+            If count > 0 Then
+                lblErrorEmail.Text = "Email exists."
+                lblErrorEmail.ForeColor = Color.Green
+                lblErrorEmail.Show()
+                connection.Close()
+                Return True
+            Else
+                lblErrorEmail.Text = "Email does not exist."
+                lblErrorEmail.ForeColor = Color.Red
+                lblErrorEmail.Show()
+                connection.Close()
+                Return False
+            End If
+        End Using
+    End Function
+
 End Class

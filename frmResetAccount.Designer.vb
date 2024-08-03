@@ -50,7 +50,7 @@ Partial Class frmResetAccount
         Me.panelLogin2.Controls.Add(Me.lblCopyright)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelLogin2.Location = New System.Drawing.Point(0, 0)
-        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(434, 473)
         Me.panelLogin2.TabIndex = 8
@@ -198,7 +198,7 @@ Partial Class frmResetAccount
         Me.txtEmail.MaxLength = 62
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtEmail.PlaceholderText = "Email/Username"
+        Me.txtEmail.PlaceholderText = "Email"
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.Size = New System.Drawing.Size(414, 36)
         Me.txtEmail.TabIndex = 15
@@ -221,7 +221,7 @@ Partial Class frmResetAccount
         Me.lblinfo.BackColor = System.Drawing.Color.Transparent
         Me.lblinfo.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblinfo.Location = New System.Drawing.Point(203, 150)
-        Me.lblinfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lblinfo.Margin = New System.Windows.Forms.Padding(2)
         Me.lblinfo.Name = "lblinfo"
         Me.lblinfo.Size = New System.Drawing.Size(151, 106)
         Me.lblinfo.TabIndex = 12
