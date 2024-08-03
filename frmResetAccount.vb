@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text.RegularExpressions
+Imports MySql.Data.MySqlClient
 
 Public Class frmResetAccount
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
@@ -30,40 +31,34 @@ Public Class frmResetAccount
     End Sub
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
-        ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.\S+$"
-
-        ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
-            ' Check if the email exists in the database
-            CheckExistingUser(txtEmail.Text)
-        Else
-            lblErrorEmail.Text = "Please enter a valid email."
-            lblErrorEmail.ForeColor = Color.Red
-            txtEmail.BorderColor = Color.Red
-            lblErrorEmail.Show()
-        End If
+        emailValid()
     End Sub
 
-
     Function emailValid() As Boolean
-        ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.\S+$"
+        ' Using regular expressions to check if the email is valid
+        Dim emailPattern As String = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
 
-        ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
-            lblErrorEmail.Text = "Valid input."
-            lblErrorEmail.ForeColor = Color.Green
-            txtEmail.BorderColor = Color.Green
-            Return True
-        Else
-            lblErrorEmail.Text = "Please enter a valid email."
-            lblErrorEmail.ForeColor = Color.Red
-            txtEmail.BorderColor = Color.Red
+        If String.IsNullOrWhiteSpace(txtEmail.Text) Then
+            lblErrorEmail.Text = "Fill in the field"
+            lblErrorEmail.ForeColor = Color.Orange
+            txtEmail.BorderColor = Color.Orange
+            lblErrorEmail.Show() ' Show the email error label
             Return False
         End If
-        ' Show the email error label regardless of the result
-        lblErrorEmail.Show()
+
+        If Regex.IsMatch(txtEmail.Text, emailPattern) Then
+            lblErrorEmail.Text = "Valid Input"
+            lblErrorEmail.ForeColor = Color.Green
+            txtEmail.BorderColor = Color.Green
+            lblErrorEmail.Show() ' Show the email error label
+            Return True
+        Else
+            lblErrorEmail.Text = "Please enter a valid email"
+            lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
+            lblErrorEmail.Show() ' Show the email error label
+            Return False
+        End If
     End Function
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click

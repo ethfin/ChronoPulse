@@ -186,21 +186,21 @@ Public Class frmSignUp
         Dim emailPattern As String = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
 
         If String.IsNullOrWhiteSpace(txtEmail.Text) Then
-            lblErrorEmail.Text = "Email is empty."
-            lblErrorEmail.ForeColor = Color.Red
-            txtEmail.BorderColor = Color.Red
+            lblErrorEmail.Text = "Fill in the field"
+            lblErrorEmail.ForeColor = Color.Orange
+            txtEmail.BorderColor = Color.Orange
             lblErrorEmail.Show() ' Show the email error label
             Return False
         End If
 
         If Regex.IsMatch(txtEmail.Text, emailPattern) Then
-            lblErrorEmail.Text = "Valid input."
+            lblErrorEmail.Text = "Valid Input"
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
             lblErrorEmail.Show() ' Show the email error label
             Return True
         Else
-            lblErrorEmail.Text = "Please enter a valid email."
+            lblErrorEmail.Text = "Please enter a valid email"
             lblErrorEmail.ForeColor = Color.Red
             txtEmail.BorderColor = Color.Red
             lblErrorEmail.Show() ' Show the email error label
