@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
 Imports MySql.Data.MySqlClient
+Imports System.Net.Mail
 
 Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
@@ -177,42 +178,36 @@ Public Class frmSignUp
     End Sub
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
-        ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.\S+$"
-
-        ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) AndAlso Not txtEmail.Text.StartsWith(".") AndAlso Not txtEmail.Text.Contains(".@") Then
-            lblErrorEmail.Text = "Valid input."
-            lblErrorEmail.ForeColor = Color.Green
-            txtEmail.BorderColor = Color.Green
-        Else
-            lblErrorEmail.Text = "Please enter a valid email."
-            lblErrorEmail.ForeColor = Color.Red
-            txtEmail.BorderColor = Color.Red
-        End If
-        ' Show the email error label regardless of the result
-        lblErrorEmail.Show()
+        emailValid()
     End Sub
 
     Function emailValid() As Boolean
-        ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.\S+$"
+        ' Using regular expressions to check if the email is valid
+        Dim emailPattern As String = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
 
-        ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) AndAlso Not txtEmail.Text.StartsWith(".") AndAlso Not txtEmail.Text.Contains(".@") Then
+        If String.IsNullOrWhiteSpace(txtEmail.Text) Then
+            lblErrorEmail.Text = "Email is empty."
+            lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
+            lblErrorEmail.Show() ' Show the email error label
+            Return False
+        End If
+
+        If Regex.IsMatch(txtEmail.Text, emailPattern) Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
+            lblErrorEmail.Show() ' Show the email error label
             Return True
         Else
             lblErrorEmail.Text = "Please enter a valid email."
             lblErrorEmail.ForeColor = Color.Red
             txtEmail.BorderColor = Color.Red
+            lblErrorEmail.Show() ' Show the email error label
             Return False
         End If
-        ' Show the email error label regardless of the result
-        lblErrorEmail.Show()
     End Function
+
 
     Private Function CheckExistingUser(username As String, email As String) As Boolean
         ' Use the getDBConnectionX method from Common.vb to get the database connection
