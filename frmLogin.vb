@@ -1,25 +1,18 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
+
 Public Class frmLogin
 
     Public Property Username As String
 
     Protected Overrides Sub WndProc(ByRef m As Message)
-        ' Define the Windows message constant for system commands
         Const WM_SYSCOMMAND As Integer = &H112
-        ' Define the command value for maximizing the window
         Const SC_MAXIMIZE As Integer = &HF030
 
-        ' Check if the message is a system command
-        If m.Msg = WM_SYSCOMMAND Then
-            ' Check if the command is to maximize the window
-            If m.WParam.ToInt32() = SC_MAXIMIZE Then
-                ' Prevent the default behavior by not calling the base method
-                Return
-            End If
+        If m.Msg = WM_SYSCOMMAND AndAlso m.WParam.ToInt32() = SC_MAXIMIZE Then
+            Return
         End If
 
-        ' Call the base class method for default processing of other messages
         MyBase.WndProc(m)
     End Sub
 
@@ -34,7 +27,6 @@ Public Class frmLogin
     Public Shared Function ReleaseCapture() As Boolean
     End Function
 
-    ' The MouseDown event for the panel to initiate the form dragging.
     Private Sub Panel_MouseDown(sender As Object, e As MouseEventArgs) Handles panelLogin.MouseDown, panelLogin2.MouseDown
         If e.Button = MouseButtons.Left Then
             ReleaseCapture()
@@ -43,14 +35,12 @@ Public Class frmLogin
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        ' Confirm before closing the application.
         If MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            ' Closes the entire application.
             Application.Exit()
         End If
     End Sub
 
-    Private Sub btnMinimize_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
+    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -58,48 +48,34 @@ Public Class frmLogin
         Dim username As String = txtUsername.Text
         Dim password As String = txtPassword.Text
 
-        Dim conn As MySqlConnection = Common.getDBConnectionX()
+        Using conn As MySqlConnection = Common.getDBConnectionX()
+            Try
+                conn.Open()
 
-        Try
-            ' Open the connection
-            conn.Open()
+                Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE username = @username AND password = @password"
+                Using cmd As MySqlCommand = New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@username", username)
+                    cmd.Parameters.AddWithValue("@password", password)
 
-            ' SQL query to check if the user exists with the given username and password
-            Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE username = @username AND password = @password"
-            Dim cmd As MySqlCommand = New MySqlCommand(query, conn)
+                    Dim result As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
-            ' Use parameters to prevent SQL injection
-            cmd.Parameters.AddWithValue("@username", username)
-            cmd.Parameters.AddWithValue("@password", password)
-
-            ' Execute the query and get the result
-            Dim result As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-
-            ' Check if the user exists
-            If result > 0 Then
-                ' Set the Username property
-                Me.Username = username
-
-                ' Proceed to the next form or main application window
-                frmMain.Show()
-                'frmMain.WindowState = FormWindowState.Normal
-                'frmMain.ShowInTaskbar = True
-                Me.Close()
-            Else
-                lblIncorrect.Text = "Invalid username or password."
+                    If result > 0 Then
+                        Me.Username = username
+                        frmMain.Show()
+                        conn.Close()
+                        Me.Close()
+                    Else
+                        lblIncorrect.Text = "Invalid username or password."
+                        lblIncorrect.Show()
+                        conn.Close()
+                    End If
+                End Using
+            Catch ex As Exception
+                lblIncorrect.Text = "Error: " & ex.Message
                 lblIncorrect.Show()
-            End If
-
-        Catch ex As Exception
-            ' Handle any errors that occur
-            lblIncorrect.Text = "Error: " & ex.Message
-            lblIncorrect.Show()
-        Finally
-            ' Close the connection whether or not an error occurred
-            If conn IsNot Nothing Then
                 conn.Close()
-            End If
-        End Try
+            End Try
+        End Using
 
         txtUsername.Clear()
         txtPassword.Clear()
@@ -111,13 +87,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
-        If cbxShowPassword.Checked Then
-            ' If the checkbox is checked, set the PasswordChar to an empty string to show the password
-            txtPassword.PasswordChar = ""
-        Else
-            ' If the checkbox is unchecked, set the PasswordChar back to "*"
-            txtPassword.PasswordChar = "*"
-        End If
+        txtPassword.PasswordChar = If(cbxShowPassword.Checked, "", "*")
     End Sub
 
     Private Sub lnklblSignUp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblSignUp.LinkClicked
