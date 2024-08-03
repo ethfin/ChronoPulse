@@ -99,7 +99,7 @@ Public Class frmSignUp
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         ' Validate the input fields
-        If ValidateInputFields() AndAlso emailValid() Then
+        If ValidateInputFields() AndAlso emailValid() AndAlso ValidatePassword(txtPassword.Text) Then
             ' Check if the username or email already exists
             If CheckExistingUser(txtUsername.Text, txtEmail.Text) Then
                 Return
