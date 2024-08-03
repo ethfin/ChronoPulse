@@ -1,5 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
+Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
+Imports MySql.Data.MySqlClient
 
 Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
@@ -90,13 +92,18 @@ Public Class frmSignUp
     End Sub
 
     Private Sub htmllblBackToLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles htmllblBackToLogin.LinkClicked
-        Me.Hide()
         frmLogin.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         ' Validate the input fields
         If ValidateInputFields() AndAlso emailValid() Then
+            ' Check if the username or email already exists
+            If CheckExistingUser(txtUsername.Text, txtEmail.Text) Then
+                Return
+            End If
+
             Me.Hide()
             frmSecurityQuestions.Show()
         End If
@@ -205,5 +212,37 @@ Public Class frmSignUp
         End If
         ' Show the email error label regardless of the result
         lblErrorEmail.Show()
+    End Function
+
+    Private Function CheckExistingUser(username As String, email As String) As Boolean
+        ' Use the getDBConnectionX method from Common.vb to get the database connection
+        Dim connection As MySqlConnection = Common.getDBConnectionX()
+
+        ' SQL query to check if the username or email already exists
+        Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE username = @Username OR email = @Email"
+
+        ' Create a MySqlCommand object with the query and connection
+        Using command As New MySqlCommand(query, connection)
+            ' Add parameters to the query to prevent SQL injection
+            command.Parameters.AddWithValue("@Username", username)
+            command.Parameters.AddWithValue("@Email", email)
+
+            ' Open the database connection
+            connection.Open()
+
+            ' Execute the query and get the result
+            Dim count As Integer = CInt(command.ExecuteScalar())
+
+            ' Check if the count is greater than 0, indicating that the username or email already exists
+            If count > 0 Then
+                lblError.Text = "Error: Username or email has already been taken."
+                lblError.ForeColor = Color.Red
+                lblError.Show()
+                connection.Close()
+                Return True
+            End If
+        End Using
+
+        Return False
     End Function
 End Class

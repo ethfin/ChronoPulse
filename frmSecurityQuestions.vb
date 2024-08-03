@@ -87,8 +87,9 @@ Public Class frmSecurityQuestions
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         If ValidateInputFields() Then
             InsertUserData()
-            Me.Hide()
             frmLogin.Show()
+            frmSignUp.Close()
+            Me.Close()
         End If
     End Sub
 
@@ -282,8 +283,8 @@ Public Class frmSecurityQuestions
     End Sub
 
     Private Sub htmllblBackToLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles htmllblBackToLogin.LinkClicked
-        Me.Hide()
         frmLogin.Show()
+        Me.Close()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

@@ -17,32 +17,36 @@ Public Class frmGames
 
         For Each proc As Process In processes
             If Not String.IsNullOrEmpty(proc.MainWindowTitle) AndAlso Not IsSystemProcess(proc) Then
-                If Not currentApplications.ContainsKey(proc.MainWindowTitle) Then
+                Dim appTitle = proc.MainWindowTitle
+                If Not currentApplications.ContainsKey(appTitle) Then
                     Dim elapsedTime = DateTime.Now - proc.StartTime
-                    trackerText.AppendLine($"{proc.MainWindowTitle}: {elapsedTime:hh\:mm\:ss}")
-                    currentApplications(proc.MainWindowTitle) = DateTime.Now
+                    trackerText.AppendLine($"{appTitle}: {elapsedTime:hh\:mm\:ss}")
+                    currentApplications(appTitle) = DateTime.Now
 
                     ' Update the last active time for the running application
-                    previousApplications(proc.MainWindowTitle) = DateTime.Now
+                    previousApplications(appTitle) = DateTime.Now
                 End If
             End If
         Next
 
         ' Check for closed applications
+        Dim closedApplications As New List(Of String)()
         For Each app In previousApplications.Keys.ToList()
             If Not currentApplications.ContainsKey(app) Then
                 Dim lastActiveTime = previousApplications(app)
                 lblLoglastTime.Text &= $"{app} was last active at {lastActiveTime:hh\:mm\:ss}" & "<br>"
-                previousApplications.Remove(app) ' Remove the closed application from tracking
+                closedApplications.Add(app)
             End If
         Next
 
-        lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>") ' Ensure new lines in the label text
+        For Each app In closedApplications
+            previousApplications.Remove(app)
+        Next
+
+        lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
     End Sub
 
     Private Function IsSystemProcess(proc As Process) As Boolean
-        ' Add logic to filter out system processes or background applications
-        ' For example, you can filter out processes with no main window title or specific known system processes
         Dim systemProcesses As String() = {"System", "Idle", "Settings"}
         Return systemProcesses.Contains(proc.ProcessName)
     End Function

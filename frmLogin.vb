@@ -100,6 +100,9 @@ Public Class frmLogin
                 conn.Close()
             End If
         End Try
+
+        txtUsername.Clear()
+        txtPassword.Clear()
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs)
