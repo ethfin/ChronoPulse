@@ -173,6 +173,8 @@ Public Class frmSignUp
         ' Regular expression pattern for a valid email address
         Dim emailPattern As String = "^\S+@\S+\.(?!.*@)\S+$"
 
+        'update the email verification
+
         ' Using Regex.IsMatch to check if the email is valid
         If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
             lblErrorEmail.Text = "Valid input."
