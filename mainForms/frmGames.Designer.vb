@@ -24,7 +24,6 @@ Partial Class frmGames
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblTracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -37,7 +36,6 @@ Partial Class frmGames
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
@@ -45,21 +43,6 @@ Partial Class frmGames
         Me.pnlContainer.Padding = New System.Windows.Forms.Padding(50)
         Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
         Me.pnlContainer.TabIndex = 1
-        '
-        'btnAdd
-        '
-        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAdd.FillColor = System.Drawing.Color.Lime
-        Me.btnAdd.Font = New System.Drawing.Font("DM Sans 14pt Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(55, 605)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(108, 45)
-        Me.btnAdd.TabIndex = 3
-        Me.btnAdd.Text = "Add"
         '
         'Guna2Panel5
         '
@@ -146,5 +129,4 @@ Partial Class frmGames
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbApp As ListBox
-    Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
 End Class

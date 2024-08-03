@@ -46,8 +46,4 @@ Public Class frmGames
         Dim systemProcesses As String() = {"System", "Idle", "Settings"}
         Return systemProcesses.Contains(proc.ProcessName)
     End Function
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
-    End Sub
 End Class
