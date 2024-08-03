@@ -171,12 +171,10 @@ Public Class frmSignUp
 
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
         ' Regular expression pattern for a valid email address
-        Dim emailPattern As String = "^\S+@\S+\.(?!.*@)\S+$"
-
-        'update the email verification
+        Dim emailPattern As String = "^\S+@\S+\.\S+$"
 
         ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
+        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) AndAlso Not txtEmail.Text.StartsWith(".") AndAlso Not txtEmail.Text.Contains(".@") Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
@@ -194,7 +192,7 @@ Public Class frmSignUp
         Dim emailPattern As String = "^\S+@\S+\.\S+$"
 
         ' Using Regex.IsMatch to check if the email is valid
-        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) Then
+        If System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern) AndAlso Not txtEmail.Text.StartsWith(".") AndAlso Not txtEmail.Text.Contains(".@") Then
             lblErrorEmail.Text = "Valid input."
             lblErrorEmail.ForeColor = Color.Green
             txtEmail.BorderColor = Color.Green
@@ -208,16 +206,4 @@ Public Class frmSignUp
         ' Show the email error label regardless of the result
         lblErrorEmail.Show()
     End Function
-
-    Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.TextChanged
-
-    End Sub
-
-    Private Sub lblErrorEmail_Click(sender As Object, e As EventArgs) Handles lblErrorEmail.Click
-
-    End Sub
-
-    Private Sub pnlBackground_Paint(sender As Object, e As PaintEventArgs) Handles pnlBackground.Paint
-
-    End Sub
 End Class
