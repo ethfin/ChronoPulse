@@ -1,5 +1,6 @@
 ﻿Public Class frmMain
 
+    ' Changes the panel displayed in the main panel container.
     Public Sub changePanel(ByVal panel As Form)
         pnlMain.Controls.Clear()
         With panel
@@ -11,6 +12,7 @@
         panel.Show()
     End Sub
 
+    ' Initializes a new instance of the frmMain class.
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
@@ -21,10 +23,12 @@
         Me.MinimumSize = New Size(1200, 700)
     End Sub
 
+    ' Handles the Load event of the frmMain control.
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblUsername.Text = frmLogin.Username
     End Sub
 
+    ' Handles the Click event of the icon buttons to change the displayed panel.
     Private Sub IconButton_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click, btnLeaderboard.Click, btnGames.Click, btnFinance.Click
         Select Case DirectCast(sender, Button).Name
             Case btnDashboard.Name
@@ -38,11 +42,13 @@
         End Select
     End Sub
 
+    ' Handles the form closing event to exit the application.
     Protected Overrides Sub OnFormClosing(ByVal e As FormClosingEventArgs)
         MyBase.OnFormClosing(e)
         Application.Exit()
     End Sub
 
+    ' Handles the Click event of the btnLogout control to log out the user.
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Hide()
         frmLogin.Show()
