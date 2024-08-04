@@ -24,19 +24,23 @@ Partial Class frmGames
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
+        Me.picBox = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblTracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.pnlContainer.SuspendLayout()
+        CType(Me.picBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlContainer.Controls.Add(Me.picBox)
         Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
@@ -45,6 +49,16 @@ Partial Class frmGames
         Me.pnlContainer.Padding = New System.Windows.Forms.Padding(50)
         Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
         Me.pnlContainer.TabIndex = 1
+        '
+        'picBox
+        '
+        Me.picBox.ImageRotate = 0!
+        Me.picBox.Location = New System.Drawing.Point(0, 0)
+        Me.picBox.Name = "picBox"
+        Me.picBox.Size = New System.Drawing.Size(54, 52)
+        Me.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picBox.TabIndex = 4
+        Me.picBox.TabStop = False
         '
         'btnAdd
         '
@@ -104,10 +118,6 @@ Partial Class frmGames
         Me.lblTracker.TabIndex = 1
         Me.lblTracker.Text = Nothing
         '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
-        '
         'ListBox1
         '
         Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Right
@@ -118,6 +128,16 @@ Partial Class frmGames
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(314, 492)
         Me.ListBox1.TabIndex = 3
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'frmGames
         '
@@ -131,6 +151,7 @@ Partial Class frmGames
         Me.Name = "frmGames"
         Me.Text = "frmGames"
         Me.pnlContainer.ResumeLayout(False)
+        CType(Me.picBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -143,4 +164,6 @@ Partial Class frmGames
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents picBox As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents ImageList1 As ImageList
 End Class

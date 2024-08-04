@@ -6,7 +6,7 @@ Imports System.IO
 Public Class frmGames
 
     Private previousApplications As New Dictionary(Of String, DateTime)()
-    Private knownGames As New List(Of String)()
+    Private knownGames As New HashSet(Of String)() ' Use HashSet for faster lookups
     Private gameStartTimes As New Dictionary(Of String, DateTime)()
 
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,9 +14,7 @@ Public Class frmGames
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
 
         ' Populate ListBox1 with known games
-        For Each game In knownGames
-            ListBox1.Items.Add(game)
-        Next
+        ListBox1.Items.AddRange(knownGames.ToArray())
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)
@@ -73,15 +71,16 @@ Public Class frmGames
         Next
 
         ' Update the tracker text in the UI
-        Invoke(Sub()
-                   If Not Me.IsDisposed Then
+
+        If Not Me.IsDisposed Then
+            Invoke(Sub()
                        lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
-                   End If
-               End Sub)
+                   End Sub)
+        End If
     End Sub
 
     Private Function IsSystemProcess(proc As Process) As Boolean
-        Dim systemProcesses As String() = {"System", "Idle", "Settings"}
+        Dim systemProcesses As HashSet(Of String) = New HashSet(Of String)({"System", "Idle", "Settings"})
         Return systemProcesses.Contains(proc.ProcessName)
     End Function
 
@@ -99,9 +98,16 @@ Public Class frmGames
                 Dim filePath As String = openFileDialog.FileName
                 Dim fileName As String = Path.GetFileNameWithoutExtension(filePath)
 
-                If Not knownGames.Contains(fileName) Then
-                    knownGames.Add(fileName)
+                If knownGames.Add(fileName) Then ' HashSet.Add returns false if item already exists
                     ListBox1.Items.Add(fileName) ' Add the game to ListBox1
+
+                    ' Extract the icon from the executable file
+                    Dim icon As Icon = Icon.ExtractAssociatedIcon(filePath)
+                    If icon IsNot Nothing Then
+                        ' Convert the icon to an image and display it in the PictureBox
+                        picBox.Image = icon.ToBitmap()
+                    End If
+
                     MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show($"{fileName} is already in the known games list.", "Duplicate Game", MessageBoxButtons.OK, MessageBoxIcon.Warning)
