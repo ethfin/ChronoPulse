@@ -1,10 +1,13 @@
 ﻿Imports System.Diagnostics
 Imports System.Text
 Imports System.Threading.Tasks
+Imports System.IO
 
 Public Class frmGames
 
     Private previousApplications As New Dictionary(Of String, DateTime)()
+    Private knownGames As New List(Of String)()
+    Private gameStartTimes As New Dictionary(Of String, DateTime)()
 
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
@@ -21,10 +24,19 @@ Public Class frmGames
         Dim currentApplications As New Dictionary(Of String, DateTime)()
 
         For Each proc As Process In processes
-            If Not String.IsNullOrEmpty(proc.MainWindowTitle) AndAlso Not IsSystemProcess(proc) Then
+            If Not String.IsNullOrEmpty(proc.MainWindowTitle) AndAlso Not IsSystemProcess(proc) AndAlso IsGame(proc) Then
                 Dim appTitle = proc.MainWindowTitle
                 If Not currentApplications.ContainsKey(appTitle) Then
-                    trackerText.AppendLine($"{appTitle}: Last active at {DateTime.Now:hh\:mm\:ss}")
+                    ' Set the start time for the game session if not already set
+                    If Not gameStartTimes.ContainsKey(appTitle) Then
+                        gameStartTimes(appTitle) = DateTime.Now
+                    End If
+
+                    ' Calculate the elapsed time
+                    Dim startTime As DateTime = gameStartTimes(appTitle)
+                    Dim elapsedTime As TimeSpan = DateTime.Now - startTime
+
+                    trackerText.AppendLine($"{appTitle}: Elapsed Time {elapsedTime:hh\:mm\:ss}")
                     currentApplications(appTitle) = DateTime.Now
 
                     ' Update the last active time for the running application
@@ -37,21 +49,29 @@ Public Class frmGames
         Dim closedApplications As New List(Of String)()
         For Each app In previousApplications.Keys.ToList()
             If Not currentApplications.ContainsKey(app) Then
-                Dim lastActiveTime = previousApplications(app)
-                Invoke(Sub()
-                           lblLoglastTime.Text &= $"{app} was last active at {lastActiveTime:hh\:mm\:ss}" & "<br>"
-                       End Sub)
+                Dim startTime As DateTime = gameStartTimes(app)
+                Dim elapsedTime As TimeSpan = DateTime.Now - startTime
+
                 closedApplications.Add(app)
+
+                ' Update the UI with the closed application information
+                Invoke(Sub()
+                           lblLoglastTime.Text &= $"{app}: Elapsed Time {elapsedTime:hh\:mm\:ss}" & "<br>"
+                       End Sub)
             End If
         Next
 
-        ' Remove closed applications from the previousApplications dictionary
+        ' Remove closed applications from the previousApplications and gameStartTimes dictionaries
         For Each app In closedApplications
             previousApplications.Remove(app)
+            gameStartTimes.Remove(app)
         Next
 
+        ' Update the tracker text in the UI
         Invoke(Sub()
-                   lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+                   If Not Me.IsDisposed Then
+                       lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+                   End If
                End Sub)
     End Sub
 
@@ -59,4 +79,28 @@ Public Class frmGames
         Dim systemProcesses As String() = {"System", "Idle", "Settings"}
         Return systemProcesses.Contains(proc.ProcessName)
     End Function
+
+    Private Function IsGame(proc As Process) As Boolean
+        ' Check if the process title or name matches any known game titles
+        Return knownGames.Any(Function(game) proc.MainWindowTitle.Contains(game) OrElse proc.ProcessName.Contains(game))
+    End Function
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Using openFileDialog As New OpenFileDialog()
+            openFileDialog.Filter = "Executable Files|*.exe"
+            openFileDialog.Title = "Select a Game Executable"
+
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                Dim filePath As String = openFileDialog.FileName
+                Dim fileName As String = Path.GetFileNameWithoutExtension(filePath)
+
+                If Not knownGames.Contains(fileName) Then
+                    knownGames.Add(fileName)
+                    MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show($"{fileName} is already in the known games list.", "Duplicate Game", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            End If
+        End Using
+    End Sub
 End Class

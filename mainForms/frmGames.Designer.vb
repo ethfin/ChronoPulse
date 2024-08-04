@@ -27,8 +27,8 @@ Partial Class frmGames
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblTracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbApp = New System.Windows.Forms.ListBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.SuspendLayout()
@@ -36,6 +36,7 @@ Partial Class frmGames
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
@@ -54,7 +55,6 @@ Partial Class frmGames
         Me.Guna2Panel5.BorderThickness = 1
         Me.Guna2Panel5.Controls.Add(Me.lblLoglastTime)
         Me.Guna2Panel5.Controls.Add(Me.lblTracker)
-        Me.Guna2Panel5.Controls.Add(Me.lbApp)
         Me.Guna2Panel5.Location = New System.Drawing.Point(55, 55)
         Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel5.Name = "Guna2Panel5"
@@ -71,7 +71,7 @@ Partial Class frmGames
         Me.lblLoglastTime.ForeColor = System.Drawing.Color.White
         Me.lblLoglastTime.Location = New System.Drawing.Point(25, 247)
         Me.lblLoglastTime.Name = "lblLoglastTime"
-        Me.lblLoglastTime.Size = New System.Drawing.Size(801, 267)
+        Me.lblLoglastTime.Size = New System.Drawing.Size(1088, 267)
         Me.lblLoglastTime.TabIndex = 2
         Me.lblLoglastTime.Text = Nothing
         '
@@ -84,26 +84,27 @@ Partial Class frmGames
         Me.lblTracker.ForeColor = System.Drawing.Color.White
         Me.lblTracker.Location = New System.Drawing.Point(25, 25)
         Me.lblTracker.Name = "lblTracker"
-        Me.lblTracker.Size = New System.Drawing.Size(801, 222)
+        Me.lblTracker.Size = New System.Drawing.Size(1088, 222)
         Me.lblTracker.TabIndex = 1
-        '
-        'lbApp
-        '
-        Me.lbApp.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.lbApp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbApp.Dock = System.Windows.Forms.DockStyle.Right
-        Me.lbApp.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbApp.ForeColor = System.Drawing.Color.White
-        Me.lbApp.FormattingEnabled = True
-        Me.lbApp.ItemHeight = 23
-        Me.lbApp.Location = New System.Drawing.Point(826, 25)
-        Me.lbApp.Name = "lbApp"
-        Me.lbApp.Size = New System.Drawing.Size(287, 492)
-        Me.lbApp.TabIndex = 0
+        Me.lblTracker.Text = Nothing
         '
         'Timer1
         '
         Me.Timer1.Interval = 1000
+        '
+        'btnAdd
+        '
+        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.Location = New System.Drawing.Point(55, 595)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(180, 45)
+        Me.btnAdd.TabIndex = 3
+        Me.btnAdd.Text = "ADD"
         '
         'frmGames
         '
@@ -127,5 +128,5 @@ Partial Class frmGames
     Friend WithEvents lblTracker As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents lbApp As ListBox
+    Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
 End Class
