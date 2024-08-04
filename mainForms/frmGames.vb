@@ -12,6 +12,11 @@ Public Class frmGames
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
+
+        ' Populate ListBox1 with known games
+        For Each game In knownGames
+            ListBox1.Items.Add(game)
+        Next
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)
@@ -96,6 +101,7 @@ Public Class frmGames
 
                 If Not knownGames.Contains(fileName) Then
                     knownGames.Add(fileName)
+                    ListBox1.Items.Add(fileName) ' Add the game to ListBox1
                     MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show($"{fileName} is already in the known games list.", "Duplicate Game", MessageBoxButtons.OK, MessageBoxIcon.Warning)

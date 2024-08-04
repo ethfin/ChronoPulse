@@ -50,6 +50,7 @@
         frmDashboard.Close()
         frmCategory.Close()
         frmGames.Close()
+        frmGames.Dispose()
         frmLeaderboard.Close()
     End Sub
 
@@ -60,6 +61,7 @@
         frmDashboard.Close()
         frmCategory.Close()
         frmGames.Close()
+        frmGames.Dispose()
         frmLeaderboard.Close()
         Me.Close()
     End Sub
