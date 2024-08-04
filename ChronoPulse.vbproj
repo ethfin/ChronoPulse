@@ -197,10 +197,10 @@
     <Compile Include="mainForms\frmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForms\frmFinance.Designer.vb">
-      <DependentUpon>frmFinance.vb</DependentUpon>
+    <Compile Include="mainForms\frmCategory.Designer.vb">
+      <DependentUpon>frmCategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="mainForms\frmFinance.vb">
+    <Compile Include="mainForms\frmCategory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mainForms\frmGames.Designer.vb">
@@ -263,8 +263,8 @@
     <EmbeddedResource Include="mainForms\frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainForms\frmFinance.resx">
-      <DependentUpon>frmFinance.vb</DependentUpon>
+    <EmbeddedResource Include="mainForms\frmCategory.resx">
+      <DependentUpon>frmCategory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForms\frmGames.resx">
       <DependentUpon>frmGames.vb</DependentUpon>

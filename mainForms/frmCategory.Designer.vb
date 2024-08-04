@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmFinance
+Partial Class frmCategory
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,7 @@ Partial Class frmFinance
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.pnlFinanceContainer = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlCategoryContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnDisable = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
@@ -40,14 +40,14 @@ Partial Class frmFinance
         Me.lblCategory = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dgvCategories = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pnlContainer.SuspendLayout()
-        Me.pnlFinanceContainer.SuspendLayout()
+        Me.pnlCategoryContainer.SuspendLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlContainer.Controls.Add(Me.pnlFinanceContainer)
+        Me.pnlContainer.Controls.Add(Me.pnlCategoryContainer)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
         Me.pnlContainer.Name = "pnlContainer"
@@ -55,31 +55,31 @@ Partial Class frmFinance
         Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
         Me.pnlContainer.TabIndex = 2
         '
-        'pnlFinanceContainer
+        'pnlCategoryContainer
         '
-        Me.pnlFinanceContainer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.pnlCategoryContainer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlFinanceContainer.BackColor = System.Drawing.Color.Transparent
-        Me.pnlFinanceContainer.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.pnlFinanceContainer.BorderThickness = 1
-        Me.pnlFinanceContainer.Controls.Add(Me.btnDisable)
-        Me.pnlFinanceContainer.Controls.Add(Me.btnClear)
-        Me.pnlFinanceContainer.Controls.Add(Me.btnUpdate)
-        Me.pnlFinanceContainer.Controls.Add(Me.btnAdd)
-        Me.pnlFinanceContainer.Controls.Add(Me.txtStatus)
-        Me.pnlFinanceContainer.Controls.Add(Me.lblStatus)
-        Me.pnlFinanceContainer.Controls.Add(Me.txtType)
-        Me.pnlFinanceContainer.Controls.Add(Me.lblType)
-        Me.pnlFinanceContainer.Controls.Add(Me.txtCategory)
-        Me.pnlFinanceContainer.Controls.Add(Me.lblCategory)
-        Me.pnlFinanceContainer.Controls.Add(Me.dgvCategories)
-        Me.pnlFinanceContainer.Location = New System.Drawing.Point(55, 55)
-        Me.pnlFinanceContainer.Margin = New System.Windows.Forms.Padding(5)
-        Me.pnlFinanceContainer.Name = "pnlFinanceContainer"
-        Me.pnlFinanceContainer.Padding = New System.Windows.Forms.Padding(25)
-        Me.pnlFinanceContainer.Size = New System.Drawing.Size(1138, 542)
-        Me.pnlFinanceContainer.TabIndex = 2
+        Me.pnlCategoryContainer.BackColor = System.Drawing.Color.Transparent
+        Me.pnlCategoryContainer.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.pnlCategoryContainer.BorderThickness = 1
+        Me.pnlCategoryContainer.Controls.Add(Me.btnDisable)
+        Me.pnlCategoryContainer.Controls.Add(Me.btnClear)
+        Me.pnlCategoryContainer.Controls.Add(Me.btnUpdate)
+        Me.pnlCategoryContainer.Controls.Add(Me.btnAdd)
+        Me.pnlCategoryContainer.Controls.Add(Me.txtStatus)
+        Me.pnlCategoryContainer.Controls.Add(Me.lblStatus)
+        Me.pnlCategoryContainer.Controls.Add(Me.txtType)
+        Me.pnlCategoryContainer.Controls.Add(Me.lblType)
+        Me.pnlCategoryContainer.Controls.Add(Me.txtCategory)
+        Me.pnlCategoryContainer.Controls.Add(Me.lblCategory)
+        Me.pnlCategoryContainer.Controls.Add(Me.dgvCategories)
+        Me.pnlCategoryContainer.Location = New System.Drawing.Point(55, 55)
+        Me.pnlCategoryContainer.Margin = New System.Windows.Forms.Padding(5)
+        Me.pnlCategoryContainer.Name = "pnlCategoryContainer"
+        Me.pnlCategoryContainer.Padding = New System.Windows.Forms.Padding(25)
+        Me.pnlCategoryContainer.Size = New System.Drawing.Size(1138, 542)
+        Me.pnlCategoryContainer.TabIndex = 2
         '
         'btnDisable
         '
@@ -91,10 +91,13 @@ Partial Class frmFinance
         Me.btnDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnDisable.Font = New System.Drawing.Font("DM Sans 14pt", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnDisable.ForeColor = System.Drawing.Color.White
+        Me.btnDisable.HoverState.FillColor = System.Drawing.Color.Red
+        Me.btnDisable.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnDisable.IndicateFocus = True
         Me.btnDisable.Location = New System.Drawing.Point(139, 349)
         Me.btnDisable.Name = "btnDisable"
         Me.btnDisable.Size = New System.Drawing.Size(105, 45)
-        Me.btnDisable.TabIndex = 10
+        Me.btnDisable.TabIndex = 6
         Me.btnDisable.Text = "Disable"
         '
         'btnClear
@@ -107,10 +110,13 @@ Partial Class frmFinance
         Me.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnClear.Font = New System.Drawing.Font("DM Sans 14pt", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.HoverState.FillColor = System.Drawing.Color.White
+        Me.btnClear.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.btnClear.IndicateFocus = True
         Me.btnClear.Location = New System.Drawing.Point(28, 349)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(105, 45)
-        Me.btnClear.TabIndex = 9
+        Me.btnClear.TabIndex = 5
         Me.btnClear.Text = "Clear"
         '
         'btnUpdate
@@ -123,10 +129,12 @@ Partial Class frmFinance
         Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("DM Sans 14pt", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnUpdate.IndicateFocus = True
         Me.btnUpdate.Location = New System.Drawing.Point(139, 298)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(105, 45)
-        Me.btnUpdate.TabIndex = 8
+        Me.btnUpdate.TabIndex = 4
         Me.btnUpdate.Text = "Update"
         '
         'btnAdd
@@ -139,10 +147,12 @@ Partial Class frmFinance
         Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("DM Sans 14pt", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.HoverState.FillColor = System.Drawing.Color.Lime
+        Me.btnAdd.IndicateFocus = True
         Me.btnAdd.Location = New System.Drawing.Point(28, 298)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(105, 45)
-        Me.btnAdd.TabIndex = 7
+        Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "Add"
         '
         'txtStatus
@@ -167,7 +177,7 @@ Partial Class frmFinance
         Me.txtStatus.PlaceholderText = "..."
         Me.txtStatus.SelectedText = ""
         Me.txtStatus.Size = New System.Drawing.Size(248, 36)
-        Me.txtStatus.TabIndex = 6
+        Me.txtStatus.TabIndex = 2
         '
         'lblStatus
         '
@@ -178,6 +188,7 @@ Partial Class frmFinance
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(97, 40)
         Me.lblStatus.TabIndex = 5
+        Me.lblStatus.TabStop = False
         Me.lblStatus.Text = "Status"
         '
         'txtType
@@ -202,7 +213,7 @@ Partial Class frmFinance
         Me.txtType.PlaceholderText = "..."
         Me.txtType.SelectedText = ""
         Me.txtType.Size = New System.Drawing.Size(248, 36)
-        Me.txtType.TabIndex = 4
+        Me.txtType.TabIndex = 1
         '
         'lblType
         '
@@ -213,6 +224,7 @@ Partial Class frmFinance
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(74, 40)
         Me.lblType.TabIndex = 3
+        Me.lblType.TabStop = False
         Me.lblType.Text = "Type"
         '
         'txtCategory
@@ -237,7 +249,7 @@ Partial Class frmFinance
         Me.txtCategory.PlaceholderText = "..."
         Me.txtCategory.SelectedText = ""
         Me.txtCategory.Size = New System.Drawing.Size(248, 36)
-        Me.txtCategory.TabIndex = 2
+        Me.txtCategory.TabIndex = 0
         '
         'lblCategory
         '
@@ -248,6 +260,7 @@ Partial Class frmFinance
         Me.lblCategory.Name = "lblCategory"
         Me.lblCategory.Size = New System.Drawing.Size(136, 40)
         Me.lblCategory.TabIndex = 1
+        Me.lblCategory.TabStop = False
         Me.lblCategory.Text = "Category"
         '
         'dgvCategories
@@ -258,7 +271,6 @@ Partial Class frmFinance
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvCategories.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Inter Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -288,6 +300,7 @@ Partial Class frmFinance
         Me.dgvCategories.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCategories.Size = New System.Drawing.Size(826, 486)
         Me.dgvCategories.TabIndex = 0
+        Me.dgvCategories.TabStop = False
         Me.dgvCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvCategories.ThemeStyle.AlternatingRowsStyle.Font = Nothing
         Me.dgvCategories.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
@@ -310,7 +323,7 @@ Partial Class frmFinance
         Me.dgvCategories.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvCategories.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'frmFinance
+        'frmCategory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -319,18 +332,18 @@ Partial Class frmFinance
         Me.Controls.Add(Me.pnlContainer)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmFinance"
-        Me.Text = "frmFinance"
+        Me.Name = "frmCategory"
+        Me.Text = "frmCategory"
         Me.pnlContainer.ResumeLayout(False)
-        Me.pnlFinanceContainer.ResumeLayout(False)
-        Me.pnlFinanceContainer.PerformLayout()
+        Me.pnlCategoryContainer.ResumeLayout(False)
+        Me.pnlCategoryContainer.PerformLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlContainer As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents pnlFinanceContainer As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlCategoryContainer As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dgvCategories As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents lblCategory As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txtCategory As Guna.UI2.WinForms.Guna2TextBox

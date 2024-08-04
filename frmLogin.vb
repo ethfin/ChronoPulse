@@ -4,7 +4,12 @@ Imports MySql.Data.MySqlClient
 Public Class frmLogin
 
     ' Property to store the username of the logged-in user
-    Public Property Username As String
+    Public ReadOnly Property Username As String
+        Get
+            ' Return the username entered by the user
+            Return txtUsername.Text
+        End Get
+    End Property
 
     ' Override the window procedure to handle custom window messages
     Protected Overrides Sub WndProc(ByRef m As Message)
@@ -87,10 +92,7 @@ Public Class frmLogin
 
             ' Check if the user exists
             If result > 0 Then
-                ' Set the Username property
-                Me.Username = username
-
-                ' Proceed to the next form or main application window
+                frmMain.lblUsername.Text = Me.Username
                 frmMain.Show()
                 Me.Close()
             Else

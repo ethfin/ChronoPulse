@@ -29,7 +29,7 @@
     End Sub
 
     ' Handles the Click event of the icon buttons to change the displayed panel.
-    Private Sub IconButton_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click, btnLeaderboard.Click, btnGames.Click, btnFinance.Click
+    Private Sub IconButton_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click, btnLeaderboard.Click, btnGames.Click, btnCategory.Click, btnExpenses.Click
         Select Case DirectCast(sender, Button).Name
             Case btnDashboard.Name
                 changePanel(frmDashboard)
@@ -37,8 +37,10 @@
                 changePanel(frmLeaderboard)
             Case btnGames.Name
                 changePanel(frmGames)
-            Case btnFinance.Name
-                changePanel(frmFinance)
+            Case btnCategory.Name
+                changePanel(frmCategory)
+            Case btnExpenses.Name
+                'changePanel(frmExpense)
         End Select
     End Sub
 
@@ -46,7 +48,7 @@
     Protected Overrides Sub OnFormClosing(ByVal e As FormClosingEventArgs)
         MyBase.OnFormClosing(e)
         frmDashboard.Close()
-        frmFinance.Close()
+        frmCategory.Close()
         frmGames.Close()
         frmLeaderboard.Close()
     End Sub
@@ -56,7 +58,7 @@
         'Me.Hide()
         frmLogin.Show()
         frmDashboard.Close()
-        frmFinance.Close()
+        frmCategory.Close()
         frmGames.Close()
         frmLeaderboard.Close()
         Me.Close()
