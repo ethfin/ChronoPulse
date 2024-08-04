@@ -1,5 +1,6 @@
 ﻿Imports System.Diagnostics
 Imports System.Text
+Imports System.Threading.Tasks
 
 Public Class frmGames
 
@@ -7,10 +8,14 @@ Public Class frmGames
 
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-        AddHandler Timer1.Tick, AddressOf UpdateTracker
+        AddHandler Timer1.Tick, AddressOf Timer1_Tick
     End Sub
 
-    Private Sub UpdateTracker(sender As Object, e As EventArgs)
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
+        Task.Run(AddressOf UpdateTracker)
+    End Sub
+
+    Private Sub UpdateTracker()
         Dim processes = Process.GetProcesses()
         Dim trackerText As New StringBuilder()
         Dim currentApplications As New Dictionary(Of String, DateTime)()
@@ -19,8 +24,7 @@ Public Class frmGames
             If Not String.IsNullOrEmpty(proc.MainWindowTitle) AndAlso Not IsSystemProcess(proc) Then
                 Dim appTitle = proc.MainWindowTitle
                 If Not currentApplications.ContainsKey(appTitle) Then
-                    Dim elapsedTime = DateTime.Now - proc.StartTime
-                    trackerText.AppendLine($"{appTitle}: {elapsedTime:hh\:mm\:ss}")
+                    trackerText.AppendLine($"{appTitle}: Last active at {DateTime.Now:hh\:mm\:ss}")
                     currentApplications(appTitle) = DateTime.Now
 
                     ' Update the last active time for the running application
@@ -34,16 +38,21 @@ Public Class frmGames
         For Each app In previousApplications.Keys.ToList()
             If Not currentApplications.ContainsKey(app) Then
                 Dim lastActiveTime = previousApplications(app)
-                lblLoglastTime.Text &= $"{app} was last active at {lastActiveTime:hh\:mm\:ss}" & "<br>"
+                Invoke(Sub()
+                           lblLoglastTime.Text &= $"{app} was last active at {lastActiveTime:hh\:mm\:ss}" & "<br>"
+                       End Sub)
                 closedApplications.Add(app)
             End If
         Next
 
+        ' Remove closed applications from the previousApplications dictionary
         For Each app In closedApplications
             previousApplications.Remove(app)
         Next
 
-        lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+        Invoke(Sub()
+                   lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+               End Sub)
     End Sub
 
     Private Function IsSystemProcess(proc As Process) As Boolean
