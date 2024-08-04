@@ -27,6 +27,11 @@ Public Class frmFinance
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        If String.IsNullOrWhiteSpace(txtCategory.Text) OrElse String.IsNullOrWhiteSpace(txtType.Text) OrElse String.IsNullOrWhiteSpace(txtStatus.Text) Then
+            MessageBox.Show("Please fill in all fields before adding a new category.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         Dim userID As Integer
         Dim username As String = frmMain.lblUsername.Text
         Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
@@ -50,6 +55,7 @@ Public Class frmFinance
         End Using
         LoadData()
     End Sub
+
     Private Sub dgvCategories_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategories.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = dgvCategories.Rows(e.RowIndex)
@@ -60,32 +66,40 @@ Public Class frmFinance
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If dgvCategories.SelectedRows.Count > 0 Then
-            Dim userID As Integer
-            Dim username As String = frmMain.lblUsername.Text
-            Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
-
-            Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
-                getUserIDCmd.Parameters.AddWithValue("@username", username)
-                Common.getDBConnectionX().Open()
-                userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
-                Common.getDBConnectionX().Close()
-            End Using
-
-            Dim id As Integer = Convert.ToInt32(dgvCategories.SelectedRows(0).Cells("ID").Value)
-            Dim query As String = "UPDATE categories SET category = @category, type = @type, status = @status WHERE ID = @id AND UserID = @userID"
-            Using cmd As New MySqlCommand(query, Common.getDBConnectionX())
-                cmd.Parameters.AddWithValue("@id", id)
-                cmd.Parameters.AddWithValue("@userID", userID)
-                cmd.Parameters.AddWithValue("@category", txtCategory.Text)
-                cmd.Parameters.AddWithValue("@type", txtType.Text)
-                cmd.Parameters.AddWithValue("@status", txtStatus.Text)
-                Common.getDBConnectionX().Open()
-                cmd.ExecuteNonQuery()
-                Common.getDBConnectionX().Close()
-            End Using
-            LoadData()
+        If dgvCategories.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a category to update.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
+
+        If String.IsNullOrWhiteSpace(txtCategory.Text) OrElse String.IsNullOrWhiteSpace(txtType.Text) OrElse String.IsNullOrWhiteSpace(txtStatus.Text) Then
+            MessageBox.Show("Please fill in all fields before updating the category.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim userID As Integer
+        Dim username As String = frmMain.lblUsername.Text
+        Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
+
+        Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
+            getUserIDCmd.Parameters.AddWithValue("@username", username)
+            Common.getDBConnectionX().Open()
+            userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
+            Common.getDBConnectionX().Close()
+        End Using
+
+        Dim id As Integer = Convert.ToInt32(dgvCategories.SelectedRows(0).Cells("ID").Value)
+        Dim query As String = "UPDATE categories SET category = @category, type = @type, status = @status WHERE ID = @id AND UserID = @userID"
+        Using cmd As New MySqlCommand(query, Common.getDBConnectionX())
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@userID", userID)
+            cmd.Parameters.AddWithValue("@category", txtCategory.Text)
+            cmd.Parameters.AddWithValue("@type", txtType.Text)
+            cmd.Parameters.AddWithValue("@status", txtStatus.Text)
+            Common.getDBConnectionX().Open()
+            cmd.ExecuteNonQuery()
+            Common.getDBConnectionX().Close()
+        End Using
+        LoadData()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -95,28 +109,31 @@ Public Class frmFinance
     End Sub
 
     Private Sub btnDisable_Click(sender As Object, e As EventArgs) Handles btnDisable.Click
-        If dgvCategories.SelectedRows.Count > 0 Then
-            Dim userID As Integer
-            Dim username As String = frmMain.lblUsername.Text
-            Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
-
-            Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
-                getUserIDCmd.Parameters.AddWithValue("@username", username)
-                Common.getDBConnectionX().Open()
-                userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
-                Common.getDBConnectionX().Close()
-            End Using
-
-            Dim id As Integer = Convert.ToInt32(dgvCategories.SelectedRows(0).Cells("ID").Value)
-            Dim query As String = "UPDATE categories SET status = 'Disabled' WHERE ID = @id AND UserID = @userID"
-            Using cmd As New MySqlCommand(query, Common.getDBConnectionX())
-                cmd.Parameters.AddWithValue("@id", id)
-                cmd.Parameters.AddWithValue("@userID", userID)
-                Common.getDBConnectionX().Open()
-                cmd.ExecuteNonQuery()
-                Common.getDBConnectionX().Close()
-            End Using
-            LoadData()
+        If dgvCategories.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a category to disable.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
+
+        Dim userID As Integer
+        Dim username As String = frmMain.lblUsername.Text
+        Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
+
+        Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
+            getUserIDCmd.Parameters.AddWithValue("@username", username)
+            Common.getDBConnectionX().Open()
+            userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
+            Common.getDBConnectionX().Close()
+        End Using
+
+        Dim id As Integer = Convert.ToInt32(dgvCategories.SelectedRows(0).Cells("ID").Value)
+        Dim query As String = "UPDATE categories SET status = 'Disabled' WHERE ID = @id AND UserID = @userID"
+        Using cmd As New MySqlCommand(query, Common.getDBConnectionX())
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@userID", userID)
+            Common.getDBConnectionX().Open()
+            cmd.ExecuteNonQuery()
+            Common.getDBConnectionX().Close()
+        End Using
+        LoadData()
     End Sub
 End Class
