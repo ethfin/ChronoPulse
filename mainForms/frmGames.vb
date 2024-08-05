@@ -56,9 +56,11 @@ Public Class frmGames
                 closedApplications.Add(app)
 
                 ' Update the UI with the closed application information
-                Invoke(Sub()
-                           lblLoglastTime.Text &= $"{app}: Elapsed Time {elapsedTime:hh\:mm\:ss}" & "<br>"
-                       End Sub)
+                If Not Me.IsDisposed Then
+                    BeginInvoke(Sub()
+                                    lblLoglastTime.Text &= $"{app}: Elapsed Time {elapsedTime:hh\:mm\:ss}" & "<br>"
+                                End Sub)
+                End If
             End If
         Next
 
@@ -69,11 +71,10 @@ Public Class frmGames
         Next
 
         ' Update the tracker text in the UI
-
         If Not Me.IsDisposed Then
-            Invoke(Sub()
-                       lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
-                   End Sub)
+            BeginInvoke(Sub()
+                            lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+                        End Sub)
         End If
     End Sub
 
