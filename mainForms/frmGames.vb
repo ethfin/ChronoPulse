@@ -25,23 +25,23 @@ Public Class frmGames
         Dim currentApplications As New Dictionary(Of String, DateTime)()
 
         For Each proc As Process In processes
-            If Not String.IsNullOrEmpty(proc.MainWindowTitle) AndAlso Not IsSystemProcess(proc) AndAlso IsGame(proc) Then
-                Dim appTitle = proc.MainWindowTitle
-                If Not currentApplications.ContainsKey(appTitle) Then
+            If Not IsSystemProcess(proc) AndAlso IsGame(proc) Then
+                Dim appName = proc.ProcessName
+                If Not currentApplications.ContainsKey(appName) Then
                     ' Set the start time for the game session if not already set
-                    If Not gameStartTimes.ContainsKey(appTitle) Then
-                        gameStartTimes(appTitle) = DateTime.Now
+                    If Not gameStartTimes.ContainsKey(appName) Then
+                        gameStartTimes(appName) = DateTime.Now
                     End If
 
                     ' Calculate the elapsed time
-                    Dim startTime As DateTime = gameStartTimes(appTitle)
+                    Dim startTime As DateTime = gameStartTimes(appName)
                     Dim elapsedTime As TimeSpan = DateTime.Now - startTime
 
-                    trackerText.AppendLine($"{appTitle}: Elapsed Time {elapsedTime:hh\:mm\:ss}")
-                    currentApplications(appTitle) = DateTime.Now
+                    trackerText.AppendLine($"{appName}: Elapsed Time {elapsedTime:hh\:mm\:ss}")
+                    currentApplications(appName) = DateTime.Now
 
                     ' Update the last active time for the running application
-                    previousApplications(appTitle) = DateTime.Now
+                    previousApplications(appName) = DateTime.Now
                 End If
             End If
         Next
@@ -84,8 +84,8 @@ Public Class frmGames
     End Function
 
     Private Function IsGame(proc As Process) As Boolean
-        ' Check if the process title or name matches any known game titles
-        Return knownGames.Any(Function(game) proc.MainWindowTitle.Contains(game) OrElse proc.ProcessName.Contains(game))
+        ' Check if the process name matches any known game titles
+        Return knownGames.Contains(proc.ProcessName)
     End Function
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
