@@ -59,4 +59,12 @@ Public Class frmExpenses
             lblDate.Text = row.Cells("date").Value.ToString()
         End If
     End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        frmAddExpense.Show()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        frmAddExpense.Show()
+    End Sub
 End Class
