@@ -63,7 +63,7 @@
         frmDashboard.Close()
         'frmCategory.Close()
         frmGames.Close()
-        frmGames.Dispose()
+        'frmGames.Dispose()
         'frmLeaderboard.Close()
         frmExpenses.Close()
     End Sub
