@@ -23,28 +23,28 @@ Partial Class frmAddExpense
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lblItem = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lblDesc = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lblCost = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.lblDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txtCost = New System.Windows.Forms.TextBox()
+        Me.txtItem = New System.Windows.Forms.TextBox()
+        Me.txtDesc = New System.Windows.Forms.ComboBox()
+        Me.lblCost = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lblDesc = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lblItem = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DTP = New System.Windows.Forms.DateTimePicker()
         Me.pnlContainer.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlContainer.Controls.Add(Me.ComboBox2)
-        Me.pnlContainer.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.pnlContainer.Controls.Add(Me.DTP)
+        Me.pnlContainer.Controls.Add(Me.lblDate)
         Me.pnlContainer.Controls.Add(Me.btnAdd)
-        Me.pnlContainer.Controls.Add(Me.TextBox2)
-        Me.pnlContainer.Controls.Add(Me.TextBox1)
-        Me.pnlContainer.Controls.Add(Me.ComboBox1)
+        Me.pnlContainer.Controls.Add(Me.txtCost)
+        Me.pnlContainer.Controls.Add(Me.txtItem)
+        Me.pnlContainer.Controls.Add(Me.txtDesc)
         Me.pnlContainer.Controls.Add(Me.lblCost)
         Me.pnlContainer.Controls.Add(Me.lblDesc)
         Me.pnlContainer.Controls.Add(Me.lblItem)
@@ -56,75 +56,17 @@ Partial Class frmAddExpense
         Me.pnlContainer.Size = New System.Drawing.Size(644, 353)
         Me.pnlContainer.TabIndex = 2
         '
-        'Guna2HtmlLabel1
+        'lblDate
         '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(29, 23)
-        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(188, 34)
-        Me.Guna2HtmlLabel1.TabIndex = 14
-        Me.Guna2HtmlLabel1.Text = "Add Expenses"
-        '
-        'lblItem
-        '
-        Me.lblItem.BackColor = System.Drawing.Color.Transparent
-        Me.lblItem.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItem.ForeColor = System.Drawing.Color.White
-        Me.lblItem.Location = New System.Drawing.Point(115, 78)
-        Me.lblItem.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblItem.Name = "lblItem"
-        Me.lblItem.Size = New System.Drawing.Size(69, 34)
-        Me.lblItem.TabIndex = 15
-        Me.lblItem.Text = "Item:"
-        '
-        'lblDesc
-        '
-        Me.lblDesc.BackColor = System.Drawing.Color.Transparent
-        Me.lblDesc.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDesc.ForeColor = System.Drawing.Color.White
-        Me.lblDesc.Location = New System.Drawing.Point(29, 184)
-        Me.lblDesc.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblDesc.Name = "lblDesc"
-        Me.lblDesc.Size = New System.Drawing.Size(156, 34)
-        Me.lblDesc.TabIndex = 16
-        Me.lblDesc.Text = "Description:"
-        '
-        'lblCost
-        '
-        Me.lblCost.BackColor = System.Drawing.Color.Transparent
-        Me.lblCost.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCost.ForeColor = System.Drawing.Color.White
-        Me.lblCost.Location = New System.Drawing.Point(115, 134)
-        Me.lblCost.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblCost.Name = "lblCost"
-        Me.lblCost.Size = New System.Drawing.Size(69, 34)
-        Me.lblCost.TabIndex = 17
-        Me.lblCost.Text = "Cost:"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(188, 194)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(343, 24)
-        Me.ComboBox1.TabIndex = 18
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(190, 88)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(341, 22)
-        Me.TextBox1.TabIndex = 19
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(190, 143)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(341, 22)
-        Me.TextBox2.TabIndex = 20
+        Me.lblDate.BackColor = System.Drawing.Color.Transparent
+        Me.lblDate.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.ForeColor = System.Drawing.Color.White
+        Me.lblDate.Location = New System.Drawing.Point(111, 232)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(73, 34)
+        Me.lblDate.TabIndex = 22
+        Me.lblDate.Text = "Date:"
         '
         'btnAdd
         '
@@ -147,25 +89,82 @@ Partial Class frmAddExpense
         Me.btnAdd.TabIndex = 21
         Me.btnAdd.Text = "Add"
         '
-        'ComboBox2
+        'txtCost
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(188, 242)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(343, 24)
-        Me.ComboBox2.TabIndex = 23
+        Me.txtCost.Location = New System.Drawing.Point(190, 143)
+        Me.txtCost.Name = "txtCost"
+        Me.txtCost.Size = New System.Drawing.Size(341, 22)
+        Me.txtCost.TabIndex = 20
         '
-        'Guna2HtmlLabel2
+        'txtItem
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(111, 232)
-        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(73, 34)
-        Me.Guna2HtmlLabel2.TabIndex = 22
-        Me.Guna2HtmlLabel2.Text = "Date:"
+        Me.txtItem.Location = New System.Drawing.Point(190, 88)
+        Me.txtItem.Name = "txtItem"
+        Me.txtItem.Size = New System.Drawing.Size(341, 22)
+        Me.txtItem.TabIndex = 19
+        '
+        'txtDesc
+        '
+        Me.txtDesc.FormattingEnabled = True
+        Me.txtDesc.Location = New System.Drawing.Point(188, 194)
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(343, 24)
+        Me.txtDesc.TabIndex = 18
+        '
+        'lblCost
+        '
+        Me.lblCost.BackColor = System.Drawing.Color.Transparent
+        Me.lblCost.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCost.ForeColor = System.Drawing.Color.White
+        Me.lblCost.Location = New System.Drawing.Point(115, 134)
+        Me.lblCost.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblCost.Name = "lblCost"
+        Me.lblCost.Size = New System.Drawing.Size(69, 34)
+        Me.lblCost.TabIndex = 17
+        Me.lblCost.Text = "Cost:"
+        '
+        'lblDesc
+        '
+        Me.lblDesc.BackColor = System.Drawing.Color.Transparent
+        Me.lblDesc.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesc.ForeColor = System.Drawing.Color.White
+        Me.lblDesc.Location = New System.Drawing.Point(29, 184)
+        Me.lblDesc.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblDesc.Name = "lblDesc"
+        Me.lblDesc.Size = New System.Drawing.Size(156, 34)
+        Me.lblDesc.TabIndex = 16
+        Me.lblDesc.Text = "Description:"
+        '
+        'lblItem
+        '
+        Me.lblItem.BackColor = System.Drawing.Color.Transparent
+        Me.lblItem.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItem.ForeColor = System.Drawing.Color.White
+        Me.lblItem.Location = New System.Drawing.Point(115, 78)
+        Me.lblItem.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblItem.Name = "lblItem"
+        Me.lblItem.Size = New System.Drawing.Size(69, 34)
+        Me.lblItem.TabIndex = 15
+        Me.lblItem.Text = "Item:"
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(29, 23)
+        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(188, 34)
+        Me.Guna2HtmlLabel1.TabIndex = 14
+        Me.Guna2HtmlLabel1.Text = "Add Expenses"
+        '
+        'DTP
+        '
+        Me.DTP.Location = New System.Drawing.Point(190, 244)
+        Me.DTP.Name = "DTP"
+        Me.DTP.Size = New System.Drawing.Size(341, 22)
+        Me.DTP.TabIndex = 23
         '
         'frmAddExpense
         '
@@ -188,10 +187,10 @@ Partial Class frmAddExpense
     Friend WithEvents lblItem As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblDesc As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblCost As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtCost As TextBox
+    Friend WithEvents txtItem As TextBox
+    Friend WithEvents txtDesc As ComboBox
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lblDate As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents DTP As DateTimePicker
 End Class

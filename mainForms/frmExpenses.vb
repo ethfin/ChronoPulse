@@ -26,7 +26,8 @@ Public Class frmExpenses
         End Using
     End Sub
 
-    Private Sub LoadExpensesData()
+    ' Make LoadExpensesData public so it can be accessed from frmAddExpense
+    Public Sub LoadExpensesData()
         Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
                               "WHERE UserID = @userID"
         Dim connection As MySqlConnection = Common.getDBConnectionX()
@@ -66,10 +67,12 @@ Public Class frmExpenses
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        frmAddExpense.Show()
+        Dim addExpenseForm As New frmAddExpense()
+        addExpenseForm.Initialize(userID, Me) ' Pass the user ID and reference to this form
+        addExpenseForm.Show()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        frmAddExpense.Show()
+        ' You can use this to clear selection or clear form inputs, depending on your UI logic.
     End Sub
 End Class
