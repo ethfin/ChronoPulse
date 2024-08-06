@@ -47,6 +47,18 @@
     ' Handles the form closing event to exit the application.
     Protected Overrides Sub OnFormClosing(ByVal e As FormClosingEventArgs)
         MyBase.OnFormClosing(e)
+        CloseChildForms()
+    End Sub
+
+    ' Handles the Click event of the btnLogout control to log out the user.
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        'Me.Hide()
+        frmLogin.Show()
+        CloseChildForms()
+        Me.Close()
+    End Sub
+
+    Private Sub CloseChildForms()
         frmDashboard.Close()
         frmCategory.Close()
         frmGames.Close()
@@ -55,16 +67,4 @@
         frmExpenses.Close()
     End Sub
 
-    ' Handles the Click event of the btnLogout control to log out the user.
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        'Me.Hide()
-        frmLogin.Show()
-        frmDashboard.Close()
-        frmCategory.Close()
-        frmGames.Close()
-        frmGames.Dispose()
-        frmLeaderboard.Close()
-        frmExpenses.Close()
-        Me.Close()
-    End Sub
 End Class
