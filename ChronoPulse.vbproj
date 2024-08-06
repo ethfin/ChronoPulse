@@ -203,6 +203,12 @@
     <Compile Include="mainForms\frmCategory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mainForms\frmExpenses.Designer.vb">
+      <DependentUpon>frmExpenses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mainForms\frmExpenses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mainForms\frmGames.Designer.vb">
       <DependentUpon>frmGames.vb</DependentUpon>
     </Compile>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForms\frmCategory.resx">
       <DependentUpon>frmCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForms\frmExpenses.resx">
+      <DependentUpon>frmExpenses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForms\frmGames.resx">
       <DependentUpon>frmGames.vb</DependentUpon>
