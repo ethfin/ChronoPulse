@@ -49,4 +49,14 @@ Public Class frmExpenses
             connection.Close()
         End Try
     End Sub
+
+    Private Sub dataGridViewExpenses_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridViewExpenses.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dataGridViewExpenses.Rows(e.RowIndex)
+            lblItem.Text = row.Cells("Item").Value.ToString()
+            lblCost.Text = row.Cells("Cost").Value.ToString()
+            lblDescription.Text = row.Cells("Description").Value.ToString()
+            lblDate.Text = row.Cells("date").Value.ToString()
+        End If
+    End Sub
 End Class
