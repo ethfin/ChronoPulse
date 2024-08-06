@@ -40,7 +40,7 @@
             Case btnCategory.Name
                 changePanel(frmCategory)
             Case btnExpenses.Name
-                'changePanel(frmExpense)
+                changePanel(frmExpenses)
         End Select
     End Sub
 
@@ -52,6 +52,7 @@
         frmGames.Close()
         frmGames.Dispose()
         frmLeaderboard.Close()
+        frmExpenses.Close()
     End Sub
 
     ' Handles the Click event of the btnLogout control to log out the user.
@@ -63,6 +64,7 @@
         frmGames.Close()
         frmGames.Dispose()
         frmLeaderboard.Close()
+        frmExpenses.Close()
         Me.Close()
     End Sub
 End Class
