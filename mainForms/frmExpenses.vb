@@ -27,8 +27,8 @@ Public Class frmExpenses
     End Sub
 
     Private Sub LoadExpensesData()
-        Dim query As String = "SELECT expense_id, dbaccountsID, categoryID, Item, Cost, Description, date FROM user_expenses " &
-                              "WHERE dbaccountsID = @userID"
+        Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
+                              "WHERE UserID = @userID"
         Dim connection As MySqlConnection = Common.getDBConnectionX()
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@userID", userID)
@@ -41,8 +41,13 @@ Public Class frmExpenses
 
             ' Hide ID columns
             dataGridViewExpenses.Columns("expense_id").Visible = False
-            dataGridViewExpenses.Columns("dbaccountsID").Visible = False
-            dataGridViewExpenses.Columns("categoryID").Visible = False
+            dataGridViewExpenses.Columns("UserID").Visible = False
+
+            ' Rename column headers to all caps
+            dataGridViewExpenses.Columns("Item").HeaderText = "ITEM"
+            dataGridViewExpenses.Columns("Cost").HeaderText = "COST"
+            dataGridViewExpenses.Columns("Description").HeaderText = "DESCRIPTION"
+            dataGridViewExpenses.Columns("formatted_date").HeaderText = "DATE"
         Catch ex As MySqlException
             MessageBox.Show("Error fetching data: " & ex.Message)
         Finally
@@ -56,7 +61,7 @@ Public Class frmExpenses
             lblItem.Text = row.Cells("Item").Value.ToString()
             lblCost.Text = row.Cells("Cost").Value.ToString()
             lblDescription.Text = row.Cells("Description").Value.ToString()
-            lblDate.Text = row.Cells("date").Value.ToString()
+            lblDate.Text = row.Cells("formatted_date").Value.ToString()
         End If
     End Sub
 

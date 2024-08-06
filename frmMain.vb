@@ -26,19 +26,20 @@
     ' Handles the Load event of the frmMain control.
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblUsername.Text = frmLogin.Username
+        changePanel(frmDashboard)
     End Sub
 
     ' Handles the Click event of the icon buttons to change the displayed panel.
-    Private Sub IconButton_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click, btnLeaderboard.Click, btnGames.Click, btnCategory.Click, btnExpenses.Click
+    Private Sub IconButton_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click, btnGames.Click, btnExpenses.Click
         Select Case DirectCast(sender, Button).Name
             Case btnDashboard.Name
                 changePanel(frmDashboard)
-            Case btnLeaderboard.Name
-                changePanel(frmLeaderboard)
+            'Case btnLeaderboard.Name
+            '    changePanel(frmLeaderboard)
             Case btnGames.Name
                 changePanel(frmGames)
-            Case btnCategory.Name
-                changePanel(frmCategory)
+            'Case btnCategory.Name
+            '    changePanel(frmCategory)
             Case btnExpenses.Name
                 changePanel(frmExpenses)
         End Select
@@ -60,10 +61,10 @@
 
     Private Sub CloseChildForms()
         frmDashboard.Close()
-        frmCategory.Close()
+        'frmCategory.Close()
         frmGames.Close()
         frmGames.Dispose()
-        frmLeaderboard.Close()
+        'frmLeaderboard.Close()
         frmExpenses.Close()
     End Sub
 
