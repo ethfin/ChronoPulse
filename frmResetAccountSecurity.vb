@@ -336,4 +336,8 @@ Public Class frmResetAccountSecurity
             cmbSQ1.Items.Remove(cmbSQ2.SelectedItem)
         End If
     End Sub
+
+    Public Sub SetEmail(email As String)
+        lblWelcome1.Text = email
+    End Sub
 End Class

@@ -26,6 +26,7 @@ Public Class frmResetAccount
         ' Validate the input fields
         If ValidateInputFields() AndAlso emailValid() Then
             Me.Hide()
+            frmResetAccountSecurity.SetEmail(txtEmail.Text)
             frmResetAccountSecurity.Show()
         End If
     End Sub
