@@ -21,6 +21,42 @@ Public Class frmGames
 
         ' Populate ListBox1 with known games
         ListBox1.Items.AddRange(knownGames.ToArray())
+
+        ' Load existing game times
+        LoadExistingGameTimes()
+    End Sub
+
+    Private Sub LoadExistingGameTimes()
+        Dim getElapsedTimeQuery As String = "SELECT gp.game_name, SUM(gt.hours) AS total_hours " &
+                                        "FROM game_time gt " &
+                                        "JOIN game_paths gp ON gt.path_id = gp.path_id " &
+                                        "WHERE gt.UserID = @UserID " &
+                                        "GROUP BY gp.game_name"
+
+        Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, Common.getDBConnectionX())
+            getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
+            Common.getDBConnectionX().Open()
+            Using reader As MySqlDataReader = getElapsedTimeCmd.ExecuteReader()
+                If Not Me.IsDisposed Then
+                    BeginInvoke(Sub()
+                                    lblLoglastTime.Text = String.Empty ' Clear the label text
+                                End Sub)
+                End If
+
+                While reader.Read()
+                    Dim gameName As String = reader("game_name").ToString()
+                    Dim totalElapsedTimeSeconds As Integer = Convert.ToInt32(reader("total_hours"))
+                    Dim formattedElapsedTime As String = FormatElapsedTime(totalElapsedTimeSeconds)
+
+                    If Not Me.IsDisposed Then
+                        BeginInvoke(Sub()
+                                        lblLoglastTime.Text &= $"{gameName}: Total Elapsed Time {formattedElapsedTime}" & "<br>"
+                                    End Sub)
+                    End If
+                End While
+            End Using
+            Common.getDBConnectionX().Close()
+        End Using
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)
@@ -63,12 +99,10 @@ Public Class frmGames
 
                 closedApplications.Add(app)
 
-                ' Update the UI with the closed application information
-                If Not Me.IsDisposed Then
-                    BeginInvoke(Sub()
-                                    lblLoglastTime.Text &= $"{app}: Elapsed Time {elapsedTime:hh\:mm\:ss}" & "<br>"
-                                End Sub)
-                End If
+                ' Insert or update the elapsed time in the database
+                InsertOrUpdateGameTime(app, elapsedTime)
+
+                LoadExistingGameTimes()
             End If
         Next
 
@@ -161,4 +195,127 @@ Public Class frmGames
             Common.getDBConnectionX().Close()
         End Using
     End Sub
+
+    Private Sub InsertGameTime(gameName As String, elapsedTime As TimeSpan)
+        Dim pathID As Integer = GetPathID(gameName)
+        Dim elapsedTimeSeconds As Integer = Convert.ToInt32(elapsedTime.TotalSeconds)
+        Dim insertQuery As String = "INSERT INTO game_time (UserID, path_id, hours, date) VALUES (@UserID, @path_id, @hours, @date)"
+
+        Using insertCmd As New MySqlCommand(insertQuery, Common.getDBConnectionX())
+            insertCmd.Parameters.AddWithValue("@UserID", userID)
+            insertCmd.Parameters.AddWithValue("@path_id", pathID)
+            insertCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
+            insertCmd.Parameters.AddWithValue("@date", DateTime.Now)
+
+            Common.getDBConnectionX().Open()
+            insertCmd.ExecuteNonQuery()
+            Common.getDBConnectionX().Close()
+        End Using
+    End Sub
+
+    Private Function GetPathID(gameName As String) As Integer
+        Dim getPathIDQuery As String = "SELECT path_id FROM game_paths WHERE UserID = @UserID AND game_name = @game_name"
+        Dim pathID As Integer
+
+        Using getPathIDCmd As New MySqlCommand(getPathIDQuery, Common.getDBConnectionX())
+            getPathIDCmd.Parameters.AddWithValue("@UserID", userID)
+            getPathIDCmd.Parameters.AddWithValue("@game_name", gameName)
+            Common.getDBConnectionX().Open()
+            pathID = Convert.ToInt32(getPathIDCmd.ExecuteScalar())
+            Common.getDBConnectionX().Close()
+        End Using
+
+        Return pathID
+    End Function
+
+    Private Function FormatElapsedTime(seconds As Integer) As String
+        Dim timeSpan As TimeSpan = TimeSpan.FromSeconds(seconds)
+        Return $"{timeSpan:hh\:mm\:ss}"
+    End Function
+
+    Private Sub UpdateLogLastTime()
+        Dim getElapsedTimeQuery As String = "SELECT gp.game_name, gt.hours " &
+                                        "FROM game_time gt " &
+                                        "JOIN game_paths gp ON gt.path_id = gp.path_id " &
+                                        "WHERE gt.UserID = @UserID " &
+                                        "ORDER BY gt.date DESC LIMIT 1"
+
+        Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, Common.getDBConnectionX())
+            getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
+            Common.getDBConnectionX().Open()
+            Using reader As MySqlDataReader = getElapsedTimeCmd.ExecuteReader()
+                If reader.Read() Then
+                    Dim gameName As String = reader("game_name").ToString()
+                    Dim elapsedTimeSeconds As Integer = Convert.ToInt32(reader("hours"))
+                    Dim formattedElapsedTime As String = FormatElapsedTime(elapsedTimeSeconds)
+
+                    If Not Me.IsDisposed Then
+                        BeginInvoke(Sub()
+                                        lblLoglastTime.Text = String.Empty ' Clear the label text
+                                        lblLoglastTime.Text &= $"{gameName}: Elapsed Time {formattedElapsedTime}" & "<br>"
+                                    End Sub)
+                    End If
+                End If
+            End Using
+            Common.getDBConnectionX().Close()
+        End Using
+    End Sub
+
+    Private Sub InsertOrUpdateGameTime(gameName As String, elapsedTime As TimeSpan)
+        Dim pathID As Integer = GetPathID(gameName)
+        Dim elapsedTimeSeconds As Integer = Convert.ToInt32(elapsedTime.TotalSeconds)
+
+        ' Check if a record already exists
+        Dim existingTime As Integer = GetExistingElapsedTime(pathID)
+
+        If existingTime > 0 Then
+            ' Update the existing record
+            Dim updateQuery As String = "UPDATE game_time SET hours = hours + @hours, date = @date WHERE UserID = @UserID AND path_id = @path_id"
+
+            Using updateCmd As New MySqlCommand(updateQuery, Common.getDBConnectionX())
+                updateCmd.Parameters.AddWithValue("@UserID", userID)
+                updateCmd.Parameters.AddWithValue("@path_id", pathID)
+                updateCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
+                updateCmd.Parameters.AddWithValue("@date", DateTime.Now)
+
+                Common.getDBConnectionX().Open()
+                updateCmd.ExecuteNonQuery()
+                Common.getDBConnectionX().Close()
+            End Using
+        Else
+            ' Insert a new record
+            Dim insertQuery As String = "INSERT INTO game_time (UserID, path_id, hours, date) VALUES (@UserID, @path_id, @hours, @date)"
+
+            Using insertCmd As New MySqlCommand(insertQuery, Common.getDBConnectionX())
+                insertCmd.Parameters.AddWithValue("@UserID", userID)
+                insertCmd.Parameters.AddWithValue("@path_id", pathID)
+                insertCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
+                insertCmd.Parameters.AddWithValue("@date", DateTime.Now)
+
+                Common.getDBConnectionX().Open()
+                insertCmd.ExecuteNonQuery()
+                Common.getDBConnectionX().Close()
+            End Using
+        End If
+    End Sub
+
+
+    Private Function GetExistingElapsedTime(pathID As Integer) As Integer
+        Dim getElapsedTimeQuery As String = "SELECT SUM(hours) FROM game_time WHERE UserID = @UserID AND path_id = @path_id"
+        Dim existingTime As Integer = 0
+
+        Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, Common.getDBConnectionX())
+            getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
+            getElapsedTimeCmd.Parameters.AddWithValue("@path_id", pathID)
+            Common.getDBConnectionX().Open()
+            Dim result = getElapsedTimeCmd.ExecuteScalar()
+            If result IsNot DBNull.Value Then
+                existingTime = Convert.ToInt32(result)
+            End If
+            Common.getDBConnectionX().Close()
+        End Using
+
+        Return existingTime
+    End Function
+
 End Class
