@@ -24,7 +24,6 @@ Partial Class frmGames
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.picBox = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -33,14 +32,12 @@ Partial Class frmGames
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.pnlContainer.SuspendLayout()
-        CType(Me.picBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlContainer.Controls.Add(Me.picBox)
         Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
@@ -50,18 +47,9 @@ Partial Class frmGames
         Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
         Me.pnlContainer.TabIndex = 1
         '
-        'picBox
-        '
-        Me.picBox.ImageRotate = 0!
-        Me.picBox.Location = New System.Drawing.Point(0, 0)
-        Me.picBox.Name = "picBox"
-        Me.picBox.Size = New System.Drawing.Size(54, 52)
-        Me.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picBox.TabIndex = 4
-        Me.picBox.TabStop = False
-        '
         'btnAdd
         '
+        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -97,7 +85,7 @@ Partial Class frmGames
         Me.lblLoglastTime.AutoSize = False
         Me.lblLoglastTime.BackColor = System.Drawing.Color.Transparent
         Me.lblLoglastTime.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblLoglastTime.Font = New System.Drawing.Font("Inter", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoglastTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLoglastTime.ForeColor = System.Drawing.Color.White
         Me.lblLoglastTime.Location = New System.Drawing.Point(25, 247)
         Me.lblLoglastTime.Name = "lblLoglastTime"
@@ -110,7 +98,7 @@ Partial Class frmGames
         Me.lblTracker.AutoSize = False
         Me.lblTracker.BackColor = System.Drawing.Color.Transparent
         Me.lblTracker.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTracker.Font = New System.Drawing.Font("Inter", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTracker.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTracker.ForeColor = System.Drawing.Color.White
         Me.lblTracker.Location = New System.Drawing.Point(25, 25)
         Me.lblTracker.Name = "lblTracker"
@@ -120,10 +108,13 @@ Partial Class frmGames
         '
         'ListBox1
         '
+        Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ListBox1.Font = New System.Drawing.Font("Inter Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox1.ForeColor = System.Drawing.Color.White
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 23
+        Me.ListBox1.ItemHeight = 24
         Me.ListBox1.Location = New System.Drawing.Point(799, 25)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(314, 492)
@@ -151,7 +142,6 @@ Partial Class frmGames
         Me.Name = "frmGames"
         Me.Text = "frmGames"
         Me.pnlContainer.ResumeLayout(False)
-        CType(Me.picBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -164,6 +154,5 @@ Partial Class frmGames
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents picBox As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents ImageList1 As ImageList
 End Class

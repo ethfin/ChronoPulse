@@ -100,13 +100,6 @@ Public Class frmGames
                 If knownGames.Add(fileName) Then ' HashSet.Add returns false if item already exists
                     ListBox1.Items.Add(fileName) ' Add the game to ListBox1
 
-                    ' Extract the icon from the executable file
-                    Dim icon As Icon = Icon.ExtractAssociatedIcon(filePath)
-                    If icon IsNot Nothing Then
-                        ' Convert the icon to an image and display it in the PictureBox
-                        picBox.Image = icon.ToBitmap()
-                    End If
-
                     MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show($"{fileName} is already in the known games list.", "Duplicate Game", MessageBoxButtons.OK, MessageBoxIcon.Warning)
