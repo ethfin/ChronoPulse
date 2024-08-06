@@ -31,12 +31,16 @@ Partial Class frmAddExpense
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnlContainer.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlContainer.Controls.Add(Me.ComboBox2)
+        Me.pnlContainer.Controls.Add(Me.Guna2HtmlLabel2)
         Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.TextBox2)
         Me.pnlContainer.Controls.Add(Me.TextBox1)
@@ -57,7 +61,7 @@ Partial Class frmAddExpense
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(29, 31)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(29, 23)
         Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(188, 34)
@@ -69,7 +73,7 @@ Partial Class frmAddExpense
         Me.lblItem.BackColor = System.Drawing.Color.Transparent
         Me.lblItem.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblItem.ForeColor = System.Drawing.Color.White
-        Me.lblItem.Location = New System.Drawing.Point(115, 96)
+        Me.lblItem.Location = New System.Drawing.Point(115, 78)
         Me.lblItem.Margin = New System.Windows.Forms.Padding(0)
         Me.lblItem.Name = "lblItem"
         Me.lblItem.Size = New System.Drawing.Size(69, 34)
@@ -81,7 +85,7 @@ Partial Class frmAddExpense
         Me.lblDesc.BackColor = System.Drawing.Color.Transparent
         Me.lblDesc.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDesc.ForeColor = System.Drawing.Color.White
-        Me.lblDesc.Location = New System.Drawing.Point(29, 202)
+        Me.lblDesc.Location = New System.Drawing.Point(29, 184)
         Me.lblDesc.Margin = New System.Windows.Forms.Padding(0)
         Me.lblDesc.Name = "lblDesc"
         Me.lblDesc.Size = New System.Drawing.Size(156, 34)
@@ -93,7 +97,7 @@ Partial Class frmAddExpense
         Me.lblCost.BackColor = System.Drawing.Color.Transparent
         Me.lblCost.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCost.ForeColor = System.Drawing.Color.White
-        Me.lblCost.Location = New System.Drawing.Point(115, 152)
+        Me.lblCost.Location = New System.Drawing.Point(115, 134)
         Me.lblCost.Margin = New System.Windows.Forms.Padding(0)
         Me.lblCost.Name = "lblCost"
         Me.lblCost.Size = New System.Drawing.Size(69, 34)
@@ -103,21 +107,21 @@ Partial Class frmAddExpense
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(188, 212)
+        Me.ComboBox1.Location = New System.Drawing.Point(188, 194)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(343, 24)
         Me.ComboBox1.TabIndex = 18
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(190, 106)
+        Me.TextBox1.Location = New System.Drawing.Point(190, 88)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(341, 22)
         Me.TextBox1.TabIndex = 19
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(190, 161)
+        Me.TextBox2.Location = New System.Drawing.Point(190, 143)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(341, 22)
         Me.TextBox2.TabIndex = 20
@@ -136,12 +140,32 @@ Partial Class frmAddExpense
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.HoverState.FillColor = System.Drawing.Color.Lime
         Me.btnAdd.IndicateFocus = True
-        Me.btnAdd.Location = New System.Drawing.Point(267, 281)
+        Me.btnAdd.Location = New System.Drawing.Point(267, 291)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(113, 36)
         Me.btnAdd.TabIndex = 21
         Me.btnAdd.Text = "Add"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(188, 242)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(343, 24)
+        Me.ComboBox2.TabIndex = 23
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(111, 232)
+        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(73, 34)
+        Me.Guna2HtmlLabel2.TabIndex = 22
+        Me.Guna2HtmlLabel2.Text = "Date:"
         '
         'frmAddExpense
         '
@@ -149,10 +173,10 @@ Partial Class frmAddExpense
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(644, 353)
         Me.Controls.Add(Me.pnlContainer)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAddExpense"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAddExpense"
+        Me.Text = "Add Expenses"
         Me.pnlContainer.ResumeLayout(False)
         Me.pnlContainer.PerformLayout()
         Me.ResumeLayout(False)
@@ -168,4 +192,6 @@ Partial Class frmAddExpense
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
