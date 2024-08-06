@@ -1,5 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
+Imports System.Text.RegularExpressions
+
 Public Class frmResetAccountPassword
 
     Protected Overrides Sub WndProc(ByRef m As Message)
@@ -41,33 +43,56 @@ Public Class frmResetAccountPassword
     End Sub
 
     Private Sub btnResetPassword_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        lblError.Text = "" ' Clear any previous error messages
+
         If txtPassword.Text = txtVerifyPassword.Text And txtPassword.Text <> "" Then
-            Dim conn As MySqlConnection = Common.getDBConnectionX()
-            Try
-                conn.Open()
-                Dim cmd As MySqlCommand = conn.CreateCommand
-                cmd.CommandText = "UPDATE dbaccounts SET password = @password WHERE email = @email"
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text)
-                cmd.Parameters.AddWithValue("@email", frmResetAccountSecurity.lblWelcome1.Text)
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Password has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Hide()
-                frmLogin.Show()
-            Catch ex As Exception
-                MessageBox.Show("An error occurred while resetting the password. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                conn.Close()
-            End Try
+            If ValidatePassword(txtPassword.Text) Then
+                Dim conn As MySqlConnection = Common.getDBConnectionX()
+                Try
+                    conn.Open()
+                    Dim cmd As MySqlCommand = conn.CreateCommand
+                    cmd.CommandText = "UPDATE dbaccounts SET password = @password WHERE email = @email"
+                    cmd.Parameters.AddWithValue("@password", txtPassword.Text)
+                    cmd.Parameters.AddWithValue("@email", frmResetAccountSecurity.lblWelcome1.Text)
+                    cmd.ExecuteNonQuery()
+                    lblError.Text = "Password has been reset successfully."
+                    lblError.ForeColor = Color.Green
+                    lblError.Show()
+                    frmLogin.Show()
+                    frmResetAccount.Close()
+                    frmResetAccountSecurity.Close()
+                    Me.Close()
+                Catch ex As Exception
+                    lblError.Text = "An error occurred while resetting the password. Please try again."
+                    lblError.ForeColor = Color.Red
+                    lblError.Show()
+                Finally
+                    conn.Close()
+                End Try
+            Else
+                lblError.Text = "Password does not meet the complexity requirements. Please try again."
+                lblError.ForeColor = Color.Red
+                lblError.Show()
+            End If
         Else
-            MessageBox.Show("Passwords do not match or are empty. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            lblError.Text = "Passwords do not match or are empty. Please try again."
+            lblError.ForeColor = Color.Red
+            lblError.Show()
         End If
     End Sub
+
     'minimize the form
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
     'close the form
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        ' Close the other active form if it is open
+        If frmLogin IsNot Nothing AndAlso Not frmLogin.IsDisposed Then
+            frmLogin.Close()
+        End If
+
+        ' Close the current form
         Me.Close()
     End Sub
     'show password for txtPassword
@@ -86,4 +111,67 @@ Public Class frmResetAccountPassword
             txtVerifyPassword.PasswordChar = "*"
         End If
     End Sub
+
+    ' TextChanged event handlers for password fields
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+        ComparePasswords()
+    End Sub
+
+    Private Sub txtVerifyPassword_TextChanged(sender As Object, e As EventArgs) Handles txtVerifyPassword.TextChanged
+        ComparePasswords()
+    End Sub
+
+    Private Sub ComparePasswords()
+        ' First, check if the passwords match.
+        If txtPassword.Text = txtVerifyPassword.Text Then
+            ' Next, validate the password complexity.
+            If ValidatePassword(txtPassword.Text) Then
+                ' If the password is complex enough, set the border color to Green.
+                txtPassword.BorderColor = Color.Green
+                txtVerifyPassword.BorderColor = Color.Green
+                lblError.ForeColor = Color.Green
+                lblError.Text = "Password matches and meets requirements."
+            Else
+                ' If the password does not meet complexity requirements, set the border color to Orange.
+                txtPassword.BorderColor = Color.Orange
+                txtVerifyPassword.BorderColor = Color.Orange
+                lblError.ForeColor = Color.Orange
+                lblError.Text = "Password must be at least 8 characters, contain numbers, and special characters, and should not include : ; "" ' / \\."
+            End If
+        Else
+            ' If passwords don't match, set the border color to Red.
+            txtPassword.BorderColor = Color.Red
+            txtVerifyPassword.BorderColor = Color.Red
+            lblError.ForeColor = Color.Red
+            lblError.Text = "Passwords do not match."
+        End If
+        lblError.Show()
+    End Sub
+
+    Function ValidatePassword(ByVal pwd As String) As Boolean
+        ' Check the length.
+        If Len(pwd) < 8 Then
+            Return False
+        End If
+
+        ' Use regular expressions to check for numbers, letters, special characters, and invalid characters.
+        Dim hasNumber As New Regex("[0-9]")
+        Dim hasLetter As New Regex("[a-zA-Z]")
+        Dim hasSpecial As New Regex("[^a-zA-Z0-9]")
+        Dim invalidChars As New Regex("[ :;""'/\\]")
+
+        ' Check for minimum number of occurrences.
+        If hasNumber.Matches(pwd).Count < 1 OrElse hasLetter.Matches(pwd).Count < 1 OrElse hasSpecial.Matches(pwd).Count < 1 Then
+            Return False
+        End If
+
+        ' Check for invalid characters.
+        If invalidChars.Matches(pwd).Count > 0 Then
+            Return False
+        End If
+
+        ' Passed all checks.
+        Return True
+    End Function
+
 End Class

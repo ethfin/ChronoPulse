@@ -259,6 +259,8 @@ Public Class frmResetAccountSecurity
     End Sub
 
     Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        Dim email As String = lblWelcome1.Text.Replace("Email: ", "") ' Extract the email from the label text
+
         If ValidateInputFields() Then
             Dim conn As MySqlConnection = Common.getDBConnectionX()
 
@@ -266,12 +268,12 @@ Public Class frmResetAccountSecurity
                 ' Open the connection
                 conn.Open()
 
-                ' SQL query to check if the user exists with the given username and password
+                ' SQL query to check if the user exists with the given email and security answers
                 Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE email = @email AND securityAnswer1 = @sqa1 AND securityAnswer2 = @sqa2"
                 Dim cmd As MySqlCommand = New MySqlCommand(query, conn)
 
                 ' Use parameters to prevent SQL injection
-                cmd.Parameters.AddWithValue("@email", lblWelcome1.Text)
+                cmd.Parameters.AddWithValue("@email", email)
                 cmd.Parameters.AddWithValue("@sqa1", txtSQA1.Text)
                 cmd.Parameters.AddWithValue("@sqa2", txtSQA2.Text)
 
@@ -338,6 +340,6 @@ Public Class frmResetAccountSecurity
     End Sub
 
     Public Sub SetEmail(email As String)
-        lblWelcome1.Text = email
+        lblWelcome1.Text = "Email: " & email
     End Sub
 End Class
