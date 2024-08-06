@@ -1,15 +1,23 @@
 ﻿Imports System.Text
 Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class frmGames
 
     Private previousApplications As New Dictionary(Of String, DateTime)()
     Private knownGames As New HashSet(Of String)() ' Use HashSet for faster lookups
     Private gameStartTimes As New Dictionary(Of String, DateTime)()
+    Private userID As Integer
 
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
+
+        ' Get the UserID from frmExpenses
+        GetUserID()
+
+        ' Populate ListBox1 with known games from the database
+        LoadUserGames()
 
         ' Populate ListBox1 with known games
         ListBox1.Items.AddRange(knownGames.ToArray())
@@ -100,11 +108,57 @@ Public Class frmGames
                 If knownGames.Add(fileName) Then ' HashSet.Add returns false if item already exists
                     ListBox1.Items.Add(fileName) ' Add the game to ListBox1
 
+                    ' Insert the game details into the database
+                    InsertGameDetails(fileName, filePath)
+
                     MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show($"{fileName} is already in the known games list.", "Duplicate Game", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
             End If
+        End Using
+    End Sub
+
+    Private Sub GetUserID()
+        Dim username As String = frmMain.lblUsername.Text
+        Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
+
+        Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
+            getUserIDCmd.Parameters.AddWithValue("@username", username)
+            Common.getDBConnectionX().Open()
+            userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
+            Common.getDBConnectionX().Close()
+        End Using
+    End Sub
+
+    Private Sub LoadUserGames()
+        Dim loadGamesQuery As String = "SELECT game_name FROM game_paths WHERE UserID = @UserID"
+
+        Using loadGamesCmd As New MySqlCommand(loadGamesQuery, Common.getDBConnectionX())
+            loadGamesCmd.Parameters.AddWithValue("@UserID", userID)
+            Common.getDBConnectionX().Open()
+            Using reader As MySqlDataReader = loadGamesCmd.ExecuteReader()
+                While reader.Read()
+                    Dim gameName As String = reader("game_name").ToString()
+                    knownGames.Add(gameName)
+                End While
+            End Using
+            Common.getDBConnectionX().Close()
+        End Using
+    End Sub
+
+    Private Sub InsertGameDetails(gameName As String, exePath As String)
+        Dim insertQuery As String = "INSERT INTO game_paths (UserID, game_name, exe_path, date_added) VALUES (@UserID, @game_name, @exe_path, @date_added)"
+
+        Using insertCmd As New MySqlCommand(insertQuery, Common.getDBConnectionX())
+            insertCmd.Parameters.AddWithValue("@UserID", userID)
+            insertCmd.Parameters.AddWithValue("@game_name", gameName)
+            insertCmd.Parameters.AddWithValue("@exe_path", exePath)
+            insertCmd.Parameters.AddWithValue("@date_added", DateTime.Now)
+
+            Common.getDBConnectionX().Open()
+            insertCmd.ExecuteNonQuery()
+            Common.getDBConnectionX().Close()
         End Using
     End Sub
 End Class
