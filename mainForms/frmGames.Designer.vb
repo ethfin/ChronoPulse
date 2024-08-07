@@ -40,7 +40,6 @@ Partial Class frmGames
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblTracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
@@ -113,7 +112,6 @@ Partial Class frmGames
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel5.Controls.Add(Me.lblLoglastTime)
         Me.Guna2Panel5.Controls.Add(Me.lblTracker)
-        Me.Guna2Panel5.Controls.Add(Me.ListBox1)
         Me.Guna2Panel5.Location = New System.Drawing.Point(55, 55)
         Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Guna2Panel5.Name = "Guna2Panel5"
@@ -130,6 +128,8 @@ Partial Class frmGames
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
         Me.dgvGameList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvGameList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvGameList.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -164,7 +164,7 @@ Partial Class frmGames
         Me.dgvGameList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvGameList.RowHeadersVisible = False
         Me.dgvGameList.RowTemplate.Height = 30
-        Me.dgvGameList.Size = New System.Drawing.Size(298, 456)
+        Me.dgvGameList.Size = New System.Drawing.Size(285, 452)
         Me.dgvGameList.TabIndex = 11
         Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Inter Medium", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -299,21 +299,6 @@ Partial Class frmGames
         Me.lblTracker.TabIndex = 1
         Me.lblTracker.Text = Nothing
         '
-        'ListBox1
-        '
-        Me.ListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.ForeColor = System.Drawing.Color.White
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 24
-        Me.ListBox1.Location = New System.Drawing.Point(825, 62)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(298, 456)
-        Me.ListBox1.TabIndex = 3
-        '
         'Timer1
         '
         Me.Timer1.Interval = 1000
@@ -346,7 +331,6 @@ Partial Class frmGames
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
