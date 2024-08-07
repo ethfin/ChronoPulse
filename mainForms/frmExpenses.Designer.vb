@@ -51,9 +51,10 @@ Partial Class frmExpenses
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
+        Me.pnlContainer.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlContainer.Name = "pnlContainer"
-        Me.pnlContainer.Padding = New System.Windows.Forms.Padding(50, 50, 50, 50)
-        Me.pnlContainer.Size = New System.Drawing.Size(1234, 613)
+        Me.pnlContainer.Padding = New System.Windows.Forms.Padding(67, 62, 67, 62)
+        Me.pnlContainer.Size = New System.Drawing.Size(1645, 754)
         Me.pnlContainer.TabIndex = 2
         '
         'Guna2Panel5
@@ -71,11 +72,11 @@ Partial Class frmExpenses
         Me.Guna2Panel5.Controls.Add(Me.Guna2Panel4)
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(55, 55)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(73, 68)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(25, 25, 25, 25)
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1118, 504)
+        Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(33, 31, 33, 31)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(1491, 620)
         Me.Guna2Panel5.TabIndex = 2
         '
         'dataGridViewExpenses
@@ -110,7 +111,8 @@ Partial Class frmExpenses
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dataGridViewExpenses.DefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridViewExpenses.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dataGridViewExpenses.Location = New System.Drawing.Point(28, 88)
+        Me.dataGridViewExpenses.Location = New System.Drawing.Point(37, 108)
+        Me.dataGridViewExpenses.Margin = New System.Windows.Forms.Padding(4)
         Me.dataGridViewExpenses.Name = "dataGridViewExpenses"
         Me.dataGridViewExpenses.ReadOnly = True
         Me.dataGridViewExpenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -124,7 +126,7 @@ Partial Class frmExpenses
         Me.dataGridViewExpenses.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dataGridViewExpenses.RowHeadersVisible = False
         Me.dataGridViewExpenses.RowHeadersWidth = 51
-        Me.dataGridViewExpenses.Size = New System.Drawing.Size(1062, 284)
+        Me.dataGridViewExpenses.Size = New System.Drawing.Size(1416, 350)
         Me.dataGridViewExpenses.TabIndex = 12
         Me.dataGridViewExpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dataGridViewExpenses.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -163,9 +165,10 @@ Partial Class frmExpenses
         Me.btnClear.HoverState.FillColor = System.Drawing.Color.White
         Me.btnClear.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnClear.IndicateFocus = True
-        Me.btnClear.Location = New System.Drawing.Point(1005, 51)
+        Me.btnClear.Location = New System.Drawing.Point(1340, 63)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 29)
+        Me.btnClear.Size = New System.Drawing.Size(113, 36)
         Me.btnClear.TabIndex = 11
         Me.btnClear.Text = "Edit"
         '
@@ -183,9 +186,10 @@ Partial Class frmExpenses
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.HoverState.FillColor = System.Drawing.Color.Lime
         Me.btnAdd.IndicateFocus = True
-        Me.btnAdd.Location = New System.Drawing.Point(913, 51)
+        Me.btnAdd.Location = New System.Drawing.Point(1217, 63)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(85, 29)
+        Me.btnAdd.Size = New System.Drawing.Size(113, 36)
         Me.btnAdd.TabIndex = 10
         Me.btnAdd.Text = "Add"
         '
@@ -194,10 +198,10 @@ Partial Class frmExpenses
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel8.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(22, 46)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(29, 57)
         Me.Guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(22, 39)
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(26, 48)
         Me.Guna2HtmlLabel8.TabIndex = 5
         Me.Guna2HtmlLabel8.Text = "$"
         '
@@ -212,11 +216,11 @@ Partial Class frmExpenses
         Me.Guna2Panel4.Controls.Add(Me.lblDescription)
         Me.Guna2Panel4.Controls.Add(Me.lblCost)
         Me.Guna2Panel4.Controls.Add(Me.lblItem)
-        Me.Guna2Panel4.Location = New System.Drawing.Point(30, 380)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(40, 468)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(25, 25, 25, 25)
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1058, 94)
+        Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(33, 31, 33, 31)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(1411, 116)
         Me.Guna2Panel4.TabIndex = 4
         '
         'lblDate
@@ -224,10 +228,10 @@ Partial Class frmExpenses
         Me.lblDate.BackColor = System.Drawing.Color.Transparent
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.GhostWhite
-        Me.lblDate.Location = New System.Drawing.Point(25, 65)
+        Me.lblDate.Location = New System.Drawing.Point(33, 80)
         Me.lblDate.Margin = New System.Windows.Forms.Padding(0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(128, 20)
+        Me.lblDate.Size = New System.Drawing.Size(158, 26)
         Me.lblDate.TabIndex = 8
         Me.lblDate.Text = "(Date of Purchase)"
         '
@@ -237,10 +241,10 @@ Partial Class frmExpenses
         Me.lblDescription.BackColor = System.Drawing.Color.Transparent
         Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescription.ForeColor = System.Drawing.Color.GhostWhite
-        Me.lblDescription.Location = New System.Drawing.Point(25, 30)
+        Me.lblDescription.Location = New System.Drawing.Point(33, 37)
         Me.lblDescription.Margin = New System.Windows.Forms.Padding(0)
         Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(1008, 35)
+        Me.lblDescription.Size = New System.Drawing.Size(1344, 43)
         Me.lblDescription.TabIndex = 7
         Me.lblDescription.Text = "(Company)"
         '
@@ -250,10 +254,10 @@ Partial Class frmExpenses
         Me.lblCost.BackColor = System.Drawing.Color.Transparent
         Me.lblCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCost.ForeColor = System.Drawing.Color.White
-        Me.lblCost.Location = New System.Drawing.Point(994, 10)
+        Me.lblCost.Location = New System.Drawing.Point(1325, 12)
         Me.lblCost.Margin = New System.Windows.Forms.Padding(0)
         Me.lblCost.Name = "lblCost"
-        Me.lblCost.Size = New System.Drawing.Size(39, 20)
+        Me.lblCost.Size = New System.Drawing.Size(48, 26)
         Me.lblCost.TabIndex = 6
         Me.lblCost.Text = "$0.00"
         '
@@ -262,10 +266,10 @@ Partial Class frmExpenses
         Me.lblItem.BackColor = System.Drawing.Color.Transparent
         Me.lblItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblItem.ForeColor = System.Drawing.Color.White
-        Me.lblItem.Location = New System.Drawing.Point(25, 10)
+        Me.lblItem.Location = New System.Drawing.Point(33, 12)
         Me.lblItem.Margin = New System.Windows.Forms.Padding(0)
         Me.lblItem.Name = "lblItem"
-        Me.lblItem.Size = New System.Drawing.Size(131, 20)
+        Me.lblItem.Size = New System.Drawing.Size(167, 26)
         Me.lblItem.TabIndex = 5
         Me.lblItem.Text = "(Name of Expense)"
         '
@@ -274,10 +278,10 @@ Partial Class frmExpenses
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(42, 46)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(56, 57)
         Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(70, 39)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(84, 48)
         Me.Guna2HtmlLabel2.TabIndex = 2
         Me.Guna2HtmlLabel2.Text = "0.00"
         '
@@ -286,21 +290,21 @@ Partial Class frmExpenses
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(25, 25)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(33, 31)
         Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(129, 20)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(166, 26)
         Me.Guna2HtmlLabel1.TabIndex = 1
         Me.Guna2HtmlLabel1.Text = "TOTAL EXPENSE:"
         '
         'frmExpenses
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1234, 613)
+        Me.ClientSize = New System.Drawing.Size(1645, 754)
         Me.Controls.Add(Me.pnlContainer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmExpenses"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmExpenses"
