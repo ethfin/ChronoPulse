@@ -161,34 +161,34 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmResetAccount.Designer.vb">
+    <Compile Include="resetAccountForms\frmResetAccount.Designer.vb">
       <DependentUpon>frmResetAccount.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmResetAccount.vb">
+    <Compile Include="resetAccountForms\frmResetAccount.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmResetAccountPassword.Designer.vb">
+    <Compile Include="resetAccountForms\frmResetAccountPassword.Designer.vb">
       <DependentUpon>frmResetAccountPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmResetAccountPassword.vb">
+    <Compile Include="resetAccountForms\frmResetAccountPassword.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmResetAccountSecurity.Designer.vb">
+    <Compile Include="resetAccountForms\frmResetAccountSecurity.Designer.vb">
       <DependentUpon>frmResetAccountSecurity.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmResetAccountSecurity.vb">
+    <Compile Include="resetAccountForms\frmResetAccountSecurity.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSecurityQuestions.Designer.vb">
+    <Compile Include="singUpForms\frmSecurityQuestions.Designer.vb">
       <DependentUpon>frmSecurityQuestions.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSecurityQuestions.vb">
+    <Compile Include="singUpForms\frmSecurityQuestions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSignUp.Designer.vb">
+    <Compile Include="singUpForms\frmSignUp.Designer.vb">
       <DependentUpon>frmSignUp.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSignUp.vb">
+    <Compile Include="singUpForms\frmSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mainForms\frmDashboard.Designer.vb">
@@ -252,19 +252,19 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmResetAccount.resx">
+    <EmbeddedResource Include="resetAccountForms\frmResetAccount.resx">
       <DependentUpon>frmResetAccount.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmResetAccountPassword.resx">
+    <EmbeddedResource Include="resetAccountForms\frmResetAccountPassword.resx">
       <DependentUpon>frmResetAccountPassword.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmResetAccountSecurity.resx">
+    <EmbeddedResource Include="resetAccountForms\frmResetAccountSecurity.resx">
       <DependentUpon>frmResetAccountSecurity.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSecurityQuestions.resx">
+    <EmbeddedResource Include="singUpForms\frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSignUp.resx">
+    <EmbeddedResource Include="singUpForms\frmSignUp.resx">
       <DependentUpon>frmSignUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForms\frmDashboard.resx">

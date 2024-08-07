@@ -40,9 +40,9 @@ Public Class frmExpenses
     End Sub
 
     ' Make LoadExpensesData public so it can be accessed from frmAddExpense
-    Public Sub LoadExpensesData()
-        Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
-                              "WHERE UserID = @userID"
+    Private Sub LoadExpensesData()
+        Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, Category, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
+                          "WHERE UserID = @userID"
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@userID", userID)
         Dim table As New DataTable()
@@ -55,10 +55,11 @@ Public Class frmExpenses
             dataGridViewExpenses.Columns("expense_id").Visible = False
             dataGridViewExpenses.Columns("UserID").Visible = False
 
-            ' Rename column headers to all caps
-            dataGridViewExpenses.Columns("Item").HeaderText = "ITEM"
+            ' Rename column headers
+            dataGridViewExpenses.Columns("Item").HeaderText = "GAME"
             dataGridViewExpenses.Columns("Cost").HeaderText = "COST"
             dataGridViewExpenses.Columns("Description").HeaderText = "DESCRIPTION"
+            dataGridViewExpenses.Columns("Category").HeaderText = "CATEGORY"
             dataGridViewExpenses.Columns("formatted_date").HeaderText = "DATE"
 
             ' Update total cost
@@ -82,7 +83,8 @@ Public Class frmExpenses
         ' Validate inputs
         If String.IsNullOrWhiteSpace(txtItem.Text) OrElse
            String.IsNullOrWhiteSpace(txtCost.Text) OrElse
-           String.IsNullOrWhiteSpace(txtDescription.Text) Then
+           String.IsNullOrWhiteSpace(txtDescription.Text) OrElse
+           cmbCategory.SelectedIndex = -1 Then
             MessageBox.Show("Please fill in all fields before adding an expense.")
             Return
         End If
@@ -97,15 +99,17 @@ Public Class frmExpenses
         End If
 
         Dim description As String = txtDescription.Text
+        Dim category As String = cmbCategory.SelectedItem.ToString()
         Dim dateValue As DateTime = dtpDate.Value
 
-        Dim insertQuery As String = "INSERT INTO user_expenses (UserID, Item, Cost, Description, date) VALUES (@userID, @item, @cost, @description, @date)"
+        Dim insertQuery As String = "INSERT INTO user_expenses (UserID, Item, Cost, Description, Category, date) VALUES (@userID, @item, @cost, @description, @category, @date)"
 
         Using insertCmd As New MySqlCommand(insertQuery, connection)
             insertCmd.Parameters.AddWithValue("@userID", userID)
             insertCmd.Parameters.AddWithValue("@item", item)
             insertCmd.Parameters.AddWithValue("@cost", cost)
             insertCmd.Parameters.AddWithValue("@description", description)
+            insertCmd.Parameters.AddWithValue("@category", category)
             insertCmd.Parameters.AddWithValue("@date", dateValue)
 
             Try
@@ -126,7 +130,8 @@ Public Class frmExpenses
         ' Validate inputs
         If String.IsNullOrWhiteSpace(txtItem.Text) OrElse
            String.IsNullOrWhiteSpace(txtCost.Text) OrElse
-           String.IsNullOrWhiteSpace(txtDescription.Text) Then
+           String.IsNullOrWhiteSpace(txtDescription.Text) OrElse
+           cmbCategory.SelectedIndex = -1 Then
             MessageBox.Show("Please fill in all fields before editing an expense.")
             Return
         End If
@@ -141,14 +146,16 @@ Public Class frmExpenses
         End If
 
         Dim description As String = txtDescription.Text
+        Dim category As String = cmbCategory.SelectedItem.ToString()
         Dim dateValue As DateTime = dtpDate.Value
 
-        Dim updateQuery As String = "UPDATE user_expenses SET Item = @item, Cost = @cost, Description = @description, date = @date WHERE expense_id = @expenseID"
+        Dim updateQuery As String = "UPDATE user_expenses SET Item = @item, Cost = @cost, Description = @description, Category = @category, date = @date WHERE expense_id = @expenseID"
 
         Using updateCmd As New MySqlCommand(updateQuery, connection)
             updateCmd.Parameters.AddWithValue("@item", item)
             updateCmd.Parameters.AddWithValue("@cost", cost)
             updateCmd.Parameters.AddWithValue("@description", description)
+            updateCmd.Parameters.AddWithValue("@category", category)
             updateCmd.Parameters.AddWithValue("@date", dateValue)
             updateCmd.Parameters.AddWithValue("@expenseID", dataGridViewExpenses.SelectedRows(0).Cells("expense_id").Value)
 
@@ -220,6 +227,7 @@ Public Class frmExpenses
         txtItem.Clear()
         txtCost.Clear()
         txtDescription.Clear()
+        cmbCategory.SelectedIndex = -1
         dtpDate.Value = DateTime.Now
 
         ' Unselect any selected rows in the DataGridView
@@ -235,6 +243,7 @@ Public Class frmExpenses
             txtItem.Text = row.Cells("Item").Value.ToString()
             txtCost.Text = row.Cells("Cost").Value.ToString()
             txtDescription.Text = row.Cells("Description").Value.ToString()
+            cmbCategory.SelectedItem = row.Cells("Category").Value.ToString()
 
             Dim dateValue As DateTime
             If DateTime.TryParse(row.Cells("formatted_date").Value.ToString(), dateValue) Then
