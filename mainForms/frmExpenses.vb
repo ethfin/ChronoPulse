@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Microsoft.Office.Interop.Excel
 
 Public Class frmExpenses
     Private userID As Integer
@@ -45,11 +46,11 @@ Public Class frmExpenses
                           "WHERE UserID = @userID"
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@userID", userID)
-        Dim table As New DataTable()
+        Dim dataSet As New DataSet()
 
         Try
-            adapter.Fill(table)
-            dataGridViewExpenses.DataSource = table
+            adapter.Fill(dataSet)
+            dataGridViewExpenses.DataSource = dataSet.Tables(0)
 
             ' Hide ID columns
             dataGridViewExpenses.Columns("expense_id").Visible = False
@@ -296,5 +297,78 @@ Public Class frmExpenses
         If (e.KeyChar = "."c) AndAlso (DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf("."c) > -1) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+        ExportToExcel()
+    End Sub
+
+    Private Sub ExportToExcel()
+        Dim excelApp As New Application()
+        Dim workbook As Workbook = excelApp.Workbooks.Add(Type.Missing)
+        Dim worksheet As Worksheet = Nothing
+
+        Try
+            worksheet = workbook.ActiveSheet
+            worksheet.Name = "Expenses"
+
+            ' Add column headers, skipping expense_id and UserID
+            Dim colIndex As Integer = 1
+            For i As Integer = 0 To dataGridViewExpenses.Columns.Count - 1
+                If dataGridViewExpenses.Columns(i).Name <> "expense_id" AndAlso dataGridViewExpenses.Columns(i).Name <> "UserID" Then
+                    worksheet.Cells(1, colIndex) = dataGridViewExpenses.Columns(i).HeaderText
+                    colIndex += 1
+                End If
+            Next
+
+            ' Add rows, skipping expense_id and UserID
+            For i As Integer = 0 To dataGridViewExpenses.Rows.Count - 1
+                colIndex = 1
+                For j As Integer = 0 To dataGridViewExpenses.Columns.Count - 1
+                    If dataGridViewExpenses.Columns(j).Name <> "expense_id" AndAlso dataGridViewExpenses.Columns(j).Name <> "UserID" Then
+                        worksheet.Cells(i + 2, colIndex) = dataGridViewExpenses.Rows(i).Cells(j).Value.ToString()
+                        colIndex += 1
+                    End If
+                Next
+            Next
+
+            ' Calculate total cost
+            Dim totalCost As Decimal = 0
+            For Each row As DataGridViewRow In dataGridViewExpenses.Rows
+                totalCost += Convert.ToDecimal(row.Cells("Cost").Value)
+            Next
+
+            ' Add total cost to the Excel sheet
+            worksheet.Cells(dataGridViewExpenses.Rows.Count + 2, 1) = "Total Cost"
+            worksheet.Cells(dataGridViewExpenses.Rows.Count + 2, 2) = totalCost.ToString("C")
+
+            ' Save the file
+            Dim saveFileDialog As New SaveFileDialog()
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+            saveFileDialog.FilterIndex = 1
+
+            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                workbook.SaveAs(saveFileDialog.FileName)
+                MessageBox.Show("Data exported successfully.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error exporting data: " & ex.Message)
+        Finally
+            excelApp.Quit()
+            ReleaseObject(worksheet)
+            ReleaseObject(workbook)
+            ReleaseObject(excelApp)
+        End Try
+    End Sub
+
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
     End Sub
 End Class
