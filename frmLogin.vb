@@ -52,6 +52,7 @@ Public Class frmLogin
     ' Handles the Click event of the btnClose control to close the application
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         If MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            frmMain.Close()
             Application.Exit()
         End If
     End Sub
