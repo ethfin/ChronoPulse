@@ -44,10 +44,13 @@ Public Class frmGames
         Dim processes = Process.GetProcesses()
         Dim trackerText As New StringBuilder()
         Dim currentApplications As New Dictionary(Of String, DateTime)()
+        Dim isGameRunning As Boolean = False
 
         For Each proc As Process In processes
             If Not IsSystemProcess(proc) AndAlso IsGame(proc) Then
                 Dim appName = proc.ProcessName
+                isGameRunning = True ' A game is running, so set the flag to true
+
                 If Not currentApplications.ContainsKey(appName) Then
                     ' Set the start time for the game session if not already set
                     If Not gameStartTimes.ContainsKey(appName) Then
@@ -93,6 +96,7 @@ Public Class frmGames
         If Not Me.IsDisposed Then
             BeginInvoke(Sub()
                             lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
+                            btnDelete.Enabled = Not isGameRunning ' Disable the delete button if a game is running
                         End Sub)
         End If
     End Sub
