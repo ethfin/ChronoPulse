@@ -128,10 +128,10 @@ Public Class frmSignUp
                 lblError.ForeColor = Color.Green
                 lblError.Text = "Password matches and meets requirements."
             Else
-                ' If the password does not meet complexity requirements, set the border color to Orange.
-                txtPassword.BorderColor = Color.Orange
-                txtReenterPassword.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                ' If the password does not meet complexity requirements, set the border color to Red.
+                txtPassword.BorderColor = Color.Red
+                txtReenterPassword.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Password must be at least 8 characters, contain numbers, and special characters, and should not include : ; "" ' / \\."
             End If
         Else
@@ -186,8 +186,8 @@ Public Class frmSignUp
 
         If String.IsNullOrWhiteSpace(txtEmail.Text) Then
             lblErrorEmail.Text = "Fill in the field"
-            lblErrorEmail.ForeColor = Color.Orange
-            txtEmail.BorderColor = Color.Orange
+            lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
             lblErrorEmail.Show() ' Show the email error label
             Return False
         End If

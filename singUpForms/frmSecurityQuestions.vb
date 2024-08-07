@@ -170,10 +170,10 @@ Public Class frmSecurityQuestions
                 Return True
             Else
                 txtSQA1.Text = txtSQA1Verify.Text
-                ' If the inputs are blank, set the border color to Orange.
-                txtSQA1.BorderColor = Color.Orange
-                txtSQA1Verify.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                ' If the inputs are blank, set the border color to Red.
+                txtSQA1.BorderColor = Color.Red
+                txtSQA1Verify.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Fill in the the following fields"
                 lblError.Show()
                 Return False
@@ -202,10 +202,10 @@ Public Class frmSecurityQuestions
                 Return True
             Else
                 txtSQA1Verify.Text = txtSQA1.Text
-                ' If the inputs are blank, set the border color to Orange.
-                txtSQA1.BorderColor = Color.Orange
-                txtSQA1Verify.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                ' If the inputs are blank, set the border color to Red.
+                txtSQA1.BorderColor = Color.Red
+                txtSQA1Verify.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Fill in the the following fields"
                 lblError.Show()
                 Return False
@@ -243,10 +243,10 @@ Public Class frmSecurityQuestions
                 Return True
             Else
                 txtSQA2.Text = txtSQA2Verify.Text
-                ' If the inputs are blank, set the border color to Orange.
-                txtSQA2.BorderColor = Color.Orange
-                txtSQA2Verify.BorderColor = Color.Orange
-                lblError2.ForeColor = Color.Orange
+                ' If the inputs are blank, set the border color to Red.
+                txtSQA2.BorderColor = Color.Red
+                txtSQA2Verify.BorderColor = Color.Red
+                lblError2.ForeColor = Color.Red
                 lblError2.Text = "Fill in the the following fields"
                 lblError2.Show()
                 Return False
@@ -275,10 +275,10 @@ Public Class frmSecurityQuestions
                 Return True
             Else
                 txtSQA2Verify.Text = txtSQA2.Text
-                ' If the inputs are blank, set the border color to Orange.
-                txtSQA2.BorderColor = Color.Orange
-                txtSQA2Verify.BorderColor = Color.Orange
-                lblError2.ForeColor = Color.Orange
+                ' If the inputs are blank, set the border color to Red.
+                txtSQA2.BorderColor = Color.Red
+                txtSQA2Verify.BorderColor = Color.Red
+                lblError2.ForeColor = Color.Red
                 lblError2.Text = "Fill in the the following fields"
                 lblError2.Show()
                 Return False
