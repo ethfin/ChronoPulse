@@ -18,17 +18,15 @@ Public Class frmGames
         ' Get the UserID from frmExpenses
         GetUserID()
 
-        ' Populate ListBox1 with known games from the database
+        ' Populate DataGridView with known games from the database
         LoadUserGames()
-
-        ' Populate ListBox1 with known games
-        ListBox1.Items.AddRange(knownGames.ToArray())
-
-        ' Load existing game times
-        LoadExistingGameTimes()
 
         ' Add handler for form closing event
         AddHandler Me.FormClosing, AddressOf frmGames_FormClosing
+
+        ' Disable column headers and remove the extra empty row
+        dgvGameList.ColumnHeadersVisible = False
+        dgvGameList.AllowUserToAddRows = False
     End Sub
 
     Private Sub frmGames_FormClosing(sender As Object, e As FormClosingEventArgs)
@@ -81,8 +79,6 @@ Public Class frmGames
 
                 ' Insert or update the elapsed time in the database
                 InsertOrUpdateGameTime(app, elapsedTime)
-
-                LoadExistingGameTimes()
             End If
         Next
 
@@ -92,14 +88,25 @@ Public Class frmGames
             gameStartTimes.Remove(app)
         Next
 
+        ' Load existing game times after processing all closed applications
+        LoadExistingGameTimes()
+
         ' Update the tracker text in the UI
         If Not Me.IsDisposed Then
             BeginInvoke(Sub()
                             lblTracker.Text = trackerText.ToString().Replace(Environment.NewLine, "<br>")
-                            btnDelete.Enabled = Not isGameRunning ' Disable the delete button if a game is running
+                            btnDelete.Enabled = Not IsSelectedGameRunning() ' Disable the delete button if the selected game is running
                         End Sub)
         End If
     End Sub
+
+    Private Function IsSelectedGameRunning() As Boolean
+        If dgvGameList.SelectedRows.Count > 0 Then
+            Dim selectedGame As String = dgvGameList.SelectedRows(0).Cells("game_name").Value.ToString()
+            Return previousApplications.ContainsKey(selectedGame)
+        End If
+        Return False
+    End Function
 
     Private Sub LoadExistingGameTimes()
         Dim getElapsedTimeQuery As String = "SELECT gp.game_name, SUM(gt.hours) AS total_hours " &
@@ -158,10 +165,12 @@ Public Class frmGames
                 loadGamesCmd.Parameters.AddWithValue("@UserID", userID)
                 conn.Open()
                 Using reader As MySqlDataReader = loadGamesCmd.ExecuteReader()
-                    While reader.Read()
-                        Dim gameName As String = reader("game_name").ToString()
-                        knownGames.Add(gameName)
-                    End While
+                    Dim dt As New DataTable()
+                    dt.Load(reader)
+                    dgvGameList.DataSource = dt
+                    For Each row As DataRow In dt.Rows
+                        knownGames.Add(row("game_name").ToString())
+                    Next
                 End Using
                 conn.Close()
             End Using
@@ -272,7 +281,11 @@ Public Class frmGames
                 Dim fileName As String = Path.GetFileNameWithoutExtension(filePath)
 
                 If knownGames.Add(fileName) Then ' HashSet.Add returns false if item already exists
-                    ListBox1.Items.Add(fileName) ' Add the game to ListBox1
+                    ' Add the game to DataGridView
+                    Dim dt As DataTable = CType(dgvGameList.DataSource, DataTable)
+                    Dim newRow As DataRow = dt.NewRow()
+                    newRow("game_name") = fileName
+                    dt.Rows.Add(newRow)
 
                     ' Insert the game details into the database
                     InsertGameDetails(fileName, filePath)
@@ -289,13 +302,13 @@ Public Class frmGames
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If ListBox1.SelectedItem IsNot Nothing Then
-            Dim selectedGame As String = ListBox1.SelectedItem.ToString()
+        If dgvGameList.SelectedRows.Count > 0 Then
+            Dim selectedGame As String = dgvGameList.SelectedRows(0).Cells("game_name").Value.ToString()
 
             ' Remove the game from the knownGames collection
             If knownGames.Remove(selectedGame) Then
-                ' Remove the game from the ListBox
-                ListBox1.Items.Remove(selectedGame)
+                ' Remove the game from the DataGridView
+                dgvGameList.Rows.RemoveAt(dgvGameList.SelectedRows(0).Index)
 
                 ' Delete the game from the database
                 DeleteGameDetails(selectedGame)

@@ -23,10 +23,15 @@ Partial Class frmGames
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dgvGameList = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.IconPictureBox4 = New FontAwesome.Sharp.IconPictureBox()
@@ -37,9 +42,9 @@ Partial Class frmGames
         Me.lblTracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
+        CType(Me.dgvGameList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +104,7 @@ Partial Class frmGames
         Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.Guna2Panel5.BorderThickness = 1
+        Me.Guna2Panel5.Controls.Add(Me.dgvGameList)
         Me.Guna2Panel5.Controls.Add(Me.IconPictureBox2)
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Guna2Panel5.Controls.Add(Me.IconPictureBox4)
@@ -114,6 +120,73 @@ Partial Class frmGames
         Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(25)
         Me.Guna2Panel5.Size = New System.Drawing.Size(1138, 542)
         Me.Guna2Panel5.TabIndex = 2
+        '
+        'dgvGameList
+        '
+        Me.dgvGameList.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Inter Medium", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvGameList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvGameList.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("DM Sans 14pt", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGameList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvGameList.ColumnHeadersHeight = 30
+        Me.dgvGameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Inter Medium", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvGameList.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvGameList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGameList.Location = New System.Drawing.Point(825, 62)
+        Me.dgvGameList.Name = "dgvGameList"
+        Me.dgvGameList.ReadOnly = True
+        Me.dgvGameList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGameList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvGameList.RowHeadersVisible = False
+        Me.dgvGameList.RowTemplate.Height = 30
+        Me.dgvGameList.Size = New System.Drawing.Size(298, 456)
+        Me.dgvGameList.TabIndex = 11
+        Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Inter Medium", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White
+        Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvGameList.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvGameList.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("DM Sans 14pt", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvGameList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgvGameList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgvGameList.ThemeStyle.HeaderStyle.Height = 30
+        Me.dgvGameList.ThemeStyle.ReadOnly = True
+        Me.dgvGameList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvGameList.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Inter Medium", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvGameList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White
+        Me.dgvGameList.ThemeStyle.RowsStyle.Height = 30
+        Me.dgvGameList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGameList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
         '
         'IconPictureBox2
         '
@@ -203,7 +276,7 @@ Partial Class frmGames
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLoglastTime.AutoSize = False
         Me.lblLoglastTime.BackColor = System.Drawing.Color.DimGray
-        Me.lblLoglastTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoglastTime.Font = New System.Drawing.Font("Inter", 20.25!)
         Me.lblLoglastTime.ForeColor = System.Drawing.Color.White
         Me.lblLoglastTime.Location = New System.Drawing.Point(28, 292)
         Me.lblLoglastTime.Name = "lblLoglastTime"
@@ -218,7 +291,7 @@ Partial Class frmGames
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTracker.AutoSize = False
         Me.lblTracker.BackColor = System.Drawing.Color.DimGray
-        Me.lblTracker.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTracker.Font = New System.Drawing.Font("Inter", 20.25!)
         Me.lblTracker.ForeColor = System.Drawing.Color.White
         Me.lblTracker.Location = New System.Drawing.Point(28, 62)
         Me.lblTracker.Name = "lblTracker"
@@ -245,12 +318,6 @@ Partial Class frmGames
         '
         Me.Timer1.Interval = 1000
         '
-        'ImageList1
-        '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        '
         'frmGames
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,6 +332,7 @@ Partial Class frmGames
         Me.pnlContainer.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
+        CType(Me.dgvGameList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -279,7 +347,6 @@ Partial Class frmGames
     Friend WithEvents lblLoglastTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
@@ -287,4 +354,5 @@ Partial Class frmGames
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents IconPictureBox2 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents dgvGameList As Guna.UI2.WinForms.Guna2DataGridView
 End Class

@@ -87,6 +87,7 @@ Partial Class frmDashboard
         '
         Me.lblLogLastTime.AutoSize = False
         Me.lblLogLastTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblLogLastTime.Font = New System.Drawing.Font("Inter", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogLastTime.Location = New System.Drawing.Point(11, 91)
         Me.lblLogLastTime.Name = "lblLogLastTime"
         Me.lblLogLastTime.Size = New System.Drawing.Size(661, 172)
