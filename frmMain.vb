@@ -66,6 +66,7 @@
         'frmGames.Dispose()
         'frmLeaderboard.Close()
         frmExpenses.Close()
+        frmExpenses.Dispose()
     End Sub
 
 End Class
