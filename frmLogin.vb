@@ -89,6 +89,13 @@ Public Class frmLogin
                     If result > 0 Then
                         ' Set the username label in the frmMain form to the logged-in username
                         frmMain.lblUsername.Text = Me.Username
+                        ' Show the system tray icon
+                        frmMain.notifyIcon.Visible = True
+                        ' Restore the frmMain form to its previous size and location
+                        frmMain.WindowState = FormWindowState.Normal
+                        frmMain.ShowInTaskbar = True
+                        ' Change the panel to the dashboard
+                        frmMain.changePanel(frmDashboard)
                         ' Show the frmMain form
                         frmMain.Show()
                         ' Close the frmLogin form

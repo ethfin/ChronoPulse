@@ -2,8 +2,8 @@
 
 Public Class frmMain
 
-    Private notifyIcon As NotifyIcon
-    Private contextMenu As ContextMenuStrip
+    Public notifyIcon As NotifyIcon
+    Private Shadows contextMenu As ContextMenuStrip
 
     ' Changes the panel displayed in the main panel container.
     Public Sub changePanel(ByVal panel As Form)
@@ -74,10 +74,17 @@ Public Class frmMain
 
     ' Handles the Click event of the btnLogout control to log out the user.
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        'Me.Hide()
+        ' Hide the system tray icon
+        notifyIcon.Visible = False
+
+        ' Show the login form
         frmLogin.Show()
+
+        ' Close all child forms
         CloseChildForms()
-        Me.Close()
+
+        ' Hide the main form
+        Me.Hide()
     End Sub
 
     Private Sub CloseChildForms()
@@ -94,12 +101,14 @@ Public Class frmMain
     Private Sub NotifyIcon_DoubleClick(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Normal
         Me.ShowInTaskbar = True
+        changePanel(frmDashboard) ' Load the dashboard panel
     End Sub
 
     ' Handles the Click event of the Show menu item to restore the form.
     Private Sub ShowMenuItem_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Normal
         Me.ShowInTaskbar = True
+        changePanel(frmDashboard) ' Load the dashboard panel
     End Sub
 
     ' Handles the Click event of the Exit menu item to close the application.
