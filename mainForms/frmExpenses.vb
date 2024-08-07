@@ -39,16 +39,6 @@ Public Class frmExpenses
         End Using
     End Sub
 
-    Private Sub UpdateTotalCost()
-        Dim totalCost As Decimal = 0
-
-        For Each row As DataGridViewRow In dataGridViewExpenses.Rows
-            totalCost += Convert.ToDecimal(row.Cells("Cost").Value)
-        Next
-
-        lblTotalCost.Text = totalCost.ToString("C")
-    End Sub
-
     ' Make LoadExpensesData public so it can be accessed from frmAddExpense
     Public Sub LoadExpensesData()
         Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
@@ -78,36 +68,16 @@ Public Class frmExpenses
         End Try
     End Sub
 
-    Private Sub dataGridViewExpenses_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridViewExpenses.CellClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = dataGridViewExpenses.Rows(e.RowIndex)
-            txtItem.Text = row.Cells("Item").Value.ToString()
-            txtCost.Text = row.Cells("Cost").Value.ToString()
-            txtDescription.Text = row.Cells("Description").Value.ToString()
+    Private Sub UpdateTotalCost()
+        Dim totalCost As Decimal = 0
 
-            Dim dateValue As DateTime
-            If DateTime.TryParse(row.Cells("formatted_date").Value.ToString(), dateValue) Then
-                dtpDate.Value = dateValue
-            Else
-                MessageBox.Show("Invalid date format in the selected row.")
-            End If
+        For Each row As DataGridViewRow In dataGridViewExpenses.Rows
+            totalCost += Convert.ToDecimal(row.Cells("Cost").Value)
+        Next
 
-            ' Disable the Add button and enable the Edit button
-            btnAdd.Enabled = False
-            btnEdit.Enabled = True
-        End If
+        lblTotalCost.Text = totalCost.ToString("C")
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        AddExpense()
-    End Sub
-
-    Private Sub dataGridViewExpenses_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridViewExpenses.CellContentClick
-        ' Call the CellClick event handler to update the textboxes and DateTimePicker
-        dataGridViewExpenses_CellClick(sender, e)
-    End Sub
-
-    ' Function to add a new expense to the database
     Private Sub AddExpense()
         ' Validate inputs
         If String.IsNullOrWhiteSpace(txtItem.Text) OrElse
@@ -150,19 +120,6 @@ Public Class frmExpenses
                 MessageBox.Show("Error adding expense: " & ex.Message)
             End Try
         End Using
-    End Sub
-
-    ' Event handler to ensure txtCost only accepts numbers
-    Private Sub txtCost_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCost.KeyPress
-        ' Allow control keys, digits, and one decimal point
-        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso (e.KeyChar <> "."c) Then
-            e.Handled = True
-        End If
-
-        ' Only allow one decimal point
-        If (e.KeyChar = "."c) AndAlso (DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf("."c) > -1) Then
-            e.Handled = True
-        End If
     End Sub
 
     Private Sub EditExpense()
@@ -212,33 +169,6 @@ Public Class frmExpenses
         ClearFieldsAndUnselect()
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        EditExpense()
-    End Sub
-
-    ' Event handler for the Clear button
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        ClearFieldsAndUnselect()
-    End Sub
-
-    ' Method to clear fields and unselect DataGridView
-    Private Sub ClearFieldsAndUnselect()
-        ' Clear all input fields
-        txtItem.Clear()
-        txtCost.Clear()
-        txtDescription.Clear()
-        dtpDate.Value = DateTime.Now
-
-        ' Unselect any selected rows in the DataGridView
-        dataGridViewExpenses.ClearSelection()
-
-        ' Enable the Add button
-        btnAdd.Enabled = True
-
-        ' Disable the Edit button
-        btnEdit.Enabled = False
-    End Sub
-
     Private Sub DeleteSelectedExpenses()
         ' Check if any rows are selected
         If dataGridViewExpenses.SelectedRows.Count = 0 Then
@@ -285,6 +215,48 @@ Public Class frmExpenses
         End If
     End Sub
 
+    Private Sub ClearFieldsAndUnselect()
+        ' Clear all input fields
+        txtItem.Clear()
+        txtCost.Clear()
+        txtDescription.Clear()
+        dtpDate.Value = DateTime.Now
+
+        ' Unselect any selected rows in the DataGridView
+        dataGridViewExpenses.ClearSelection()
+
+        ' Enable the Add button
+        btnAdd.Enabled = True
+
+        ' Disable the Edit button
+        btnEdit.Enabled = False
+    End Sub
+
+    Private Sub dataGridViewExpenses_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridViewExpenses.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dataGridViewExpenses.Rows(e.RowIndex)
+            txtItem.Text = row.Cells("Item").Value.ToString()
+            txtCost.Text = row.Cells("Cost").Value.ToString()
+            txtDescription.Text = row.Cells("Description").Value.ToString()
+
+            Dim dateValue As DateTime
+            If DateTime.TryParse(row.Cells("formatted_date").Value.ToString(), dateValue) Then
+                dtpDate.Value = dateValue
+            Else
+                MessageBox.Show("Invalid date format in the selected row.")
+            End If
+
+            ' Disable the Add button and enable the Edit button
+            btnAdd.Enabled = False
+            btnEdit.Enabled = True
+        End If
+    End Sub
+
+    Private Sub dataGridViewExpenses_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridViewExpenses.CellContentClick
+        ' Call the CellClick event handler to update the textboxes and DateTimePicker
+        dataGridViewExpenses_CellClick(sender, e)
+    End Sub
+
     Private Sub dataGridViewExpenses_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dataGridViewExpenses.CellMouseDown
         ' Check if the user shift-clicked multiple items
         If e.Button = MouseButtons.Left AndAlso (Control.ModifierKeys And Keys.Shift) = Keys.Shift Then
@@ -293,7 +265,32 @@ Public Class frmExpenses
         End If
     End Sub
 
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        AddExpense()
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        EditExpense()
+    End Sub
+
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         DeleteSelectedExpenses()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ClearFieldsAndUnselect()
+    End Sub
+
+    ' Event handler to ensure txtCost only accepts numbers
+    Private Sub txtCost_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCost.KeyPress
+        ' Allow control keys, digits, and one decimal point
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso (e.KeyChar <> "."c) Then
+            e.Handled = True
+        End If
+
+        ' Only allow one decimal point
+        If (e.KeyChar = "."c) AndAlso (DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf("."c) > -1) Then
+            e.Handled = True
+        End If
     End Sub
 End Class
