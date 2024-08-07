@@ -93,7 +93,7 @@ Public Class frmResetAccountPassword
         End If
 
         ' Close the current form
-        Me.Close()
+        Application.Exit()
     End Sub
     'show password for txtPassword
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged

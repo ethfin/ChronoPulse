@@ -223,10 +223,11 @@ Public Class frmGames
     End Sub
 
     Private Sub LoadUserGames()
-        Dim getUserGamesQuery As String = "SELECT game_name FROM game_paths"
+        Dim getUserGamesQuery As String = "SELECT game_name FROM game_paths WHERE UserID = @UserID"
 
         Using connection As MySqlConnection = Common.createDBConnection()
             Using getUserGamesCmd As New MySqlCommand(getUserGamesQuery, connection)
+                getUserGamesCmd.Parameters.AddWithValue("@UserID", userID)
                 connection.Open()
                 Using reader As MySqlDataReader = getUserGamesCmd.ExecuteReader()
                     While reader.Read()

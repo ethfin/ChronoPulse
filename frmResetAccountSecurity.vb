@@ -259,7 +259,7 @@ Public Class frmResetAccountSecurity
     End Sub
 
     Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        Dim email As String = lblWelcome1.Text.Replace("Email: ", "") ' Extract the email from the label text
+        Dim email As String = lblWelcome1.Text ' Extract the email from the label text
 
         If ValidateInputFields() Then
             Dim conn As MySqlConnection = Common.getDBConnectionX()
@@ -340,6 +340,6 @@ Public Class frmResetAccountSecurity
     End Sub
 
     Public Sub SetEmail(email As String)
-        lblWelcome1.Text = "Email: " & email
+        lblWelcome1.Text = email
     End Sub
 End Class
