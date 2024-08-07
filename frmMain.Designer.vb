@@ -64,7 +64,7 @@ Partial Class frmMain
         Me.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.lblUsername.AutoSize = False
         Me.lblUsername.BackColor = System.Drawing.Color.Transparent
-        Me.lblUsername.Font = New System.Drawing.Font("DM Sans 14pt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
         Me.lblUsername.Location = New System.Drawing.Point(1078, 12)
         Me.lblUsername.Name = "lblUsername"
@@ -78,7 +78,7 @@ Partial Class frmMain
         '
         Me.lblHeaderTitle.AutoSize = False
         Me.lblHeaderTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblHeaderTitle.Font = New System.Drawing.Font("DM Sans 14pt Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeaderTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeaderTitle.ForeColor = System.Drawing.Color.White
         Me.lblHeaderTitle.Location = New System.Drawing.Point(53, 7)
         Me.lblHeaderTitle.Name = "lblHeaderTitle"
@@ -107,7 +107,7 @@ Partial Class frmMain
         Me.picUserIcon.IconColor = System.Drawing.Color.White
         Me.picUserIcon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.picUserIcon.Location = New System.Drawing.Point(1249, 6)
-        Me.picUserIcon.Margin = New System.Windows.Forms.Padding(5)
+        Me.picUserIcon.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.picUserIcon.Name = "picUserIcon"
         Me.picUserIcon.Size = New System.Drawing.Size(32, 35)
         Me.picUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

@@ -65,8 +65,19 @@ Public Class frmSecurityQuestions
 
             MessageBox.Show("Please fill in all fields.")
             Return False
-
         End If
+
+        ' Check if the security questions are the same
+        If cmbSQ1.Text = cmbSQ2.Text Then
+            MessageBox.Show("Security questions must be different.")
+            Return False
+        End If
+
+        ' Validate the security answers
+        If Not compareAnswer1() OrElse Not compareAnswer2() Then
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -94,8 +105,8 @@ Public Class frmSecurityQuestions
     End Sub
 
     Private Sub InsertUserData()
-        ' Use the Common class to get the database connection
-        Dim conn As MySqlConnection = Common.getDBConnectionX()
+        ' Use the Common class to create a new instance of the database connection
+        Dim conn As MySqlConnection = Common.createDBConnection()
 
         Try
             ' Define the SQL INSERT statement

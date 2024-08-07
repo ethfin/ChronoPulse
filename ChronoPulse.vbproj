@@ -221,12 +221,6 @@
     <Compile Include="mainForms\frmLeaderboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForms\subForm\frmAddExpense.Designer.vb">
-      <DependentUpon>frmAddExpense.vb</DependentUpon>
-    </Compile>
-    <Compile Include="mainForms\subForm\frmAddExpense.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -256,6 +250,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmResetAccount.resx">
       <DependentUpon>frmResetAccount.vb</DependentUpon>
@@ -286,9 +281,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForms\frmLeaderboard.resx">
       <DependentUpon>frmLeaderboard.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mainForms\subForm\frmAddExpense.resx">
-      <DependentUpon>frmAddExpense.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -92,8 +92,12 @@ Public Class frmResetAccountPassword
             frmLogin.Close()
         End If
 
-        ' Close the current form
-        Me.Close()
+        ' Ask for confirmation before closing the form
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            ' Close the current form
+            Application.Exit()
+        End If
     End Sub
     'show password for txtPassword
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
@@ -174,4 +178,8 @@ Public Class frmResetAccountPassword
         Return True
     End Function
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        frmResetAccountSecurity.Show()
+        Me.Close()
+    End Sub
 End Class
