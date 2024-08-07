@@ -28,6 +28,26 @@ Public Class frmDashboard
         lblTotalCost.Text = totalCost.ToString("C")
     End Sub
 
+    Private Sub UpdateTotalItems()
+        Dim totalItems As Integer = 0
+
+        ' Query to get the total number of items for the user
+        Dim query As String = "SELECT COUNT(*) AS TotalItems FROM user_expenses WHERE UserID = @userID"
+
+        Using conn As MySqlConnection = Common.createDBConnection()
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@userID", userID)
+                conn.Open()
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot DBNull.Value Then
+                    totalItems = Convert.ToInt32(result)
+                End If
+                conn.Close()
+            End Using
+        End Using
+
+        lblTotalItems.Text = totalItems.ToString()
+    End Sub
 
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Get the UserID from frmMain
@@ -45,6 +65,9 @@ Public Class frmDashboard
         ' Update the total cost
         UpdateTotalCost()
 
+        ' Update the total items
+        UpdateTotalItems()
+
         ' Start the timer
         Timer1.Start()
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
@@ -52,6 +75,10 @@ Public Class frmDashboard
 
     Public Sub RefreshTotalCost()
         UpdateTotalCost()
+    End Sub
+
+    Public Sub RefreshTotalItems()
+        UpdateTotalItems()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)

@@ -33,7 +33,7 @@ Partial Class frmDashboard
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lblExpenses2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lblTotalItems = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -182,7 +182,7 @@ Partial Class frmDashboard
         Me.Guna2Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.Guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.Guna2Panel3.BorderThickness = 1
-        Me.Guna2Panel3.Controls.Add(Me.lblExpenses2)
+        Me.Guna2Panel3.Controls.Add(Me.lblTotalItems)
         Me.Guna2Panel3.Controls.Add(Me.IconPictureBox2)
         Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel4)
         Me.Guna2Panel3.Location = New System.Drawing.Point(410, 55)
@@ -192,17 +192,17 @@ Partial Class frmDashboard
         Me.Guna2Panel3.Size = New System.Drawing.Size(345, 241)
         Me.Guna2Panel3.TabIndex = 2
         '
-        'lblExpenses2
+        'lblTotalItems
         '
-        Me.lblExpenses2.BackColor = System.Drawing.Color.Transparent
-        Me.lblExpenses2.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblExpenses2.ForeColor = System.Drawing.Color.White
-        Me.lblExpenses2.Location = New System.Drawing.Point(89, 98)
-        Me.lblExpenses2.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblExpenses2.Name = "lblExpenses2"
-        Me.lblExpenses2.Size = New System.Drawing.Size(174, 77)
-        Me.lblExpenses2.TabIndex = 16
-        Me.lblExpenses2.Text = "$0.00"
+        Me.lblTotalItems.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalItems.ForeColor = System.Drawing.Color.White
+        Me.lblTotalItems.Location = New System.Drawing.Point(89, 98)
+        Me.lblTotalItems.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblTotalItems.Name = "lblTotalItems"
+        Me.lblTotalItems.Size = New System.Drawing.Size(174, 77)
+        Me.lblTotalItems.TabIndex = 16
+        Me.lblTotalItems.Text = "$0.00"
         '
         'IconPictureBox2
         '
@@ -326,7 +326,7 @@ Partial Class frmDashboard
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblTotalCost As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents lblExpenses2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lblTotalItems As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents IconPictureBox4 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox

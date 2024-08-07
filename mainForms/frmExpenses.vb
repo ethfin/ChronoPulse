@@ -143,8 +143,9 @@ Public Class frmExpenses
                 MessageBox.Show("Expense added successfully.")
                 LoadExpensesData() ' Refresh the data grid view
 
-                ' Update the total cost in frmDashboard
+                ' Update the total cost and total items in frmDashboard
                 frmDashboard.RefreshTotalCost()
+                frmDashboard.RefreshTotalItems()
             Catch ex As MySqlException
                 MessageBox.Show("Error adding expense: " & ex.Message)
             End Try
@@ -199,8 +200,9 @@ Public Class frmExpenses
                 MessageBox.Show("Expense updated successfully.")
                 LoadExpensesData() ' Refresh the data grid view
 
-                ' Update the total cost in frmDashboard
+                ' Update the total cost and total items in frmDashboard
                 frmDashboard.RefreshTotalCost()
+                frmDashboard.RefreshTotalItems()
             Catch ex As MySqlException
                 MessageBox.Show("Error updating expense: " & ex.Message)
             End Try
@@ -273,8 +275,9 @@ Public Class frmExpenses
                     MessageBox.Show("Selected expenses deleted successfully.")
                     LoadExpensesData() ' Refresh the data grid view
 
-                    ' Update the total cost in frmDashboard
+                    ' Update the total cost and total items in frmDashboard
                     frmDashboard.RefreshTotalCost()
+                    frmDashboard.RefreshTotalItems()
                 Catch ex As MySqlException
                     MessageBox.Show("Error deleting expenses: " & ex.Message)
                 End Try
