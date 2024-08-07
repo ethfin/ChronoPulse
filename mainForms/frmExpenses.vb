@@ -17,6 +17,9 @@ Public Class frmExpenses
 
         ' Disable the Edit button initially
         btnEdit.Enabled = False
+
+        ' Prevent extra empty rows in the DataGridView
+        dataGridViewExpenses.AllowUserToAddRows = False
     End Sub
 
     Private Sub frmExpenses_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -140,7 +143,7 @@ Public Class frmExpenses
         End If
 
         ' Only allow one decimal point
-        If (e.KeyChar = "."c) AndAlso (DirectCast(sender, TextBox).Text.IndexOf("."c) > -1) Then
+        If (e.KeyChar = "."c) AndAlso (DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf("."c) > -1) Then
             e.Handled = True
         End If
     End Sub
@@ -213,5 +216,59 @@ Public Class frmExpenses
 
         ' Disable the Edit button
         btnEdit.Enabled = False
+    End Sub
+
+    Private Sub DeleteSelectedExpenses()
+        ' Check if any rows are selected
+        If dataGridViewExpenses.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select at least one row to delete.")
+            Return
+        End If
+
+        ' Confirm the deletion with the user
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete the selected expenses?", "Confirm Deletion", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            ' Delete the selected expenses from the database
+            Dim deleteQuery As String = "DELETE FROM user_expenses WHERE expense_id IN ("
+
+            ' Build the parameterized query with placeholders for each selected expense ID
+            Dim parameterNames As New List(Of String)()
+            For Each row As DataGridViewRow In dataGridViewExpenses.SelectedRows
+                Dim expenseID As Integer = Convert.ToInt32(row.Cells("expense_id").Value)
+                Dim parameterName As String = "@expenseID" & expenseID.ToString()
+                deleteQuery &= parameterName & ","
+                parameterNames.Add(parameterName)
+            Next
+
+            ' Remove the trailing comma and close the parentheses
+            deleteQuery = deleteQuery.TrimEnd(","c) & ")"
+
+            Using deleteCmd As New MySqlCommand(deleteQuery, connection)
+                ' Add the expense ID parameters to the command
+                For i As Integer = 0 To parameterNames.Count - 1
+                    deleteCmd.Parameters.AddWithValue(parameterNames(i), Convert.ToInt32(dataGridViewExpenses.SelectedRows(i).Cells("expense_id").Value))
+                Next
+
+                Try
+                    deleteCmd.ExecuteNonQuery()
+                    MessageBox.Show("Selected expenses deleted successfully.")
+                    LoadExpensesData() ' Refresh the data grid view
+                Catch ex As MySqlException
+                    MessageBox.Show("Error deleting expenses: " & ex.Message)
+                End Try
+            End Using
+        End If
+    End Sub
+
+    Private Sub dataGridViewExpenses_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dataGridViewExpenses.CellMouseDown
+        ' Check if the user shift-clicked multiple items
+        If e.Button = MouseButtons.Left AndAlso (Control.ModifierKeys And Keys.Shift) = Keys.Shift Then
+            ' Select the clicked row
+            dataGridViewExpenses.Rows(e.RowIndex).Selected = True
+        End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DeleteSelectedExpenses()
     End Sub
 End Class
