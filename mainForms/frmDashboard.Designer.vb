@@ -226,9 +226,9 @@ Partial Class frmDashboard
         Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(53, 23)
         Me.Guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(155, 30)
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(120, 30)
         Me.Guna2HtmlLabel4.TabIndex = 1
-        Me.Guna2HtmlLabel4.Text = "Item Expenses"
+        Me.Guna2HtmlLabel4.Text = "Total Items"
         '
         'Guna2Panel2
         '

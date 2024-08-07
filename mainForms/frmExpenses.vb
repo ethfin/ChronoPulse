@@ -142,6 +142,9 @@ Public Class frmExpenses
                 insertCmd.ExecuteNonQuery()
                 MessageBox.Show("Expense added successfully.")
                 LoadExpensesData() ' Refresh the data grid view
+
+                ' Update the total cost in frmDashboard
+                frmDashboard.RefreshTotalCost()
             Catch ex As MySqlException
                 MessageBox.Show("Error adding expense: " & ex.Message)
             End Try
@@ -195,6 +198,9 @@ Public Class frmExpenses
                 updateCmd.ExecuteNonQuery()
                 MessageBox.Show("Expense updated successfully.")
                 LoadExpensesData() ' Refresh the data grid view
+
+                ' Update the total cost in frmDashboard
+                frmDashboard.RefreshTotalCost()
             Catch ex As MySqlException
                 MessageBox.Show("Error updating expense: " & ex.Message)
             End Try
@@ -266,6 +272,9 @@ Public Class frmExpenses
                     deleteCmd.ExecuteNonQuery()
                     MessageBox.Show("Selected expenses deleted successfully.")
                     LoadExpensesData() ' Refresh the data grid view
+
+                    ' Update the total cost in frmDashboard
+                    frmDashboard.RefreshTotalCost()
                 Catch ex As MySqlException
                     MessageBox.Show("Error deleting expenses: " & ex.Message)
                 End Try

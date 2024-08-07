@@ -7,6 +7,28 @@ Public Class frmDashboard
     Private knownGames As New HashSet(Of String)() ' Use HashSet for faster lookups
     Private userID As Integer
 
+    Private Sub UpdateTotalCost()
+        Dim totalCost As Decimal = 0
+
+        ' Query to get the total cost of expenses for the user
+        Dim query As String = "SELECT SUM(Cost) AS TotalCost FROM user_expenses WHERE UserID = @userID"
+
+        Using conn As MySqlConnection = Common.createDBConnection()
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@userID", userID)
+                conn.Open()
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot DBNull.Value Then
+                    totalCost = Convert.ToDecimal(result)
+                End If
+                conn.Close()
+            End Using
+        End Using
+
+        lblTotalCost.Text = totalCost.ToString("C")
+    End Sub
+
+
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Get the UserID from frmMain
         GetUserID()
@@ -20,9 +42,16 @@ Public Class frmDashboard
         ' Update the last log time
         UpdateLogLastTime()
 
+        ' Update the total cost
+        UpdateTotalCost()
+
         ' Start the timer
         Timer1.Start()
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
+    End Sub
+
+    Public Sub RefreshTotalCost()
+        UpdateTotalCost()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)
