@@ -219,7 +219,7 @@ Partial Class frmResetAccountSecurity
         Me.cmbSQ2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.cmbSQ2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ2.ItemHeight = 30
-        Me.cmbSQ2.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
+        Me.cmbSQ2.Items.AddRange(New Object() {"What was the name of your first stuffed animal or doll?", "In what city did your parents meet?", "What was the first concert you ever attended?", "What is the name of the street where you grew up?", "What was the make and model of your first car?", "What was the name of your favorite teacher in elementary school?", "What was your childhood best friend’s nickname?", "What’s your pet’s name?", "What’s your favorite color?", "What’s your lucky number?"})
         Me.cmbSQ2.Location = New System.Drawing.Point(10, 307)
         Me.cmbSQ2.Name = "cmbSQ2"
         Me.cmbSQ2.Size = New System.Drawing.Size(322, 36)
@@ -237,7 +237,7 @@ Partial Class frmResetAccountSecurity
         Me.cmbSQ1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold)
         Me.cmbSQ1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbSQ1.ItemHeight = 30
-        Me.cmbSQ1.Items.AddRange(New Object() {"What's your pet's name?", "What's your favorite color?", "What's your lucky number?"})
+        Me.cmbSQ1.Items.AddRange(New Object() {"What was the name of your first stuffed animal or doll?", "In what city did your parents meet?", "What was the first concert you ever attended?", "What is the name of the street where you grew up?", "What was the make and model of your first car?", "What was the name of your favorite teacher in elementary school?", "What was your childhood best friend’s nickname?", "What’s your pet’s name?", "What’s your favorite color?", "What’s your lucky number?"})
         Me.cmbSQ1.Location = New System.Drawing.Point(10, 172)
         Me.cmbSQ1.Name = "cmbSQ1"
         Me.cmbSQ1.Size = New System.Drawing.Size(322, 36)

@@ -96,6 +96,7 @@ Public Class frmResetAccountPassword
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
             ' Close the current form
+            frmMain.Close()
             Application.Exit()
         End If
     End Sub

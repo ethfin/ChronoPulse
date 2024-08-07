@@ -51,6 +51,7 @@ Public Class frmResetAccountSecurity
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         If MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            frmMain.Close()
             Application.Exit()
         End If
     End Sub
@@ -281,6 +282,7 @@ Public Class frmResetAccountSecurity
             End Try
         End If
     End Sub
+
 
     Private Sub cmbSQ1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSQ1.SelectedIndexChanged
         If cmbSQ1.SelectedIndex <> -1 AndAlso prevSelectedIndex2 <> -1 Then

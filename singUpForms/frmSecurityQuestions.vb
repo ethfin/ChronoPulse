@@ -32,6 +32,7 @@ Public Class frmSecurityQuestions
         ' Confirm before closing the application.
         If MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) = DialogResult.Yes Then
             ' Closes the entire application.
+            frmMain.Close()
             Application.Exit()
         End If
     End Sub
