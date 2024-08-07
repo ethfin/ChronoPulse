@@ -10,7 +10,7 @@ Public Class frmExpenses
     End Sub
 
     Private Sub frmExpenses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection = Common.getDBConnectionX()
+        connection = Common.createDBConnection()
         connection.Open()
         GetUserID()
         LoadExpensesData()
@@ -39,6 +39,16 @@ Public Class frmExpenses
         End Using
     End Sub
 
+    Private Sub UpdateTotalCost()
+        Dim totalCost As Decimal = 0
+
+        For Each row As DataGridViewRow In dataGridViewExpenses.Rows
+            totalCost += Convert.ToDecimal(row.Cells("Cost").Value)
+        Next
+
+        lblTotalCost.Text = totalCost.ToString("C")
+    End Sub
+
     ' Make LoadExpensesData public so it can be accessed from frmAddExpense
     Public Sub LoadExpensesData()
         Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
@@ -60,6 +70,9 @@ Public Class frmExpenses
             dataGridViewExpenses.Columns("Cost").HeaderText = "COST"
             dataGridViewExpenses.Columns("Description").HeaderText = "DESCRIPTION"
             dataGridViewExpenses.Columns("formatted_date").HeaderText = "DATE"
+
+            ' Update total cost
+            UpdateTotalCost()
         Catch ex As MySqlException
             MessageBox.Show("Error fetching data: " & ex.Message)
         End Try

@@ -37,7 +37,7 @@ Partial Class frmExpenses
         Me.txtDescription = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.txtItem = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lblTotalCost = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnlContainer.SuspendLayout()
         CType(Me.dataGridViewExpenses, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +49,7 @@ Partial Class frmExpenses
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.pnlContainer.Controls.Add(Me.dataGridViewExpenses)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel4)
-        Me.pnlContainer.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.pnlContainer.Controls.Add(Me.lblTotalCost)
         Me.pnlContainer.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(0, 0)
@@ -305,17 +305,17 @@ Partial Class frmExpenses
         Me.txtItem.Size = New System.Drawing.Size(200, 25)
         Me.txtItem.TabIndex = 0
         '
-        'Guna2HtmlLabel2
+        'lblTotalCost
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(50, 70)
-        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(89, 39)
-        Me.Guna2HtmlLabel2.TabIndex = 14
-        Me.Guna2HtmlLabel2.Text = "$0.00"
+        Me.lblTotalCost.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalCost.ForeColor = System.Drawing.Color.White
+        Me.lblTotalCost.Location = New System.Drawing.Point(50, 70)
+        Me.lblTotalCost.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblTotalCost.Name = "lblTotalCost"
+        Me.lblTotalCost.Size = New System.Drawing.Size(89, 39)
+        Me.lblTotalCost.TabIndex = 14
+        Me.lblTotalCost.Text = "$0.00"
         '
         'Guna2HtmlLabel1
         '
@@ -353,7 +353,7 @@ Partial Class frmExpenses
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lblTotalCost As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnClear As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtItem As Guna.UI2.WinForms.Guna2TextBox
