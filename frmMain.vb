@@ -27,6 +27,8 @@
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblUsername.Text = frmLogin.Username
         changePanel(frmDashboard)
+        frmGames.Show()
+        frmGames.Hide()
     End Sub
 
     ' Handles the Click event of the icon buttons to change the displayed panel.

@@ -61,6 +61,7 @@ Public Class frmSignUp
            String.IsNullOrWhiteSpace(txtLastName.Text) OrElse
            String.IsNullOrWhiteSpace(txtEmail.Text) OrElse
            String.IsNullOrWhiteSpace(txtPassword.Text) OrElse
+           String.IsNullOrWhiteSpace(txtUsername.Text) OrElse
            String.IsNullOrWhiteSpace(txtReenterPassword.Text) Then
 
             MessageBox.Show("Please fill in all fields.")
@@ -210,8 +211,8 @@ Public Class frmSignUp
 
 
     Private Function CheckExistingUser(username As String, email As String) As Boolean
-        ' Use the getDBConnectionX method from Common.vb to get the database connection
-        Dim connection As MySqlConnection = Common.getDBConnectionX()
+        ' Use the createDBConnection method from Common.vb to get a new database connection instance
+        Dim connection As MySqlConnection = Common.createDBConnection()
 
         ' SQL query to check if the username or email already exists
         Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE username = @Username OR email = @Email"

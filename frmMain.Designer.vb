@@ -55,9 +55,8 @@ Partial Class frmMain
         Me.pnlHeader.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.pnlHeader.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1727, 58)
+        Me.pnlHeader.Size = New System.Drawing.Size(1295, 47)
         Me.pnlHeader.TabIndex = 0
         '
         'lblUsername
@@ -67,11 +66,10 @@ Partial Class frmMain
         Me.lblUsername.BackColor = System.Drawing.Color.Transparent
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
-        Me.lblUsername.Location = New System.Drawing.Point(1437, 15)
-        Me.lblUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblUsername.Location = New System.Drawing.Point(1078, 12)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Padding = New System.Windows.Forms.Padding(0, 0, 7, 0)
-        Me.lblUsername.Size = New System.Drawing.Size(217, 36)
+        Me.lblUsername.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.lblUsername.Size = New System.Drawing.Size(163, 29)
         Me.lblUsername.TabIndex = 0
         Me.lblUsername.Text = "USER#0001"
         Me.lblUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
@@ -82,10 +80,9 @@ Partial Class frmMain
         Me.lblHeaderTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblHeaderTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeaderTitle.ForeColor = System.Drawing.Color.White
-        Me.lblHeaderTitle.Location = New System.Drawing.Point(71, 9)
-        Me.lblHeaderTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblHeaderTitle.Location = New System.Drawing.Point(53, 7)
         Me.lblHeaderTitle.Name = "lblHeaderTitle"
-        Me.lblHeaderTitle.Size = New System.Drawing.Size(304, 41)
+        Me.lblHeaderTitle.Size = New System.Drawing.Size(228, 33)
         Me.lblHeaderTitle.TabIndex = 0
         Me.lblHeaderTitle.Text = "CHRONOPULSE"
         Me.lblHeaderTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -96,9 +93,8 @@ Partial Class frmMain
         Me.picLogo.Image = Global.ChronoPulse.My.Resources.Resources.ChronoPulse_Logo
         Me.picLogo.ImageRotate = 0!
         Me.picLogo.Location = New System.Drawing.Point(0, 0)
-        Me.picLogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(63, 58)
+        Me.picLogo.Size = New System.Drawing.Size(47, 47)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picLogo.TabIndex = 0
         Me.picLogo.TabStop = False
@@ -110,11 +106,10 @@ Partial Class frmMain
         Me.picUserIcon.IconChar = FontAwesome.Sharp.IconChar.User
         Me.picUserIcon.IconColor = System.Drawing.Color.White
         Me.picUserIcon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.picUserIcon.IconSize = 43
-        Me.picUserIcon.Location = New System.Drawing.Point(1665, 7)
-        Me.picUserIcon.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.picUserIcon.Location = New System.Drawing.Point(1249, 6)
+        Me.picUserIcon.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.picUserIcon.Name = "picUserIcon"
-        Me.picUserIcon.Size = New System.Drawing.Size(43, 43)
+        Me.picUserIcon.Size = New System.Drawing.Size(32, 35)
         Me.picUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picUserIcon.TabIndex = 0
         Me.picUserIcon.TabStop = False
@@ -133,10 +128,9 @@ Partial Class frmMain
         Me.pnlSidebar.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.pnlSidebar.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.pnlSidebar.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.pnlSidebar.Location = New System.Drawing.Point(0, 58)
-        Me.pnlSidebar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSidebar.Location = New System.Drawing.Point(0, 47)
         Me.pnlSidebar.Name = "pnlSidebar"
-        Me.pnlSidebar.Size = New System.Drawing.Size(63, 802)
+        Me.pnlSidebar.Size = New System.Drawing.Size(47, 652)
         Me.pnlSidebar.TabIndex = 1
         '
         'btnExpenses
@@ -151,10 +145,9 @@ Partial Class frmMain
         Me.btnExpenses.IconColor = System.Drawing.SystemColors.MenuHighlight
         Me.btnExpenses.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnExpenses.IconSize = 25
-        Me.btnExpenses.Location = New System.Drawing.Point(5, 116)
-        Me.btnExpenses.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExpenses.Location = New System.Drawing.Point(4, 94)
         Me.btnExpenses.Name = "btnExpenses"
-        Me.btnExpenses.Size = New System.Drawing.Size(51, 47)
+        Me.btnExpenses.Size = New System.Drawing.Size(38, 38)
         Me.btnExpenses.TabIndex = 5
         Me.btnExpenses.UseVisualStyleBackColor = False
         '
@@ -170,10 +163,9 @@ Partial Class frmMain
         Me.btnLogout.IconColor = System.Drawing.Color.Red
         Me.btnLogout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnLogout.IconSize = 25
-        Me.btnLogout.Location = New System.Drawing.Point(5, 741)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogout.Location = New System.Drawing.Point(4, 602)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(51, 47)
+        Me.btnLogout.Size = New System.Drawing.Size(38, 38)
         Me.btnLogout.TabIndex = 3
         Me.btnLogout.UseVisualStyleBackColor = False
         '
@@ -189,10 +181,9 @@ Partial Class frmMain
         Me.btnGames.IconColor = System.Drawing.SystemColors.MenuHighlight
         Me.btnGames.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnGames.IconSize = 25
-        Me.btnGames.Location = New System.Drawing.Point(5, 62)
-        Me.btnGames.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGames.Location = New System.Drawing.Point(4, 50)
         Me.btnGames.Name = "btnGames"
-        Me.btnGames.Size = New System.Drawing.Size(51, 47)
+        Me.btnGames.Size = New System.Drawing.Size(38, 38)
         Me.btnGames.TabIndex = 2
         Me.btnGames.UseVisualStyleBackColor = False
         '
@@ -208,10 +199,9 @@ Partial Class frmMain
         Me.btnDashboard.IconColor = System.Drawing.SystemColors.MenuHighlight
         Me.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnDashboard.IconSize = 25
-        Me.btnDashboard.Location = New System.Drawing.Point(5, 7)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDashboard.Location = New System.Drawing.Point(4, 6)
         Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(51, 47)
+        Me.btnDashboard.Size = New System.Drawing.Size(38, 38)
         Me.btnDashboard.TabIndex = 0
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
@@ -225,25 +215,22 @@ Partial Class frmMain
         Me.pnlMain.FillColor2 = System.Drawing.Color.Transparent
         Me.pnlMain.FillColor3 = System.Drawing.Color.Transparent
         Me.pnlMain.FillColor4 = System.Drawing.Color.Transparent
-        Me.pnlMain.Location = New System.Drawing.Point(63, 58)
-        Me.pnlMain.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlMain.Location = New System.Drawing.Point(47, 47)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1664, 802)
+        Me.pnlMain.Size = New System.Drawing.Size(1248, 652)
         Me.pnlMain.TabIndex = 2
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1727, 860)
+        Me.ClientSize = New System.Drawing.Size(1295, 699)
         Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlSidebar)
         Me.Controls.Add(Me.pnlHeader)
         Me.ForeColor = System.Drawing.Color.Black
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"

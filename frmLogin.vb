@@ -73,7 +73,7 @@ Public Class frmLogin
         Dim password As String = txtPassword.Text
 
         ' Get the database connection
-        Dim conn As MySqlConnection = Common.getDBConnectionX()
+        Dim conn As MySqlConnection = Common.createDBConnection()
 
         Try
             ' Open the connection
