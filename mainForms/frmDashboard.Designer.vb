@@ -199,14 +199,14 @@ Partial Class frmDashboard
         '
         Me.lblTotalItems.AutoSize = False
         Me.lblTotalItems.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalItems.ForeColor = System.Drawing.Color.White
         Me.lblTotalItems.Location = New System.Drawing.Point(25, 98)
         Me.lblTotalItems.Margin = New System.Windows.Forms.Padding(0)
         Me.lblTotalItems.Name = "lblTotalItems"
         Me.lblTotalItems.Size = New System.Drawing.Size(295, 77)
         Me.lblTotalItems.TabIndex = 16
-        Me.lblTotalItems.Text = "$0.00"
+        Me.lblTotalItems.Text = "0"
         Me.lblTotalItems.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IconPictureBox2
