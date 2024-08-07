@@ -7,6 +7,66 @@ Public Class frmDashboard
     Private knownGames As New HashSet(Of String)() ' Use HashSet for faster lookups
     Private userID As Integer
 
+    Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Get the UserID from frmMain
+        GetUserID()
+
+        ' Populate ListBox1 with known games from the database
+        LoadUserGames()
+
+        ' Populate ListBox1 with known games
+        ListBox1.Items.AddRange(knownGames.ToArray())
+
+        ' Update the last log time
+        UpdateLogLastTime()
+
+        ' Update the total cost
+        UpdateTotalCost()
+
+        ' Update the total items
+        UpdateTotalItems()
+
+        ' Start the timer
+        Timer1.Start()
+        AddHandler Timer1.Tick, AddressOf Timer1_Tick
+
+        ' Subscribe to events from frmGames
+        AddHandler frmGames.GameAdded, AddressOf OnGameAdded
+        AddHandler frmGames.GameDeleted, AddressOf OnGameDeleted
+    End Sub
+
+    Private Sub GetUserID()
+        Dim username As String = frmMain.lblUsername.Text
+        Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
+
+        Using conn As MySqlConnection = Common.createDBConnection()
+            Using getUserIDCmd As New MySqlCommand(getUserIDQuery, conn)
+                getUserIDCmd.Parameters.AddWithValue("@username", username)
+                conn.Open()
+                userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
+                conn.Close()
+            End Using
+        End Using
+    End Sub
+
+    Private Sub LoadUserGames()
+        Dim loadGamesQuery As String = "SELECT game_name FROM game_paths WHERE UserID = @UserID"
+
+        Using conn As MySqlConnection = Common.createDBConnection()
+            Using loadGamesCmd As New MySqlCommand(loadGamesQuery, conn)
+                loadGamesCmd.Parameters.AddWithValue("@UserID", userID)
+                conn.Open()
+                Using reader As MySqlDataReader = loadGamesCmd.ExecuteReader()
+                    While reader.Read()
+                        Dim gameName As String = reader("game_name").ToString()
+                        knownGames.Add(gameName)
+                    End While
+                End Using
+                conn.Close()
+            End Using
+        End Using
+    End Sub
+
     Private Sub UpdateTotalCost()
         Dim totalCost As Decimal = 0
 
@@ -49,90 +109,6 @@ Public Class frmDashboard
         lblTotalItems.Text = totalItems.ToString()
     End Sub
 
-    Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Get the UserID from frmMain
-        GetUserID()
-
-        ' Populate ListBox1 with known games from the database
-        LoadUserGames()
-
-        ' Populate ListBox1 with known games
-        ListBox1.Items.AddRange(knownGames.ToArray())
-
-        ' Update the last log time
-        UpdateLogLastTime()
-
-        ' Update the total cost
-        UpdateTotalCost()
-
-        ' Update the total items
-        UpdateTotalItems()
-
-        ' Start the timer
-        Timer1.Start()
-        AddHandler Timer1.Tick, AddressOf Timer1_Tick
-
-        ' Subscribe to events from frmGames
-        AddHandler frmGames.GameAdded, AddressOf OnGameAdded
-        AddHandler frmGames.GameDeleted, AddressOf OnGameDeleted
-    End Sub
-
-    Private Sub OnGameAdded(gameName As String)
-        If Not ListBox1.Items.Contains(gameName) Then
-            ListBox1.Items.Add(gameName)
-        End If
-    End Sub
-
-    Private Sub OnGameDeleted(gameName As String)
-        If ListBox1.Items.Contains(gameName) Then
-            ListBox1.Items.Remove(gameName)
-        End If
-    End Sub
-
-    Public Sub RefreshTotalCost()
-        UpdateTotalCost()
-    End Sub
-
-    Public Sub RefreshTotalItems()
-        UpdateTotalItems()
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
-        Task.Run(AddressOf UpdateLogLastTime)
-    End Sub
-
-    Private Sub GetUserID()
-        Dim username As String = frmMain.lblUsername.Text
-        Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
-
-        Using conn As MySqlConnection = Common.createDBConnection()
-            Using getUserIDCmd As New MySqlCommand(getUserIDQuery, conn)
-                getUserIDCmd.Parameters.AddWithValue("@username", username)
-                conn.Open()
-                userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
-                conn.Close()
-            End Using
-        End Using
-    End Sub
-
-    Private Sub LoadUserGames()
-        Dim loadGamesQuery As String = "SELECT game_name FROM game_paths WHERE UserID = @UserID"
-
-        Using conn As MySqlConnection = Common.createDBConnection()
-            Using loadGamesCmd As New MySqlCommand(loadGamesQuery, conn)
-                loadGamesCmd.Parameters.AddWithValue("@UserID", userID)
-                conn.Open()
-                Using reader As MySqlDataReader = loadGamesCmd.ExecuteReader()
-                    While reader.Read()
-                        Dim gameName As String = reader("game_name").ToString()
-                        knownGames.Add(gameName)
-                    End While
-                End Using
-                conn.Close()
-            End Using
-        End Using
-    End Sub
-
     Private Sub UpdateLogLastTime()
         Dim getElapsedTimeQuery As String = "SELECT gp.game_name, gt.hours " &
                                             "FROM game_time gt " &
@@ -167,5 +143,29 @@ Public Class frmDashboard
         Dim timeSpan As TimeSpan = TimeSpan.FromSeconds(seconds)
         Return $"{timeSpan:hh\:mm\:ss}"
     End Function
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
+        Task.Run(AddressOf UpdateLogLastTime)
+    End Sub
+
+    Private Sub OnGameAdded(gameName As String)
+        If Not ListBox1.Items.Contains(gameName) Then
+            ListBox1.Items.Add(gameName)
+        End If
+    End Sub
+
+    Private Sub OnGameDeleted(gameName As String)
+        If ListBox1.Items.Contains(gameName) Then
+            ListBox1.Items.Remove(gameName)
+        End If
+    End Sub
+
+    Public Sub RefreshTotalCost()
+        UpdateTotalCost()
+    End Sub
+
+    Public Sub RefreshTotalItems()
+        UpdateTotalItems()
+    End Sub
 
 End Class

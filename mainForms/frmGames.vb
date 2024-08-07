@@ -295,29 +295,33 @@ Public Class frmGames
             ' Update the existing record
             Dim updateQuery As String = "UPDATE game_time SET hours = hours + @hours, date = @date WHERE UserID = @UserID AND path_id = @path_id"
 
-            Using updateCmd As New MySqlCommand(updateQuery, Common.getDBConnectionX())
-                updateCmd.Parameters.AddWithValue("@UserID", userID)
-                updateCmd.Parameters.AddWithValue("@path_id", pathID)
-                updateCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
-                updateCmd.Parameters.AddWithValue("@date", DateTime.Now)
+            Using conn As MySqlConnection = Common.createDBConnection()
+                Using updateCmd As New MySqlCommand(updateQuery, conn)
+                    updateCmd.Parameters.AddWithValue("@UserID", userID)
+                    updateCmd.Parameters.AddWithValue("@path_id", pathID)
+                    updateCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
+                    updateCmd.Parameters.AddWithValue("@date", DateTime.Now)
 
-                Common.getDBConnectionX().Open()
-                updateCmd.ExecuteNonQuery()
-                Common.getDBConnectionX().Close()
+                    conn.Open()
+                    updateCmd.ExecuteNonQuery()
+                    conn.Close()
+                End Using
             End Using
         Else
             ' Insert a new record
             Dim insertQuery As String = "INSERT INTO game_time (UserID, path_id, hours, date) VALUES (@UserID, @path_id, @hours, @date)"
 
-            Using insertCmd As New MySqlCommand(insertQuery, Common.getDBConnectionX())
-                insertCmd.Parameters.AddWithValue("@UserID", userID)
-                insertCmd.Parameters.AddWithValue("@path_id", pathID)
-                insertCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
-                insertCmd.Parameters.AddWithValue("@date", DateTime.Now)
+            Using conn As MySqlConnection = Common.createDBConnection()
+                Using insertCmd As New MySqlCommand(insertQuery, conn)
+                    insertCmd.Parameters.AddWithValue("@UserID", userID)
+                    insertCmd.Parameters.AddWithValue("@path_id", pathID)
+                    insertCmd.Parameters.AddWithValue("@hours", elapsedTimeSeconds)
+                    insertCmd.Parameters.AddWithValue("@date", DateTime.Now)
 
-                Common.getDBConnectionX().Open()
-                insertCmd.ExecuteNonQuery()
-                Common.getDBConnectionX().Close()
+                    conn.Open()
+                    insertCmd.ExecuteNonQuery()
+                    conn.Close()
+                End Using
             End Using
         End If
     End Sub
@@ -326,15 +330,17 @@ Public Class frmGames
         Dim getElapsedTimeQuery As String = "SELECT SUM(hours) FROM game_time WHERE UserID = @UserID AND path_id = @path_id"
         Dim existingTime As Integer = 0
 
-        Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, Common.getDBConnectionX())
-            getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
-            getElapsedTimeCmd.Parameters.AddWithValue("@path_id", pathID)
-            Common.getDBConnectionX().Open()
-            Dim result = getElapsedTimeCmd.ExecuteScalar()
-            If result IsNot DBNull.Value Then
-                existingTime = Convert.ToInt32(result)
-            End If
-            Common.getDBConnectionX().Close()
+        Using conn As MySqlConnection = Common.createDBConnection()
+            Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, conn)
+                getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
+                getElapsedTimeCmd.Parameters.AddWithValue("@path_id", pathID)
+                conn.Open()
+                Dim result = getElapsedTimeCmd.ExecuteScalar()
+                If result IsNot DBNull.Value Then
+                    existingTime = Convert.ToInt32(result)
+                End If
+                conn.Close()
+            End Using
         End Using
 
         Return existingTime
@@ -368,7 +374,7 @@ Public Class frmGames
         Dim deleteGameTimeQuery As String = "DELETE FROM game_time WHERE path_id IN (SELECT path_id FROM game_paths WHERE UserID = @UserID AND game_name = @game_name)"
         Dim deleteGamePathsQuery As String = "DELETE FROM game_paths WHERE UserID = @UserID AND game_name = @game_name"
 
-        Using conn As MySqlConnection = Common.getDBConnectionX()
+        Using conn As MySqlConnection = Common.createDBConnection()
             conn.Open()
 
             Using deleteGameTimeCmd As New MySqlCommand(deleteGameTimeQuery, conn)

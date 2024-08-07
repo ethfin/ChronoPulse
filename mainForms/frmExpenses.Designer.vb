@@ -154,7 +154,6 @@ Partial Class frmExpenses
         '
         'btnDelete
         '
-        Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDelete.BorderRadius = 5
         Me.btnDelete.BorderThickness = 1
         Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -167,7 +166,7 @@ Partial Class frmExpenses
         Me.btnDelete.HoverState.FillColor = System.Drawing.Color.White
         Me.btnDelete.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnDelete.IndicateFocus = True
-        Me.btnDelete.Location = New System.Drawing.Point(305, 74)
+        Me.btnDelete.Location = New System.Drawing.Point(329, 74)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(85, 29)
         Me.btnDelete.TabIndex = 21
@@ -175,7 +174,6 @@ Partial Class frmExpenses
         '
         'btnClear
         '
-        Me.btnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnClear.BorderRadius = 5
         Me.btnClear.BorderThickness = 1
         Me.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -188,7 +186,7 @@ Partial Class frmExpenses
         Me.btnClear.HoverState.FillColor = System.Drawing.Color.White
         Me.btnClear.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnClear.IndicateFocus = True
-        Me.btnClear.Location = New System.Drawing.Point(214, 74)
+        Me.btnClear.Location = New System.Drawing.Point(238, 74)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(85, 29)
         Me.btnClear.TabIndex = 20
@@ -224,7 +222,6 @@ Partial Class frmExpenses
         '
         'btnEdit
         '
-        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEdit.BorderRadius = 5
         Me.btnEdit.BorderThickness = 1
         Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -237,7 +234,7 @@ Partial Class frmExpenses
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnEdit.IndicateFocus = True
-        Me.btnEdit.Location = New System.Drawing.Point(305, 39)
+        Me.btnEdit.Location = New System.Drawing.Point(329, 39)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(85, 29)
         Me.btnEdit.TabIndex = 18
@@ -266,7 +263,6 @@ Partial Class frmExpenses
         '
         'btnAdd
         '
-        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.BorderRadius = 5
         Me.btnAdd.BorderThickness = 1
         Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -278,7 +274,7 @@ Partial Class frmExpenses
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.HoverState.FillColor = System.Drawing.Color.Lime
         Me.btnAdd.IndicateFocus = True
-        Me.btnAdd.Location = New System.Drawing.Point(214, 39)
+        Me.btnAdd.Location = New System.Drawing.Point(238, 39)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(85, 29)
         Me.btnAdd.TabIndex = 17
