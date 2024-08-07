@@ -24,6 +24,7 @@ Partial Class frmGames
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblLoglastTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -38,6 +39,7 @@ Partial Class frmGames
         'pnlContainer
         '
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.pnlContainer.Controls.Add(Me.btnDelete)
         Me.pnlContainer.Controls.Add(Me.btnAdd)
         Me.pnlContainer.Controls.Add(Me.Guna2Panel5)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
@@ -47,18 +49,36 @@ Partial Class frmGames
         Me.pnlContainer.Size = New System.Drawing.Size(1248, 652)
         Me.pnlContainer.TabIndex = 1
         '
+        'btnDelete
+        '
+        Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnDelete.BorderRadius = 5
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.Red
+        Me.btnDelete.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(152, 595)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(116, 45)
+        Me.btnDelete.TabIndex = 4
+        Me.btnDelete.Text = "DELETE"
+        '
         'btnAdd
         '
         Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAdd.BorderRadius = 5
         Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAdd.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.Location = New System.Drawing.Point(55, 595)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(180, 45)
+        Me.btnAdd.Size = New System.Drawing.Size(91, 45)
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "ADD"
         '
@@ -155,4 +175,5 @@ Partial Class frmGames
     Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

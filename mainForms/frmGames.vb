@@ -24,6 +24,18 @@ Public Class frmGames
 
         ' Load existing game times
         LoadExistingGameTimes()
+        AddHandler Me.FormClosing, AddressOf frmGames_FormClosing
+    End Sub
+
+    Private Sub frmGames_FormClosing(sender As Object, e As FormClosingEventArgs)
+        ' Save elapsed time for all tracked games
+        For Each app In previousApplications.Keys.ToList()
+            Dim startTime As DateTime = gameStartTimes(app)
+            Dim elapsedTime As TimeSpan = DateTime.Now - startTime
+
+            ' Insert or update the elapsed time in the database
+            InsertOrUpdateGameTime(app, elapsedTime)
+        Next
     End Sub
 
     Private Sub LoadExistingGameTimes()
@@ -233,33 +245,42 @@ Public Class frmGames
         Return $"{timeSpan:hh\:mm\:ss}"
     End Function
 
-    Private Sub UpdateLogLastTime()
-        Dim getElapsedTimeQuery As String = "SELECT gp.game_name, gt.hours " &
-                                        "FROM game_time gt " &
-                                        "JOIN game_paths gp ON gt.path_id = gp.path_id " &
-                                        "WHERE gt.UserID = @UserID " &
-                                        "ORDER BY gt.date DESC LIMIT 1"
+    Private Sub UpdateDatabaseSchema()
+        Dim getForeignKeyNameQuery As String = "SELECT CONSTRAINT_NAME " &
+                                           "FROM information_schema.KEY_COLUMN_USAGE " &
+                                           "WHERE TABLE_NAME = 'game_time' " &
+                                           "AND COLUMN_NAME = 'path_id' " &
+                                           "AND REFERENCED_TABLE_NAME = 'game_paths'"
 
-        Using getElapsedTimeCmd As New MySqlCommand(getElapsedTimeQuery, Common.getDBConnectionX())
-            getElapsedTimeCmd.Parameters.AddWithValue("@UserID", userID)
-            Common.getDBConnectionX().Open()
-            Using reader As MySqlDataReader = getElapsedTimeCmd.ExecuteReader()
-                If reader.Read() Then
-                    Dim gameName As String = reader("game_name").ToString()
-                    Dim elapsedTimeSeconds As Integer = Convert.ToInt32(reader("hours"))
-                    Dim formattedElapsedTime As String = FormatElapsedTime(elapsedTimeSeconds)
+        Dim foreignKeyName As String = String.Empty
 
-                    If Not Me.IsDisposed Then
-                        BeginInvoke(Sub()
-                                        lblLoglastTime.Text = String.Empty ' Clear the label text
-                                        lblLoglastTime.Text &= $"{gameName}: Elapsed Time {formattedElapsedTime}" & "<br>"
-                                    End Sub)
-                    End If
-                End If
+        Using connection As MySqlConnection = Common.getDBConnectionX()
+            connection.Open()
+
+            ' Get the foreign key constraint name
+            Using getForeignKeyNameCmd As New MySqlCommand(getForeignKeyNameQuery, connection)
+                foreignKeyName = getForeignKeyNameCmd.ExecuteScalar().ToString()
             End Using
-            Common.getDBConnectionX().Close()
+
+            ' Drop the existing foreign key constraint
+            Dim dropForeignKeyQuery As String = $"ALTER TABLE game_time DROP FOREIGN KEY {foreignKeyName}"
+            Using dropCmd As New MySqlCommand(dropForeignKeyQuery, connection)
+                dropCmd.ExecuteNonQuery()
+            End Using
+
+            ' Add the new foreign key constraint without ON DELETE CASCADE
+            Dim addForeignKeyQuery As String = "ALTER TABLE game_time " &
+                                           "ADD CONSTRAINT fk_game_time_path_id " &
+                                           "FOREIGN KEY (path_id) REFERENCES game_paths(path_id) " &
+                                           "ON DELETE NO ACTION"
+            Using addCmd As New MySqlCommand(addForeignKeyQuery, connection)
+                addCmd.ExecuteNonQuery()
+            End Using
+
+            connection.Close()
         End Using
     End Sub
+
 
     Private Sub InsertOrUpdateGameTime(gameName As String, elapsedTime As TimeSpan)
         Dim pathID As Integer = GetPathID(gameName)
@@ -317,5 +338,47 @@ Public Class frmGames
 
         Return existingTime
     End Function
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If ListBox1.SelectedItem IsNot Nothing Then
+            Dim selectedGame As String = ListBox1.SelectedItem.ToString()
+
+            ' Remove the game from the knownGames collection
+            If knownGames.Remove(selectedGame) Then
+                ' Remove the game from the ListBox
+                ListBox1.Items.Remove(selectedGame)
+
+                ' Delete the game from the database
+                DeleteGameDetails(selectedGame)
+
+                MessageBox.Show($"{selectedGame} has been deleted from the known games list.", "Game Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show($"{selectedGame} could not be found in the known games list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            MessageBox.Show("Please select a game to delete.", "No Game Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub DeleteGameDetails(gameName As String)
+        Dim deleteGameTimeQuery As String = "DELETE FROM game_time WHERE path_id IN (SELECT path_id FROM game_paths WHERE UserID = @UserID AND game_name = @game_name)"
+        Dim deleteGamePathsQuery As String = "DELETE FROM game_paths WHERE UserID = @UserID AND game_name = @game_name"
+
+        Using conn As MySqlConnection = Common.getDBConnectionX()
+            conn.Open()
+
+            Using deleteGameTimeCmd As New MySqlCommand(deleteGameTimeQuery, conn)
+                deleteGameTimeCmd.Parameters.AddWithValue("@UserID", userID)
+                deleteGameTimeCmd.Parameters.AddWithValue("@game_name", gameName)
+                deleteGameTimeCmd.ExecuteNonQuery()
+            End Using
+
+            Using deleteGamePathsCmd As New MySqlCommand(deleteGamePathsQuery, conn)
+                deleteGamePathsCmd.Parameters.AddWithValue("@UserID", userID)
+                deleteGamePathsCmd.Parameters.AddWithValue("@game_name", gameName)
+                deleteGamePathsCmd.ExecuteNonQuery()
+            End Using
+        End Using
+    End Sub
 
 End Class
