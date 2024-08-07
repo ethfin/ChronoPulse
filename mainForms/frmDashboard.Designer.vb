@@ -199,7 +199,7 @@ Partial Class frmDashboard
         '
         Me.lblTotalItems.AutoSize = False
         Me.lblTotalItems.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalItems.ForeColor = System.Drawing.Color.White
         Me.lblTotalItems.Location = New System.Drawing.Point(25, 98)
         Me.lblTotalItems.Margin = New System.Windows.Forms.Padding(0)
@@ -207,6 +207,7 @@ Partial Class frmDashboard
         Me.lblTotalItems.Size = New System.Drawing.Size(295, 77)
         Me.lblTotalItems.TabIndex = 16
         Me.lblTotalItems.Text = "$0.00"
+        Me.lblTotalItems.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IconPictureBox2
         '
@@ -253,7 +254,7 @@ Partial Class frmDashboard
         '
         Me.lblTotalCost.AutoSize = False
         Me.lblTotalCost.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalCost.ForeColor = System.Drawing.Color.White
         Me.lblTotalCost.Location = New System.Drawing.Point(25, 98)
         Me.lblTotalCost.Margin = New System.Windows.Forms.Padding(0)
@@ -261,6 +262,7 @@ Partial Class frmDashboard
         Me.lblTotalCost.Size = New System.Drawing.Size(295, 77)
         Me.lblTotalCost.TabIndex = 15
         Me.lblTotalCost.Text = "$0.00"
+        Me.lblTotalCost.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IconPictureBox3
         '
