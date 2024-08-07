@@ -29,7 +29,7 @@ Public Class frmMain
 
         ' Initialize NotifyIcon
         notifyIcon = New NotifyIcon()
-        notifyIcon.Icon = My.Resources.ChronoPulse_Logo_v2 ' Replace with your actual resource name
+        notifyIcon.Icon = My.Resources.ChronoPulse_Logo_v2 'uses Resources folder in order to use the icon
         notifyIcon.Visible = True
         AddHandler notifyIcon.DoubleClick, AddressOf NotifyIcon_DoubleClick
 
