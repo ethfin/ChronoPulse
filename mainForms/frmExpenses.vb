@@ -2,6 +2,7 @@
 
 Public Class frmExpenses
     Private userID As Integer
+    Private connection As MySqlConnection
 
     ' Method to set the user ID
     Public Sub SetUserID(ByVal id As Integer)
@@ -9,8 +10,19 @@ Public Class frmExpenses
     End Sub
 
     Private Sub frmExpenses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        connection = Common.getDBConnectionX()
+        connection.Open()
         GetUserID()
         LoadExpensesData()
+
+        ' Disable the Edit button initially
+        btnEdit.Enabled = False
+    End Sub
+
+    Private Sub frmExpenses_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If connection IsNot Nothing AndAlso connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
     End Sub
 
     ' Method to get the user ID based on the username from frmMain
@@ -18,11 +30,9 @@ Public Class frmExpenses
         Dim username As String = frmMain.lblUsername.Text
         Dim getUserIDQuery As String = "SELECT UserID FROM dbaccounts WHERE Username = @username"
 
-        Using getUserIDCmd As New MySqlCommand(getUserIDQuery, Common.getDBConnectionX())
+        Using getUserIDCmd As New MySqlCommand(getUserIDQuery, connection)
             getUserIDCmd.Parameters.AddWithValue("@username", username)
-            Common.getDBConnectionX().Open()
             userID = Convert.ToInt32(getUserIDCmd.ExecuteScalar())
-            Common.getDBConnectionX().Close()
         End Using
     End Sub
 
@@ -30,16 +40,11 @@ Public Class frmExpenses
     Public Sub LoadExpensesData()
         Dim query As String = "SELECT expense_id, UserID, Item, Cost, Description, date_format(date, '%M %e, %Y %h:%i:%s%p') AS formatted_date FROM user_expenses " &
                               "WHERE UserID = @userID"
-        Dim connection As MySqlConnection = Common.getDBConnectionX()
         Dim adapter As New MySqlDataAdapter(query, connection)
         adapter.SelectCommand.Parameters.AddWithValue("@userID", userID)
         Dim table As New DataTable()
 
         Try
-            If connection.State = ConnectionState.Closed Then
-                connection.Open()
-            End If
-
             adapter.Fill(table)
             dataGridViewExpenses.DataSource = table
 
@@ -54,10 +59,6 @@ Public Class frmExpenses
             dataGridViewExpenses.Columns("formatted_date").HeaderText = "DATE"
         Catch ex As MySqlException
             MessageBox.Show("Error fetching data: " & ex.Message)
-        Finally
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
         End Try
     End Sub
 
@@ -74,6 +75,10 @@ Public Class frmExpenses
             Else
                 MessageBox.Show("Invalid date format in the selected row.")
             End If
+
+            ' Disable the Add button and enable the Edit button
+            btnAdd.Enabled = False
+            btnEdit.Enabled = True
         End If
     End Sub
 
@@ -110,25 +115,20 @@ Public Class frmExpenses
 
         Dim insertQuery As String = "INSERT INTO user_expenses (UserID, Item, Cost, Description, date) VALUES (@userID, @item, @cost, @description, @date)"
 
-        Using connection As MySqlConnection = Common.getDBConnectionX()
-            Using insertCmd As New MySqlCommand(insertQuery, connection)
-                insertCmd.Parameters.AddWithValue("@userID", userID)
-                insertCmd.Parameters.AddWithValue("@item", item)
-                insertCmd.Parameters.AddWithValue("@cost", cost)
-                insertCmd.Parameters.AddWithValue("@description", description)
-                insertCmd.Parameters.AddWithValue("@date", dateValue)
+        Using insertCmd As New MySqlCommand(insertQuery, connection)
+            insertCmd.Parameters.AddWithValue("@userID", userID)
+            insertCmd.Parameters.AddWithValue("@item", item)
+            insertCmd.Parameters.AddWithValue("@cost", cost)
+            insertCmd.Parameters.AddWithValue("@description", description)
+            insertCmd.Parameters.AddWithValue("@date", dateValue)
 
-                Try
-                    connection.Open()
-                    insertCmd.ExecuteNonQuery()
-                    MessageBox.Show("Expense added successfully.")
-                    LoadExpensesData() ' Refresh the data grid view
-                Catch ex As MySqlException
-                    MessageBox.Show("Error adding expense: " & ex.Message)
-                Finally
-                    connection.Close()
-                End Try
-            End Using
+            Try
+                insertCmd.ExecuteNonQuery()
+                MessageBox.Show("Expense added successfully.")
+                LoadExpensesData() ' Refresh the data grid view
+            Catch ex As MySqlException
+                MessageBox.Show("Error adding expense: " & ex.Message)
+            End Try
         End Using
     End Sub
 
@@ -143,5 +143,75 @@ Public Class frmExpenses
         If (e.KeyChar = "."c) AndAlso (DirectCast(sender, TextBox).Text.IndexOf("."c) > -1) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub EditExpense()
+        ' Validate inputs
+        If String.IsNullOrWhiteSpace(txtItem.Text) OrElse
+           String.IsNullOrWhiteSpace(txtCost.Text) OrElse
+           String.IsNullOrWhiteSpace(txtDescription.Text) Then
+            MessageBox.Show("Please fill in all fields before editing an expense.")
+            Return
+        End If
+
+        Dim item As String = txtItem.Text
+        Dim cost As Decimal
+
+        ' Validate cost input
+        If Not Decimal.TryParse(txtCost.Text, cost) Then
+            MessageBox.Show("Please enter a valid cost.")
+            Return
+        End If
+
+        Dim description As String = txtDescription.Text
+        Dim dateValue As DateTime = dtpDate.Value
+
+        Dim updateQuery As String = "UPDATE user_expenses SET Item = @item, Cost = @cost, Description = @description, date = @date WHERE expense_id = @expenseID"
+
+        Using updateCmd As New MySqlCommand(updateQuery, connection)
+            updateCmd.Parameters.AddWithValue("@item", item)
+            updateCmd.Parameters.AddWithValue("@cost", cost)
+            updateCmd.Parameters.AddWithValue("@description", description)
+            updateCmd.Parameters.AddWithValue("@date", dateValue)
+            updateCmd.Parameters.AddWithValue("@expenseID", dataGridViewExpenses.SelectedRows(0).Cells("expense_id").Value)
+
+            Try
+                updateCmd.ExecuteNonQuery()
+                MessageBox.Show("Expense updated successfully.")
+                LoadExpensesData() ' Refresh the data grid view
+            Catch ex As MySqlException
+                MessageBox.Show("Error updating expense: " & ex.Message)
+            End Try
+        End Using
+
+        ' Clear fields and unselect DataGridView
+        ClearFieldsAndUnselect()
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        EditExpense()
+    End Sub
+
+    ' Event handler for the Clear button
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ClearFieldsAndUnselect()
+    End Sub
+
+    ' Method to clear fields and unselect DataGridView
+    Private Sub ClearFieldsAndUnselect()
+        ' Clear all input fields
+        txtItem.Clear()
+        txtCost.Clear()
+        txtDescription.Clear()
+        dtpDate.Value = DateTime.Now
+
+        ' Unselect any selected rows in the DataGridView
+        dataGridViewExpenses.ClearSelection()
+
+        ' Enable the Add button
+        btnAdd.Enabled = True
+
+        ' Disable the Edit button
+        btnEdit.Enabled = False
     End Sub
 End Class
