@@ -232,6 +232,12 @@ Public Class frmResetAccountSecurity
     Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         Dim email As String = lblWelcome1.Text
 
+        ' Check if both combo boxes have selected items
+        If cmbSQ1.SelectedIndex = -1 OrElse cmbSQ2.SelectedIndex = -1 Then
+            MessageBox.Show("Please select both security questions.")
+            Return
+        End If
+
         If ValidateInputFields() Then
             Dim conn As MySqlConnection = Common.getDBConnectionX()
 

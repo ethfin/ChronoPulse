@@ -27,6 +27,8 @@ Partial Class frmGames
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.IconPictureBox4 = New FontAwesome.Sharp.IconPictureBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
@@ -36,13 +38,11 @@ Partial Class frmGames
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnlContainer.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlContainer
@@ -67,11 +67,11 @@ Partial Class frmGames
         Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnDelete.FillColor = System.Drawing.Color.Red
-        Me.btnDelete.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.Location = New System.Drawing.Point(152, 595)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(116, 45)
+        Me.btnDelete.Size = New System.Drawing.Size(139, 45)
         Me.btnDelete.TabIndex = 4
         Me.btnDelete.Text = "DELETE"
         '
@@ -83,7 +83,7 @@ Partial Class frmGames
         Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAdd.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.Location = New System.Drawing.Point(55, 595)
         Me.btnAdd.Name = "btnAdd"
@@ -115,6 +115,32 @@ Partial Class frmGames
         Me.Guna2Panel5.Size = New System.Drawing.Size(1138, 542)
         Me.Guna2Panel5.TabIndex = 2
         '
+        'IconPictureBox2
+        '
+        Me.IconPictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.IconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ClockFour
+        Me.IconPictureBox2.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconPictureBox2.IconSize = 35
+        Me.IconPictureBox2.Location = New System.Drawing.Point(28, 27)
+        Me.IconPictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.IconPictureBox2.Name = "IconPictureBox2"
+        Me.IconPictureBox2.Size = New System.Drawing.Size(35, 35)
+        Me.IconPictureBox2.TabIndex = 10
+        Me.IconPictureBox2.TabStop = False
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(65, 29)
+        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(103, 27)
+        Me.Guna2HtmlLabel1.TabIndex = 9
+        Me.Guna2HtmlLabel1.Text = "Run Time"
+        '
         'IconPictureBox4
         '
         Me.IconPictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -134,12 +160,12 @@ Partial Class frmGames
         '
         Me.Guna2HtmlLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("DM Sans 14pt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.White
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(65, 254)
         Me.Guna2HtmlLabel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(128, 30)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(133, 27)
         Me.Guna2HtmlLabel3.TabIndex = 7
         Me.Guna2HtmlLabel3.Text = "Elapse Time"
         '
@@ -162,12 +188,12 @@ Partial Class frmGames
         '
         Me.Guna2HtmlLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("DM Sans 14pt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(860, 25)
         Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(75, 30)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(76, 27)
         Me.Guna2HtmlLabel2.TabIndex = 4
         Me.Guna2HtmlLabel2.Text = "Games"
         '
@@ -177,7 +203,7 @@ Partial Class frmGames
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLoglastTime.AutoSize = False
         Me.lblLoglastTime.BackColor = System.Drawing.Color.DimGray
-        Me.lblLoglastTime.Font = New System.Drawing.Font("Inter Medium", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoglastTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLoglastTime.ForeColor = System.Drawing.Color.White
         Me.lblLoglastTime.Location = New System.Drawing.Point(28, 292)
         Me.lblLoglastTime.Name = "lblLoglastTime"
@@ -192,7 +218,7 @@ Partial Class frmGames
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTracker.AutoSize = False
         Me.lblTracker.BackColor = System.Drawing.Color.DimGray
-        Me.lblTracker.Font = New System.Drawing.Font("Inter Medium", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTracker.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTracker.ForeColor = System.Drawing.Color.White
         Me.lblTracker.Location = New System.Drawing.Point(28, 62)
         Me.lblTracker.Name = "lblTracker"
@@ -225,32 +251,6 @@ Partial Class frmGames
         Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
-        'IconPictureBox2
-        '
-        Me.IconPictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.IconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ClockFour
-        Me.IconPictureBox2.IconColor = System.Drawing.Color.White
-        Me.IconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconPictureBox2.IconSize = 35
-        Me.IconPictureBox2.Location = New System.Drawing.Point(28, 27)
-        Me.IconPictureBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.IconPictureBox2.Name = "IconPictureBox2"
-        Me.IconPictureBox2.Size = New System.Drawing.Size(35, 35)
-        Me.IconPictureBox2.TabIndex = 10
-        Me.IconPictureBox2.TabStop = False
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("DM Sans 14pt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(65, 29)
-        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(99, 30)
-        Me.Guna2HtmlLabel1.TabIndex = 9
-        Me.Guna2HtmlLabel1.Text = "Run Time"
-        '
         'frmGames
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,9 +265,9 @@ Partial Class frmGames
         Me.pnlContainer.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
