@@ -1,6 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
-Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
+Imports MySql.Data.MySqlClient
 
 Public Class frmResetAccountPassword
 

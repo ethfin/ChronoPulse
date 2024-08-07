@@ -1,6 +1,4 @@
-﻿Imports System.Text
-Imports System.IO
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class frmDashboard
 

@@ -1,8 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
-Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
 Imports MySql.Data.MySqlClient
-Imports System.Net.Mail
 
 Public Class frmSignUp
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
