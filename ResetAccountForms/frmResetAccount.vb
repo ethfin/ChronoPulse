@@ -41,8 +41,8 @@ Public Class frmResetAccount
 
         If String.IsNullOrWhiteSpace(txtEmail.Text) Then
             lblErrorEmail.Text = "Fill in the field"
-            lblErrorEmail.ForeColor = Color.Orange
-            txtEmail.BorderColor = Color.Orange
+            lblErrorEmail.ForeColor = Color.Red
+            txtEmail.BorderColor = Color.Red
             lblErrorEmail.Show() ' Show the email error label
             Return False
         End If
@@ -109,4 +109,7 @@ Public Class frmResetAccount
         End Using
     End Function
 
+    Private Sub txtEmail_Load(sender As Object, e As EventArgs) Handles txtEmail.Load
+        txtEmail.Select()
+    End Sub
 End Class

@@ -159,12 +159,13 @@ Partial Class frmResetAccount
         Me.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnReset.FillColor = System.Drawing.Color.MediumTurquoise
-        Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnReset.ForeColor = System.Drawing.Color.White
+        Me.btnReset.IndicateFocus = True
         Me.btnReset.Location = New System.Drawing.Point(188, 346)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(180, 45)
-        Me.btnReset.TabIndex = 17
+        Me.btnReset.TabIndex = 1
         Me.btnReset.Text = "Next"
         '
         'LinkLabel1
@@ -175,7 +176,7 @@ Partial Class frmResetAccount
         Me.LinkLabel1.Location = New System.Drawing.Point(454, 449)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(76, 16)
-        Me.LinkLabel1.TabIndex = 16
+        Me.LinkLabel1.TabIndex = 2
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "← Previous"
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.White
@@ -201,7 +202,7 @@ Partial Class frmResetAccount
         Me.txtEmail.PlaceholderText = "Email"
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.Size = New System.Drawing.Size(414, 36)
-        Me.txtEmail.TabIndex = 15
+        Me.txtEmail.TabIndex = 0
         '
         'Label1
         '

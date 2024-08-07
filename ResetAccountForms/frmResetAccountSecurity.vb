@@ -93,9 +93,9 @@ Public Class frmResetAccountSecurity
                 Return True
             Else
                 txtSQA1.Text = txtSQA1Verify.Text
-                txtSQA1.BorderColor = Color.Orange
-                txtSQA1Verify.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                txtSQA1.BorderColor = Color.Red
+                txtSQA1Verify.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Fill in the the following fields"
                 lblError.Show()
                 Return False
@@ -120,9 +120,9 @@ Public Class frmResetAccountSecurity
                 Return True
             Else
                 txtSQA1Verify.Text = txtSQA1.Text
-                txtSQA1.BorderColor = Color.Orange
-                txtSQA1Verify.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                txtSQA1.BorderColor = Color.Red
+                txtSQA1Verify.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Fill in the the following fields"
                 lblError.Show()
                 Return False
@@ -155,9 +155,9 @@ Public Class frmResetAccountSecurity
                 Return True
             Else
                 txtSQA2.Text = txtSQA2Verify.Text
-                txtSQA2.BorderColor = Color.Orange
-                txtSQA2Verify.BorderColor = Color.Orange
-                lblError2.ForeColor = Color.Orange
+                txtSQA2.BorderColor = Color.Red
+                txtSQA2Verify.BorderColor = Color.Red
+                lblError2.ForeColor = Color.Red
                 lblError2.Text = "Fill in the the following fields"
                 lblError2.Show()
                 Return False
@@ -182,9 +182,9 @@ Public Class frmResetAccountSecurity
                 Return True
             Else
                 txtSQA2Verify.Text = txtSQA2.Text
-                txtSQA2.BorderColor = Color.Orange
-                txtSQA2Verify.BorderColor = Color.Orange
-                lblError2.ForeColor = Color.Orange
+                txtSQA2.BorderColor = Color.Red
+                txtSQA2Verify.BorderColor = Color.Red
+                lblError2.ForeColor = Color.Red
                 lblError2.Text = "Fill in the the following fields"
                 lblError2.Show()
                 Return False
@@ -226,7 +226,7 @@ Public Class frmResetAccountSecurity
     End Function
 
     Private Sub frmResetAccountSecurity_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        cmbSQ1.Select()
     End Sub
 
     Private Sub btnVerify_Click(sender As Object, e As EventArgs) Handles btnReset.Click

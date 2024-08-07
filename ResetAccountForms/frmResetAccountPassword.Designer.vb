@@ -111,7 +111,7 @@ Partial Class frmResetAccountPassword
         Me.chkShowPassword.Location = New System.Drawing.Point(348, 251)
         Me.chkShowPassword.Name = "chkShowPassword"
         Me.chkShowPassword.Size = New System.Drawing.Size(149, 21)
-        Me.chkShowPassword.TabIndex = 69
+        Me.chkShowPassword.TabIndex = 1
         Me.chkShowPassword.Text = "Show Password"
         Me.chkShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.chkShowPassword.UncheckedState.BorderRadius = 0
@@ -129,7 +129,7 @@ Partial Class frmResetAccountPassword
         Me.chkShowPassword2.Location = New System.Drawing.Point(348, 343)
         Me.chkShowPassword2.Name = "chkShowPassword2"
         Me.chkShowPassword2.Size = New System.Drawing.Size(149, 21)
-        Me.chkShowPassword2.TabIndex = 68
+        Me.chkShowPassword2.TabIndex = 3
         Me.chkShowPassword2.Text = "Show Password"
         Me.chkShowPassword2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.chkShowPassword2.UncheckedState.BorderRadius = 0
@@ -157,7 +157,7 @@ Partial Class frmResetAccountPassword
         Me.txtPassword.PlaceholderText = "Password"
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(414, 36)
-        Me.txtPassword.TabIndex = 46
+        Me.txtPassword.TabIndex = 0
         '
         'btnClose
         '
@@ -206,9 +206,9 @@ Partial Class frmResetAccountPassword
         Me.lblError.BackColor = System.Drawing.Color.Transparent
         Me.lblError.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(150, 370)
+        Me.lblError.Location = New System.Drawing.Point(71, 370)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(256, 40)
+        Me.lblError.Size = New System.Drawing.Size(414, 40)
         Me.lblError.TabIndex = 43
         Me.lblError.TabStop = False
         Me.lblError.Text = "Error"
@@ -223,12 +223,13 @@ Partial Class frmResetAccountPassword
         Me.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnReset.FillColor = System.Drawing.Color.MediumTurquoise
-        Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold)
         Me.btnReset.ForeColor = System.Drawing.Color.White
+        Me.btnReset.IndicateFocus = True
         Me.btnReset.Location = New System.Drawing.Point(188, 416)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(180, 45)
-        Me.btnReset.TabIndex = 17
+        Me.btnReset.TabIndex = 4
         Me.btnReset.Text = "Reset"
         '
         'LinkLabel1
@@ -239,7 +240,7 @@ Partial Class frmResetAccountPassword
         Me.LinkLabel1.Location = New System.Drawing.Point(454, 449)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(76, 16)
-        Me.LinkLabel1.TabIndex = 16
+        Me.LinkLabel1.TabIndex = 5
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "← Previous"
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.White
@@ -265,7 +266,7 @@ Partial Class frmResetAccountPassword
         Me.txtVerifyPassword.PlaceholderText = "Re-enter Password"
         Me.txtVerifyPassword.SelectedText = ""
         Me.txtVerifyPassword.Size = New System.Drawing.Size(414, 36)
-        Me.txtVerifyPassword.TabIndex = 15
+        Me.txtVerifyPassword.TabIndex = 2
         '
         'Label1
         '
@@ -304,6 +305,7 @@ Partial Class frmResetAccountPassword
         '
         'frmResetAccountPassword
         '
+        Me.AcceptButton = Me.btnReset
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(970, 473)

@@ -54,7 +54,7 @@ Partial Class frmLogin
         Me.panelLogin2.Controls.Add(Me.lblCopyright)
         Me.panelLogin2.Dock = System.Windows.Forms.DockStyle.Right
         Me.panelLogin2.Location = New System.Drawing.Point(491, 0)
-        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelLogin2.Margin = New System.Windows.Forms.Padding(2)
         Me.panelLogin2.Name = "panelLogin2"
         Me.panelLogin2.Size = New System.Drawing.Size(434, 491)
         Me.panelLogin2.TabIndex = 7
@@ -111,7 +111,7 @@ Partial Class frmLogin
         Me.lnklblSignUp.Location = New System.Drawing.Point(109, 453)
         Me.lnklblSignUp.Name = "lnklblSignUp"
         Me.lnklblSignUp.Size = New System.Drawing.Size(272, 20)
-        Me.lnklblSignUp.TabIndex = 12
+        Me.lnklblSignUp.TabIndex = 5
         Me.lnklblSignUp.TabStop = True
         Me.lnklblSignUp.Text = "Don't have an account? Sign up now!"
         '
@@ -141,7 +141,7 @@ Partial Class frmLogin
         Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
         Me.Guna2PictureBox2.Location = New System.Drawing.Point(147, 119)
-        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
         Me.Guna2PictureBox2.Size = New System.Drawing.Size(109, 107)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
