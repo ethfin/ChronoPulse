@@ -311,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChronoPulse Logo.ico" />
+    <None Include="Resources\ChronoPulse Logo v2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
