@@ -225,9 +225,6 @@ Public Class frmExpenses
         ' Unselect any selected rows in the DataGridView
         dataGridViewExpenses.ClearSelection()
 
-        ' Enable the Add button
-        btnAdd.Enabled = True
-
         ' Disable the Edit button
         btnEdit.Enabled = False
     End Sub
@@ -246,8 +243,6 @@ Public Class frmExpenses
                 MessageBox.Show("Invalid date format in the selected row.")
             End If
 
-            ' Disable the Add button and enable the Edit button
-            btnAdd.Enabled = False
             btnEdit.Enabled = True
         End If
     End Sub

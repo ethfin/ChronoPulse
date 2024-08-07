@@ -63,59 +63,82 @@ Public Class frmLogin
 
     ' Handles the Click event of the btnLogin control to log in the user
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        ' Get the username and password from the text boxes
         Dim username As String = txtUsername.Text
         Dim password As String = txtPassword.Text
 
+        ' Create a MySqlConnection object using the createDBConnection method from the Common class
         Using conn As MySqlConnection = Common.createDBConnection()
             Try
+                ' Open the database connection
                 conn.Open()
 
+                ' Create a SQL query to check if the username and password exist in the database
                 Dim query As String = "SELECT COUNT(*) FROM dbaccounts WHERE username = @username AND password = @password"
+
+                ' Create a MySqlCommand object with the query and connection
                 Using cmd As MySqlCommand = New MySqlCommand(query, conn)
+                    ' Add parameters to the query to prevent SQL injection
                     cmd.Parameters.AddWithValue("@username", username)
                     cmd.Parameters.AddWithValue("@password", password)
 
+                    ' Execute the query and get the result as an integer
                     Dim result As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
+                    ' If the result is greater than 0, the username and password are valid
                     If result > 0 Then
+                        ' Set the username label in the frmMain form to the logged-in username
                         frmMain.lblUsername.Text = Me.Username
+                        ' Show the frmMain form
                         frmMain.Show()
+                        ' Close the frmLogin form
                         Me.Close()
                     Else
+                        ' Display an error message if the username or password is invalid
                         lblIncorrect.Text = "Invalid username or password."
                         lblIncorrect.Show()
                     End If
                 End Using
             Catch ex As Exception
+                ' Display an error message if there is an exception during the database operation
                 lblIncorrect.Text = "Error: " & ex.Message
                 lblIncorrect.Show()
             End Try
         End Using
 
+        ' Clear the text boxes after the login attempt
         txtUsername.Clear()
         txtPassword.Clear()
     End Sub
 
     ' Handles the Click event of the btnSignUp control to show the sign-up form
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs)
+        ' Hide the frmLogin form
         Me.Hide()
+        ' Show the frmSignUp form
         frmSignUp.Show()
     End Sub
 
     ' Handles the CheckedChanged event of the cbxShowPassword control to toggle password visibility
     Private Sub cbxShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShowPassword.CheckedChanged
+        ' If the checkbox is checked, show the password as plain text
+        ' Otherwise, hide the password with asterisks
         txtPassword.PasswordChar = If(cbxShowPassword.Checked, "", "*")
     End Sub
 
     ' Handles the LinkClicked event of the lnklblSignUp control to show the sign-up form
     Private Sub lnklblSignUp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblSignUp.LinkClicked
+        ' Hide the frmLogin form
         Me.Hide()
+        ' Show the frmSignUp form
         frmSignUp.Show()
     End Sub
 
     ' Handles the LinkClicked event of the lnklblReset control to show the reset account form
     Private Sub lnklblReset_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblReset.LinkClicked
+        ' Hide the frmLogin form
         Me.Hide()
+        ' Show the frmResetAccount form
         frmResetAccount.Show()
     End Sub
 
