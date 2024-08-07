@@ -8,6 +8,8 @@ Public Class frmGames
     Private knownGames As New HashSet(Of String)() ' Use HashSet for faster lookups
     Private gameStartTimes As New Dictionary(Of String, DateTime)()
     Private userID As Integer
+    Public Event GameAdded(gameName As String)
+    Public Event GameDeleted(gameName As String)
 
     Private Sub frmGames_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
@@ -154,6 +156,9 @@ Public Class frmGames
 
                     ' Insert the game details into the database
                     InsertGameDetails(fileName, filePath)
+
+                    ' Raise the GameAdded event
+                    RaiseEvent GameAdded(fileName)
 
                     MessageBox.Show($"{fileName} has been added to the known games list.", "Game Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
@@ -346,6 +351,9 @@ Public Class frmGames
 
                 ' Delete the game from the database
                 DeleteGameDetails(selectedGame)
+
+                ' Raise the GameDeleted event
+                RaiseEvent GameDeleted(selectedGame)
 
                 MessageBox.Show($"{selectedGame} has been deleted from the known games list.", "Game Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else

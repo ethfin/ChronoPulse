@@ -71,6 +71,22 @@ Public Class frmDashboard
         ' Start the timer
         Timer1.Start()
         AddHandler Timer1.Tick, AddressOf Timer1_Tick
+
+        ' Subscribe to events from frmGames
+        AddHandler frmGames.GameAdded, AddressOf OnGameAdded
+        AddHandler frmGames.GameDeleted, AddressOf OnGameDeleted
+    End Sub
+
+    Private Sub OnGameAdded(gameName As String)
+        If Not ListBox1.Items.Contains(gameName) Then
+            ListBox1.Items.Add(gameName)
+        End If
+    End Sub
+
+    Private Sub OnGameDeleted(gameName As String)
+        If ListBox1.Items.Contains(gameName) Then
+            ListBox1.Items.Remove(gameName)
+        End If
     End Sub
 
     Public Sub RefreshTotalCost()

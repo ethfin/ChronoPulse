@@ -138,6 +138,9 @@ Partial Class frmDashboard
         '
         'ListBox1
         '
+        Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.ListBox1.Font = New System.Drawing.Font("DM Sans 14pt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.ForeColor = System.Drawing.Color.White
@@ -194,13 +197,14 @@ Partial Class frmDashboard
         '
         'lblTotalItems
         '
+        Me.lblTotalItems.AutoSize = False
         Me.lblTotalItems.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalItems.ForeColor = System.Drawing.Color.White
-        Me.lblTotalItems.Location = New System.Drawing.Point(89, 98)
+        Me.lblTotalItems.Location = New System.Drawing.Point(25, 98)
         Me.lblTotalItems.Margin = New System.Windows.Forms.Padding(0)
         Me.lblTotalItems.Name = "lblTotalItems"
-        Me.lblTotalItems.Size = New System.Drawing.Size(174, 77)
+        Me.lblTotalItems.Size = New System.Drawing.Size(295, 77)
         Me.lblTotalItems.TabIndex = 16
         Me.lblTotalItems.Text = "$0.00"
         '
@@ -247,13 +251,14 @@ Partial Class frmDashboard
         '
         'lblTotalCost
         '
+        Me.lblTotalCost.AutoSize = False
         Me.lblTotalCost.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 49.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalCost.ForeColor = System.Drawing.Color.White
-        Me.lblTotalCost.Location = New System.Drawing.Point(92, 98)
+        Me.lblTotalCost.Location = New System.Drawing.Point(25, 98)
         Me.lblTotalCost.Margin = New System.Windows.Forms.Padding(0)
         Me.lblTotalCost.Name = "lblTotalCost"
-        Me.lblTotalCost.Size = New System.Drawing.Size(174, 77)
+        Me.lblTotalCost.Size = New System.Drawing.Size(295, 77)
         Me.lblTotalCost.TabIndex = 15
         Me.lblTotalCost.Text = "$0.00"
         '
