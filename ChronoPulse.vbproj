@@ -237,10 +237,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PIDTesting.Designer.vb">
+    <Compile Include="testForms\PIDTesting.Designer.vb">
       <DependentUpon>PIDTesting.vb</DependentUpon>
     </Compile>
-    <Compile Include="PIDTesting.vb">
+    <Compile Include="testForms\PIDTesting.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -288,7 +288,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PIDTesting.resx">
+    <EmbeddedResource Include="testForms\PIDTesting.resx">
       <DependentUpon>PIDTesting.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

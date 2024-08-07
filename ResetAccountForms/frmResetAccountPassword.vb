@@ -136,10 +136,10 @@ Public Class frmResetAccountPassword
                 lblError.ForeColor = Color.Green
                 lblError.Text = "Password matches and meets requirements."
             Else
-                ' If the password does not meet complexity requirements, set the border color to Orange.
-                txtPassword.BorderColor = Color.Orange
-                txtVerifyPassword.BorderColor = Color.Orange
-                lblError.ForeColor = Color.Orange
+                ' If the password does not meet complexity requirements, set the border color to Red.
+                txtPassword.BorderColor = Color.Red
+                txtVerifyPassword.BorderColor = Color.Red
+                lblError.ForeColor = Color.Red
                 lblError.Text = "Password must be at least 8 characters, contain numbers, and special characters, and should not include : ; "" ' / \\."
             End If
         Else
@@ -181,5 +181,9 @@ Public Class frmResetAccountPassword
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         frmResetAccountSecurity.Show()
         Me.Close()
+    End Sub
+
+    Private Sub frmResetAccountPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtPassword.Select()
     End Sub
 End Class
