@@ -85,8 +85,12 @@ Partial Class frmDashboard
         '
         'lblLogLastTime
         '
+        Me.lblLogLastTime.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLogLastTime.AutoSize = False
-        Me.lblLogLastTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblLogLastTime.BackColor = System.Drawing.Color.DimGray
+        Me.lblLogLastTime.Font = New System.Drawing.Font("Inter Medium", 20.25!, System.Drawing.FontStyle.Bold)
         Me.lblLogLastTime.Location = New System.Drawing.Point(11, 91)
         Me.lblLogLastTime.Name = "lblLogLastTime"
         Me.lblLogLastTime.Size = New System.Drawing.Size(661, 172)
