@@ -198,6 +198,9 @@ Partial Class frmDashboard
         '
         'lblTotalItems
         '
+        Me.lblTotalItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalItems.AutoSize = False
         Me.lblTotalItems.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -232,9 +235,9 @@ Partial Class frmDashboard
         Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(53, 23)
         Me.Guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(120, 30)
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(249, 30)
         Me.Guna2HtmlLabel4.TabIndex = 1
-        Me.Guna2HtmlLabel4.Text = "Total Items"
+        Me.Guna2HtmlLabel4.Text = "Total Games Purchased"
         '
         'Guna2Panel2
         '
